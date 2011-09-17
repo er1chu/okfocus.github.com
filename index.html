@@ -17,25 +17,30 @@
     <meta name="author" content="OKFocus" />
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style>
-      html { overflow-y:hidden }
+      html { overflow-y:hidden}
       img {width:600px; margin: 0px auto }
-      a, a:visited { color:blue; text-decoration:none}
+      a,a:visited{color:blue;text-decoration:none;}
+      a.slash:after { content: "//"; color:black; margin-left:5px;}
       ul,li { list-style-type:none; padding-left: 0px; }
       li { display: inline }
       li.comma:after { content: ","; }
-      a.slash:after { content: "//"; color:black; margin-left:5px;}
-      .center{ text-align:center; }
-      body{ text-align: justify; color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size: 9px; width: 600px; margin: 0px auto; }
-      #main-column { z-index:0; position:relative; width:600px; padding-top:250px; margin:0px auto 300px; display:block; }
-      article { padding: 250px 10px; }
-      #work, #us, #contact { height:1000px; min-height: 800px; }
-      header { height: 139px; display:block; position:fixed; z-index:666; width:600px; margin-top:75px; }
-      header img { display:block; margin: 0 auto; }
-      h3 { font-size:10px;font-weight:normal }
-      #about { margin-bottom:800px }
-      #us p { line-height:15px}
+      .center{text-align:center}
+      p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:9px;}
+      #parallax { background: #fff;background-image:url('assets/images/dither.gif'); position:fixed;left:0; overflow:hidden;margin:0;padding:0;
+      width:100%; height:8000px;top:0;z-index:-1;}
+      body {background-image:url('assets/images/grad.png');background-position:top left;background-repeat:repeat; width:600px; margin: 0px auto;}
+      #main-column { background-image:url('assets/images/sq2.png');background-position:top right;background-repeat:repeat-y; z-index:0; position:relative; width:600px;padding-top:250px; margin:0px auto 300px; display:block; overflow:hidden }
+      article { margin: 2000px 10px;padding-top:300px;padding-left:20px;padding-right:20px;}
+      #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px;}
+      #us{background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y;}
+      #contact{background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y;}
+      #contact p{text-align:center;}
+      #about{margin-top:30px;}
+      #work{background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
+      header { margin-top:100px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
+      header img { display:block; margin: 0 auto;}
       #bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0 }
-      #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;} 
+      #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;}       
     </style>
     <title>OKFocus</title>
   </head>
