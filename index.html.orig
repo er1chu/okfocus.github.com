@@ -17,8 +17,33 @@
     <meta name="author" content="OKFocus" />
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style>
-      html { overflow-y:hidden}
+           html { overflow-y:hidden }
       img {width:600px; margin: 0px auto }
+<<<<<<< HEAD
+      a, a:visited { color:blue; text-decoration:none}
+      ul,li { list-style-type:none; padding-left: 0px; }
+      li { display: inline }
+      li.comma:after { content: ","; }
+      a.slash:after { content: "//"; color:black; margin-left:5px;}
+      .center{ text-align:center; }
+      body{ text-align: justify; color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size: 9px; width: 600px; margin: 0px auto; }
+      #main-column { z-index:0; position:relative; width:600px; padding-top:250px; margin:0px auto 300px; display:block; }
+      article { padding: 250px 10px; }
+      #work, #us, #contact { height:1000px; min-height: 800px; }
+      header { height: 139px; display:block; position:fixed; z-index:666; width:600px; margin-top:75px; }
+      header img { display:block; margin: 0 auto; }
+      h3 { font-size:10px;font-weight:normal }
+      #about { margin-bottom:800px }
+      #us p { line-height:15px}
+      #contact a{font-family:cursive;font-size:38px;font-style:italic;text-shadow:17px 0px 0px white, 2px 2px 0px #eee;}
+	  #contact{text-align:center}
+body.yes-javascript { overflow:hidden; }
+#bg {width:10000%; height:10000%; background: scroll 150% 150% repeat;}
+.bg__main, #main { overflow:hidden; height:100%; left:0; top:0;  margin: 0;}
+#main {left:-15px;top:5px; margin:0; color:#000;}
+#bg.thing{background-image:url('https://ssl.gstatic.com/apps/cpanel/resources/img/apps_logo_sm.gif');position:fixed;left:0;top:0;}
+
+=======
       a,a:visited{color:blue;text-decoration:none;}
       a.slash:after { content: "//"; color:black; margin-left:5px;}
       ul,li { list-style-type:none; padding-left: 0px; }
@@ -40,18 +65,33 @@
       header { margin-top:100px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;}
       #bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0 }
-      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
-      #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
-      #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
-      #bg.blind-mist { background-image: url('assets/images/blind-mist.png'); position: fixed;z-index:0;}       
-      #bg.l-train { background-image: url('assets/images/ltrain.png'); position: fixed;z-index:0;}       
-      #bg.new-museum { background-image: url('assets/images/newmuseum.png'); position: fixed;z-index:0;}       
-      #bg.bitly { background-image: url('assets/images/bitly-web-ring.png'); position: fixed;z-index:0;}       
       #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;}       
-      #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;}       
+>>>>>>> 47ae3c0273730342e80e60d91a0e02d8c951ba25
     </style>
     <title>OKFocus</title>
   </head>
+<<<<<<< HEAD
+<body style="overflow:hidden">
+	<div id="bg" class="none"></div>	
+  <div id="main">
+  
+  <header>
+    <script>
+    (function() {
+      var d = new Date();
+      var logo = document.createElement('img');
+      logo.src = 'assets/images/logo1.gif?ok=' + d.getTime();    
+      var header = document.getElementsByTagName('header')[0];
+      var nav = document.getElementsByTagName('nav')[0];
+      header.insertBefore(logo,nav);
+    })();
+    </script>
+     <nav id='ls' class='center'>
+       <a href="#us">US</a> // <a onMouseOut="bgDel();" href="#work" id="thing">WORK</a> // <a href="#contact">CONTACT</a><!-- // <a href="#yeah">∞)´§</a>-->
+     </nav>
+  </header>
+ <section id="main-column">
+=======
   <body>
     <header>
       <!-- img loaded with js -->
@@ -76,21 +116,37 @@
     </script>
     <div id="bg" class="none"></div>
     <section id="main-column">
+>>>>>>> 47ae3c0273730342e80e60d91a0e02d8c951ba25
       <section id="intro">
         <p class="center" id="about">OKFocus is a full service digital agency</p>
       </section>
       <article id="work">
         <h3>Stuff We've Made For Ourselves</h3>
         <ul>
-          <li class="comma" id="bitly"><a href="#">Bitly Webring</a></li>
-          <li class="comma" id="blind-mist"><a href="#">Blind Mist</a></li>
+          <li class="comma"><a href="#">Bitly Webring</a></li>
+          <li class="comma"><a href="#">Blind Mist</a></li>
           <li class="comma"><a href="#">Dump.fm</a></li> 
-          <li class="comma" id="l-train"><a href="#">Is the L Train Fucked?</a></li>
+          <li class="comma"><a href="#">Is the L Train Fucked?</a></li>
           <li class="comma"><a href="#">Lucky Plop</a></li>
           <li><a href="#">Surf Cave</a></li>
         </ul>
         <h3>Stuff We've Made For Other People</h3>
         <ul>
+<<<<<<< HEAD
+          <li class="comma" id="anamanaguchi"><a href="#">Anamanaguchi</a></li>
+          <li class="comma" id="beautiful-decay"><a href="#">Beautiful Decay</a></li> 
+          <li class="comma" id="creative-time"><a href="#">Creative Time</a></li> 
+          <li class="comma" id="nicola"><a href="#">Nicola Formichetti</a></li> 
+          <li class="comma" id="lipman"><a href="#">Lipman Advertising</a></li>
+          <li class="comma" id="mia"><a href="#">M.I.A.</a></li>
+          <li class="comma" id="ps1"><a href="#">PS1 MoMA</a></li>
+          <li class="comma" id="normative"><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative"><a href="#">Normative Music Company</a></li> 
+          <li class="comma" id="sarah-silverman"><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="ssion"><a href="#">Ssion</a></li>
+          <li class="comma" id="ryan"><a href="#">Ryan Trecartin</a></li> 
+          <li><a href="#" id="w">W Magazine</a></li>
+=======
           <li class="comma" id="anamanaguchi" ><a href="#">Anamanaguchi</a></li>
           <li class="comma" id="beautiful-decay" ><a href="#">Beautiful Decay</a></li> 
           <li class="comma" id="creative-time" ><a href="#">Creative Time</a></li> 
@@ -98,12 +154,13 @@
           <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
           <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
-          <li class="comma" id="new-museum" ><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative" ><a href="#">New Museum</a></li> 
           <li class="comma" id="normative" ><a href="#">Normative Music Company</a></li> 
           <li class="comma" id="sarah-silverman" ><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
           <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
           <li><a href="#" id="w" >W Magazine</a></li>
+>>>>>>> 47ae3c0273730342e80e60d91a0e02d8c951ba25
         </ul>
       </article>
       <article id="us">
@@ -119,6 +176,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/jquery.localscroll-1.2.7-min.js"></script>
     <script src="assets/javascripts/jquery.scrollTo-1.4.2-min.js"></script>
+        <script src="assets/javascripts/hover.js"></script>
     <script>
       $(function(){
           $('#ls').localScroll({
@@ -222,6 +280,10 @@
 
 
     </script>
+<<<<<<< HEAD
     </div>
 </body>
+=======
+  </body>
+>>>>>>> 47ae3c0273730342e80e60d91a0e02d8c951ba25
 </html>
