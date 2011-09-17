@@ -7,62 +7,67 @@
 |__/ | \  |    |__/ |__/ |__/  __/ 
                                    
                                    -->
-
 <html>
   <head>
-    <title>OKFocus</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <meta name="keywords" content="okfocus,ok focus,jonathan vingiano,ryder ripps,digital agency,internet thugs" />
     <meta name="description" content="OKFocus makes awesome stuff for the internet." />
+    <meta name="author" content="OKFocus" />
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style>
-           html { overflow-y:hidden }
+      html { overflow-y:hidden}
       img {width:600px; margin: 0px auto }
-      a, a:visited { color:blue; text-decoration:none}
+      a,a:visited{color:blue;text-decoration:none;}
+      a.slash:after { content: "//"; color:black; margin-left:5px;}
       ul,li { list-style-type:none; padding-left: 0px; }
       li { display: inline }
       li.comma:after { content: ","; }
-      a.slash:after { content: "//"; color:black; margin-left:5px;}
-      .center{ text-align:center; }
-      body{ text-align: justify; color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size: 9px; width: 600px; margin: 0px auto; }
-      #main-column { z-index:0; position:relative; width:600px; padding-top:250px; margin:0px auto 300px; display:block; }
-      article { padding: 250px 10px; }
-      #work, #us, #contact { height:1000px; min-height: 800px; }
-      header { height: 139px; display:block; position:fixed; z-index:666; width:600px; margin-top:75px; }
-      header img { display:block; margin: 0 auto; }
-      h3 { font-size:10px;font-weight:normal }
-      #about { margin-bottom:800px }
-      #us p { line-height:15px}
-      #contact a{font-family:cursive;font-size:38px;font-style:italic;text-shadow:17px 0px 0px white, 2px 2px 0px #eee;}
-	  #contact{text-align:center}
-body.yes-javascript { overflow:hidden; }
-#bg {width:10000%; height:10000%; background: scroll 150% 150% repeat;}
-.bg__main, #main { overflow:hidden; height:100%; left:0; top:0;  margin: 0;}
-#main {left:-15px;top:5px; margin:0; color:#000;}
-#bg.thing{background-image:url('https://ssl.gstatic.com/apps/cpanel/resources/img/apps_logo_sm.gif');position:fixed;left:0;top:0;}
-
+      .center{text-align:center}
+      p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:9px;}
+      #parallax { background: #fff;background-image:url('assets/images/dither.gif'); position:fixed;left:0; overflow:hidden;margin:0;padding:0;
+      width:100%; height:8000px;top:0;z-index:-1;}
+      body {background-image:url('assets/images/grad.png');background-position:top left;background-repeat:repeat; width:600px; margin: 0px auto;}
+      #main-column { background-image:url('assets/images/sq2.png');background-position:top right;background-repeat:repeat-y; z-index:0; position:relative; width:600px;padding-top:250px; margin:0px auto 300px; display:block; overflow:hidden }
+      article { margin: 2000px 10px;padding-top:300px;padding-left:20px;padding-right:20px;}
+      #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px;}
+      #us{background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y;}
+      #contact{background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y;}
+      #contact p{text-align:center;}
+      #about{margin-top:30px;}
+      #work{background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
+      header { margin-top:100px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
+      header img { display:block; margin: 0 auto;}
+      #bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0 }
+      #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;}       
     </style>
+    <title>OKFocus</title>
   </head>
-<body style="overflow:hidden">
-	<div id="bg" class="none"></div>	
-  <div id="main">
-  
-  <header>
+  <body>
+    <header>
+      <!-- img loaded with js -->
+      <nav id='ls' class='center'>
+        <a class="slash" href="#us">US</a>
+        <a class="slash" href="#work">WORK</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
     <script>
     (function() {
-      var d = new Date();
-      var logo = document.createElement('img');
-      logo.src = 'assets/images/logo1.gif?ok=' + d.getTime();    
-      var header = document.getElementsByTagName('header')[0];
-      var nav = document.getElementsByTagName('nav')[0];
-      header.insertBefore(logo,nav);
+      var d = new Date(),
+      logo = document.createElement('img'),
+      a = document.createElement('a'),
+      header = document.getElementsByTagName('header')[0],
+      nav = document.getElementsByTagName('nav')[0];
+      logo.src = 'assets/images/logo1.gif?ok=' + d.getTime();
+      a.href = 'http://okfoc.us';
+      header.insertBefore(a,nav);
+      a.appendChild(logo);
     })();
     </script>
-     <nav id='ls' class='center'>
-       <a href="#us">US</a> // <a onMouseOut="bgDel();" href="#work" id="thing">WORK</a> // <a href="#contact">CONTACT</a><!-- // <a href="#yeah">∞)´§</a>-->
-     </nav>
-  </header>
- <section id="main-column">
+    <div id="bg" class="none"></div>
+    <section id="main-column">
       <section id="intro">
         <p class="center" id="about">OKFocus is a full service digital agency</p>
       </section>
@@ -78,19 +83,19 @@ body.yes-javascript { overflow:hidden; }
         </ul>
         <h3>Stuff We've Made For Other People</h3>
         <ul>
-          <li class="comma" id="anamanaguchi"><a href="#">Anamanaguchi</a></li>
-          <li class="comma" id="beautiful-decay"><a href="#">Beautiful Decay</a></li> 
-          <li class="comma" id="creative-time"><a href="#">Creative Time</a></li> 
-          <li class="comma" id="nicola"><a href="#">Nicola Formichetti</a></li> 
-          <li class="comma" id="lipman"><a href="#">Lipman Advertising</a></li>
-          <li class="comma" id="mia"><a href="#">M.I.A.</a></li>
-          <li class="comma" id="ps1"><a href="#">PS1 MoMA</a></li>
-          <li class="comma" id="normative"><a href="#">New Museum</a></li> 
-          <li class="comma" id="normative"><a href="#">Normative Music Company</a></li> 
-          <li class="comma" id="sarah-silverman"><a href="#">The Sarah Silverman Project</a></li> 
-          <li class="comma" id="ssion"><a href="#">Ssion</a></li>
-          <li class="comma" id="ryan"><a href="#">Ryan Trecartin</a></li> 
-          <li><a href="#" id="w">W Magazine</a></li>
+          <li class="comma" id="anamanaguchi" ><a href="#">Anamanaguchi</a></li>
+          <li class="comma" id="beautiful-decay" ><a href="#">Beautiful Decay</a></li> 
+          <li class="comma" id="creative-time" ><a href="#">Creative Time</a></li> 
+          <li class="comma" id="nicola" ><a href="#">Nicola Formichetti</a></li> 
+          <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
+          <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
+          <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
+          <li class="comma" id="normative" ><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative" ><a href="#">Normative Music Company</a></li> 
+          <li class="comma" id="sarah-silverman" ><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
+          <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
+          <li><a href="#" id="w" >W Magazine</a></li>
         </ul>
       </article>
       <article id="us">
@@ -106,7 +111,6 @@ body.yes-javascript { overflow:hidden; }
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/jquery.localscroll-1.2.7-min.js"></script>
     <script src="assets/javascripts/jquery.scrollTo-1.4.2-min.js"></script>
-        <script src="assets/javascripts/hover.js"></script>
     <script>
       $(function(){
           $('#ls').localScroll({
@@ -114,9 +118,101 @@ body.yes-javascript { overflow:hidden; }
               hash: true,
               duration: 400
           });
+
+      var i = k = 0,
+          f = false,
+          t = bg_Name = "",
+          browser_shit = !(typeof document.createElement("main").style.opacity != 'undefined'),
+	        bg = document.getElementById('bg'),
+	        aObjects = document.getElementsByTagName('li');
+
+	        function MMove(e) {
+    		      e = e || window.event;
+        		  if (e.pageX == null && e.clientX != null ) {  
+		            	var html = document.documentElement;
+			            var body = document.body;
+    			        e.pageX = e.clientX + (html && html.scrollLeft || body && body.scrollLeft || 0) - (html.clientLeft || 0);
+		    	        e.pageY = e.clientY + (html && html.scrollTop || body && body.scrollTop || 0) - (html.clientTop || 0);
+    		      }
+
+		          bg.style.backgroundPosition = t = " "+(e.pageX)+"px "+(e.pageY-1450)+"px";
+	        }
+
+	        if (document.layers) { 
+              document.captureEvents(Event.MOUSEMOVE); 
+          }
+
+    	    document.onmousemove=MMove;
+
+	        for( var i = 0; i < aObjects.length; i++ ) {
+
+		          aObjects[i].onmouseover = function() {
+                  console.log('hay');
+			            f=true;
+			            var a_id = this.getAttribute("id");                  
+			            bgOver(a_id);
+		          }
+              aObjects[i].onmouseout = function() {
+                  console.log('bai');
+  	              f=false;
+	                i=100;
+	                bg_Name = "none";
+    	            k=10;
+	                bgDel_scroll_d();
+              }
+	        }
           
-          $('body').css('overflow', 'hidden');
+          function bgOver(s) {
+              f=false;
+	            i=100; 
+	            bg_Name = s;
+	            k=10;
+	            bgDel_scroll_d();
+          }          
+
+          function bgDel_scroll_d() {
+	            if (f == false) {
+		              if (browser_shit) {
+			                i-=k*2;
+			                document.getElementById('bg').style.filter = 'alpha(opacity='+i+')';
+		              } else {
+			                i-=k;
+			                document.getElementById('bg').style.opacity = (i/20)
+		              }
+		              if (i > 0) {
+                      setTimeout(bgDel_scroll_d,2);
+		              } else {
+             			    document.getElementById('bg').className=bg_Name; 
+			                i=0;
+            			    bgDel_scroll_u();
+		              }
+	            }
+          }
+
+          function bgDel_scroll_u() { 
+    	        if (f == false) {
+		              if (browser_shit) {
+			                i+=10;
+			                document.getElementById('bg').style.filter = 'alpha(opacity='+i+')';
+		              } else {
+			                i+=5;
+			                document.getElementById('bg').style.opacity = (i/20)
+		              }
+
+		              if ( (i < 100) && (f==false) ) {
+                      setTimeout(bgDel_scroll_u,2);
+		              } else if (browser_shit) {
+                      document.getElementById('bg').style.filter = 'alpha(opacity=100)';
+		              } else {
+                      document.getElementById('bg').style.opacity = "1";
+	                }
+              }
+          }
+
       });
+      
+
+
     </script>
     </div>
 </body>
