@@ -7,7 +7,9 @@
 |__/ | \  |    |__/ |__/ |__/  __/ 
                                    
                                    -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:og="http://ogp.me/ns#"
+	xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -16,15 +18,13 @@
     <meta name="description" content="OKFocus makes awesome stuff for the internet." />
     <meta name="author" content="OKFocus" />
     <link rel="shortcut icon" href="http://okfoc.us/favicon.ico">
-    <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:og="http://ogp.me/ns#"
-	xmlns:fb="http://www.facebook.com/2008/fbml">
-	<meta property="og:title" content="OKFocus" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="assets/images/ok_icon.png" />
-	<link rel="image_src" href="assets/images/ok_icon.png" /> 
-	<meta property="og:url" content="http://okfoc.us" />
-	<meta property="og:site_name" content="OKFocus is a full service digital agency." />
+    <!-- facebook props -->
+	  <meta property="og:title" content="OKFocus" />
+	  <meta property="og:type" content="website" />
+	  <meta property="og:image" content="assets/images/ok_icon.png" />
+	  <link rel="image_src" href="assets/images/ok_icon.png" /> 
+	  <meta property="og:url" content="http://okfoc.us" />
+	  <meta property="og:site_name" content="OKFocus is a full service digital agency." />
 
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style type="text/css">
@@ -60,7 +60,7 @@
       #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
-      #bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0 }
+      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat;left:0 }
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -79,25 +79,28 @@
       #bg.ps1 { background-image: url('assets/images/ps1.jpg'); position: fixed;z-index:0;}
       #bg.lipman { background-image: url('assets/images/lipman.jpg'); position: fixed;z-index:0;}
       #bg.newmoticons { background-image: url('assets/images/newmoticons.jpg'); position: fixed;z-index:0;}
-	  #bg.ryan { background-image: url('assets/images/trecartin.jpg'); position: fixed;z-index:0;} 
-	  #bg.sarah { background-image: url('assets/images/sarah.jpg'); position: fixed;z-index:0;} 
-	  #bg.dis { background-image: url('assets/images/ddis.png'); position: fixed;z-index:0;}
-	  #bg.ia { background-image: url('assets/images/ia.jpg'); position: fixed;z-index:0;}
-	  #bg.paper { background-image: url('assets/images/paper.jpg'); position: fixed;z-index:0;}
-	  #bg.cbs { background-image: url('assets/images/cbs.gif'); position: fixed;z-index:0;}
-	  #bg.print { background-image: url('assets/images/print.jpg'); position: fixed;z-index:0;}
-	  #bg.wired { background-image: url('assets/images/wired.gif'); position: fixed;z-index:0;}
-	  #bg.huff { background-image: url('assets/images/huff.gif'); position: fixed;z-index:0;}
-	  #bg.artforum { background-image: url('assets/images/artforum.jpg'); position: fixed;z-index:0;}
-	  #bg.pbs { background-image: url('assets/images/pbs.gif'); position: fixed;z-index:0;}
-	  #bg.ia { background-image: url('assets/images/ia.jpg'); position: fixed;z-index:0;}
-	  #bg.nylon { background-image: url('assets/images/nylon.jpg'); position: fixed;z-index:0;}
-	  #bg.net { background-image: url('assets/images/net.gif'); position: fixed;z-index:0;}
-	  #bg.tc { background-image: url('assets/images/tc.jpg'); position: fixed;z-index:0;}
-	  #bg.npr { background-image: url('assets/images/npr.jpg'); position: fixed;z-index:0;}
+	    #bg.ryan { background-image: url('assets/images/trecartin.jpg'); position: fixed;z-index:0;} 
+	    #bg.sarah { background-image: url('assets/images/sarah.jpg'); position: fixed;z-index:0;} 
+	    #bg.dis { background-image: url('assets/images/ddis.png'); position: fixed;z-index:0;}
+	    #bg.ia { background-image: url('assets/images/ia.jpg'); position: fixed;z-index:0;}
+	    #bg.paper { background-image: url('assets/images/paper.jpg'); position: fixed;z-index:0;}
+	    #bg.cbs { background-image: url('assets/images/cbs.gif'); position: fixed;z-index:0;}
+	    #bg.print { background-image: url('assets/images/print.jpg'); position: fixed;z-index:0;}
+	    #bg.wired { background-image: url('assets/images/wired.gif'); position: fixed;z-index:0;}
+	    #bg.huff { background-image: url('assets/images/huff.gif'); position: fixed;z-index:0;}
+	    #bg.artforum { background-image: url('assets/images/artforum.jpg'); position: fixed;z-index:0;}
+	    #bg.pbs { background-image: url('assets/images/pbs.gif'); position: fixed;z-index:0;}
+	    #bg.ia { background-image: url('assets/images/ia.jpg'); position: fixed;z-index:0;}
+	    #bg.nylon { background-image: url('assets/images/nylon.jpg'); position: fixed;z-index:0;}
+	    #bg.net { background-image: url('assets/images/net.gif'); position: fixed;z-index:0;}
+	    #bg.tc { background-image: url('assets/images/tc.jpg'); position: fixed;z-index:0;}
+	    #bg.npr { background-image: url('assets/images/npr.jpg'); position: fixed;z-index:0;}
+	    #bg.gothamist { background-image: url('assets/images/gothamist-logo.png'); position: fixed;z-index:0;}
+	    #bg.new-yorker { background-image: url('assets/images/newyorker-logo.jpeg'); position: fixed;z-index:0;}
+	    #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
-   
+      .project-description { background: rgba(255,255,255, 0.7); font-size: 100px; width:100%; height:110%;position:relative;margin-top:-10px; overflow:hidden; text-align:left}
    
    
    </style>
@@ -152,7 +155,7 @@
           <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
           <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
-          <li class="comma" id="new-museum" ><a href="#">New Museum</a></li> 
+          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dreammachine"><a href="#">New Museum</a></li> 
           <li class="comma" id="normative" ><a href="#">Normative Music Company</a></li> 
           <li class="comma" id="sarah" ><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
@@ -163,17 +166,20 @@
         </ul>
           <h3 style="font-size:24px;text-align:right;letter-spacing:7px;">amazing press we've received!</h3>
         <ul>
-          <li class="comma" id="npr" ><a href="#">NPR</a></li>
-          <li class="comma" id="tc"><a href="#"  >TechCrunch</a></li>
-          <li class="comma" id="net"><a href="#"  >Net Magazine</a></li>
-          <li class="comma" id="nylon"><a href="#"  >Nylon</a></li>
-          <li class="comma" id="paper"><a href="#"  >Paper</a></li>
-          <li class="comma" id="cbs"><a href="#"  >CBS</a></li>
-          <li class="comma" id="print" ><a href="#">PRINT MAGAZINE</a></li> 
-          <li class="comma" id="wired"><a href="#"  >Wired</a></li>
-          <li class="comma" id="huff"><a href="#"  >Huffington Post</a></li>
           <li class="comma" id="artforum"><a href="#"  >ARTFORUM</a></li>
+          <li class="comma" id="cbs"><a href="#"  >CBS</a></li>
+          <li class="comma" id="gothamist"><a href="#"  >Gothamist</a></li>
+          <li class="comma" id="huff"><a href="#"  >Huffington Post</a></li>
+          <li class="comma" id="net"><a href="#"  >Net Magazine</a></li>
+          <li class="comma" id="new-yorker"><a href="#"  >The New Yorker</a></li>
+          <li class="comma" id="npr" ><a href="#">NPR</a></li>
+          <li class="comma" id="nylon"><a href="#"  >Nylon</a></li>          
+          <li class="comma" id="paper"><a href="#"  >Paper</a></li>
           <li class="comma" id="pbs"><a href="#"  >PBS</a></li>
+          <li class="comma" id="print" ><a href="#">PRINT MAGAZINE</a></li> 
+          <li class="comma" id="tc"><a href="#"  >TechCrunch</a></li>
+          <li class="comma" id="vv"><a href="#"  >Village Voice</a></li>
+          <li class="comma" id="wired"><a href="#"  >Wired</a></li>
           <li id="more2"><a href="#"  >AND MORE!</a></li>
         </ul>
       </article>
@@ -226,21 +232,25 @@
           
           var background = $('#bg');
           $('li').hover(function(){
-              var name = $(this).attr('id');
-
+              var name = $(this).attr('id'), descrip = $(this).attr('data-description');
+              
               $(this).mousemove(function(e){
                   background
                       .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
               });
 
               background
-                  .addClass(name);
+                  .addClass(name)
+                  .html("<p class='project-description'>" + descrip + "</p>");
           
           }, function (){
 
+
               background
-                  .removeClass();
-              
+                  .removeClass()
+                  .children()
+                  .remove();
+      
           });
       });
     </script>
