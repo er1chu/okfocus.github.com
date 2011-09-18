@@ -232,16 +232,21 @@
           
           var background = $('#bg');
           $('li').hover(function(){
-              var name = $(this).attr('id'), descrip = $(this).attr('data-description');
+              var name = $(this).attr('id');
               
               $(this).mousemove(function(e){
                   background
                       .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
+               
+                  $('.project-description')
+                      .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
+
               });
 
               background
-                  .addClass(name)
-                  .html("<p class='project-description'>" + descrip + "</p>");
+                  .addClass(name);
+
+
           
           }, function (){
 
@@ -251,6 +256,13 @@
                   .children()
                   .remove();
       
+          });
+
+          $('li').click(function(e){
+              e.preventDefault();
+              descrip = $(this).attr('data-description');
+              background
+                  .html("<p class='project-description'>" + descrip + "</p>");
           });
       });
     </script>
