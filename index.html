@@ -31,7 +31,7 @@
 
 
 
-      html { }
+      html { overflow-y:hidden;}
       a, a:visited {color:blue;text-decoration:none;}
       a:hover {background-image:url('assets/images/dotbg.gif'); }
       a.slash:after { content: ""; color:black; margin-left:5px; }
@@ -67,8 +67,8 @@
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
       #bg.blind-mist { background-image: url('assets/images/blind-mist.png'); position: fixed;z-index:0;}       
       #bg.l-train { background-image: url('assets/images/ltrain.png'); position: fixed;z-index:0;}       
-      #bg.new-museum { background-image: url('assets/images/newmuseum.png'); position: fixed;z-index:0;}       
-      #bg.bitly { background-image: url('assets/images/bitly-web-ring.png'); position: fixed;z-index:0;}       
+      #bg.new-museum { background-image: url('assets/images/newmuseum.jpg'); position: fixed;z-index:0;}       
+      #bg.bitly { background-image: url('assets/images/bitly-web-ring.jpg'); position: fixed;z-index:0;}       
       #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;}       
       #bg.dumpfm { background-image: url('assets/images/dumpfm.gif'); position: fixed;z-index:0;} 
       #bg.luckyplop { background-image: url('assets/images/luckyplop.jpg'); position: fixed;z-index:0;}
@@ -76,10 +76,27 @@
       #bg.mia { background-image: url('assets/images/mia.gif'); position: fixed;z-index:0;}
       #bg.ssion { background-image: url('assets/images/ssion.gif'); position: fixed;z-index:0;}
       #bg.w { background-image: url('assets/images/w.jpg'); position: fixed;z-index:0;}
+      #bg.hyper { background-image: url('assets/images/hyper.gif'); position: fixed;z-index:0;}
       #bg.ps1 { background-image: url('assets/images/ps1.jpg'); position: fixed;z-index:0;}
       #bg.lipman { background-image: url('assets/images/lipman.jpg'); position: fixed;z-index:0;}
+      #bg.newmoticons { background-image: url('assets/images/newmoticons.jpg'); position: fixed;z-index:0;}
 	  #bg.ryan { background-image: url('assets/images/trecartin.jpg'); position: fixed;z-index:0;} 
-   #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
+	  #bg.sarah { background-image: url('assets/images/sarah.jpg'); position: fixed;z-index:0;} 
+	  #bg.dis { background-image: url('assets/images/ddis.png'); position: fixed;z-index:0;}
+	  #bg.ia { background-image: url('assets/images/ia.jpg'); position: fixed;z-index:0;}
+	  #bg.paper { background-image: url('assets/images/paper.jpg'); position: fixed;z-index:0;}
+	  #bg.cbs { background-image: url('assets/images/cbs.gif'); position: fixed;z-index:0;}
+	  #bg.print { background-image: url('assets/images/print.jpg'); position: fixed;z-index:0;}
+	  #bg.wired { background-image: url('assets/images/wired.gif'); position: fixed;z-index:0;}
+	  #bg.huff { background-image: url('assets/images/huff.gif'); position: fixed;z-index:0;}
+	  #bg.artforum { background-image: url('assets/images/artforum.jpg'); position: fixed;z-index:0;}
+	  #bg.pbs { background-image: url('assets/images/pbs.gif'); position: fixed;z-index:0;}
+	  #bg.ia { background-image: url('assets/images/ia.jpg'); position: fixed;z-index:0;}
+	  #bg.nylon { background-image: url('assets/images/nylon.jpg'); position: fixed;z-index:0;}
+	  #bg.net { background-image: url('assets/images/net.gif'); position: fixed;z-index:0;}
+	  #bg.tc { background-image: url('assets/images/tc.jpg'); position: fixed;z-index:0;}
+	  #bg.npr { background-image: url('assets/images/npr.jpg'); position: fixed;z-index:0;}
+      #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
    
    
    
@@ -103,7 +120,7 @@
       header = document.getElementsByTagName('header')[0],
       nav = document.getElementsByTagName('nav')[0];
       logo.src = 'assets/images/okdot1.gif?ok=' + d.getTime();
-      a.href = 'http://okfoc.us';
+      a.href = '#';
       header.insertBefore(a,nav);
       a.appendChild(logo);
     })();
@@ -116,35 +133,47 @@
       <article id="work">
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
+          <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
           <li class="comma" id="bitly"><a href="#">Bitly Webring</a></li>
           <li class="comma" id="blind-mist"><a href="#">Blind Mist</a></li>
-          <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
           <li class="comma" id="l-train"><a href="#">Is the L Train Fucked?</a></li>
           <li class="comma" id="luckyplop"><a href="#">LuCkyPloP</a></li>
-          <li><a href="#">Surf Cave</a></li>
+          <li class="comma" id="newmoticons"><a href="#">newmoticons</a></li>
+          <li  id="ia"><a href="#">internet archaeology</a></li>
         </ul>
         <h4>people we've made stuff for!</h4>
         <ul>
           <li class="comma" id="anamanaguchi" ><a href="#">Anamanaguchi</a></li>
           <li class="comma" id="beautiful-decay" ><a href="#">Beautiful Decay</a></li> 
+          <li class="comma" id="dis" ><a href="#">DIS Magazine</a></li> 
           <li class="comma" id="creative-time" ><a href="#">Creative Time</a></li> 
           <li class="comma" id="rico" ><a href="#">Nicola Formichetti</a></li> 
+          <li class="comma" id="hyper" ><a href="#">hyperpublic</a></li> 
           <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
           <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
           <li class="comma" id="new-museum" ><a href="#">New Museum</a></li> 
           <li class="comma" id="normative" ><a href="#">Normative Music Company</a></li> 
-          <li class="comma" id="sarah-silverman" ><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="sarah" ><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
+          <li class="comma" id="eyebeam" ><a href="#">eyebeam</a></li>
           <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
           <li id="w"><a href="#"  >W Magazine</a></li>
           <li id="more"><a href="#"  >AND MORE!</a></li>
         </ul>
-          <h3 style="font-size:25px;text-align:right;">amazing press we've received!</h3>
+          <h3 style="font-size:24px;text-align:right;letter-spacing:7px;">amazing press we've received!</h3>
         <ul>
-          <li class="comma" id="anamanaguchi" ><a href="#">Anamanaguchi</a></li>
-          <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
-          <li id="w"><a href="#"  >W Magazine</a></li>
+          <li class="comma" id="npr" ><a href="#">NPR</a></li>
+          <li class="comma" id="tc"><a href="#"  >techcrunch</a></li>
+          <li class="comma" id="net"><a href="#"  >net magazine</a></li>
+          <li class="comma" id="nylon"><a href="#"  >nylon</a></li>
+          <li class="comma" id="paper"><a href="#"  >paper</a></li>
+          <li class="comma" id="cbs"><a href="#"  >cbs</a></li>
+          <li class="comma" id="print" ><a href="#">PRINT MAGAZINE</a></li> 
+          <li class="comma" id="wired"><a href="#"  >wired</a></li>
+          <li class="comma" id="huff"><a href="#"  >huffington post</a></li>
+          <li class="comma" id="artforum"><a href="#"  >artforum</a></li>
+          <li class="comma" id="pbs"><a href="#"  >pbs</a></li>
           <li id="more"><a href="#"  >AND MORE!</a></li>
         </ul>
       </article>
@@ -155,9 +184,9 @@
       <article id="contact">
         <h3><a href="mailto:frontdesk@okfoc.us">frontdesk@okfoc.us</a></h3>
 <br>
-        <a href="https://twitter.com/okfocus" class="twitter-follow-button">Follow @okfocus</a>
-        <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>       
-              <iframe src="//www.facebook.com/plugins/like.php?app_id=220585137996235&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOKFocus%2F126395247420599&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:60px; float:right; margin-bottom:10px;display:block;clear:both" allowTransparency="true"></iframe>
+<a href="https://twitter.com/okfocus" class="twitter-follow-button">Follow @okfocus</a>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>       
+<iframe src="//www.facebook.com/plugins/like.php?app_id=220585137996235&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOKFocus%2F126395247420599&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:60px; float:right; margin-bottom:10px;display:block;clear:both;background-color:#f2f2f2;border:1px dashed #f1f1f1;padding:3px;" ></iframe>
 
       </article>    
     </section>
