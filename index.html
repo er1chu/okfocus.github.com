@@ -60,7 +60,7 @@
       #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
-      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:absolute;top:0;left:0;}
+      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:fixed;top:0;left:0;}
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -258,14 +258,33 @@
 
           $('li').click(function(e){
               e.preventDefault();
-              descrip = $(this).attr('data-description');
+              descrip = $(this).attr('data-description'), title = $(this).attr('id'), titlePosition = $(this).position();
+
+              console.log(titlePosition);
+
                   background
-                      .css('z-index', 999999)
-                      .html("<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
+                      .css('z-index', 9999)
+                      .html("<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1, callback:function(){
+                       background.append("<span id='title'>" + title + "</span>");
+
+              
+                       $("#title").css({ top: (e.clientY - $("#title").height() / 2), left: (e.clientX - $("#title").width() / 2), position: 'fixed', zIndex: 10000 });
+                       
+                       } });
+
+
           });
+               $("#title").live('mouseout', function(){
+               console.log('out');
+               background
+                 .css('z-index', 0)
+                 .removeClass()
+                 .children()
+                 .remove();
+                });
 
           background.click(function(e){
-             $(this)
+             background
                  .css('z-index', 0)
                  .removeClass()
                  .children()
