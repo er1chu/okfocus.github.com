@@ -29,14 +29,17 @@
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style>
 
+
       html { overflow-y:hidden; }
       img {width:600px; margin: 0px auto; }
       a, a:visited {color:blue;text-decoration:none;}
       a:hover {background-image:url('assets/images/dotbg.gif'); }
       a.slash:after { content: "//"; color:black; margin-left:5px; }
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
-      li { display: inline; }
+      li { display: inline;}
       li.comma:after { content: ","; }
+	  /*li.comma:nth-child(2n+1) a{font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Arial,Helvetica,sans-serif; color:yellow;text-shadow:1px 1px blue;}
+	  li.comma:nth-child(7n+3) a{font-family:fantasy;color:hotpink;text-shadow:1px 1px yellow; }*/
       .center{text-align:center}
       p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:10px;}
       #parallax { background: #fff;background-image:url('assets/images/dither.gif'); position:fixed;left:0; overflow:hidden;margin:0;padding:0;
@@ -52,7 +55,7 @@
       h3{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
       h4{text-transform:uppercase;font-size:26px;letter-spacing:4px;text-align:right;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg); }
       #work{background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
-      #work a{font-size:14px;width:500px;margin-left:60px;}
+    #work a{font-size:15px;width:500px;margin:2%;text-transform:uppercase;}
       header { margin-top:80px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
       #bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0 }
@@ -64,10 +67,11 @@
       #bg.new-museum { background-image: url('assets/images/newmuseum.png'); position: fixed;z-index:0;}       
       #bg.bitly { background-image: url('assets/images/bitly-web-ring.png'); position: fixed;z-index:0;}       
       #bg.anamanaguchi { background-image: url('assets/images/pizza.jpeg'); position: fixed;z-index:0;}       
-      #bg.dumpfm { background-image: url('assets/images/dump.gif'); position: fixed;z-index:0;} 
+      #bg.dumpfm { background-image: url('assets/images/dump.png'); position: fixed;z-index:0;} 
       #bg.luckyplop { background-image: url('assets/images/luckyplop.jpg'); position: fixed;z-index:0;}
       #bg.rico { background-image: url('assets/images/rico.gif'); position: fixed;z-index:0;}
     
+   
    
    </style>
     <title>OKFocus</title>
