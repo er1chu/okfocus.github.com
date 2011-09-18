@@ -170,19 +170,22 @@
           });          
           
           var background = $('#bg');
-          $('li').mouseenter(function(){
+          $('li').hover(function(){
               var name = $(this).attr('id');
+
               $(this).mousemove(function(e){
                   background
                       .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
               });
+
               background
-                  .addClass(name)
-                  .fadeIn('fast');                  
-          }).mouseleave(function(){
+                  .addClass(name);
+          
+          }, function (){
+
               background
-                  .removeClass()
-                  .fadeOut('fast');                  
+                  .removeClass();
+              
           });
       });
     </script>
