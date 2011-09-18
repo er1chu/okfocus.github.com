@@ -60,7 +60,7 @@
       #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
-      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat;left:0 }
+      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat;left:0; background-color:white}
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -246,11 +246,12 @@
           
           }, function (){
 
+              if ( $('#p').length == 0 ) {
               background
                   .removeClass()
                   .children()
                   .remove();
-      
+              }
           });
 
 
@@ -259,17 +260,16 @@
               e.preventDefault();
               descrip = $(this).attr('data-description');
                   background
-                      .html("<p style='padding-top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
+                      .css('z-index', 999999)
+                      .html("<p id='p' style='padding-top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
+          });
 
-
-      console.log('click ' + e.pageX);
-
-              $(this).mousemove(function(e){
-
-      console.log('move ' + e.pageX);
-                  $('.project-description')
-                      .css('padding-top', (e.pageX -400) + 'px');
-              });
+          background.click(function(e){
+             $(this).css('z-index', 0);
+             $(this)
+                 .removeClass()
+                 .children()
+                 .remove();
           });
       });
     </script>
