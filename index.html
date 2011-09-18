@@ -242,12 +242,12 @@
                       .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');              
 
               });
-              if ( $("#p") == 0 ){
+              if ( $("#p").length == 0 ){
               background
                   .addClass(name);
               }
           }, function (){
-              if ( $("#p") == 0 ){
+              if ( $("#p").length == 0 ){
               background
                   .removeClass()
                   .children()
