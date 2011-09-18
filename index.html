@@ -60,7 +60,7 @@
       #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
-      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat;left:0; background-color:white}
+      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:absolute;top:0;left:0;}
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -101,8 +101,8 @@
 	    #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
-      .project-description {font-size: 120px;  overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;}
-      .description-container { width:100%; height:100%; display:block;margin:0 auto; background:transparent; }
+      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
+      .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
    </style>
     <title>OKFocus</title>
   </head>
@@ -241,7 +241,7 @@
 
               });
 
-            if ( $('#t').length == 0 ) {
+            if ( $('#p').length == 0 ) {
               background
                   .addClass(name);
              }
@@ -261,20 +261,18 @@
               descrip = $(this).attr('data-description');
                   background
                       .css('z-index', 999999)
-                      .html("<p id='p' style='padding-top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
+                      .html("<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
           });
 
           background.click(function(e){
-             $(this).css('z-index', 0);
              $(this)
+                 .css('z-index', 0)
                  .removeClass()
                  .children()
                  .remove();
           });
       });
-      
-
-      });
+     
     </script>
     </div>
 </body>
