@@ -39,6 +39,8 @@
       /*nav a:hover{background-image:url('assets/images/dither.gif'); background-color:#ddd;}*/
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
       li { display: inline;}
+	  #dwi{position:fixed;left:50%;top:0;margin-left:-309px;display:none;}
+      .dwi:hover #dwi{display:block;}
       li.comma:after { content: ","; }
  	  /*li.comma:nth-child(4n+1) a{font-family: Comic Sans MS, cursive;font-weight:bold; }
 	  li.comma:nth-child(7n+3) a{font-family:fantasy;}*/
@@ -51,7 +53,7 @@
       article { margin: 2000px 10px;padding-top:210px;padding-left:20px;padding-right:20px;}
       #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px;}
       #us{background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;text-align:center;}
-      #us img{max-height:160px;margin:20px;border:2px dashed #f2f2f2;padding:12px;background-image:url('assets/images/dither.gif');background-color:#ddd}
+      #baby img{max-height:160px;margin:20px;border:2px dashed #f2f2f2;padding:12px;background-image:url('assets/images/dither.gif');background-color:#ddd}
       #contact{text-align:left;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
       #contact h3 a{font-family:fantasy;font-size:20px;color:lightyellow;text-shadow:2px 3px blue;letter-spacing:10px;}
       #about{margin-top:30px;}
@@ -178,8 +180,9 @@
         </ul>
       </article>
       <article id="us">
-        <p>OKFocus is a full service digital agency led by Jonathan Vingiano and Ryder Ripps. Our products and services are result driven and forward thinking. We believe that good design is achieved through the marriage of verbal, visual and programming language. Our company is founded on honesty and hard work, deal with it.</p>
-      <img src="assets/images/j.jpg"> <img src="assets/images/r.jpg">
+
+        <p>OKFocus is a full service digital agency led by Jonathan Vingiano and Ryder Ripps. Our products and services are result driven and forward thinking. We believe that good design is achieved through the marriage of verbal, visual and programming language. Our company is founded on honesty and hard work, <i class="dwi">      <img src="assets/images/dwi.gif" id="dwi">deal with it.</i></p>
+      <div id="baby"><img src="assets/images/j.jpg"> <img src="assets/images/r.jpg"></div>
       </article>
       <article id="contact">
         <h3><a href="mailto:frontdesk@okfoc.us">frontdesk@okfoc.us</a></h3>
