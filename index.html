@@ -174,23 +174,20 @@
           });          
           
           var background = $('#bg');
-          $('li').each(function(){
-              $(this).mouseover(function(){
-                  var name = $(this).attr('id');
+          $('li').mouseenter(function(){
+              var name = $(this).attr('id');
+              $(this).mousemove(function(e){
                   background
-                      .addClass(name)
-                      .fadeIn('fast');                  
-                  $(this).mousemove(function(e){
-                      background
-                          .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
-                  });
-              }).mouseout(function(){
-                  background
-                      .removeClass()
-                      .fadeOut('fast');                  
-              });              
+                      .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
+              });
+              background
+                  .addClass(name)
+                  .fadeIn('fast');                  
+          }).mouseleave(function(){
+              background
+                  .removeClass()
+                  .fadeOut('fast');                  
           });
-
       });
     </script>
     </div>
