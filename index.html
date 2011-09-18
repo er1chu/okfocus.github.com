@@ -54,7 +54,7 @@
       #contact{text-align:left;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
       #contact h3 a{font-family:fantasy;font-size:20px;color:lightyellow;text-shadow:2px 3px blue;letter-spacing:10px;}
       #about{margin-top:30px;}
-      h3, .title{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
+      h3{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
       h4{text-transform:uppercase;font-size:30px;letter-spacing:6px;text-align:right;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg); }
       #work {background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
       #work a {font-size:12px;width:500px;margin:2%;text-transform:;}
@@ -233,7 +233,7 @@
           
           });          
           
-          var background = $('#bg');      
+          var background = $('#bg');
           $('li').hover(function(){
               var name = $(this).attr('id');
               
@@ -243,19 +243,16 @@
 
               });
 
-            if ( $('#p').length == 0 ) {
               background
                   .addClass(name);
-             }
-
+          
           }, function (){
 
-              if ( $('#p').length == 0 ) {
               background
                   .removeClass()
                   .children()
                   .remove();
-              }
+      
           });
 
           $('li').click(function(e){
@@ -272,6 +269,7 @@
                   $("#bg").append("<p></p>").type({ minInterval: 1, content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>" });
                    
 
+      console.log('click ' + e.pageX);
 
           });
                $("#title").live('mouseout', function(){
@@ -295,7 +293,6 @@
                  .remove();
           });
       });
-     
     </script>
     </div>
 </body>
