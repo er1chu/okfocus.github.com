@@ -17,30 +17,28 @@
     <meta name="author" content="OKFocus" />
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style>
-      html { overflow-y:hidden}
-      img {width:600px; margin: 0px auto }
-      a,a:visited{color:blue;text-decoration:none;text-shadow:0px 10px white;}
-      a:hover{background-image:url('assets/images/dotbg.gif');}
-      a.slash:after { content: "//"; color:black; margin-left:5px;}
-      ul,li { list-style-type:none; padding-left: 0px; }
-      li { display: inline }
+      html { overflow-y:hidden; }
+      img {width:600px; margin: 0px auto; }
+      a, a:visited {color:blue;text-decoration:none; }
+      a:hover {background-image:url('assets/images/dotbg.gif'); }
+      a.slash:after { content: "//"; color:black; margin-left:5px; }
+      ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden;line-height:9px; }
+      li { display: inline; }
       li.comma:after { content: ","; }
-      .center{text-align:center}
-      p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:9px;}
-      #parallax { background: #fff;background-image:url('assets/images/dither.gif'); position:fixed;left:0; overflow:hidden;margin:0;padding:0;
-      width:100%; height:8000px;top:0;z-index:-1;}
-      body {background-image:url('assets/images/grad.png');background-position:top left;background-repeat:repeat; width:600px; margin: 0px auto;}
-      #main-column { background-image:url('assets/images/sq2.png');background-position:top right;background-repeat:repeat-y; z-index:0; position:relative; width:600px;padding-top:250px; margin:0px auto 300px; display:block; overflow:hidden }
-      article { margin: 2000px 10px;padding-top:250px;padding-left:20px;padding-right:20px;}
-      #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px;}
-      #us{background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y;}
-      #contact{background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y;}
-      #contact p{text-align:center;}
-      #about{margin-top:30px;}
-      #work{background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
-      header { margin-top:80px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
-      header img { display:block; margin: 0 auto;}
-#bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0;display:none }
+      .center { text-align:center }
+      p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:9px; }
+      body { background-image:url('assets/images/grad.png');background-position:top left;background-repeat:repeat; width:600px; margin: 0px auto; }
+      #main-column { background-image:url('assets/images/sq2.png');background-position:top right;background-repeat:repeat-y; z-index:0; position:relative; width:600px;padding-top:250px; margin:0px auto 300px; display:block; overflow:hidden; }
+      article { margin: 2000px 10px;padding-top:250px;padding-left:20px;padding-right:20px; }
+      #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px; }
+      #us { background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y; }
+      #contact { background-image:url('assets/images/sq3.png');background-position:top left;background-repeat:repeat-y; }
+      #contact p { text-align:center; }
+      #about { margin-top:30px; }
+      #work { background-image:url('assets/images/sq3.png'); background-position:top left; background-repeat:repeat-y; }
+      header { margin-top:80px;height: 139px; display:block; position:fixed; z-index:666; width:600px; }
+      header img { display:block; margin: 0 auto; }
+      #bg { width: 10000%; height: 10000%; background: scroll 150% 150% repeat;left:0;display:none; }
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -63,17 +61,17 @@
       </nav>
     </header>
     <script>
-    (function() {
-      var d = new Date(),
-      logo = document.createElement('img'),
-      a = document.createElement('a'),
-      header = document.getElementsByTagName('header')[0],
-      nav = document.getElementsByTagName('nav')[0];
-      logo.src = 'assets/images/okdot1.gif?ok=' + d.getTime();
-      a.href = 'http://okfoc.us';
-      header.insertBefore(a,nav);
-      a.appendChild(logo);
-    })();
+      (function() {
+          var d = new Date(),
+          logo = document.createElement('img'),
+          a = document.createElement('a'),
+          header = document.getElementsByTagName('header')[0],
+          nav = document.getElementsByTagName('nav')[0];
+          logo.src = 'assets/images/okdot1.gif?ok=' + d.getTime();
+          a.href = 'http://okfoc.us';
+          header.insertBefore(a,nav);
+          a.appendChild(logo);
+      })();
     </script>
     <div id="bg" class="none"></div>
     <section id="main-column">
@@ -104,7 +102,7 @@
           <li class="comma" id="sarah-silverman" ><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
           <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
-          <li><a href="#" id="w" >W Magazine</a></li>
+          <li id="w"><a href="#"  >W Magazine</a></li>
         </ul>
       </article>
       <article id="us">
@@ -116,7 +114,26 @@
         <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>       
       </article>    
     </section>
-
+    <script>
+      (function(){
+          function preload(images) {
+              for (var i = 0, len = images.length; i < len; i++) {
+                  (new Image()).src = this;
+              }
+          }
+          
+          preload([
+              'assets/images/beautiful-decay-issue-y.jpeg',
+              'assets/images/creative-time.jpg',
+              'assets/images/blind-mist.png',
+              'assets/images/anamanaguchi.png',
+              'assets/images/ltrain.png',
+              'assets/images/newmuseum.png',
+              'assets/images/bitly-web-ring.png',
+              'assets/images/pizza.jpeg'
+          ]);
+      })();
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/jquery.localscroll-1.2.7-min.js"></script>
     <script src="assets/javascripts/jquery.scrollTo-1.4.2-min.js"></script>
@@ -129,8 +146,8 @@
           
           });          
           
+          var background = $('#bg');
           $('li').each(function(){
-              var background = $('#bg');
               $(this).mouseover(function(){
                   var name = $(this).attr('id');
                   background
@@ -145,7 +162,8 @@
                       .removeClass()
                       .fadeOut('fast');                  
               });              
-          });  
+          });
+
       });
     </script>
     </div>
