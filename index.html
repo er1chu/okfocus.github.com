@@ -54,13 +54,13 @@
       #contact{text-align:left;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
       #contact h3 a{font-family:fantasy;font-size:20px;color:lightyellow;text-shadow:2px 3px blue;letter-spacing:10px;}
       #about{margin-top:30px;}
-      h3, .title{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
+      h3{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
       h4{text-transform:uppercase;font-size:30px;letter-spacing:6px;text-align:right;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg); }
       #work{background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
       #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
-      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:fixed;top:0;left:0;}
+      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat;left:0 }
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -101,8 +101,8 @@
 	    #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
-      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
-      .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
+      .project-description {font-size: 120px; width:100%; height:110%;margin-top:-100px; overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;}
+   
    </style>
     <title>OKFocus</title>
   </head>
@@ -231,7 +231,7 @@
           
           });          
           
-          var background = $('#bg');      
+          var background = $('#bg');
           $('li').hover(function(){
               var name = $(this).attr('id');
               
@@ -241,57 +241,37 @@
 
               });
 
-            if ( $('#p').length == 0 ) {
               background
                   .addClass(name);
-             }
-
+          
           }, function (){
 
-              if ( $('#p').length == 0 ) {
               background
                   .removeClass()
                   .children()
                   .remove();
-              }
+      
           });
+
+
 
           $('li').click(function(e){
               e.preventDefault();
-              descrip = $(this).attr('data-description'), title = $(this).attr('id'), titlePosition = $(this).position();
-
-              console.log(titlePosition);
-
+              descrip = $(this).attr('data-description');
                   background
-                      .css('z-index', 9999)
-                      .html("<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1, callback:function(){
-                       background.append("<span id='title'>" + title + "</span>");
-
-              
-                       $("#title").css({ top: (e.clientY - $("#title").height() / 2), left: (e.clientX - $("#title").width() / 2), position: 'fixed', zIndex: 10000 });
-                       
-                       } });
+                      .html("<p style='padding-top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
 
 
-          });
-               $("#title").live('mouseout', function(){
-               console.log('out');
-               background
-                 .css('z-index', 0)
-                 .removeClass()
-                 .children()
-                 .remove();
-                });
+      console.log('click ' + e.pageX);
 
-          background.click(function(e){
-             background
-                 .css('z-index', 0)
-                 .removeClass()
-                 .children()
-                 .remove();
+              $(this).mousemove(function(e){
+
+      console.log('move ' + e.pageX);
+                  $('.project-description')
+                      .css('padding-top', (e.pageX -400) + 'px');
+              });
           });
       });
-     
     </script>
     </div>
 </body>
