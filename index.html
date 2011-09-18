@@ -17,14 +17,13 @@
     <meta name="author" content="OKFocus" />
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style>
-
-      html { overflow-y:hidden}
-      img {width:600px; margin: 0px auto }
-      a,a:visited{color:blue;text-decoration:none;}
-      a:hover{background-image:url('assets/images/dotbg.gif');}
-      a.slash:after { content: "//"; color:black; margin-left:5px;}
-      ul,li { list-style-type:none; padding-left: 0px; }
-      li { display: inline }
+      html { overflow-y:hidden; }
+      img {width:600px; margin: 0px auto; }
+      a, a:visited {color:blue;text-decoration:none; }
+      a:hover {background-image:url('assets/images/dotbg.gif'); }
+      a.slash:after { content: "//"; color:black; margin-left:5px; }
+      ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden;line-height:9px; }
+      li { display: inline; }
       li.comma:after { content: ","; }
       .center{text-align:center}
       p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:9px;}
@@ -109,7 +108,7 @@
           <li class="comma" id="sarah-silverman" ><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
           <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
-          <li><a href="#" id="w" >W Magazine</a></li>
+          <li id="w"><a href="#"  >W Magazine</a></li>
         </ul>
       </article>
       <article id="us">
@@ -123,7 +122,26 @@
       
       </article>    
     </section>
-
+    <script>
+      (function(){
+          function preload(images) {
+              for (var i = 0, len = images.length; i < len; i++) {
+                  (new Image()).src = this;
+              }
+          }
+          
+          preload([
+              'assets/images/beautiful-decay-issue-y.jpeg',
+              'assets/images/creative-time.jpg',
+              'assets/images/blind-mist.png',
+              'assets/images/anamanaguchi.png',
+              'assets/images/ltrain.png',
+              'assets/images/newmuseum.png',
+              'assets/images/bitly-web-ring.png',
+              'assets/images/pizza.jpeg'
+          ]);
+      })();
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/jquery.localscroll-1.2.7-min.js"></script>
     <script src="assets/javascripts/jquery.scrollTo-1.4.2-min.js"></script>
@@ -133,102 +151,28 @@
               lock: true,
               hash: true,
               duration: 400
+          
+          });          
+          
+          var background = $('#bg');
+          $('li').each(function(){
+              $(this).mouseover(function(){
+                  var name = $(this).attr('id');
+                  background
+                      .addClass(name)
+                      .fadeIn('fast');                  
+                  $(this).mousemove(function(e){
+                      background
+                          .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
+                  });
+              }).mouseout(function(){
+                  background
+                      .removeClass()
+                      .fadeOut('fast');                  
+              });              
           });
 
-      var i = k = 0,
-          f = false,
-          t = bg_Name = "",
-          browser_shit = !(typeof document.createElement("main").style.opacity != 'undefined'),
-	        bg = document.getElementById('bg'),
-	        aObjects = document.getElementsByTagName('li');
-
-	        function MMove(e) {
-    		      e = e || window.event;
-        		  if (e.pageX == null && e.clientX != null ) {  
-		            	var html = document.documentElement;
-			            var body = document.body;
-    			        e.pageX = e.clientX + (html && html.scrollLeft || body && body.scrollLeft || 0) - (html.clientLeft || 0);
-		    	        e.pageY = e.clientY + (html && html.scrollTop || body && body.scrollTop || 0) - (html.clientTop || 0);
-    		      }
-
-		          bg.style.backgroundPosition = t = " "+(e.pageX)+"px "+(e.pageY-1450)+"px";
-	        }
-
-	        if (document.layers) { 
-              document.captureEvents(Event.MOUSEMOVE); 
-          }
-
-    	    document.onmousemove=MMove;
-
-	        for( var i = 0; i < aObjects.length; i++ ) {
-
-		          aObjects[i].onmouseover = function() {
-                  console.log('hay');
-			            f=true;
-			            var a_id = this.getAttribute("id");                  
-			            bgOver(a_id);
-		          }
-              aObjects[i].onmouseout = function() {
-                  console.log('bai');
-  	              f=false;
-	                i=100;
-	                bg_Name = "none";
-    	            k=10;
-	                bgDel_scroll_d();
-              }
-	        }
-          
-          function bgOver(s) {
-              f=false;
-	            i=100; 
-	            bg_Name = s;
-	            k=10;
-	            bgDel_scroll_d();
-          }          
-
-          function bgDel_scroll_d() {
-	            if (f == false) {
-		              if (browser_shit) {
-			                i-=k*2;
-			                document.getElementById('bg').style.filter = 'alpha(opacity='+i+')';
-		              } else {
-			                i-=k;
-			                document.getElementById('bg').style.opacity = (i/20)
-		              }
-		              if (i > 0) {
-                      setTimeout(bgDel_scroll_d,2);
-		              } else {
-             			    document.getElementById('bg').className=bg_Name; 
-			                i=0;
-            			    bgDel_scroll_u();
-		              }
-	            }
-          }
-
-          function bgDel_scroll_u() { 
-    	        if (f == false) {
-		              if (browser_shit) {
-			                i+=10;
-			                document.getElementById('bg').style.filter = 'alpha(opacity='+i+')';
-		              } else {
-			                i+=5;
-			                document.getElementById('bg').style.opacity = (i/20)
-		              }
-
-		              if ( (i < 100) && (f==false) ) {
-                      setTimeout(bgDel_scroll_u,2);
-		              } else if (browser_shit) {
-                      document.getElementById('bg').style.filter = 'alpha(opacity=100)';
-		              } else {
-                      document.getElementById('bg').style.opacity = "1";
-	                }
-              }
-          }
-
       });
-      
-
-
     </script>
     </div>
 </body>
