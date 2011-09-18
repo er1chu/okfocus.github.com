@@ -221,6 +221,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"  type="text/javascript"></script>
     <script src="assets/javascripts/jquery.localscroll-1.2.7-min.js"  type="text/javascript"></script>
     <script src="assets/javascripts/jquery.scrollTo-1.4.2-min.js"  type="text/javascript"></script>
+    <script src="assets/javascripts/PW_typer.js"  type="text/javascript"></script>
     <script type="text/javascript">
       $(function(){
           $('#ls').localScroll({
@@ -252,12 +253,14 @@
       
           });
 
+
+
           $('li').click(function(e){
               e.preventDefault();
               descrip = $(this).attr('data-description');
-
                   background
-                      .html("<p style='padding-top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p>");
+                      .html("<p style='padding-top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1 });
+
 
       console.log('click ' + e.pageX);
 
