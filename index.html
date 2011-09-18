@@ -172,13 +172,13 @@
           var background = $('#bg');
           $('li').mouseenter(function(){
               var name = $(this).attr('id');
-              background
-                  .addClass(name)
-                  .fadeIn('fast');                  
               $(this).mousemove(function(e){
                   background
                       .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
               });
+              background
+                  .addClass(name)
+                  .fadeIn('fast');                  
           }).mouseleave(function(){
               background
                   .removeClass()
