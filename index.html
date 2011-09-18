@@ -60,7 +60,7 @@
       #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
-      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat;left:0; z-index:1; position:absolute;top:0;left:0;}
+      #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:absolute;top:0;left:0;}
       #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
@@ -94,6 +94,7 @@
 	    #bg.nylon { background-image: url('assets/images/nylon.jpg'); position: fixed;z-index:0;}
 	    #bg.net { background-image: url('assets/images/net.gif'); position: fixed;z-index:0;}
 	    #bg.tc { background-image: url('assets/images/tc.jpg'); position: fixed;z-index:0;}
+	    #bg.eyebeam { background-image: url('assets/images/eyebeam.jpg'); position: fixed;z-index:0;}
 	    #bg.npr { background-image: url('assets/images/npr.jpg'); position: fixed;z-index:0;}
 	    #bg.gothamist { background-image: url('assets/images/gothamist-logo.png'); position: fixed;z-index:0;}
 	    #bg.new-yorker { background-image: url('assets/images/newyorker-logo.jpeg'); position: fixed;z-index:0;}
@@ -240,34 +241,35 @@
 
               });
 
+            if ( $('#t').length == 0 ) {
               background
                   .addClass(name);
-          
+             }
+
           }, function (){
 
+              if ( $('#t').length == 0 ) {
                   background
                       .removeClass();
-
+              }
           });
 
           $('li').click(function(e){
               e.preventDefault();
               descrip = $(this).attr('data-description'), title = $(this).attr('id');
 
-                  $('body').append("<span class='title'>"+ title +"</span>");                 
 
                   background
+                      .css('z-index', 9999)
                       .html("<div class='description-container' id='t'><p style='top:" + (e.pageX -400) + "px' class='project-description'>" + descrip + "</p></div>").type({ minInterval: 10 });
-      
-      
-                  $('.title').css({ position: 'absolute', top: e.clientY, left: e.pageX, zIndex: 666 });
           
           });
 
       background.click(function(e){
           e.preventDefault();
 
-          background
+          $('#bg')
+                  .css('z-index', 0)
                   .removeClass()
                   .children()
                   .remove();
