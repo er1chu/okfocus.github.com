@@ -139,9 +139,10 @@
       </article>
       <article id="contact">
         <h3><a href="mailto:frontdesk@okfoc.us">frontdesk@okfoc.us</a></h3>
+        <iframe src="//www.facebook.com/plugins/like.php?app_id=220585137996235&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOKFocus%2F126395247420599&amp;send=false&amp;layout=button_count&amp;width=220&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:20px; float:left; margin-right:200px;margin-bottom:10px;display:block;clear:both" allowTransparency="true"></iframe>
+
         <a href="https://twitter.com/okfocus" class="twitter-follow-button">Follow @okfocus</a>
         <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>       
-      <iframe src="//www.facebook.com/plugins/like.php?app_id=220585137996235&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOKFocus%2F126395247420599&amp;send=false&amp;layout=standard&amp;width=220&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:55px;" allowTransparency="true"></iframe>
       
       </article>    
     </section>
@@ -178,19 +179,22 @@
           });          
           
           var background = $('#bg');
-          $('li').mouseenter(function(){
+          $('li').hover(function(){
               var name = $(this).attr('id');
+
               $(this).mousemove(function(e){
                   background
                       .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
               });
+
               background
-                  .addClass(name)
-                  .fadeIn('fast');                  
-          }).mouseleave(function(){
+                  .addClass(name);
+          
+          }, function (){
+
               background
-                  .removeClass()
-                  .fadeOut('fast');                  
+                  .removeClass();
+              
           });
       });
     </script>
