@@ -30,13 +30,13 @@
     <style type="text/css">
       html { overflow-y:hidden;}
       a, a:visited {color:blue;text-decoration:none;}
-      a:hover {background-image:url('assets/images/dotbg.gif');background-color:white; }
+      a:hover, #title:hover {background-image:url('assets/images/dotbg.gif');background-color:white; }
       a.slash:after { content: ""; color:black; margin-left:5px; }
       nav a{padding:3px;}
       /*nav a:hover{background-image:url('assets/images/dither.gif'); background-color:#ddd;}*/
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
       li { display: inline;}
-	  #dwi{position:fixed;left:50%;top:0;margin-left:-309px;display:none;}
+  	  #dwi{position:fixed;left:50%;top:0;margin-left:-309px;display:none;}
       .dwi:hover #dwi{display:block;}
       li.comma:after { content: ","; }
  	  /*li.comma:nth-child(4n+1) a{font-family: Comic Sans MS, cursive;font-weight:bold; }
@@ -56,8 +56,8 @@
       #about{margin-top:30px;}
       h3, .title{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
       h4{text-transform:uppercase;font-size:30px;letter-spacing:6px;text-align:right;font-style:italic;font-family:impact;font-weight:100;color:#e43030;-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg); }
-      #work{background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
-      #work a{font-size:12px;width:500px;margin:2%;text-transform:;}
+      #work {background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
+      #work a {font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:40px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { display:block; margin: 0 auto;max-width:600px;}
       #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:fixed;top:0;left:0;}
@@ -103,6 +103,8 @@
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
       .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
+      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 12px; }
+      
    </style>
     <title>OKFocus</title>
   </head>
@@ -258,29 +260,31 @@
 
           $('li').click(function(e){
               e.preventDefault();
-              descrip = $(this).attr('data-description'), title = $(this).attr('id'), titlePosition = $(this).position();
-
-              console.log(titlePosition);
+              descrip = $(this).attr('data-description'), title = $(this).text();
 
                   background
                       .css('z-index', 9999)
-                      .html("<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>").type({ minInterval: 1, callback:function(){
-                       background.append("<span id='title'>" + title + "</span>");
+                  $('body')
+                  .append("<span id='title'>" + title + "</span>");
+ 
+                  $("#title").css({ top: (e.clientY - $("#title").height() / 2), left: (e.clientX - $("#title").width() / 2), position: 'fixed', zIndex: 10000 });
 
-              
-                       $("#title").css({ top: (e.clientY - $("#title").height() / 2), left: (e.clientX - $("#title").width() / 2), position: 'fixed', zIndex: 10000 });
-                       
-                       } });
+                  $("#bg").append("<p></p>").type({ minInterval: 1, content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>" });
+                   
 
 
           });
                $("#title").live('mouseout', function(){
-               console.log('out');
+
+      
                background
                  .css('z-index', 0)
                  .removeClass()
                  .children()
                  .remove();
+
+               $("#title").remove();
+                 
                 });
 
           background.click(function(e){
