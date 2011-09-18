@@ -148,7 +148,7 @@
           
           var background = $('#bg');
           $('li').each(function(){
-              $(this).mouseover(function(){
+              $(this).mouseenter(function(){
                   var name = $(this).attr('id');
                   background
                       .addClass(name)
@@ -157,7 +157,7 @@
                       background
                           .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
                   });
-              }).mouseout(function(){
+              }).mouseleave(function(){
                   background
                       .removeClass()
                       .fadeOut('fast');                  
