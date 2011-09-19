@@ -34,6 +34,7 @@
       a.slash:after { content: ""; color:black; margin-left:5px; }
       nav a{padding:3px;}
       /*nav a:hover{background-image:url('assets/images/dither.gif'); background-color:#ddd;}*/
+      nav a.selected { text-decoration:underline }
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
       li { display: inline;}
   	  #dwi{position:fixed;left:50%;top:0;margin-left:-309px;display:none;}
@@ -61,7 +62,7 @@
       header { margin-left:-300px;left:50%;margin-top:75px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { border-bottom:1px solid black;padding-bottom:15px;display:block; margin: 0 auto;max-width:200px;margin-bottom:15px;}
       #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:fixed;top:0;left:0;}
-      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
+      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay.png'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
       #bg.blind-mist { background-image: url('assets/images/blind-mist.png'); position: fixed;z-index:0;}       
@@ -101,10 +102,11 @@
 	    #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('assets/images/wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
-      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
+      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
-      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 25px; text-transform:uppercase;padding:4px}      
-//      #title {display: ;background-image:url('assets/images/dotbg.gif');background-color:white;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 12px;position:absolute; }
+      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px}      
+      #p { cursor:default }
+      #p:hover { cursor: url(assets/images/pointer.png), pointer }
    </style>
     <title>OKFocus</title>
   </head>
@@ -138,11 +140,19 @@
       <article id="work">
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
+<<<<<<< HEAD
           <li class="comma" id="dumpfm" data-description="<a href="http://dump.fm/"target="_blank">real-time image sharing community, the first of its kind</a>. over 20,000 users, average retention-rate above 20 min." ><a href="#">dump.fm</a></li> 
           <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter."><a href="#">Bitly Webring</a></li>
           <li class="comma" id="blind-mist" data-description="award winning system for consuming images that have been scraped from the web."><a href="#">Blind Mist</a></li>
           <li class="comma" id="l-train" data-description="web utility to alert commuters when the l train is not working."><a href="#">Is the L Train Fucked?</a></li>
           <li class="comma" id="luckyplop" data-description="a social <a href="http://luckyplop.com"target="_blank">web application</a> for easy anonymous image uploading + sharing." ><a href="#">LuCkyPloP</a></li>
+=======
+          <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
+          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter."><a href="#">bit.ly webring</a></li>
+          <li class="comma" id="blind-mist" data-description="award winning system for consuming images that have been scraped from the web"><a href="#">Blind Mist</a></li>
+          <li class="comma" id="l-train" data-description="web utility to alert commuters when the l train is not working"><a href="#">Is the L Train Fucked?</a></li>
+          <li class="comma" id="luckyplop"><a href="#">LuCkyPloP</a></li>
+>>>>>>> 3bee747eee1e34fe460f71dd159d77e8b2942ab9
           <li class="comma" id="newmoticons"><a href="#">newmoticons</a></li>
           <li  id="ia" data-description="an <a href="http://www.internetarchaeology.org/"target="_blank"> online gallery</a> to showcase, preserve and celebrate the graphic artifacts of an earlier internet." ><a href="#">Internet Archaeology</a></li>
         </ul>
@@ -154,11 +164,19 @@
           <li class="comma" id="creative-time" data-description="organizing and running visuals at the first annual creative time summit."><a href="#">Creative Time</a></li> 
           <li class="comma" id="rico" data-description="special internet projects.............................................................................................................................................................................................................................................................................................................................................................................................................."><a href="#">Nicola Formichetti</a></li> 
           <li class="comma" id="hyper" data-description="front-end developement and design for new york geolocation startup."><a href="#">hyperpublic</a></li> 
+<<<<<<< HEAD
           <li class="comma" id="lipman" data-description="graphics, concept, direction for many top luxury brands at <a href="http://www.lipman-nyc.com/"target="_blank">lipman." ><a href="#">Lipman Advertising</a></li>
           <li class="comma" id="mia" data-description="six unique web sites including a <a href="http://www.facefacefacebook.com/"target="_blank">webcam integrated web application</a>."><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" data-description="worked with dis magazine in concept and execution of <a href="http://www.moma.org/poprally/56_trecartin"target="_blank">an  event</a> for the closing of ryan trecartin’s anyever show."><a href="#">PS1 MoMA</a></li>
           <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dreammachine exhibition."><a href="#">New Museum</a></li> 
           <li class="comma" id="normative" data-description="visuals and animations for anamanaguchi's debut lp."><a href="#">Normative Music Company</a></li> 
+=======
+          <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
+          <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
+          <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
+          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dream Machine exhibition. <a href='http://www.newmuseum.org/exhibitions/422'>visit</a>"><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative" data-description="award winning visuals and animations for anamanaguchi's debut lp. <a href='http://dawnmetropolis.com'>visit</a>"><a href="#">Normative Music Company</a></li> 
+>>>>>>> 3bee747eee1e34fe460f71dd159d77e8b2942ab9
           <li class="comma" id="sarah" data-description="apparel design for charaters on the sarah silverman project."><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" data-description="web design and direction for the launch of ssion’s full length album, <a href="http://ssion.com/"target="_blank">bent</a>." ><a href="#">Ssion</a></li>
           <li class="comma" id="eyebeam" data-description="worked on concept and execution for their <a href="http://www.flickr.com/photos/eyebeam/sets/72157626662069856/"target="_blank"> past-futures</a> event featuring the sun-ra orchestra."><a href="#">Eyebeam</a></li>
@@ -268,8 +286,13 @@
                                                 content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>" 
                                              });
           });
+             
+          $('nav a').click(function() {
+              $(this).addClass('selected');
+              $(this).siblings().removeClass('selected');              
+          });
 
-          function remove(){
+          function remove(e){
               background
                   .css('z-index', 0)
                   .removeClass()
@@ -280,7 +303,7 @@
           }
       
           $("#title").live('click', remove);
-          background.bind('click', remove);
+          $("#bg, #p").bind('click', remove);
 
       });
     </script>
