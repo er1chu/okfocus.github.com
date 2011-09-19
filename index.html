@@ -34,6 +34,7 @@
       a.slash:after { content: ""; color:black; margin-left:5px; }
       nav a{padding:3px;}
       /*nav a:hover{background-image:url('assets/images/dither.gif'); background-color:#ddd;}*/
+      nav a.selected { text-decoration:underline }
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
       li { display: inline;}
   	  #dwi{position:fixed;left:50%;top:0;margin-left:-309px;display:none;}
@@ -61,7 +62,7 @@
       header { margin-left:-300px;left:50%;margin-top:75px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
       header img { border-bottom:1px solid black;padding-bottom:10px;display:block; margin: 0 auto;max-width:200px;margin-bottom:20px;}
       #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:fixed;top:0;left:0;}
-      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
+      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay.png'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
       #bg.blind-mist { background-image: url('assets/images/blind-mist.png'); position: fixed;z-index:0;}       
@@ -140,7 +141,7 @@
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
           <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
-          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter"><a href="#">bit.ly webring</a></li>
+          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter."><a href="#">bit.ly webring</a></li>
           <li class="comma" id="blind-mist" data-description="award winning system for consuming images that have been scraped from the web"><a href="#">Blind Mist</a></li>
           <li class="comma" id="l-train" data-description="web utility to alert commuters when the l train is not working"><a href="#">Is the L Train Fucked?</a></li>
           <li class="comma" id="luckyplop"><a href="#">LuCkyPloP</a></li>
@@ -159,7 +160,7 @@
           <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
           <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dream Machine exhibition. <a href='http://www.newmuseum.org/exhibitions/422'>visit</a>"><a href="#">New Museum</a></li> 
-          <li class="comma" id="normative" data-description="visuals and animations for anamanaguchi's debut lp. <a href='http://dawnmetropolis.com'>visit</a>"><a href="#">Normative Music Company</a></li> 
+          <li class="comma" id="normative" data-description="award winning visuals and animations for anamanaguchi's debut lp. <a href='http://dawnmetropolis.com'>visit</a>"><a href="#">Normative Music Company</a></li> 
           <li class="comma" id="sarah" data-description="apparel design for charaters on the sarah silverman project."><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
           <li class="comma" id="eyebeam" ><a href="#">Eyebeam</a></li>
@@ -270,7 +271,10 @@
                                              });
           });
              
-
+          $('nav a').click(function() {
+              $(this).addClass('selected');
+              $(this).siblings().removeClass('selected');              
+          });
 
           function remove(e){
               background
