@@ -49,6 +49,9 @@ b).addClass("order-"+b)});b.thisElement.find(".pwText").each(function(a){b.data[
 
 
 $(function(){
+
+	$('header').fadeIn(900);
+
     $('#ls').localScroll({
         lock: true,
         hash: true,
