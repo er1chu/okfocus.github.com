@@ -34,7 +34,7 @@
       a.slash:after { content: ""; color:black; margin-left:5px; }
       nav a{padding:3px;}
       /*nav a:hover{background-image:url('assets/images/dither.gif'); background-color:#ddd;}*/
-      nav a.selected { text-decoration:underline }
+      nav a.selected { text-decoration: underline }
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
       li { display: inline;}
   	  #dwi{position:fixed;left:50%;top:0;margin-left:-309px;display:none;}
@@ -55,14 +55,14 @@
       #contact{text-align:left;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
       #contact h3 a{font-family:fantasy;font-size:20px;color:lightyellow;text-shadow:2px 3px blue;letter-spacing:10px;}
       #about{margin-top:30px;}
-      h3{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#dfdfdf;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
-      h4{text-transform:uppercase;font-size:30px;letter-spacing:6px;text-align:right;font-style:italic;font-family:impact;font-weight:100;color:#ccc;-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg); }
+      h3{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#444;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
+      h4{text-transform:uppercase;font-size:30px;letter-spacing:6px;text-align:right;font-style:italic;font-family:impact;font-weight:100;color:#444;-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg); }
       #work {background-image:url('sq3.png');background-position:top left;background-repeat:repeat-y; }
       #work a {font-size:12px;width:500px;margin:2%;text-transform:;}
       header { margin-left:-300px;left:50%;margin-top:75px;height: 139px; display:block; position:fixed; z-index:666; width:600px;}
-      header img { border-bottom:1px solid black;padding-bottom:10px;display:block; margin: 0 auto;max-width:200px;margin-bottom:20px;}
+      header img { border-bottom:1px solid black;padding-bottom:15px;display:block; margin: 0 auto;max-width:200px;margin-bottom:15px;}
       #bg { width: 100%; height: 100%; background: scroll 150% 150% repeat; z-index:0; position:fixed;top:0;left:0;}
-      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay.png'); position: fixed;z-index:0;}       
+      #bg.beautiful-decay { background-image: url('assets/images/beautiful-decay-issue-y.jpeg'); position: fixed;z-index:0;}       
       #bg.creative-time { background-image: url('assets/images/creative-time.jpg'); position: fixed;z-index:0;}       
       #bg.normative { background-image: url('assets/images/anamanaguchi.png'); position: fixed;z-index:0;}       
       #bg.blind-mist { background-image: url('assets/images/blind-mist.png'); position: fixed;z-index:0;}       
@@ -113,13 +113,14 @@
     <header>
       <!-- img loaded with js -->
       <nav id='ls' class='center'>
-        <a class="slash" href="#us">US</a>//
-        <a class="slash" href="#work">WORK</a>//
-        <a href="#contact">CONTACT</a>
+        <a id='us-link' class="slash" href="#us">US</a>//
+        <a id='work-link' class="slash" href="#work">WORK</a>//
+        <a id='contact-link' href="#contact">CONTACT</a>
       </nav>
     </header>
-    <script type="text/javascript">
+    <script>
     (function() {
+      // we dont want to cache the image      
       var d = new Date(),
       logo = document.createElement('img'),
       a = document.createElement('a'),
@@ -129,6 +130,12 @@
       a.href = '#';
       header.insertBefore(a,nav);
       a.appendChild(logo);
+      // add a class on the fly
+      if (window.location.hash) {
+        hash = window.location.hash;
+        var selector = hash.substring(1);
+        document.getElementById(link).className += ' selected';
+      }
     })();
     </script>
     <div id="bg" class="none"></div>
@@ -139,33 +146,33 @@
       <article id="work">
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
-          <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
-          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter. developed in an evening at the bit.ly hackabit. <a href='http://bitywebring.com'>launch</a>"><a href="#">bit.ly webring</a></li>
-          <li class="comma" id="blind-mist" data-description="award winning system for consuming images that have been scraped from the web. <a href='http://blindmist.com'>launch</a>"><a href="#">Blind Mist</a></li>
-          <li class="comma" id="l-train" data-description="web utility to alert commuters when the l train is not working. <a href='http://istheltrainfucked.com'>launch</a>"><a href="#">Is the L Train Fucked?</a></li>
-          <li class="comma" id="luckyplop"><a href="#">LuCkyPloP</a></li>
-          <li class="comma" id="newmoticons"><a href="#">newmoticons</a></li>
-          <li  id="ia"><a href="#">Internet Archaeology</a></li>
+          <li class="comma" id="dumpfm" data-description="<a href='http://dump.fm' target='_blank'>real-time image sharing community, the first of its kind</a>. over 20,000 users, average retention-rate above 20 min."><a href="#">dump.fm</a></li> 
+          <li class="comma" id="bitly" data-description="a visual way to <a href='http://bitywebring.com' target='_blank'>surf bit.ly links</a> on twitter. developed in an evening at the bit.ly hackabit."><a href="#">Bitly Webring</a></li>
+          <li class="comma" id="blind-mist" data-description="award winning, crowd-sourced system for <a href='http://blindmist.com'>consuming images</a> that have been scraped from the web."><a href="#">Blind Mist</a></li>
+          <li class="comma" id="l-train" data-description="<a href='http://istheltrainfucked.com' target='_blank'> web utility</a> to alert commuters when the l train is not working."><a href="#">Is the L Train Fucked?</a></li>
+          <li class="comma" id="luckyplop" data-description="a social <a href='http://luckyplop.com' target='_blank'>web application</a> for easy anonymous image uploading + sharing." ><a href="#">LuCkyPloP</a></li>
+          <li class="comma" id="newmoticons" data-description="using twitter api, delivering <a href='http://twitter.com/#!/newmoticons'target='_blank'>new emoticons</a> to your doorstep!"><a href="#">newmoticons</a></li>
+          <li  id="ia" data-description="an <a href='http://www.internetarchaeology.org/'target='_blank'> online gallery</a> to showcase, preserve and celebrate the graphic artifacts of an earlier internet." ><a href="#">Internet Archaeology</a></li>
         </ul>
         <h4>people we've made stuff for!</h4>
         <ul>
           <li class="comma" id="anamanaguchi" data-description="website for two singles from anamanaguchi."><a href="#">Anamanaguchi</a></li>
-          <li class="comma" id="beautiful-decay" data-description="contributed art, event, and music reviews. <a href='http://beautifuldecay.com'>launch</a>"><a href="#">Beautiful Decay</a></li> 
-          <li class="comma" id="dis" ><a href="#">DIS Magazine</a></li> 
-          <li class="comma" id="creative-time" data-description="organizing and running visuals at the first annual creative time summit. <a href='http://creativetime.org/programs/archive/2009/summit/'>launch</a>"><a href="#">Creative Time</a></li> 
-          <li class="comma" id="rico" ><a href="#">Nicola Formichetti</a></li> 
-          <li class="comma" id="hyper" data-description="front-end developement and design for new york geolocation startup."><a href="#">hyperpublic</a></li> 
-          <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
-          <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
-          <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
-          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dream Machine exhibition. <a href='http://www.newmuseum.org/exhibitions/422'>launch</a>"><a href="#">New Museum</a></li> 
-          <li class="comma" id="normative" data-description="award winning visuals and animations for anamanaguchi's debut lp. <a href='http://dawnmetropolis.com'>launch</a>"><a href="#">Normative Music Company</a></li> 
-          <li class="comma" id="sarah" data-description="apparel design for charaters on the sarah silverman program."><a href="#">The Sarah Silverman Project</a></li> 
-          <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
-          <li class="comma" id="eyebeam" ><a href="#">Eyebeam</a></li>
-          <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
-          <li id="w"><a href="#"  >W Magazine</a></li>
-          <li id="more"><a href="#"  >AND MORE!</a></li>
+          <li class="comma" id="beautiful-decay" data-description="contributed art, event, and music reviews."><a href="#">Beautiful Decay</a></li> 
+          <li class="comma" id="dis" data-description="several projects with the fashion forward internet magazine known as <a href='http://dismagazine.com/' target='_blank'> dis</a>." ><a href="#">DIS Magazine</a></li> 
+          <li class="comma" id="creative-time" data-description="organizing and running visuals at the first annual <a href='http://creativetime.org/programs/archive/2009/summit/' target='_blank'>creative time summit</a>."><a href="#">Creative Time</a></li> 
+          <li class="comma" id="rico" data-description="special internet projects.............................................................................................................................................................................................................................................................................................................................................................................................................."><a href="#">Nicola Formichetti</a></li> 
+          <li class="comma" id="hyper" data-description="front-end developement and design for new york geolocation <a href='http://hyperpublic.com' target='_blank'>startup</a>."><a href="#">hyperpublic</a></li> 
+          <li class="comma" id="lipman" data-description="design/concept/direction for many top luxury brands at <a href='http://www.lipman-nyc.com/' target='_blank'>lipman."><a href="#">Lipman Advertising</a></li>
+          <li class="comma" id="mia" data-description="six unique web sites including a <a href='http://www.facefacefacebook.com/' target='_blank'>webcam integrated web application</a>."><a href="#">M.I.A.</a></li>
+          <li class="comma" id="ps1" data-description="worked with dis magazine in concept and execution of <a href='http://www.moma.org/poprally/56_trecartin' target='_blank'>an  event</a> for the closing of ryan trecartin’s anyever show."><a href="#">PS1 MoMA</a></li>
+          <li class="comma" id="new-museum" data-description="concept and execution of an iPhone application for Brion Gysin: Dreammachine <a href='http://www.newmuseum.org/exhibitions/422'>exhibition</a>."><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative" data-description="award winning visuals and <a href='http://dawnmetropolis.com'>animations</a> for anamanaguchi's debut lp."><a href="#">Normative Music Company</a></li> 
+          <li class="comma" id="sarah" data-description="apparel and graphic design for charaters on the sarah silverman program season 1."><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="ssion" data-description="web design and direction for the launch of ssion’s full length album, <a href='http://ssion.com/'target='_blank'>bent</a>." ><a href="#">Ssion</a></li>
+          <li class="comma" id="eyebeam" data-description="concept and execution for their <a href='http://www.flickr.com/photos/eyebeam/sets/72157626662069856/' target='_blank'> past-futures</a> event featuring the sun-ra orchestra."><a href="#">Eyebeam</a></li>
+          <li class="comma" id="ryan" data-description="worked with ryan trecartin on many projects including concept/exicusion of media immersed new years party, <a href='http://2240hill.com/' target='_blank'>#hi11</a>." ><a href="#">Ryan Trecartin</a></li> 
+          <li id="w" data-description="worked with ryan trecartin on graphic/art direction for his <a href='http://www.wmagazine.com/artdesign/2010/11/ryan_trecartin' target='_blank'> spread in w magazine</a>."><a href="#">W Magazine</a></li>
+          <li id="more"><a href="#">AND MORE!</a></li>
         </ul>
           <h3 style="font-size:24px;text-align:right;letter-spacing:7px;">amazing press we've received!</h3>
         <ul>
