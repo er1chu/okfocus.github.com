@@ -185,7 +185,7 @@
 			
 			// Default settings
 			var settings = {
-				minInterval: 30,
+				minInterval: 40,
 				maxInterval: 90
 			};
 			
@@ -278,7 +278,7 @@
 			
 			// Default settings
 			var settings = {
-				minInterval: 30,
+				minInterval: 40,
 				maxInterval: 90
 			};
 			
