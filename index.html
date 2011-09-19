@@ -101,9 +101,9 @@
 	    #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
-      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
+      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:left;color:black;background:white;text-transform:uppercase;padding:0}
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
-      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 25px; }      
+      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 25px; text-transform:uppercase;padding:4px}      
 //      #title {display: ;background-image:url('assets/images/dotbg.gif');background-color:white;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 12px;position:absolute; }
    </style>
     <title>OKFocus</title>
@@ -139,27 +139,27 @@
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
           <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
-          <li class="comma" id="bitly"><a href="#">Bitly Webring</a></li>
-          <li class="comma" id="blind-mist"><a href="#">Blind Mist</a></li>
-          <li class="comma" id="l-train"><a href="#">Is the L Train Fucked?</a></li>
+          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter"><a href="#">Bitly Webring</a></li>
+          <li class="comma" id="blind-mist" data-description="award winning system for consuming images that have been scraped from the web"><a href="#">Blind Mist</a></li>
+          <li class="comma" id="l-train" data-description="web utility to alert commuters when the l train is not working"><a href="#">Is the L Train Fucked?</a></li>
           <li class="comma" id="luckyplop"><a href="#">LuCkyPloP</a></li>
           <li class="comma" id="newmoticons"><a href="#">newmoticons</a></li>
           <li  id="ia"><a href="#">Internet Archaeology</a></li>
         </ul>
         <h4>people we've made stuff for!</h4>
         <ul>
-          <li class="comma" id="anamanaguchi" ><a href="#">Anamanaguchi</a></li>
-          <li class="comma" id="beautiful-decay" ><a href="#">Beautiful Decay</a></li> 
+          <li class="comma" id="anamanaguchi" data-description="website for two singles from anamanaguchi"><a href="#">Anamanaguchi</a></li>
+          <li class="comma" id="beautiful-decay" data-description="contributed art and music reviews"><a href="#">Beautiful Decay</a></li> 
           <li class="comma" id="dis" ><a href="#">DIS Magazine</a></li> 
-          <li class="comma" id="creative-time" ><a href="#">Creative Time</a></li> 
+          <li class="comma" id="creative-time" data-description="organizing and running visuals at the first annual creative time summit"><a href="#">Creative Time</a></li> 
           <li class="comma" id="rico" ><a href="#">Nicola Formichetti</a></li> 
-          <li class="comma" id="hyper" ><a href="#">hyperpublic</a></li> 
+          <li class="comma" id="hyper" data-description="front-end developement and design for new york geolocation startup"><a href="#">hyperpublic</a></li> 
           <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
           <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
-          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dreammachine"><a href="#">New Museum</a></li> 
-          <li class="comma" id="normative" ><a href="#">Normative Music Company</a></li> 
-          <li class="comma" id="sarah" ><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dreammachine exhibition"><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative" data-description="visuals and animations for anamanaguchi's debut lp"><a href="#">Normative Music Company</a></li> 
+          <li class="comma" id="sarah" data-description="apparel design for charaters on the sarah silverman project"><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
           <li class="comma" id="eyebeam" ><a href="#">Eyebeam</a></li>
           <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
@@ -229,8 +229,7 @@
           $('#ls').localScroll({
               lock: true,
               hash: true,
-              duration: 400
-          
+              duration: 400          
           });          
           
           var background = $('#bg');
@@ -238,61 +237,51 @@
               var name = $(this).attr('id');
               
               $(this).mousemove(function(e){
-                  background
-                      .css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');              
+                  background.css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');              
 
               });
               if ( $("#p").length == 0 ){
-              background
-                  .addClass(name);
+                  background.addClass(name);
               }
           }, function (){
               if ( $("#p").length == 0 ){
-              background
-                  .removeClass()
-                  .children()
-                  .remove();
+                  background
+                      .removeClass()
+                      .children()
+                      .remove();
               }
           });
 
           $('li').click(function(e){
               e.preventDefault();
               descrip = $(this).attr('data-description'), title = $(this).text();
-
-                  background
-                      .css('z-index', 9999)
-                  $('body')
-                      .append("<span id='title'>" + title + "</span>");
+              background.css('z-index', 9999)
+              $('body').append("<span id='title'>" + title + "</span>");
  
-                  $("#title").css({ top: (e.clientY - $("#title").height() / 2), left: (e.clientX - $("#title").width() / 2), position: 'fixed', zIndex: 10000 });
+              $("#title").css({ top: (e.clientY - $("#title").height() / 2), 
+                                left: (e.clientX - $("#title").width() / 2), 
+                                position: 'fixed', 
+                                zIndex: 10000 
+                             });
 
-                  $("#bg").append("<p></p>").type({ minInterval: 1, content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>" });
-                   
-
-      console.log('click ' + e.pageX);
-
+              $("#bg").append("<p></p>").type({ maxInterval: 5, 
+                                                content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>" 
+                                             });
           });
-                function remove(){
-                    background
-                     .css('z-index', 0)
-                     .removeClass()
-                     .children()
-                     .remove();
 
-                    $("#title").remove();
-                }
+          function remove(){
+              background
+                  .css('z-index', 0)
+                  .removeClass()
+                  .children()
+                  .remove();
 
+              $("#title").remove();
+          }
+      
+          $("#title").live('click', remove);
+          background.bind('click', remove);
 
-               $("#title").live('mouseout', remove);
-               $("#title").live('click', remove);
-
-          background.click(function(e){
-             background
-                 .css('z-index', 0)
-                 .removeClass()
-                 .children()
-                 .remove();
-          });
       });
     </script>
     </div>
