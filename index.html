@@ -101,10 +101,11 @@
 	    #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('http://www.gifsengracados.com.br/wp-content/uploads/2010/12/gay-gritando-wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('http://files.stv.tv/img/articles/262304-japanese-cat-more-popular-than-adele-410x230.jpg'); position: fixed;z-index:0;} 
-      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px;  overflow:hidden; text-align:left;color:black;background:white;text-transform:uppercase;padding:0}
+      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify;color:black;background:white;text-transform:uppercase;padding:0}
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
-      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 25px; text-transform:uppercase;padding:4px}      
-//      #title {display: ;background-image:url('assets/images/dotbg.gif');background-color:white;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 12px;position:absolute; }
+      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px}      
+      #p { cursor:default }
+      #p:hover { cursor: url(assets/images/pointer.png), pointer }
    </style>
     <title>OKFocus</title>
   </head>
@@ -139,7 +140,7 @@
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
           <li class="comma" id="dumpfm"><a href="#">dump.fm</a></li> 
-          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter"><a href="#">Bitly Webring</a></li>
+          <li class="comma" id="bitly" data-description="a visual way to surf bitly links on twitter"><a href="#">bit.ly webring</a></li>
           <li class="comma" id="blind-mist" data-description="award winning system for consuming images that have been scraped from the web"><a href="#">Blind Mist</a></li>
           <li class="comma" id="l-train" data-description="web utility to alert commuters when the l train is not working"><a href="#">Is the L Train Fucked?</a></li>
           <li class="comma" id="luckyplop"><a href="#">LuCkyPloP</a></li>
@@ -157,9 +158,9 @@
           <li class="comma" id="lipman" ><a href="#">Lipman Advertising</a></li>
           <li class="comma" id="mia" ><a href="#">M.I.A.</a></li>
           <li class="comma" id="ps1" ><a href="#">PS1 MoMA</a></li>
-          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dreammachine exhibition"><a href="#">New Museum</a></li> 
-          <li class="comma" id="normative" data-description="visuals and animations for anamanaguchi's debut lp"><a href="#">Normative Music Company</a></li> 
-          <li class="comma" id="sarah" data-description="apparel design for charaters on the sarah silverman project"><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="new-museum" data-description="iPhone application for Brion Gysin: Dream Machine exhibition. <a href='http://www.newmuseum.org/exhibitions/422'>visit</a>"><a href="#">New Museum</a></li> 
+          <li class="comma" id="normative" data-description="visuals and animations for anamanaguchi's debut lp. <a href='http://dawnmetropolis.com'>visit</a>"><a href="#">Normative Music Company</a></li> 
+          <li class="comma" id="sarah" data-description="apparel design for charaters on the sarah silverman project."><a href="#">The Sarah Silverman Project</a></li> 
           <li class="comma" id="ssion" ><a href="#">Ssion</a></li>
           <li class="comma" id="eyebeam" ><a href="#">Eyebeam</a></li>
           <li class="comma" id="ryan" ><a href="#">Ryan Trecartin</a></li> 
@@ -268,8 +269,10 @@
                                                 content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>" 
                                              });
           });
+             
 
-          function remove(){
+
+          function remove(e){
               background
                   .css('z-index', 0)
                   .removeClass()
@@ -280,7 +283,7 @@
           }
       
           $("#title").live('click', remove);
-          background.bind('click', remove);
+          $("#bg, #p").bind('click', remove);
 
       });
     </script>
