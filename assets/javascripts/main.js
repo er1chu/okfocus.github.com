@@ -108,7 +108,10 @@ $(function(){
             background
                 .append("<p></p>")
                 .type({ maxInterval: 5,
-                        content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>"
+                        content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>",
+                        callback: function(){
+                            if ( !background.hasClass() ) $("#p").remove();
+                        }
                       });
 
             if ( $(this).parent().attr('id') === 'press-list' ) {
