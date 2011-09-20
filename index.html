@@ -28,7 +28,7 @@
 
     <link href="assets/stylesheets/normalize.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
     <style type="text/css">
-      html { overflow-y:hidden;}
+      html { overflow-y:hidden;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
       a, a:visited {color:blue;text-decoration:none;}
       a:hover, #title {background-image:url('assets/images/dotbg.gif');background-color:white; }
       a.slash:after { content: ""; color:black; margin-left:5px; }
@@ -52,7 +52,7 @@
       #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px;}
       #us{background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;text-align:center;}
       #baby img{max-height:160px;margin:20px;border:2px dashed #f2f2f2;padding:12px;background-image:url('assets/images/dither.gif');background-color:#ddd}
-      #contact{text-align:left;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
+      #contact{text-align:center;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
       #contact h3 a{font-family:fantasy;font-size:20px;color:lightyellow;text-shadow:2px 3px blue;letter-spacing:10px;}
       #about{margin-top:30px;}
       h3{text-transform:uppercase;font-size:22px;letter-spacing:6px;text-align:center;font-style:italic;font-family:impact;font-weight:100;color:#666;-webkit-transform: rotate(-2deg);-moz-transform: rotate(-2deg); }
@@ -149,10 +149,10 @@
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
           <li class="comma" id="dumpfm" data-description="<a href='http://dump.fm' target='_blank'>real-time image sharing community, the first of its kind</a>. over 20,000 users, average retention-rate above 20 min."><a href="#">dump.fm</a></li> 
-          <li class="comma" id="bitly" data-description="a visual way to <a href='http://bitywebring.com' target='_blank'>surf bit.ly links</a> on twitter. developed in an evening at the bit.ly hackabit."><a href="#">Bitly Webring</a></li>
+          <li class="comma" id="bitly" data-description="a visual way to <a href='http://bitywebring.com' target='_blank'>surf bit.ly links</a> on twitter."><a href="#">Bitly Webring</a></li>
           <li class="comma" id="blind-mist" data-description="web application for <a href='http://blindmist.com'>consuming images</a> scraped from the web."><a href="#">Blind Mist</a></li>
           <li class="comma" id="l-train" data-description="<a href='http://istheltrainfucked.com' target='_blank'> web utility</a> to alert commuters when the l train is not working."><a href="#">Is the L Train Fucked?</a></li>
-          <li class="comma" id="luckyplop" data-description="a social <a href='http://luckyplop.com' target='_blank'>web application</a> for easy anonymous image uploading + sharing." ><a href="#">LuCkyPloP</a></li>
+          <li class="comma" id="luckyplop" data-description="a social <a href='http://luckyplop.com' target='_blank'>web application</a> for easy anonymous image uploading." ><a href="#">LuCkyPloP</a></li>
           <li class="comma" id="newmoticons" data-description="using twitter api, delivering <a href='http://twitter.com/#!/newmoticons'target='_blank'>new emoticons</a> to your doorstep!"><a href="#">newmoticons</a></li>
           <li id="ia" data-description="<a href='http://www.internetarchaeology.org/'target='_blank'> online gallery</a> celebrating an earlier internet." ><a href="#">Internet Archaeology</a></li>
         </ul>
@@ -169,8 +169,8 @@
           <li class="comma" id="ps1" data-description="concept + execution of <a href='http://www.moma.org/poprally/56_trecartin' target='_blank'>an  event</a>."><a href="#">PS1 MoMA</a></li>
           <li class="comma" id="new-museum" data-description="iPhone application for <a href='http://www.newmuseum.org/exhibitions/422'>Brion Gysin: Dreammachine</a>."><a href="#">New Museum</a></li> 
           <li class="comma" id="normative" data-description="award winning visuals and <a href='http://dawnmetropolis.com'>animations</a>."><a href="#">Normative Music Company</a></li> 
-          <li class="comma" id="sarah" data-description="apparel + graphic design for charaters on the sarah silverman program season 1."><a href="#">The Sarah Silverman Project</a></li> 
-          <li class="comma" id="ssion" data-description="web design + direction for the launch of ssion’s full length album, <a href='http://ssion.com/'target='_blank'>bent</a>." ><a href="#">Ssion</a></li>
+          <li class="comma" id="sarah" data-description="apparel + graphic design for the sarah silverman program season 1."><a href="#">The Sarah Silverman Project</a></li> 
+          <li class="comma" id="ssion" data-description="design + direction for the launch of ssion’s album, <a href='http://ssion.com/'target='_blank'>bent</a>." ><a href="#">Ssion</a></li>
           <li class="comma" id="eyebeam" data-description="concept + execution for <a href='http://www.flickr.com/photos/eyebeam/sets/72157626662069856/'target='_blank'> past-futures</a> event."><a href="#">Eyebeam</a></li>
           <li class="comma" id="ryan" data-description="concept + execution for media immersed new years party, <a href='http://2240hill.com/'target='_blank'>#hi11</a>." ><a href="#">Ryan Trecartin</a></li> 
           <li id="w" data-description="art direction for <a href='http://www.wmagazine.com/artdesign/2010/11/ryan_trecartin'target='_blank'> spread in w magazine</a>."><a href="#">W Magazine</a></li>
@@ -185,12 +185,12 @@
           <li class="comma" id="hyperallergic" data-description="<a href='http://hyperallergic.com/11893/reading-new-museums-free-catalogue' target='_blank'>'an exemplary case for simplicity in the online presentation of exhibitions.'</a>"><a href="#">Hyperallergic</a></li>
           <li class="comma" id="l-magazine" data-description="<a href='http://www.thelmagazine.com/TheMeasure/archives/2010/10/05/brion-gysins-dream-machine-lights-up-your-iphone' target='_blank'>'just like the real thing.'"><a href="#">L Magazine</a></li>
           <li class="comma" id="new-yorker" data-description="iphone app for new museum featured as an <a href='http://www.newyorker.com/online/blogs/goingson/2010/10/quick-pick-8.html' target='_blank'>art pick</a>."><a href="#">The New Yorker</a></li>
-          <li class="comma" id="npr" data-description="A company name is important because it's <a href='http://www.npr.org/2011/08/15/138796826/naming-a-company-right-can-spell-success'>how companies connect</a> with consumers."><a href="#">NPR</a></li>
+          <li class="comma" id="npr" data-description="<a href='http://www.npr.org/2011/08/15/138796826/naming-a-company-right-can-spell-success'>'A company name is important..'</a> "><a href="#">NPR</a></li>
           <li class="comma" id="nylon"data-description="<a href='http://ryder-ripps.com/press/NYLON.jpg'target='_blank'> 'there's something undeniably romantic about the way ryder ripps views the internet.'</a>"><a href="#"  >Nylon</a></li>          
           <li class="comma" id="paper"data-description="<a href='http://www.papermag.com/arts_and_style/2009/12/play-on-playas.php'target='_blank'>'super-visually-stimulating site dump.fm.'</a> " ><a href="#" >Paper</a></li>
           <li class="comma" id="pbs"data-description=" <a href='http://www.youtube.com/watch?v=JL7R9CjkxjY' target=''_blank'>'a new type of artistic and cultural collaboration.'</a>"><a href="#" >PBS</a></li>
           <li class="comma" id="print" data-description="<a href='http://www.printmag.com/article/October-2011-Table-of-Contents'target='_blank'>'artist Ryder Ripps searches for for honesty online.'</a> "><a href="#">PRINT MAGAZINE</a></li> 
-          <li class="comma" id="tc"data-description="<a href='http://techcrunch.com/2009/10/10/internet-archaeology-in-which-the-sordid-past-of-the-internet-is-preserved-forever/'target='_blank'>'panning for gold in the twilight of Geocities is an important job.'</a> "><a href="#"  >TechCrunch</a></li>
+          <li class="comma" id="tc"data-description="<a href='http://techcrunch.com/2009/10/10/internet-archaeology-in-which-the-sordid-past-of-the-internet-is-preserved-forever/'target='_blank'>'panning for gold in the twilight of Geocities'</a> "><a href="#"  >TechCrunch</a></li>
           <li class="comma" id="vv" data-description="<a href='http://blogs.villagevoice.com/runninscared/2011/02/is_the_l_train.php' target='_blank'>'Finally, our prayers have been answered.'</a>"><a href="#">Village Voice</a></li>
           <li class="comma" id="wired"data-description="<a href='http://www.wired.co.uk/news/archive/2009-12/18/meet-the-indiana-jones-of-the-internet.aspx'target='_blank'>'what happens to the sites that become ancient history?'</a> "><a href="#" >Wired</a></li>
           <li id="more2"><a href="#"  >AND MORE!</a></li>
@@ -208,7 +208,7 @@
 
 		<a href="https://twitter.com/okfocus" class="twitter-follow-button">Follow @okfocus</a>
 		<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>       
-		<iframe src="//www.facebook.com/plugins/like.php?app_id=220585137996235&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOKFocus%2F126395247420599&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:50px; float:left;clear:both;background:transparent;" ></iframe>
+		<iframe src="//www.facebook.com/plugins/like.php?app_id=220585137996235&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOKFocus%2F126395247420599&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:50px; clear:both;background:transparent;" ></iframe>
       </article>    
     </section>
     <!-- we preload images before loading js -->
