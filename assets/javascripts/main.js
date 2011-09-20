@@ -110,7 +110,7 @@ $(function(){
                 .type({ maxInterval: 5,
                         content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>",
                         callback: function(){
-                            if ( !background.hasClass() ) $("#p").remove();
+                            if ( $("#title").length == 0 ) $("#p").remove();
                         }
                       });
 
