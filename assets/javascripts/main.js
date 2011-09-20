@@ -96,7 +96,7 @@ $(function(){
 
             background.css('z-index', 9999);
 
-            $('body').append("<span id='title'>" + title + "</span>");
+            $('body').append("<div id='title'><span class='the-title'>" + title + "</span></div>");
             var headline = $("#title");
             
             headline.css({ top: (e.clientY - headline.height() / 2), 
@@ -110,6 +110,10 @@ $(function(){
                 .type({ maxInterval: 5,
                         content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>"
                       });
+
+            if ( $(this).parent().attr('id') === 'press-list' ) {
+                $("#title").prepend("<span class='simple-span'>&mdash;</span>");
+            }
         }
     });
 

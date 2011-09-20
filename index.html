@@ -124,7 +124,7 @@
     <style type="text/css">
       html { overflow-y:hidden;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
       a, a:visited {color:blue;text-decoration:none;}
-      a:hover, #title {background-image:url('assets/images/dotbg.gif');background-color:white; }
+      a:hover, .the-title {background-image:url('assets/images/dotbg.gif');background-color:white; }
       a.slash:after { content: ""; color:black; margin-left:5px; }
       nav a{padding:3px;}
       /*nav a:hover{background-image:url('assets/images/dither.gif'); background-color:#ddd;}*/
@@ -200,9 +200,11 @@
       #bg.more2 { background-image: url('assets/images/cat.jpeg'); position: fixed;z-index:0;} 
       .project-description {background-image:url('assets/images/x.png');background-position:top right;background-repeat:no-repeat;cursor:pointer;background-attachment:fixed; width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify;color:black;background-color:white;text-transform:uppercase;padding:0;padding-top:20px;}
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
-      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px}      
+      #title{ text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px;display:inline; backgorund:transparent!important}      
       #p { cursor:default; overflow-y:visible }
       #p a:hover { cursor: url(assets/images/pointer.png), pointer }
+      .simple-span { background:none; color:black;margin-right:4px }
+      .the-title { padding: 4px}
    </style>
     <title>OKFocus</title>
   </head>
@@ -273,13 +275,14 @@
           <li id="more" data-description="contact <a href='mailto:frontdesk@okfoc.us?subject=OKFocus inquiry..' target='_blank'>frontdesk@okfoc.us</a> to work with us!" ><a href="#" >AND MORE!</a></li>
         </ul>
           <h3 style="font-size:14px;text-align:center;letter-spacing:8px;">amazing press we've received!</h3>
-        <ul>
+        <ul id="press-list">
           <li class="comma" id="artforum" data-description="<a href='http://artforum.com/diary/id=28881'target='_blank'>'The temperament of our generation.'</a> "><a href="#" >ARTFORUM</a></li>
           <li class="comma" id="cbs"data-description="<a href='http://www.cbsnews.com/video/watch/?id=7379379n'target='_blank'>'Avant-garde hip-hopper Glass Popcorn performs Ed Hardy'</a> "><a href="#" >CBS</a></li>
           <li class="comma" id="gothamist" data-description="<a href='http://gothamist.com/2011/02/10/single_serving_site_dishes_on_the_l.php' target='_blank'> 'the MTA should invest in these single-serving sites.'</a>"><a href="#">Gothamist</a></li>
           <li class="comma" id="huff" data-description="<a href='http://www.huffingtonpost.com/2010/11/18/four-loko-vigil_n_785562.html'target='_blank'>'Four Loko Fans Mourn In Union Square VIGIL'</a> "><a href="#" >Huffington Post</a></li>
-          <li class="comma" id="hyperallergic" data-description="<a href='http://hyperallergic.com/11893/reading-new-museums-free-catalogue' target='_blank'>'simplicity in the online presentation of exhibitions.'</a>"><a href="#">Hyperallergic</a></li>
-          <li class="comma" id="l-magazine" data-description="<a href='http://www.thelmagazine.com/TheMeasure/archives/2010/10/05/brion-gysins-dream-machine-lights-up-your-iphone' target='_blank'>'just like the real thing.'"><a href="#">L Magazine</a></li>
+          <li class="comma" id="hyperallergic" data-description="<a href='http://hyperallergic.com/11893/reading-new-museums-free-catalogue' target='_blank'>'simplicity in the online presentation of exhibitions.'</a>"><a href="#">Hyperallergic</a></liberalistic>
+ 
+         <li class="comma" id="l-magazine" data-description="<a href='http://www.thelmagazine.com/TheMeasure/archives/2010/10/05/brion-gysins-dream-machine-lights-up-your-iphone' target='_blank'>'just like the real thing.'"><a href="#">L Magazine</a></li>
           <li class="comma" id="new-yorker" data-description="iphone app for new museum featured as an <a href='http://www.newyorker.com/online/blogs/goingson/2010/10/quick-pick-8.html' target='_blank'>art pick</a>."><a href="#">The New Yorker</a></li>
           <li class="comma" id="npr" data-description="<a href='http://www.npr.org/2011/08/15/138796826/naming-a-company-right-can-spell-success'>'A company name is important..'</a> "><a href="#">NPR</a></li>
           <li class="comma" id="nylon"data-description="<a href='http://ryder-ripps.com/press/NYLON.jpg'target='_blank'> 'there's something undeniably romantic about the way ryder ripps views the internet.'</a>"><a href="#"  >Nylon</a></li>          
@@ -356,6 +359,7 @@
           ]);
       })();
     </script>
+    <!-- if you got this far, email frontdesk@okfoc.us because we want to work with you.. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/main.js"></script>
   </body>
