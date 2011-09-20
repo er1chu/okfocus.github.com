@@ -110,12 +110,12 @@ $(function(){
                 .type({ maxInterval: 5,
                         content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>",
                         callback: function(){
-                            if ( $("#title").length == 0 ) $("#p").remove();
+                            if ( headline.length == 0 ) $("#p").remove();
                         }
                       });
 
             if ( $(this).parent().attr('id') === 'press-list' ) {
-                $("#title").prepend("<span class='simple-span'>&mdash;</span>");
+                $("#title").prepend("<span class='the-dash'>&mdash;</span>");
             }
         }
     });
