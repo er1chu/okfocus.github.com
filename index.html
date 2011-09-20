@@ -231,13 +231,10 @@
       // cachebusting or whatever,,
       var d = new Date(),
       logo = document.createElement('img'),
-      a = document.createElement('a'),
       header = document.getElementsByTagName('header')[0],
       nav = document.getElementsByTagName('nav')[0];
       logo.src = 'assets/images/logo.gif?ok=' + d.getTime();
-      a.href = '#';
-      header.insertBefore(a,nav);
-      a.appendChild(logo);
+      header.insertBefore(logo,nav);
       // add a class on the fly
       if (window.location.hash) {
         hash = window.location.hash;
