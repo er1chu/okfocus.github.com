@@ -125,16 +125,16 @@
       html { overflow-y:hidden;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
       a, a:visited {color:blue;text-decoration:none;}
       a:hover, .the-title {background-image:url('assets/images/dotbg.gif');background-color:white; }
-      a.slash:after { content: ""; color:black; margin-left:5px; }
-      nav { text-align:center }
-      nav a{padding:3px;}
+      a.slash { margin-right:5px; }
+      nav { text-align:center; }
+      nav a{padding:3px;text-align:center}
       nav a.selected { color:black;cursor:default;background-image:none;}
       ul,li { list-style-type:none; padding-left: 0px; overflow-y:hidden; }
       li { display: inline;}
   	  #dwi{position:fixed;left:50%;top:68px;margin-left:-309px;display:none;}
       .dwi:hover #dwi{display:block;}
       li.comma:after { content: ","; } 	    
-	    li.comma:nth-child(7n+3) a{font-family:fantasy;}*/
+
       .center{text-align:center}
       p, nav, li { text-align:justify;color:#333; font-family: Monaco, "Courier New", Courier, monospace; font-size:10px;}
       body {background-image:url('assets/images/photocopy.png');background-position:bottom center;background-repeat:repeat; background-attachment:fixed;margin: 0px auto;background-color:white;}
@@ -166,7 +166,7 @@
       #bg.rico { background-image: url('assets/images/rico.gif'); position: fixed;z-index:0;}
       #bg.mia { background-image: url('assets/images/mia.gif'); position: fixed;z-index:0;}
       #bg.ssion { background-image: url('assets/images/ssion.gif'); position: fixed;z-index:0;}
-      #bg.thunder { background-image: url('http://thunderhorsevideo.com/gifs-to-know-us-better/thunder_horse_video_chains_3d_motorcycle.gif'); position: fixed;z-index:0;}
+      #bg.thunder { background-image: url('assets/thunder-horse.gif'); position: fixed;z-index:0;}
       #bg.w { background-image: url('assets/images/w.jpg'); position: fixed;z-index:0;}
       #bg.hyper { background-image: url('assets/images/hyper.gif'); position: fixed;z-index:0;}
       #bg.ps1 { background-image: url('assets/images/ps1.jpg'); position: fixed;z-index:0;}
@@ -195,9 +195,9 @@
       #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('assets/images/wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('assets/images/cat.jpeg'); position: fixed;z-index:0;} 
-      .project-description {background-image:url('assets/images/x.png');background-position:top right;background-repeat:no-repeat;cursor:pointer;background-attachment:fixed; width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify;color:black;background-color:white;text-transform:uppercase;padding:0;padding-top:20px;}
+      .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify; color:black; background-color:white; text-transform:uppercase; padding:0; padding-top:20px; }
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
-      #title{ text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px;display:inline; backgorund:transparent!important}      
+      #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px;display:inline; backgorund:transparent!important}      
       #p { cursor:default; overflow-y:visible }
       #p a:hover { cursor: url(assets/images/pointer.png), pointer }
       .the-dash { background:none; color:black;margin-right:4px }
@@ -351,7 +351,9 @@
               'assets/images/village-voice.jpeg',
               'assets/images/wow.gif',
               'assets/images/cat.jpeg',
-              'assets/images/dumpfm.gif'
+              'assets/images/dumpfm.gif',
+              'assets/images/thunder-horse.gif',
+                                                       
           ]);
       })();
     </script>
