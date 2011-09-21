@@ -72,7 +72,7 @@ $(function(){
 
     $('li').bind({ 
         mouseover: function() {
-            var name = $(this).attr('id');
+            var name = $(this).attr('id'), title = $(this).text();
 
             $(this).mousemove(function(e){
                 background.css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
@@ -80,6 +80,8 @@ $(function(){
 
             if ( $("#p").length == 0 ) background.addClass(name);
 
+
+            _gaq.push(['_trackPageview', 'over-' + title);
         },
         mouseout: function (){
             if ( $("#p").length == 0 ){
@@ -117,6 +119,8 @@ $(function(){
             if ( $(this).parent().attr('id') === 'press-list' ) {
                 $("#title").prepend("<span class='the-dash'>&mdash;</span>");
             }
+
+            _gaq.push(['_trackPageview', 'click-' + title);
         }
     });
 
