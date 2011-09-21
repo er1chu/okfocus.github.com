@@ -320,7 +320,8 @@
       (function(){
           function preload(images) {          
               for (var i = 0, len = images.length; i < len; i++) {
-                  (new Image()).src = this;
+                  var image = new Image();
+                  image.src = images[i];
               }
           }
           preload([
@@ -329,10 +330,10 @@
               'assets/images/blind-mist.png',
               'assets/images/anamanaguchi.png',
               'assets/images/ltrain.png',
-              'assets/images/newmuseum.png',
-              'assets/images/bitly-web-ring.png',
+              'assets/images/newmuseum.jpg',
+              'assets/images/bitly-web-ring.jpg',
               'assets/images/pizza.jpeg',
-              'assets/images/luckplop.jpg',
+              'assets/images/luckyplop.jpg',
               'assets/images/rico.gif',
               'assets/images/mia.gif',
               'assets/images/ssion.gif',
@@ -343,7 +344,7 @@
               'assets/images/newmoticons.jpg',
               'assets/images/trecartin.jpg',
               'assets/images/sarah.jpg',
-              'assets/images/ddis.jpg',
+              'assets/images/ddis.png',
               'assets/images/ia.jpg',              
               'assets/images/paper.jpg',
               'assets/images/cbs.gif',
@@ -355,7 +356,7 @@
               'assets/images/nylon.jpg',
               'assets/images/net.gif',
               'assets/images/tc.jpg',
-              'assets/images/eyebeamm.jpg',
+              'assets/images/eyebeam.jpg',
               'assets/images/npr.jpg',
               'assets/images/gothamist-logo.png',
               'assets/images/newyorker-logo.jpeg',
