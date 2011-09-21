@@ -81,7 +81,7 @@ $(function(){
             if ( $("#p").length == 0 ) background.addClass(name);
 
 
-            _gaq.push(['_trackPageview', 'over-' + title);
+            _gaq.push(['_trackPageview', 'over-' + title]);
         },
         mouseout: function (){
             if ( $("#p").length == 0 ){
@@ -120,7 +120,7 @@ $(function(){
                 $("#title").prepend("<span class='the-dash'>&mdash;</span>");
             }
 
-            _gaq.push(['_trackPageview', 'click-' + title);
+            _gaq.push(['_trackPageview', 'click-' + title]);
         }
     });
 
