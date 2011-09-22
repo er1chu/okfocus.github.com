@@ -58,7 +58,14 @@ $(function(){
         duration: 400          
     });          
     
-    var background = $('#bg');
+    var background = $('#bg'),
+    hashes = [], 
+    listItems = $('li');
+
+    listItems.each(function(item) {
+        var idsAsHash = "#more-" + $(this).attr('id');
+        hashes.push(idsAsHash);
+    });
 
     function remove() {
         background
@@ -70,19 +77,28 @@ $(function(){
         $("#title").remove();
 
         window.location.hash = "#work";
-    }
-
+    }    
 
     $(window).bind('hashchange', function(e){
+        console.log('hey');
         e.preventDefault();
-        if (window.location.hash === '#work' && $('#p').length) {
+        if (window.location.hash === '#work' && 
+            $('#p').length) {
             remove();
+        } else if ($.inArray(window.location.hash,hashes) && 
+                   $('#p').length === 0 && 
+                   window.location.hash !== "#work") {
+            
+            var loc = window.location.hash;
+            var choppedLoc = loc.replace("#more-", "");
+            $('#' + choppedLoc).click();
+            
         }
         
         
     });
 
-    $('li').bind({ 
+    listItems.bind({ 
         mouseover: function() {
             var name = $(this).attr('id'), title = $(this).text();
 
