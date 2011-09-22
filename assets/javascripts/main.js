@@ -68,7 +68,19 @@ $(function(){
             .remove();
 
         $("#title").remove();
+
+        window.location.hash = "#work";
     }
+
+
+    $(window).bind('hashchange', function(e){
+        e.preventDefault();
+        if (window.location.hash === '#work' && $('#p').length) {
+            remove();
+        }
+        
+        
+    });
 
     $('li').bind({ 
         mouseover: function() {
@@ -119,6 +131,8 @@ $(function(){
             if ( $(this).parent().attr('id') === 'press-list' ) {
                 $("#title").prepend("<span class='the-dash'>&mdash;</span>");
             }
+            
+            window.location.hash = "#more-" + $(this).attr('id');
 
             _gaq.push(['_trackPageview', 'click-' + title]);
         }
