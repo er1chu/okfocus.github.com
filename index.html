@@ -239,16 +239,15 @@
       nav = document.getElementsByTagName('nav')[0];
       logo.src = 'assets/images/logo.gif?ok=' + d.getTime();
       header.insertBefore(logo,nav);
-      // add a class on the fly      
-      console.log(window.location.hash);
-      if (window.location.hash === "#work" || "#us" || "#contact" ) {
-        console.log(window.location.hash);
-        console.log('ho');
-        var hash = window.location.hash;
-        var selector = hash.substring(1);     
-        document.getElementById(selector + '-link').className += ' selected';
-      }
     })();
+      // add a class on the fly  
+      if (window.location.hash === "#work" || 
+          window.location.hash === "#us" || 
+          window.location.hash === "#contact" ) {
+          var hash = window.location.hash;
+          var selector = hash.substring(1);     
+          document.getElementById(selector + '-link').className += ' selected';
+      }
     </script>
     <div id="bg" class="none"></div>
     <section id="main-column">

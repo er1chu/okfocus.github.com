@@ -80,7 +80,6 @@ $(function(){
     }    
 
     $(window).bind('hashchange', function(e){
-        console.log('hey');
         e.preventDefault();
         if (window.location.hash === '#work' && 
             $('#p').length) {
