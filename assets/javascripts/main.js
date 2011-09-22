@@ -58,7 +58,14 @@ $(function(){
         duration: 400          
     });          
     
-    var background = $('#bg');
+    var background = $('#bg'),
+    hashes = [], 
+    listItems = $('li');
+
+    listItems.each(function(item) {
+        var idsAsHash = "#more-" + $(this).attr('id');
+        hashes.push(idsAsHash);
+    });
 
     function remove() {
         background
@@ -68,21 +75,30 @@ $(function(){
             .remove();
 
         $("#title").remove();
-        window.location.hash = "#work";
-    }
 
-    $(window).bind('hashchange', function() {
-        if (window.location.hash == "#work") {
+        window.location.hash = "#work";
+    }    
+
+    $(window).bind('hashchange', function(e){
+        console.log('hey');
+        e.preventDefault();
+        if (window.location.hash === '#work' && 
+            $('#p').length) {
             remove();
-        } else {
-            var hash = window.location.hash;
-            var id = hash.substring(1);
-            console.log(id);
-            $("#" + id).click();
+        } else if ($.inArray(window.location.hash,hashes) && 
+                   $('#p').length === 0 && 
+                   window.location.hash !== "#work") {
+            
+            var loc = window.location.hash;
+            var choppedLoc = loc.replace("#more-", "");
+            $('#' + choppedLoc).click();
+            
         }
+        
+        
     });
 
-    $('li').bind({ 
+    listItems.bind({ 
         mouseover: function() {
             var name = $(this).attr('id'), title = $(this).text();
 
@@ -131,10 +147,8 @@ $(function(){
             if ( $(this).parent().attr('id') === 'press-list' ) {
                 $("#title").prepend("<span class='the-dash'>&mdash;</span>");
             }
-
-            var hash = $(this).attr('id');
-            window.location.hash = "#" + hash;
-
+            
+            window.location.hash = "#more-" + $(this).attr('id');
 
             _gaq.push(['_trackPageview', 'click-' + title]);
         }
