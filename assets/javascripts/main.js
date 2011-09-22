@@ -79,23 +79,25 @@ $(function(){
         window.location.hash = "#work";
     }    
 
-    $(window).bind('hashchange', function(e){
-        e.preventDefault();
-        if (window.location.hash === '#work' && 
-            $('#p').length) {
-            remove();
-        } else if ($.inArray(window.location.hash,hashes) && 
-                   $('#p').length === 0 && 
-                   window.location.hash !== "#work") {
-            
-            var loc = window.location.hash;
-            var choppedLoc = loc.replace("#more-", "");
-            $('#' + choppedLoc).click();
-            
+    $(window).bind({
+        hashchange: function(e){
+            e.preventDefault();
+            if (window.location.hash === '#work' && $('#p').length) remove();
+            else if ($.inArray(window.location.hash,hashes) && 
+                     $('#p').length === 0 && 
+                     window.location.hash !== "#work") {                
+                var loc = window.location.hash;
+                var choppedLoc = loc.replace("#more-", "");
+                $('#' + choppedLoc).click();            
+            }
+        },
+        keyup: function(e){
+            if (e.keyCode == 27) remove();
         }
-        
-        
+            
     });
+
+    
 
     listItems.bind({ 
         mouseover: function() {
