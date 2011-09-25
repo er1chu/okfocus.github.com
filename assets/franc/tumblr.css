@@ -17,6 +17,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;
 }
 
 body {
@@ -31,7 +32,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+p{font-family:impact; font-size:46px;line-height:80px;color:red;font-style:italic;text-shadow:-4px 4px black;text-indent:10px;}
 caption, th, td {
   text-align: left;
   font-weight: normal;
@@ -75,18 +76,18 @@ body {
 
 a {
   font-size: 70%;
-  text-decoration: none;
+  text-decoration: none;cursor:pointer;
   font-family: Monaco, "Courier New", Courier, monospace;
   letter-spacing: 4px;
   color: #333;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+
 }
 
 a:hover {
   font-size: 70%;
   color: black;
   text-decoration: none;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+cursor:pointer;
 }
 
 a:visited {
@@ -112,13 +113,11 @@ a:visited {
 #navz {
   cursor: pointer;
   cursor: hand;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
   display: none;
 }
 #navz option {
   cursor: pointer;
   cursor: hand;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
 }
 
 #logo {
@@ -135,7 +134,7 @@ a:visited {
   margin: 10px 20px 10px 10px;
   cursor: pointer;
   cursor: hand;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+
 }
 
 .post {
@@ -178,6 +177,7 @@ div.copy p span {
 #okfocus {
   position: fixed;
   bottom: 20px;
+cursor:pointer;
   right: 15px;
   z-index: 420;
   text-decoration: none;
@@ -187,7 +187,6 @@ div.copy p span {
   border-top: 1px solid transparent;
 }
 #okfocus:hover {
-  background-color: #eee;
   padding-top: 3px;
   border-top: 1px solid #fff;
   border-left: 1px solid #f8f8f8;
@@ -195,12 +194,12 @@ div.copy p span {
   border-bottom: 2px solid #666;
 }
 #okfocus a:hover {
-  background: transparent;
+  background: transparent;cursor:pointer;
 }
 #okfocus a {
   text-decoration: none;
-  border: 0;
-} #okfocus a img {
+  border: 0;cursor:pointer;
+} #okfocus a img {cursor:pointer;
   text-decoration: none;
   border: 0;
 }
