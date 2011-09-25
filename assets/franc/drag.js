@@ -18,7 +18,7 @@ var Images = {
       }
     }
     TOPSHIM = $("#logo").height() + 50;
-    var leftshim = 500;
+    var leftshim = 100;
     var canvas_height = $("#canvas-handle").height();
     var canvas_width = $("#canvas-handle").width();
     var window_width = $(window).width();
@@ -81,7 +81,7 @@ var Images = {
     x = parseInt(it[1].replace("px", ""));
     y = parseInt(it[0].replace("px", ""));
     var easeType = EASING;
-    $('#canvas-handle').animate({ left: -x+100, top: -y+TOPSHIM}, 700, easeType );
+    $('#canvas-handle').animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
   },
 }
 
