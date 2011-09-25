@@ -127,10 +127,11 @@ a:visited {
 }
 
 #logo {
-  top: 0px;
-  left: 0px;
+  top: -50px;
+  left: -30px;
+  width:150%;
   position: fixed;
-  z-index: -1;
+  z-index:-1;
 }
 
 #mark {
