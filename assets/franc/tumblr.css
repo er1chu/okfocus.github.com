@@ -22,6 +22,7 @@ time, mark, audio, video {
 
 body {
   line-height: 1;
+  -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;
 }
 
 ol, ul {
@@ -32,7 +33,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-p{font-family:impact; font-size:46px;line-height:80px;color:red;font-style:italic;text-shadow:-4px 4px black;text-indent:10px;}
+p{font-family:impact; font-size:46px;line-height:60px;color:red;font-style:italic;text-shadow:-2px 2px black;text-indent:10px;font-weight:100;}
+
 caption, th, td {
   text-align: left;
   font-weight: normal;
@@ -111,8 +113,8 @@ a:visited {
 }
 
 #navz {
-  cursor: pointer;
-  cursor: hand;
+  cursor: pointer;font-size:160%;margin-left:12px;margin-top:2px;
+  cursor: hand;font-family:impact;color:white;font-style:italic;text-shadow:-1px 1px black;
   display: none;
 }
 #navz option {
