@@ -63,6 +63,7 @@ html, body {
   height: 100%;
 }
 #tumblr_controls{display:none !important;}
+iframe{display:none !important;}
 
 .post a{font-size:170%;}
 
