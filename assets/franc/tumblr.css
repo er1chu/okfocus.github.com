@@ -117,8 +117,8 @@ a:visited {
 }
 
 #navz {
-  cursor: pointer;font-size:160%;margin-left:12px;margin-top:2px;
-  cursor: hand;color:red;font-style:italic;text-shadow:-1px 1px black;
+  cursor: pointer;font-size:160%;margin-left:560px;margin-top:110px;
+  cursor: hand;
   display: none;text-transform:uppercase;
 }
 #navz option {
