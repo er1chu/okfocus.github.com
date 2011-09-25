@@ -18,7 +18,7 @@ var Images = {
       }
     }
     TOPSHIM = $("#logo").height() + 50;
-    var leftshim = 100;
+    var leftshim = 500;
     var canvas_height = $("#canvas-handle").height();
     var canvas_width = $("#canvas-handle").width();
     var window_width = $(window).width();
