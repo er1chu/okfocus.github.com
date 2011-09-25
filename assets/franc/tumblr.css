@@ -17,7 +17,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;
 }
 
 body {
@@ -85,7 +84,6 @@ a {
 
 a:hover {
   font-size: 70%;
-  background-color: #eee;
   color: black;
   text-decoration: none;
   cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
@@ -114,6 +112,13 @@ a:visited {
 #navz {
   cursor: pointer;
   cursor: hand;
+  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+  display: none;
+}
+#navz option {
+  cursor: pointer;
+  cursor: hand;
+  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
 }
 
 #logo {
@@ -138,6 +143,7 @@ a:visited {
 }
 
 #nav {
+  cursor: url(http://asdf.us/okfocus/ff/handopen.gif), auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -160,6 +166,13 @@ a:visited {
 div.title {
   font-size: 24px;
   margin-bottom: 5px;
+}
+div.copy p {
+  margin-bottom: 10px;
+}
+div.copy p span {
+  display: block;
+  max-width: 600px;
 }
 #okfocus {
   position: fixed;
@@ -190,6 +203,4 @@ div.title {
   text-decoration: none;
   border: 0;
 }
-.media {
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
-}
+

@@ -45,14 +45,25 @@ var Images = {
         if (children[i].className === "title") {
           title = "<option id='title_"+p.id+"'>"+children[i].innerHTML+"</option>";
           break;
+        } else if (! title && children[i].className === "copy") {
+          var subchildren = children[i].childNodes;
+          for (j in subchildren) {
+            if (! title) {
+              inner = subchildren[j].innerHTML.replace(/<[^>]+>/g, "")
+              if (inner.length)
+                title = "<option id='title_"+p.id+"'>"+inner+"</option>";
+            }
+          }
+          break;
         }
       }
       if (! title)
-        title = "<option id='title_"+p.id+"'>"+idx+"</option>";
+        title = "<option id='title_"+p.id+"'>Post #"+idx+"</option>";
       titles.push(title);
       Images.pages["title_"+p.id] = [p.style.top, p.style.left];
     }
     document.getElementById("navz").innerHTML = titles.join("");
+    document.getElementById("navz").style.display = "inline"
     $("#canvas-handle").animate({opacity: 1}, 200)
     Images.home()
     $("#navz").bind("change", Images.pick);
@@ -76,8 +87,10 @@ var Images = {
 
 function images_loaded() {
   document.getElementById('LB0').style.display='none';
-  Images.repage()
+  Images.repage();
+  inject_photoset_css();
 }
+
 function images_loading_bar() {
   m02=0;
   for (i=0;i<m01;i++)
