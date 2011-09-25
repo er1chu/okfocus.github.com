@@ -63,6 +63,8 @@ html, body {
   height: 100%;
 }
 
+.post a{font-size:170%;}
+
 body {
   font-family: Monaco, "Courier New", Courier, monospace;
   text-transform:uppercase;
