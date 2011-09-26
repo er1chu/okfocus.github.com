@@ -48,6 +48,7 @@ var Images = {
     Images.home()
   },
   home: function () {
+    $("html,body").css({"position": "fixed", "top": "0", "left": "0"});
     var hash = window.location.hash.replace("#","");
     if (Images.hashes[hash])
       Images.go(Images.hashes[hash]);
