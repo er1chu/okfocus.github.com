@@ -221,8 +221,8 @@ var dragMomentum = new function () {
     function clamp (x, min, max) { return Math.max(min, Math.min(max, x)) }
 
     var el = $("#canvas-handle")
-    var xmin = window.innerWidth - el.width()
-    var ymin = window.innerHeight - el.height()
+    var xmin = $(window).width() - el.width()
+    var ymin = $(window).height() - el.height()
     Xc = clamp(Xc, xmin, 0)
     Yc = clamp(Yc, ymin, 0)
 
