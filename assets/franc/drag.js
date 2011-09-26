@@ -1,71 +1,70 @@
-var POST_WIDTH = $(window).width();
-var BOTTOM_SHIM = $(window).height();
-var RIGHT_SHIM = 300;
-var STEPS = 10;
-var EASING = "easeOutExpo";
+var POST_WIDTH = $(window).width(),
+    BOTTOM_SHIM = $(window).height(),
+    RIGHT_SHIM = 300,
+    EASING = "easeOutExpo",
+    TOPSHIM = 0,
+    first_id = false,
+    pages_by_id = {},
+    ids_by_hash = {};
 
-var TOPSHIM = 0;
+var repage = function () {
+  var posts = find_posts();
+  TOPSHIM = $("#logo").height() + 50;
+  var heights = [TOPSHIM, TOPSHIM, TOPSHIM, TOPSHIM];
+  var title_divs = [];
+  for (idx in posts) {
+    var column = idx % 4;
+    var post = posts[idx];
+    var w = $("#"+post.id).width();
+    var h = $("#"+post.id).height();
+    var top_offset = heights[column];
+    var left_offset = POST_WIDTH * column + RIGHT_SHIM + (POST_WIDTH - w) / 2;
+    heights[column] += Math.max(BOTTOM_SHIM, h + 200)
 
-var Images = {
-  first_id: false,
-  pages: {},
-  hashes: {},
-  repage: function () {
-    var posts = find_posts();
-    TOPSHIM = $("#logo").height() + 50;
-    var heights = [TOPSHIM, TOPSHIM, TOPSHIM, TOPSHIM];
-    var title_divs = [];
-    for (idx in posts) {
-      var column = idx % 4;
-      var post = posts[idx];
-      var w = $("#"+post.id).width();
-      var h = $("#"+post.id).height();
-      var top_offset = heights[column];
-      var left_offset = POST_WIDTH * column + RIGHT_SHIM + (POST_WIDTH - w) / 2;
-      heights[column] += Math.max(BOTTOM_SHIM, h + 200)
+    post.style.left = left_offset + "px";
+    post.style.top = top_offset + "px";
 
-      post.style.left = left_offset + "px";
-      post.style.top = top_offset + "px";
+    var title = get_title_from_caption(post, idx);
+    var title_id = "title_" + post.id;
+    var title_div = "<option id='" + title_id + "'>" + title + "</option>";
+    title_divs.push(title_div);
 
-      var title = get_title_from_caption(post, idx);
-      var title_id = "title_" + post.id;
-      var title_div = "<option id='" + title_id + "'>" + title + "</option>";
-      title_divs.push(title_div);
+    var hash = title.replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
+    ids_by_hash[hash] = title_id;
+    pages_by_id[title_id] = [left_offset, top_offset, w, h, hash];
 
-      var hash = title.replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
-      Images.hashes[hash] = title_id;
-      Images.pages[title_id] = [left_offset, top_offset, w, h, hash];
+    if (! first_id)
+      first_id = title_id;
+  }
+  document.getElementById("navz").innerHTML = title_divs.join("");
+  document.getElementById("navz").style.display = "inline"
+  $("#canvas-handle").animate({opacity: 1}, 200)
+  $("#navz").bind("change", pick);
+  $("#mark").bind("click", go_home);
+  go_home()
+}
 
-      if (! Images.first_id)
-        Images.first_id = title_id;
-    }
-    document.getElementById("navz").innerHTML = title_divs.join("");
-    document.getElementById("navz").style.display = "inline"
-    $("#canvas-handle").animate({opacity: 1}, 200)
-    $("#navz").bind("change", Images.pick);
-    $("#mark").bind("click", Images.home);
-    Images.home()
-  },
-  home: function () {
-    $("html,body").css({"position": "fixed", "top": "0", "left": "0"});
-    var hash = window.location.hash.replace("#","");
-    if (Images.hashes[hash])
-      Images.go(Images.hashes[hash]);
-    else
-      Images.go(Images.first_id);
-  },
-  pick: function () {
-    var id = $("select option:selected")[0].id
-    Images.go(id);
-  },
-  go: function (id) {
-    var it = Images.pages[id];
-    x = it[0];
-    y = it[1];
-    var easeType = EASING;
-    $('#canvas-handle').animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
-    update_hash(-x+400, -y+TOPSHIM);
-  },
+var go_home = function () {
+  $("html,body").css({"position": "fixed", "top": "0", "left": "0"});
+  var hash = window.location.hash.replace("#","");
+  if (ids_by_hash[hash])
+    go(ids_by_hash[hash]);
+  else
+    go(first_id);
+}
+
+var pick = function () {
+  var id = $("select option:selected")[0].id
+  go(id);
+}
+
+var go = function (id) {
+  var it = pages_by_id[id];
+  x = it[0];
+  y = it[1];
+  var easeType = EASING;
+  $('#canvas-handle').animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
+  update_hash(-x+400, -y+TOPSHIM);
 }
 
 var update_hash = function (x, y) {
@@ -73,8 +72,8 @@ var update_hash = function (x, y) {
   y = Math.abs(y);
   var width = $(window).width();
   var height = $(window).height();
-  for (key in Images.pages) {
-    var page = Images.pages[key];
+  for (key in pages_by_id) {
+    var page = pages_by_id[key];
     var pagex = page[0];
     var pagey = page[1];
     var pagew = page[2];
@@ -100,6 +99,7 @@ var find_posts = function () {
   }
   return posts;
 }
+
 var get_title_from_caption = function (post, offset) {
   var children = post.childNodes;
   var title = false;
@@ -125,27 +125,26 @@ var get_title_from_caption = function (post, offset) {
   return title;
 }
 
-function images_loaded() {
-  document.getElementById('LB0').style.display='none';
-  Images.repage();
+var images_loaded = function () {
+  document.getElementById('LB0').style.display = 'none';
+  repage();
   inject_photoset_css();
 }
 
-function images_loading_bar() {
-  m02=0;
-  for (i=0;i<m01;i++)
-    m02 += (m00[i].complete) ? 1 : 0;
+var images_loading_bar = function () {
+  m02 = 0;
+  for (var i = 0; i < m01; i++)
+    m02 += m00[i].complete ? 1 : 0;
   document.getElementById("LB1").style.width = Math.round(m02/m01*100)+'px';
-  if (m02 == m01)
+  if (m02 === m01)
     setTimeout(images_loaded, 128);
   else
     setTimeout(images_loading_bar, 64);
 };
 
-
 $(document).ready(function () {
   m00 = document.getElementById("canvas-handle").getElementsByTagName("img");
-  m01=m00.length;
+  m01 = m00.length;
   images_loading_bar();
 
   // $('img').bind("onmousedown", function (e) { if (e) e.preventDefault() });
@@ -158,7 +157,6 @@ $(document).ready(function () {
     stop: function(e, ui) {
       $("#canvas-handle").removeClass("dragging");
       dragMomentum.end(this.id, e.clientX, e.clientY, e.timeStamp);
-      // e.preventDefault();
     }  
   });
 });
@@ -192,7 +190,7 @@ var dragMomentum = new function () {
     var dDist = Math.sqrt(Math.pow(Xa-Xb, 2) + Math.pow(Ya-Yb, 2));
     var dTime = Tb - Ta;
     var dSpeed = dDist / dTime;
-    dSpeed=Math.round(dSpeed*100)/100;
+    dSpeed = Math.round(dSpeed*100)/100;
 
     var distX =  Math.abs(Xa - Xb);
     var distY =  Math.abs(Ya - Yb);
@@ -204,24 +202,24 @@ var dragMomentum = new function () {
     var locX = position.left;
     var locY = position.top;
 
-    if ( Xa > Xb ){  // we are moving left
+    if ( Xa > Xb ) {  // we are moving left
       Xc = locX - dVelX;
     } else {  //  we are moving right
       Xc = locX + dVelX;
     }
 
-    if ( Ya > Yb ){  // we are moving up
+    if ( Ya > Yb ) {  // we are moving up
       Yc = (locY - dVelY);
     } else {  // we are moving down
       Yc = (locY + dVelY);
     }
 
     // must CLAMP the x and y so we don't lose control
-    var drag = $("#canvas-handle").data('draggable')
+    var drag = $("#"+elemId).data('draggable')
 
     function clamp (x, min, max) { return Math.max(min, Math.min(max, x)) }
 
-    var el = $("#canvas-handle")
+    var el = $("#"+elemId)
     var xmin = $(window).width() - el.width()
     var ymin = $(window).height() - el.height()
     Xc = clamp(Xc, xmin, 0)
@@ -230,7 +228,7 @@ var dragMomentum = new function () {
     var newLocX = Xc + 'px';
     var newLocY = Yc + 'px';
 
-    $('#'+elemId).animate({ left:newLocX, top:newLocY }, 700, easeType );
+    $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
 
     update_hash(Xc, Yc);
   };
