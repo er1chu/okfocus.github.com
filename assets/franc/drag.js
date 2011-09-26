@@ -142,6 +142,7 @@ var images_loading_bar = function () {
     setTimeout(images_loading_bar, 64);
 };
 
+var dragging = false;
 $(document).ready(function () {
   m00 = document.getElementById("canvas-handle").getElementsByTagName("img");
   m01 = m00.length;
@@ -153,10 +154,12 @@ $(document).ready(function () {
     start: function(e, ui) {
       $("#canvas-handle").addClass("dragging");
       dragMomentum.start(this.id, e.clientX, e.clientY, e.timeStamp);
+      dragging = true;
     },
     stop: function(e, ui) {
       $("#canvas-handle").removeClass("dragging");
       dragMomentum.end(this.id, e.clientX, e.clientY, e.timeStamp);
+      dragging = false;
     }  
   });
 });
