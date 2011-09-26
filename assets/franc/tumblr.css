@@ -50,7 +50,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 }
 
 a img {
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+  cursor: url(http://okfoc.us/assets/franc/finger.png), auto;
   border: none;
 }
 
@@ -76,7 +76,7 @@ body {
   margin: 0;
   padding: 0;
   z-index: 0;
-  background-image: url("http://asdf.us/okfocus/ff/bg.jpg");
+  background-image: url("http://okfoc.us/assets/franc/bg.jpg");
   background-position: top left;
   background-attachment: fixed;
 }
@@ -98,7 +98,7 @@ cursor:pointer;
 
 a:visited {
   color: #333;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+  cursor: url(http://okfoc.us/assets/franc/finger.png), auto;
 }
 
 #fblike {
@@ -149,14 +149,14 @@ a:visited {
 }
 
 #nav {
-  cursor: url(http://asdf.us/okfocus/ff/handopen.gif), auto;
+  cursor: url(http://okfoc.us/assets/franc/handopen.gif), auto;
   position: absolute;text-transform:uppercase;
   top: 0;
   left: 0;
 }
 
 #canvas-handle {
-  cursor: url(http://asdf.us/okfocus/ff/handopen.gif), auto;
+  cursor: url(http://okfoc.us/assets/franc/handopen.gif), auto;
   width: 20000px;
   height: 20000px;
   position: absolute;
@@ -167,7 +167,7 @@ a:visited {
   margin-top:-50px;
 }
 #canvas-handle:active, #canvas-handle.dragging {
-  cursor: url(http://asdf.us/okfocus/ff/handgrab.gif), auto;
+  cursor: url(http://okfoc.us/assets/franc/handgrab.gif), auto;
 }
 
 div.title {
