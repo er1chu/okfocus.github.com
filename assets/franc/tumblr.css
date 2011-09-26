@@ -33,7 +33,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-p{font-size:20px;line-height:60px;color:black;text-indent:10px;font-weight:100;}
+p {
+  font-size: 20px;
+  line-height: 60px;
+  color: black;
+  text-indent: 10px; 
+  font-weight: 100;
+}
 
 caption, th, td {
   text-align: left;
@@ -83,10 +89,10 @@ body {
 
 a {
   font-size: 70%;
-  text-decoration: none;cursor:pointer;
+  text-decoration: none;
+  cursor: pointer;
   letter-spacing: 4px;
   color: #333;
-
 }
 
 a:hover {
@@ -117,9 +123,13 @@ a:visited {
 }
 
 #navz {
-  cursor: pointer;font-size:160%;margin-left:20px;margin-top:5px;
+  cursor: pointer;
+  font-size:160%;
+  margin-left:20px;
+  margin-top:5px;
   cursor: hand;
-  display: none;text-transform:uppercase;
+  display: none;
+  text-transform:uppercase;
 }
 #navz option {
   cursor: pointer;

@@ -71,7 +71,6 @@ var Images = {
 var update_hash = function (x, y) {
   x = Math.abs(x);
   y = Math.abs(y);
-  // console.log("scrolled to "+x+", "+y);
   var width = $(window).width();
   var height = $(window).height();
   for (key in Images.pages) {
@@ -81,12 +80,12 @@ var update_hash = function (x, y) {
     var pagew = page[2];
     var pageh = page[3];
     var wmargin = (width - pagew) / 2;
-    if ((x > pagex - wmargin) && (x < pagex + pagew + wmargin) &&
-        (y > pagey - height)     && (y < pagey + pageh + 220)) {
+    var hmargin = (height) / 2;
+    if ((pagex < x + width) && (x < pagex + pagew) &&
+        (pagey < y + height) && (y < pagey + pageh)) {
       window.location.hash = page[4];
       $("#navz option:selected").removeAttr("selected");
       $("#" + key).attr("selected", "selected");
-      // console.log(["matched", pagex, pagey, pagew, pageh, key, page[4]].join(" "));
       return;
     }
   }
