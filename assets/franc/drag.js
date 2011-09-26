@@ -1,8 +1,7 @@
-var POST_WIDTH = $(window).width() + 200;
-var BOTTOM_SHIM = $(window).height() + 200;
+var POST_WIDTH = $(window).width();
+var BOTTOM_SHIM = $(window).height();
 var RIGHT_SHIM = 300;
 var STEPS = 10;
-var PADDING = 1000
 var EASING = "easeOutExpo";
 
 var TOPSHIM = 0;
@@ -23,7 +22,7 @@ var Images = {
       var h = $("#"+post.id).height();
       var top_offset = heights[column];
       var left_offset = POST_WIDTH * column + RIGHT_SHIM + (POST_WIDTH - w) / 2;
-      heights[column] += h + BOTTOM_SHIM
+      heights[column] += Math.max(BOTTOM_SHIM, h + 200)
 
       post.style.left = left_offset + "px";
       post.style.top = top_offset + "px";
