@@ -158,7 +158,7 @@ $(document).ready(function () {
     stop: function(e, ui) {
       $("#canvas-handle").removeClass("dragging");
       dragMomentum.end(this.id, e.clientX, e.clientY, e.timeStamp);
-      e.preventDefault();
+      // e.preventDefault();
     }  
   });
 });
