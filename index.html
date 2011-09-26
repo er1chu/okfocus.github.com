@@ -165,14 +165,14 @@
       #bg.rico { background-image: url('assets/images/rico.gif'); position: fixed;z-index:0;}
       #bg.mia { background-image: url('assets/images/mia.gif'); position: fixed;z-index:0;}
       #bg.ssion { background-image: url('assets/images/ssion.gif'); position: fixed;z-index:0;}
-      #bg.thunder { background-image: url('assets/thunder-horse.gif'); position: fixed;z-index:0;}
+      #bg.thunder { background-image: url('assets/images/thunder-horse.gif'); position: fixed;z-index:0;}
       #bg.w { background-image: url('assets/images/w.jpg'); position: fixed;z-index:0;}
       #bg.hyper { background-image: url('assets/images/hyper.gif'); position: fixed;z-index:0;}
       #bg.ps1 { background-image: url('assets/images/ps1.jpg'); position: fixed;z-index:0;}
       #bg.lipman { background-image: url('assets/images/lipman.jpg'); position: fixed;z-index:0;}
       #bg.newmoticons { background-image: url('assets/images/newmoticons.jpg'); position: fixed;z-index:0;}
-	  #bg.ryan { background-image: url('assets/images/trecartin.jpg'); position: fixed;z-index:0;} 
-	  #bg.sarah { background-image: url('assets/images/sarah.jpg'); position: fixed;z-index:0;} 
+	    #bg.ryan { background-image: url('assets/images/trecartin.jpg'); position: fixed;z-index:0;} 
+	    #bg.sarah { background-image: url('assets/images/sarah.jpg'); position: fixed;z-index:0;} 
       #bg.dis { background-image: url('assets/images/ddis.png'); position: fixed;z-index:0;}
       #bg.paper { background-image: url('assets/images/paper.jpg'); position: fixed;z-index:0;}
       #bg.cbs { background-image: url('assets/images/cbs.gif'); position: fixed;z-index:0;}
@@ -207,6 +207,7 @@
     <![endif]-->
     <title>OKFocus</title>
     <script type="text/javascript">
+      var _sf_startpt=(new Date()).getTime(); // chartbeat
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-25748597-1']);
       _gaq.push(['_setDomainName', 'okfoc.us']);
@@ -238,13 +239,15 @@
       nav = document.getElementsByTagName('nav')[0];
       logo.src = 'assets/images/logo.gif?ok=' + d.getTime();
       header.insertBefore(logo,nav);
-      // add a class on the fly
-      if (window.location.hash) {
-        hash = window.location.hash;
-        var selector = hash.substring(1);     
-        document.getElementById(selector + '-link').className += ' selected';
-      }
     })();
+      // add a class on the fly  
+      if (window.location.hash === "#work" || 
+          window.location.hash === "#us" || 
+          window.location.hash === "#contact" ) {
+          var hash = window.location.hash;
+          var selector = hash.substring(1);     
+          document.getElementById(selector + '-link').className += ' selected';
+      }
     </script>
     <div id="bg" class="none"></div>
     <section id="main-column">
@@ -299,7 +302,7 @@
           <li class="comma" id="tc"data-description="'panning for <a href='http://techcrunch.com/2009/10/10/internet-archaeology-in-which-the-sordid-past-of-the-internet-is-preserved-forever/'target='_blank'>gold</a> in the twilight of Geocities' "><a href="#"  >TechCrunch</a></li>
           <li class="comma" id="vv" data-description="'Finally, <a href='http://blogs.villagevoice.com/runninscared/2011/02/is_the_l_train.php' target='_blank'>our prayers</a> have been answered.'"><a href="#">Village Voice</a></li>
           <li class="comma" id="wired"data-description="'<a href='http://www.wired.co.uk/news/archive/2009-12/18/meet-the-indiana-jones-of-the-internet.aspx'target='_blank'>what happens</a> to the sites that become ancient history?' "><a href="#" >Wired</a></li>
-          <li id="more2" data-description="contact <a href='mailto:frontdesk@okfoc.us?subject=OKFocus inquiry..' target='_blank'>frontdesk@okfoc.us</a> to talk us!" ><a href="#" >AND MORE!</a></li>
+          <li id="more2" data-description="contact <a href='mailto:frontdesk@okfoc.us?subject=OKFocus inquiry..' target='_blank'>frontdesk@okfoc.us</a> to talk to us!" ><a href="#" >AND MORE!</a></li>
         </ul>
       </article>
       <article id="us">
@@ -404,5 +407,22 @@
                             HEY STUPID PERSON STILL READING THIS TEXT, DONT FUCK WITH 0KF0CUS!!!!-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/main.js"></script>
+    <script type="text/javascript">
+      var _sf_async_config={uid:25485,domain:"okfoc.us"};
+      (function(){
+          function loadChartbeat() {
+              window._sf_endpt=(new Date()).getTime();
+              var e = document.createElement('script');
+              e.setAttribute('language', 'javascript');
+              e.setAttribute('type', 'text/javascript');
+              e.setAttribute('src',
+      (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+      "js/chartbeat.js");
+              document.body.appendChild(e);
+          }
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+      })();
+    </script>
   </body>
 </html>
