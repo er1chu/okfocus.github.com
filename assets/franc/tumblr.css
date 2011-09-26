@@ -216,8 +216,10 @@ div.copy p span {
   border: 0;
 }
 .fb-like {
-  margin-top: -5px;
+  position: relative;
+  top: -5px;
 }
 .twitter-share-button {
-  margin-top: -2px;
+  position: relative;
+  top: -2px;
 }
