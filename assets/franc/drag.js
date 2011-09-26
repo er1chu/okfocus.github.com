@@ -6,71 +6,53 @@ var PADDING = 1000
 var EASING = "easeOutExpo";
 
 var TOPSHIM = 0;
+
 var Images = {
+  first_id: false,
   pages: {},
+  hashes: {},
   repage: function () {
-    var iz = document.getElementsByTagName("div");
-    var posts = [];
-    for (var i = 0, len = iz.length; i < len; i++) {
-      if (iz[i].className === "post") {
-        iz[i].id = "post_" + i
-        posts.push(iz[i]);
-      }
-    }
+    var posts = find_posts();
     TOPSHIM = $("#logo").height() + 50;
-    var leftshim = 100;
-    var canvas_height = $("#canvas-handle").height();
-    var canvas_width = $("#canvas-handle").width();
-    var window_width = $(window).width();
-    var window_height = $(window).height();
-
-    var post_width = POST_WIDTH;
-    var heights = [TOPSHIM,TOPSHIM,TOPSHIM,TOPSHIM];
-
-    var titles = [];
-    Images.first_id = false;
+    var heights = [TOPSHIM, TOPSHIM, TOPSHIM, TOPSHIM];
+    var title_divs = [];
     for (idx in posts) {
-      var i = idx % 4;
-      var p = posts[idx];
-      var w = $("#"+p.id).width();
-      var h = $("#"+p.id).height();
-      p.style.top = (heights[i]) + "px"
-      p.style.left = ((post_width * i) + RIGHT_SHIM) + ((post_width - w) / 2) + "px"
-      heights[i] = (h + BOTTOM_SHIM + heights[i])
-      var children = p.childNodes;
-      var title = false;
+      var column = idx % 4;
+      var post = posts[idx];
+      var w = $("#"+post.id).width();
+      var h = $("#"+post.id).height();
+      var top_offset = heights[column];
+      var left_offset = POST_WIDTH * column + RIGHT_SHIM + (POST_WIDTH - w) / 2;
+      heights[column] += h + BOTTOM_SHIM
+
+      post.style.left = left_offset + "px";
+      post.style.top = top_offset + "px";
+
+      var title = get_title_from_caption(post, idx);
+      var title_id = "title_" + post.id;
+      var title_div = "<option id='" + title_id + "'>" + title + "</option>";
+      title_divs.push(title_div);
+
+      var hash = title.replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
+      Images.hashes[hash] = title_id;
+      Images.pages[title_id] = [left_offset, top_offset, w, h, hash];
+
       if (! Images.first_id)
-        Images.first_id = "title_"+p.id
-      for (i in children) {
-        if (children[i].className === "title") {
-          title = "<option id='title_"+p.id+"'>"+children[i].innerHTML+"</option>";
-          break;
-        } else if (! title && children[i].className === "copy") {
-          var subchildren = children[i].childNodes;
-          for (j in subchildren) {
-            if (! title) {
-              inner = subchildren[j].innerHTML.replace(/<[^>]+>/g, "")
-              if (inner.length)
-                title = "<option id='title_"+p.id+"'>"+inner+"</option>";
-            }
-          }
-          break;
-        }
-      }
-      if (! title)
-        title = "<option id='title_"+p.id+"'>Post #"+idx+"</option>";
-      titles.push(title);
-      Images.pages["title_"+p.id] = [p.style.top, p.style.left];
+        Images.first_id = title_id;
     }
-    document.getElementById("navz").innerHTML = titles.join("");
+    document.getElementById("navz").innerHTML = title_divs.join("");
     document.getElementById("navz").style.display = "inline"
     $("#canvas-handle").animate({opacity: 1}, 200)
-    Images.home()
     $("#navz").bind("change", Images.pick);
     $("#mark").bind("click", Images.home);
+    Images.home()
   },
   home: function () {
-    Images.go(Images.first_id);
+    var hash = window.location.hash.replace("#","");
+    if (Images.hashes[hash])
+      Images.go(Images.hashes[hash]);
+    else
+      Images.go(Images.first_id);
   },
   pick: function () {
     var id = $("select option:selected")[0].id
@@ -78,11 +60,72 @@ var Images = {
   },
   go: function (id) {
     var it = Images.pages[id];
-    x = parseInt(it[1].replace("px", ""));
-    y = parseInt(it[0].replace("px", ""));
+    x = it[0];
+    y = it[1];
     var easeType = EASING;
     $('#canvas-handle').animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
+    update_hash(-x+400, -y+TOPSHIM);
   },
+}
+
+var update_hash = function (x, y) {
+  x = Math.abs(x);
+  y = Math.abs(y);
+  // console.log("scrolled to "+x+", "+y);
+  var width = $(window).width();
+  var height = $(window).height();
+  for (key in Images.pages) {
+    var page = Images.pages[key];
+    var pagex = page[0];
+    var pagey = page[1];
+    var pagew = page[2];
+    var pageh = page[3];
+    var wmargin = (width - pagew) / 2;
+    if ((x > pagex - wmargin) && (x < pagex + pagew + wmargin) &&
+        (y > pagey - height)     && (y < pagey + pageh + 220)) {
+      window.location.hash = page[4];
+      $("#navz option:selected").removeAttr("selected");
+      $("#" + key).attr("selected", "selected");
+      // console.log(["matched", pagex, pagey, pagew, pageh, key, page[4]].join(" "));
+      return;
+    }
+  }
+}
+
+var find_posts = function () {
+  var posts = [];
+  var iz = document.getElementsByTagName("div");
+  for (var i = 0, len = iz.length; i < len; i++) {
+    if (iz[i].className === "post") {
+      iz[i].id = "post_" + i
+      posts.push(iz[i]);
+    }
+  }
+  return posts;
+}
+var get_title_from_caption = function (post, offset) {
+  var children = post.childNodes;
+  var title = false;
+  for (i in children) {
+    if (title)
+      break;
+    if (children[i].className === "title") {
+      title = children[i].innerHTML;
+    } else if (children[i].className === "copy") {
+      var subchildren = children[i].childNodes;
+      for (j in subchildren) {
+        if (! title) {
+          inner = subchildren[j].innerHTML.replace(/<[^>]+>/g, "")
+          if (inner.length) {
+            title = inner;
+          }
+        }
+      }
+    }
+  }
+  if (! title)
+    title = "Post #" + idx;
+  return title;
 }
 
 function images_loaded() {
@@ -97,9 +140,9 @@ function images_loading_bar() {
     m02 += (m00[i].complete) ? 1 : 0;
   document.getElementById("LB1").style.width = Math.round(m02/m01*100)+'px';
   if (m02 == m01)
-    setTimeout("images_loaded()", 128);
+    setTimeout(images_loaded, 128);
   else
-    setTimeout("images_loading_bar()", 64);
+    setTimeout(images_loading_bar, 64);
 };
 
 
@@ -108,89 +151,93 @@ $(document).ready(function () {
   m01=m00.length;
   images_loading_bar();
 
-    $('#canvas-handle').draggable({
-        start: function(e, ui) {
-            $("#canvas-handle").addClass("dragging");
-            dragMomentum.start(this.id, e.clientX, e.clientY, e.timeStamp);
-         },
-        stop: function(e, ui) {
-            $("#canvas-handle").removeClass("dragging");
-            dragMomentum.end(this.id, e.clientX, e.clientY, e.timeStamp);
-        }  
-     });
+  // $('img').bind("onmousedown", function (e) { if (e) e.preventDefault() });
+
+  $('#canvas-handle').draggable({
+    start: function(e, ui) {
+      $("#canvas-handle").addClass("dragging");
+      dragMomentum.start(this.id, e.clientX, e.clientY, e.timeStamp);
+    },
+    stop: function(e, ui) {
+      $("#canvas-handle").removeClass("dragging");
+      dragMomentum.end(this.id, e.clientX, e.clientY, e.timeStamp);
+    }  
+  });
 });
 
 var dragMomentum = new function () {    
-    var howMuch = 120;  // change this for greater or lesser momentum
-    var minDrift = 6; // minimum drift after a drag move
-    var easeType = EASING;
+  var howMuch = 120;  // change this for greater or lesser momentum
+  var minDrift = 6; // minimum drift after a drag move
+  var easeType = EASING;
 
-    //  This easing type requires the plugin:  
-    //  jquery.easing.1.3.js  http://gsgd.co.uk/sandbox/jquery/easing/
+  //  This easing type requires the plugin:  
+  //  jquery.easing.1.3.js  http://gsgd.co.uk/sandbox/jquery/easing/
 
-    var dXa =[0];
-    var dYa =[0];
-    var dTa =[0];
+  var dXa =[0];
+  var dYa =[0];
+  var dTa =[0];
 
-    this.start = function (elemId, Xa, Ya, Ta)  {
-        $('#'+elemId).stop();
-        dXa[elemId] = Xa;
-        dYa[elemId] = Ya;
-        dTa[elemId] = Ta;
+  this.start = function (elemId, Xa, Ya, Ta)  {
+    $('#'+elemId).stop();
+    dXa[elemId] = Xa;
+    dYa[elemId] = Ya;
+    dTa[elemId] = Ta;
 
-      }; // END dragmomentum.start()
+  }; // END dragmomentum.start()
 
-    this.end = function (elemId, Xb, Yb, Tb)  {        
-        var Xa = dXa[elemId];
-        var Ya = dYa[elemId];
-        var Ta = dTa[elemId];
-        var Xc = 0;
-        var Yc = 0;
+  this.end = function (elemId, Xb, Yb, Tb)  {        
+    var Xa = dXa[elemId];
+    var Ya = dYa[elemId];
+    var Ta = dTa[elemId];
+    var Xc = 0;
+    var Yc = 0;
 
-        var dDist = Math.sqrt(Math.pow(Xa-Xb, 2) + Math.pow(Ya-Yb, 2));
-        var dTime = Tb - Ta;
-        var dSpeed = dDist / dTime;
-        dSpeed=Math.round(dSpeed*100)/100;
+    var dDist = Math.sqrt(Math.pow(Xa-Xb, 2) + Math.pow(Ya-Yb, 2));
+    var dTime = Tb - Ta;
+    var dSpeed = dDist / dTime;
+    dSpeed=Math.round(dSpeed*100)/100;
 
-        var distX =  Math.abs(Xa - Xb);
-        var distY =  Math.abs(Ya - Yb);
+    var distX =  Math.abs(Xa - Xb);
+    var distY =  Math.abs(Ya - Yb);
 
-        var dVelX = (minDrift+(Math.round(distX*dSpeed*howMuch / (distX+distY))));
-        var dVelY = (minDrift+(Math.round(distY*dSpeed*howMuch / (distX+distY))));
+    var dVelX = (minDrift+(Math.round(distX*dSpeed*howMuch / (distX+distY))));
+    var dVelY = (minDrift+(Math.round(distY*dSpeed*howMuch / (distX+distY))));
 
-        var position = $('#'+elemId).position();
-        var locX = position.left;
-        var locY = position.top;
+    var position = $('#'+elemId).position();
+    var locX = position.left;
+    var locY = position.top;
 
-        if ( Xa > Xb ){  // we are moving left
-            Xc = locX - dVelX;
-        } else {  //  we are moving right
-            Xc = locX + dVelX;
-        }
+    if ( Xa > Xb ){  // we are moving left
+      Xc = locX - dVelX;
+    } else {  //  we are moving right
+      Xc = locX + dVelX;
+    }
 
-        if ( Ya > Yb ){  // we are moving up
-            Yc = (locY - dVelY);
-        } else {  // we are moving down
-            Yc = (locY + dVelY);
-        }
+    if ( Ya > Yb ){  // we are moving up
+      Yc = (locY - dVelY);
+    } else {  // we are moving down
+      Yc = (locY + dVelY);
+    }
 
-        // must CLAMP the x and y so we don't lose control
-        var drag = $("#canvas-handle").data('draggable')
+    // must CLAMP the x and y so we don't lose control
+    var drag = $("#canvas-handle").data('draggable')
 
-        function clamp (x, min, max) { return Math.max(min, Math.min(max, x)) }
+    function clamp (x, min, max) { return Math.max(min, Math.min(max, x)) }
 
-        var el = $("#canvas-handle")
-        var xmin = window.innerWidth - el.width()
-        var ymin = window.innerHeight - el.height()
-        Xc = clamp(Xc, xmin, 0)
-        Yc = clamp(Yc, ymin, 0)
+    var el = $("#canvas-handle")
+    var xmin = window.innerWidth - el.width()
+    var ymin = window.innerHeight - el.height()
+    Xc = clamp(Xc, xmin, 0)
+    Yc = clamp(Yc, ymin, 0)
 
-        var newLocX = Xc + 'px';
-        var newLocY = Yc + 'px';
+    var newLocX = Xc + 'px';
+    var newLocY = Yc + 'px';
 
-        $('#'+elemId).animate({ left:newLocX, top:newLocY }, 700, easeType );
+    $('#'+elemId).animate({ left:newLocX, top:newLocY }, 700, easeType );
 
-    }; // END  dragmomentum.end()
+    update_hash(Xc, Yc);
+
+  }; // END  dragmomentum.end()
 
 };  // END dragMomentum()
 
