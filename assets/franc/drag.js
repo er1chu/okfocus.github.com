@@ -79,8 +79,6 @@ var update_hash = function (x, y) {
     var pagey = page[1];
     var pagew = page[2];
     var pageh = page[3];
-    var wmargin = (width - pagew) / 2;
-    var hmargin = (height) / 2;
     if ((pagex < x + width) && (x < pagex + pagew) &&
         (pagey < y + height) && (y < pagey + pageh)) {
       window.location.hash = page[4];
@@ -181,8 +179,7 @@ var dragMomentum = new function () {
     dXa[elemId] = Xa;
     dYa[elemId] = Ya;
     dTa[elemId] = Ta;
-
-  }; // END dragmomentum.start()
+  };
 
   this.end = function (elemId, Xb, Yb, Tb)  {        
     var Xa = dXa[elemId];
@@ -235,8 +232,6 @@ var dragMomentum = new function () {
     $('#'+elemId).animate({ left:newLocX, top:newLocY }, 700, easeType );
 
     update_hash(Xc, Yc);
-
-  }; // END  dragmomentum.end()
-
-};  // END dragMomentum()
+  };
+};
 
