@@ -72,9 +72,10 @@ html, body {
   top: 0;
   left: 0;
 }
+/*
 #tumblr_controls{display:none !important;visibility:hidden !important;}
 #tumblr_controls iframe{display:none !important;}
-
+*/
 .post a{font-size:170%;}
 
 body {
@@ -125,10 +126,9 @@ a:visited {
   position: fixed;
   color: #333;
 }
-
+select{ font-size:20px;}
 #navz {
   cursor: pointer;
-  font-size:160%;
   margin-left:20px;
   margin-top:5px;
   cursor: hand;
