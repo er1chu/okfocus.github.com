@@ -29,7 +29,7 @@ var repage = function () {
     var title_div = "<option id='" + title_id + "'>" + title + "</option>";
     title_divs.push(title_div);
 
-    var hash = title.replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
+    var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
     pages_by_id[title_id] = [left_offset, top_offset, w, h, hash];
 
