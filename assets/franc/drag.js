@@ -12,7 +12,7 @@ var repage = function () {
   var posts = find_posts();
   TOPSHIM = $("#logo").height() + 50;
   var heights = [];
-  for (var i = 0; i < POSTS_PER_PAGE; i++) {
+  for (var i = 0; i < POSTS_PER_ROW; i++) {
     heights.push(TOPSHIM);
   }
   var title_divs = [];
