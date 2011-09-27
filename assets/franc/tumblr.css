@@ -216,15 +216,15 @@ div.copy p span {
 
 #social {
   position: fixed;
-  top: 20px;
+  top: 50px;width:120px;
   right: 15px;
 }
 .fb-like {
-  position: relative;
+  position: relative;float:left;
   top: -7px;
 }
 .twitter-share-button {
-  position: relative;
+  position: relative;float:left;
   top: -3px;
 }
 
