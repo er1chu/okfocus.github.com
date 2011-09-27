@@ -44,9 +44,13 @@ var repage = function () {
     if (! first_id)
       first_id = title_id;
   }
+  var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5))
+  var total_height = 0;
+  for (var i = 0; i < POSTS_PER_ROW; i++)
+    total_height = Math.max(total_height, heights[i]);
   document.getElementById("navz").innerHTML = title_divs.join("");
-  document.getElementById("navz").style.display = "inline"
-  $("#canvas-handle").css({"width": Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5)) });
+  document.getElementById("navz").style.display = "inline";
+  $("#canvas-handle").css({"width": total_width, "height": total_height });
   $("#canvas-handle").animate({opacity: 1}, 200)
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
