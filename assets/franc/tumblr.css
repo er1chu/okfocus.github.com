@@ -220,11 +220,11 @@ div.copy p span {
   right: 15px;
 }
 .fb-like {
-  position: relative;float:left;
+  position: relative;float:right;
   top: -7px;margin:5px;
 }
 .twitter-share-button {
-  position: relative;float:left;
+  position: relative;float:right;
   top: -3px;margin:5px;
 }
 
