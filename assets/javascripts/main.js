@@ -47,81 +47,9 @@ b).addClass("order-"+b)});b.thisElement.find(".pwText").each(function(a){b.data[
  *
 **/
 
-(function($){
-    
-    $(function(){
-        $('body').append('<div id="ok-bg"></div>');
-        $('#ok-bg').css({
-            width : '100%',
-            height : '100%',
-            background : 'scroll 150% 150% repeat',
-            zIndex : -1,
-            position : 'fixed',
-            top : 0,
-            left : 0
-        });
-    });
-    
-    $.okhover = function(el, options){
-        var base = this;       
-        base.$el = $(el);
-        base.el = el;        
-        base.$el.data("okhover", base);
-        
-        base.init = function(){            
-            base.options = $.extend({}, $.okhover.options, options);
-            base.build();
-        };
-        
-        base.build = function(){
-            if ($('#ok-bg').length == 0) {
-                throw new Error('Failed to attach the ok-bg div to the DOM');
-            } else {
-                base.start();
-            }
-        };
-        
-        base.start = function () {
-            var background = $("#ok-bg");
-            
-            if (base.options.fadeIn) background.hide();
-            if (base.options.zIndex) background.css('zIndex', base.options.zIndex);
-
-            base.$el.bind({
-                mouseover: function(){                    
-                    $(this).mousemove(function(e){
-                        background.css('backgroundPosition', e.pageX + 'px ' + e.pageY + 'px');
-                    });
-
-                    background.css('backgroundImage', 'url(' + $(this).attr('data-okimage') + ')').show();
-
-                    if (base.options.fadeIn) background.stop().fadeTo(base.options.fadeInDuration, 1);
-                },
-                mouseout: function(){
-                    if (base.options.fadeOut) background.stop().fadeTo(base.options.fadeOutDuration, 0, function() { $(this).css('backgroundImage', '').hide() });
-                    else background.css('backgroundImage', '').hide();
-                }
-            });
-        };
-            
-        base.init();
-    };
-    
-    $.okhover.options = { 
-        fadeIn: false,
-        fadeOut: false,
-        fadeInDuration: 400,
-        fadeOutDuration: 400,
-        zIndex: null
-    };
-    
-    $.fn.okhover = function(options){
-        return this.each(function(){
-            (new $.okhover(this, options));            
-        });
-    };
-    
-})(jQuery);
+(function(b){b(function(){b("body").append('<div id="ok-bg"></div>');b("#ok-bg").css({width:"100%",height:"100%",background:"scroll 150% 150% repeat",zIndex:-1,position:"fixed",top:0,left:0})});b.okhover=function(d,e){var a=this;a.$el=b(d);a.el=d;a.$el.data("okhover",a);a.init=function(){a.options=b.extend({},b.okhover.options,e);a.build()};a.build=function(){if(b("#ok-bg").length==0)throw Error("Failed to attach the ok-bg div to the DOM");else a.start()};a.start=function(){var c=b("#ok-bg");a.options.fadeIn&&
+c.hide();a.options.zIndex&&c.css("zIndex",a.options.zIndex);a.$el.bind({mouseover:function(){b(this).mousemove(function(a){c.css("backgroundPosition",a.pageX+"px "+a.pageY+"px")});c.css("backgroundImage","url("+b(this).attr("data-okimage")+")").show();a.options.fadeIn&&c.stop().fadeTo(a.options.fadeInDuration,1)},mouseout:function(){a.options.fadeOut?c.stop().fadeTo(a.options.fadeOutDuration,0,function(){b(this).css("backgroundImage","").hide()}):c.css("backgroundImage","").hide()}})};a.init()};b.okhover.options=
+{fadeIn:!1,fadeOut:!1,fadeInDuration:400,fadeOutDuration:400,zIndex:null};b.fn.okhover=function(d){return this.each(function(){new b.okhover(this,d)})}})(jQuery);
 
 /**
  *
