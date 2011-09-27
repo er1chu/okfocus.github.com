@@ -1,5 +1,6 @@
 var POST_WIDTH = $(window).width(),
     BOTTOM_SHIM = $(window).height(),
+    POSTS_PER_ROW = 4,
     RIGHT_SHIM = 300,
     EASING = "easeOutExpo",
     TOPSHIM = 0,
@@ -10,15 +11,22 @@ var POST_WIDTH = $(window).width(),
 var repage = function () {
   var posts = find_posts();
   TOPSHIM = $("#logo").height() + 50;
-  var heights = [TOPSHIM, TOPSHIM, TOPSHIM, TOPSHIM];
+  var heights = [];
+  for (var i = 0; i < POSTS_PER_PAGE; i++) {
+    heights.push(TOPSHIM);
+  }
   var title_divs = [];
   for (idx in posts) {
-    var column = idx % 4;
+    var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
     var w = $("#"+post.id).width();
     var h = $("#"+post.id).height();
+
+    var post_shim = RIGHT_SHIM + (POST_WIDTH - w) / 2;
+
     var top_offset = heights[column];
-    var left_offset = POST_WIDTH * column + RIGHT_SHIM + (POST_WIDTH - w) / 2;
+    var left_offset = POST_WIDTH * column + post_shim;
+
     heights[column] += Math.max(BOTTOM_SHIM, h + 200)
 
     post.style.left = left_offset + "px";
@@ -38,6 +46,7 @@ var repage = function () {
   }
   document.getElementById("navz").innerHTML = title_divs.join("");
   document.getElementById("navz").style.display = "inline"
+  $("#canvas-handle").css({"width": POST_WIDTH * POSTS_PER_ROW });
   $("#canvas-handle").animate({opacity: 1}, 200)
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
