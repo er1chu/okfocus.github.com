@@ -48,56 +48,6 @@
                                              \|__| 
                             
                              HEY BICYCLE MADE 0UT 0F TEXT, D0NT FUCK WITH 0KF0CUS!
-
-
-
-
-        
-            XXXXXXXXXXXXXX          XXXXX 
-           XXXXXXXXXXXXXXXX       XXXXXXXXX 
-          XXXXXXXXXXXXXX  XX     XXXXXXXXXXX
-         XXXXXXXXXXXXXX    XX    XXXXXXXXXXX 
-        XXXXXXXXXXXXXX      XX    XXXXXXXXX  
-         X          X       X       XXXXX
-         X  XX  XX  X  XXX  X         X
-         X  XX  XX  X  XXX  X         X
-         X          X  XXX  X         X
-         XXXXXXXXXXXXXXXXXXXX         X
-
-
-                         
-                               _|_
-                              /   \
-                              |\   \
-                              | \   \
-                               \ \   \
-                                \ \   \
-                                 \ \ $ \
-                                  \ \ o \
-                                   \ \ k \
-                                    \ \ f \
-                                    |\ \ o \
-                                    | \ \ c \
-                                    | |\ \ u \
-                                    | | \ \ s \
-                                    \ |_|\ \ $ \
-                                     \  | \ \   \
-                                      \ |  \ \   \
-                                       \|   \ \  _\
-                                        |    \ \/  \
-                                        |     \ |  |
-                                        |     |\|__|
-                                        |     |  |
-                                        |     |  |
-                                        |     |  |
-                                        |     |  |
-                                         \    |  |
-                                          \   |  |
-                                           \  |  |
-                                            \ |  |
-                                             \|__| 
-                                             
-                            HEY STUPID H0USE MADE OUT 0F TEXT, DONT FUCK WITH 0KF0CUS!!!!
  
  
  
@@ -139,7 +89,7 @@
       body {background-image:url('assets/images/photocopy.png');background-position:bottom center;background-repeat:repeat; background-attachment:fixed;margin: 0px auto;background-color:white;}
       #main-column { z-index:0; position:relative; width:600px;padding-top:250px; margin:0px auto 300px; display:block; overflow:hidden }
       article { margin: 2000px 10px;padding-top:170px;padding-left:20px;padding-right:20px;}
-      #work, #us, #contact,#yeah { min-height:1000px;min-height: 800px;}
+      #work, #us, #contact,#labs { min-height:1000px;min-height: 800px;}
       #us { background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;text-align:center;}
       #baby img{max-height:160px;margin:10px;border:2px dashed #f2f2f2;padding:5px;background-image:url('assets/images/dither.gif');background-color:#ddd}
       #contact{text-align:center;background-image:url('assets/images/sq.png');background-position: left;background-repeat:repeat-y;}
@@ -194,6 +144,7 @@
       #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('assets/images/wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('assets/images/cat.jpeg'); position: fixed;z-index:0;} 
+      #bg.example { background-image: url('assets/images/okhover.png'); position: fixed;z-index:0;} 
       .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify; color:black; background-color:white; text-transform:uppercase; padding:0; padding-top:20px; }
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
       #title { text-align: justify;color:blue;font-family: Monaco, "Courier New", Courier, monospace; font-size: 30px; text-transform:uppercase;padding:4px;display:inline; backgorund:transparent!important}      
@@ -201,6 +152,8 @@
       #p a:hover { cursor: url(assets/images/pointer.png), pointer }
       .the-dash { background:none; color:black;margin-right:4px }
       .the-title { padding: 4px }
+      #labs img{float:left;}
+	  #labs span{float:left;font-size:14px;text-align:left;font-family: Comic Sans MS, cursive;font-weight:100;color:#333;display:block;padding:20px;background:rgba(255,255,255,0.5);}
     </style>
     <!--[if lt ie 9]>
        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
@@ -227,6 +180,7 @@
       <nav id='ls' class='center'>
         <a id='us-link' class="slash" href="#us">US</a>//
         <a id='work-link' class="slash" href="#work">WORK</a>//
+        <a id='work-link' class="slash" href="#labs">LABS</a>//
         <a id='contact-link' href="#contact">CONTACT</a>
       </nav>
     </header>
@@ -243,6 +197,7 @@
       // add a class on the fly  
       if (window.location.hash === "#work" || 
           window.location.hash === "#us" || 
+          window.location.hash === "#labs" || 
           window.location.hash === "#contact" ) {
           var hash = window.location.hash;
           var selector = hash.substring(1);     
@@ -254,6 +209,14 @@
       <section id="intro">
         <p class="center" id="about"><!--OKFocus is a full service digital agency--></p>
       </section>
+         <article id="labs">
+        <h3>We make free stuff for you!</h3>
+	   <span>  <img src="assets/images/okhover.png">
+	   OKHover is a jQuery plugin that makes it easy to reproduce <li class="comma" id="example"><a href="#"style="font-size:14px;font-family: Comic Sans MS, cursive;font-weight:100;">this tiled background effect on hover</a></li> it uses HTML5 data attributes and is designed to be simple yet highly customizable. 
+	   <a href="">Click here for more info</a>.
+	   
+	   </span>
+      </article>    
       <article id="work">
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
@@ -371,40 +334,7 @@
           ]);
       })(); 
     </script>
-    <!-- if you got this far, email frontdesk@okfoc.us because we want to work with you.. 
-    
-                               _|_
-                              /   \
-                              |\   \
-                              | \   \
-                               \ \   \
-                                \ \   \
-                                 \ \ $ \
-                                  \ \ o \
-                                   \ \ k \
-                                    \ \ f \
-                                    |\ \ o \
-                                    | \ \ c \
-                                    | |\ \ u \
-                                    | | \ \ s \
-                                    \ |_|\ \ $ \
-                                     \  | \ \   \
-                                      \ |  \ \   \
-                                       \|   \ \  _\
-                                        |    \ \/  \
-                                        |     \ |  |
-                                        |     |\|__|
-                                        |     |  |
-                                        |     |  |
-                                        |     |  |
-                                        |     |  |
-                                         \    |  |
-                                          \   |  |
-                                           \  |  |
-                                            \ |  |
-                                             \|__| 
-                                             
-                            HEY STUPID PERSON STILL READING THIS TEXT, DONT FUCK WITH 0KF0CUS!!!!-->
+    <!-- if you got this far, email frontdesk@okfoc.us because we want to work with you.. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script src="assets/javascripts/main.js"></script>
     <script type="text/javascript">
