@@ -17,8 +17,20 @@ ol, ul {
 }
 
 table {
+<<<<<<< HEAD
      border-collapse: collapse;
      border-spacing: 0pt;
+=======
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+p {
+  font-size: 20px;
+  line-height: 60px;
+  color: black;
+  font-weight: 100;
+  max-width: 600px;
+>>>>>>> 1fe8b64d54cbd04e0f8f206869c3db3eb865f4b0
 }
 
 
