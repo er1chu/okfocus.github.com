@@ -46,7 +46,7 @@ var repage = function () {
   }
   document.getElementById("navz").innerHTML = title_divs.join("");
   document.getElementById("navz").style.display = "inline"
-  $("#canvas-handle").css({"width": POST_WIDTH * POSTS_PER_ROW });
+  $("#canvas-handle").css({"width": Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5)) });
   $("#canvas-handle").animate({opacity: 1}, 200)
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
