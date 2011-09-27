@@ -171,8 +171,8 @@ select{ font-size:20px;}
 
 #canvas-handle {
   cursor: url(http://okfoc.us/assets/franc/handopen.gif), auto;
-  width: 15000px;
-  height: 15000px;
+  width: 8000px;
+  height: 20000px;
   position: absolute;
   top: 2000px;
   left: 200px;
