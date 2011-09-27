@@ -68,7 +68,18 @@ $(function(){
         lock: true,
         hash: true,
         duration: 400          
-    });          
+    });       
+       
+    $('#labs p').localScroll({
+        lock: true,
+        hash: true,
+        duration: 400          
+    }); 
+    
+    $("#demo-hover").click(function(e){
+    	e.preventDefault();
+    	$("#ok-bg").css('backgroundImage', '');
+    });
     
     var background = $('#bg'),
     hashes = [], 

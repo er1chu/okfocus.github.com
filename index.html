@@ -145,6 +145,8 @@
       #bg.vv { background-image: url('assets/images/village-voice.jpeg'); position: fixed;z-index:0;}
       #bg.more { background-image: url('assets/images/wow.gif'); position: fixed;z-index:0;} 
       #bg.more2 { background-image: url('assets/images/cat.jpeg'); position: fixed;z-index:0;} 
+      #bg.demo1 { background-image: url('http://dumpfm.s3.amazonaws.com/images/20101223/1293127325595-dumpfm-smokecrack-1280187644055-dumpfm-noisia-girlafraid-green-skeleton-walk-boring-broken.gif'); position: fixed;z-index:0;} 
+      #bg.demo2 { background-image: url('http://dumpfm.s3.amazonaws.com/images/20101220/1292825670304-dumpfm-HowIQuitCrak-avatarsucks.gif'); position: fixed;z-index:0;} 
       #bg.example { background-image: url('assets/images/okhover.png'); position: fixed;z-index:0;} 
       .project-description { width:100%; height:100%; margin-top:0px;font-size: 120px; overflow:hidden; text-align:justify; color:black; background-color:white; text-transform:uppercase; padding:0; padding-top:20px; }
       .description-container { width:100%; height:100%; display:block;margin:0 auto; background:white;padding:0 }
@@ -159,17 +161,17 @@
       #labs p img { margin-right: 10px; margin-top:3px; }
       #labs p{font-size:14px;  font-family: Comic Sans MS, cursive; font-weight:100; color:#333;  padding:20px 48px 20px 20px; background:rgb(255,255,255); background:rgba(255,255,255,0.5); margin-left:20px;}
 	  #okhoverrapper{text-align:center;max-width:500px;}
-	  #okhoverrapper a {border: medium none;color: blue;font-family: fantasy;font-size: 35px;}
+	  #okhoverrapper a {border: medium none;color: blue;font-family: fantasy;font-size: 18px;}
       #okhoverrapper a:visited {color: blue;}
       #okhoverrapper hr {width: 20%;}
       #okhoverrapper img {border: medium none;max-height: 150px;max-width: 200px;}
       #okhoverrapper{width:800px;margin:0 auto;}
-      #okhoverrapper pre{text-align:left;background:lightyellow;width:450px;padding:10px;margin:20px;}
+      #okhoverrapper pre{text-align:left;background:lightyellow;width:450px;padding:10px;margin:20px;font-size:15px;}
       #okhoverrapper about{font-size:12px;text-align:justify;font-family: Comic Sans MS, cursive;font-weight:100;color:#333;max-width:440px;display:block;padding:20px;background:rgba(255,255,255,0.5)}
       #okhoverrapper about a{font-size:12px;font-family:Comic Sans MS, cursive;font-weight:bold;}
       #okhoverrapper span p{text-transform:uppercase;font-size:14px;letter-spacing:6px;text-align:center;font-style:italic;font-family: Comic Sans MS, cursive;font-weight:100;color:#333;-webkit-transform: rotate(-1deg);-moz-transform: rotate(-1deg);}
-      #doves{position:absolute;margin-top:-160px;width:600px;margin-left:0px;}
-      #doves img{margin-right:100px;}
+      #doves{position:absolute;margin-top:-160px;width:600px;margin-left:25px;}
+      #doves img{margin-right:150px;}
     </style>
     <!--[if lt ie 9]>
        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
@@ -228,7 +230,7 @@
       </section>
          <article id="labs">
         <h3>We make free stuff for you!</h3>
-          <p><img src="assets/images/okhover.png">OKHover is a jQuery plugin that makes it easy to reproduce <a href="#" id="demo-hover" data-okimage="assets/images/okhover.png" style="font-size:14px;font-family: Comic Sans MS, cursive;font-weight:100;">this tiled background effect on hover</a></li> it uses HTML5 data attributes and is designed to be simple yet highly customizable.</p>
+          <p><a href="#okhover"class="okhoverdemo"><img src="assets/images/okhover.png"></a>OKHover is a jQuery plugin that makes it easy to reproduce <a href="#okhover"class="okhoverdemo" id="demo-hover" data-okimage="assets/images/okhover.png" style="font-size:14px;font-family: Comic Sans MS, cursive;font-weight:100;">this tiled background effect on hover</a> it uses HTML5 data attributes and is designed to be simple yet highly customizable. </p>
       </article>    
       <article id="work">
         <h3>Stuff We've Made For Ourselves!</h3>
@@ -282,7 +284,7 @@
           <li id="more2" data-description="contact <a href='mailto:frontdesk@okfoc.us?subject=OKFocus inquiry..' target='_blank'>frontdesk@okfoc.us</a> to talk to us!" ><a href="#" >AND MORE!</a></li>
         </ul>
       </article>
-        <article id="okhover">
+<article id="okhover">
 <div id="okhoverrapper">
 <div id="doves"><img src="http://www.okfoc.us/assets/images/dove1.gif"><img src="http://www.okfoc.us/assets/images/dove2.gif"></div>
 <hr>
@@ -305,14 +307,14 @@ The basic options are as follow
 
 </span>
 <!-- DEMO WITH BACKGROUND SKELETON IMAGE -->
-  <div data-okimage='http://dumpfm.s3.amazonaws.com/images/20101223/1293127325595-dumpfm-smokecrack-1280187644055-dumpfm-noisia-girlafraid-green-skeleton-walk-boring-broken.gif'>
+  <li id="demo1">
     <a href='#'>I'm a link and this is a demo!</a>
-  </div><hr>
+  </li><hr>
 <!-- END DEMO 1 -->  
 <!-- DEMO WITH AVATAR BACKGROUND IMAGE -->
-    <div data-okimage='http://dumpfm.s3.amazonaws.com/images/20101220/1292825670304-dumpfm-HowIQuitCrak-avatarsucks.gif'>
+    <li id="demo2">
     <a href='http://en.wikipedia.org/wiki/Avatar_(2009_film)'target="_blank">P.S. - AVATAR was a cool movie.</a>
-  </div>
+  </li>
 <!-- END DEMO 2 --> 
 <a href="https://github.com/okfocus/okhover/zipball/master"><img src="https://s3.amazonaws.com/dandd/a9b870a289d70e4f34265f50690b30ce5aa3b963.png"style="margin:20px"></a>
 </div>
