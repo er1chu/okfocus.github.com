@@ -128,7 +128,7 @@ var get_title_from_caption = function (post, offset) {
 var images_loaded = function () {
   document.getElementById('LB0').style.display = 'none';
   repage();
-  inject_photoset_css();
+  // inject_photoset_css();
 }
 
 var images_loading_bar = function () {
