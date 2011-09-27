@@ -33,7 +33,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-p{font-size:20px;line-height:60px;color:black;text-indent:10px;font-weight:100;}
+p {
+  font-size: 20px;
+  line-height: 60px;
+  color: black;
+  text-indent: 10px; 
+  font-weight: 100;
+}
 
 caption, th, td {
   text-align: left;
@@ -50,7 +56,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 }
 
 a img {
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+  cursor: url(http://okfoc.us/assets/franc/finger.png), auto;
   border: none;
 }
 
@@ -61,10 +67,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 html, body {
   width: 100%;
   height: 100%;
+  // fix a very strange drag issue in webkit
+  position: fixed;
+  top: 0;
+  left: 0;
 }
+/*
 #tumblr_controls{display:none !important;visibility:hidden !important;}
 #tumblr_controls iframe{display:none !important;}
-
+*/
 .post a{font-size:170%;}
 
 body {
@@ -76,21 +87,21 @@ body {
   margin: 0;
   padding: 0;
   z-index: 0;
-  background-image: url("http://asdf.us/okfocus/ff/bg.jpg");
+  background-image: url("http://okfoc.us/assets/franc/bg.jpg");
   background-position: top left;
   background-attachment: fixed;
 }
 
 a {
   font-size: 70%;
-  text-decoration: none;cursor:pointer;
+  text-decoration: none;
+  cursor: pointer;
   letter-spacing: 4px;
   color: #333;
-
 }
 
 a:hover {
-  font-size: 70%;
+  // font-size: 70%;
   color: black;
   text-decoration: none;
 cursor:pointer;
@@ -98,7 +109,7 @@ cursor:pointer;
 
 a:visited {
   color: #333;
-  cursor: url(http://asdf.us/okfocus/ff/finger.png), auto;
+  cursor: url(http://okfoc.us/assets/franc/finger.png), auto;
 }
 
 #fblike {
@@ -115,11 +126,14 @@ a:visited {
   position: fixed;
   color: #333;
 }
-
+select{ font-size:20px; background: rgba(255,255,255,0.9);}
 #navz {
-  cursor: pointer;font-size:160%;margin-left:20px;margin-top:5px;
+  cursor: pointer;
+  margin-left:5px;
+  margin-top:5px;
   cursor: hand;
-  display: none;text-transform:uppercase;
+  display: none;
+  text-transform:uppercase;
 }
 #navz option {
   cursor: pointer;
@@ -127,13 +141,11 @@ a:visited {
 }
 
 #logo {
-  top: -30px;
-  left: -30px;
-  width:150%;
+  top: -25px;
+  left: -20px;
   position: fixed;
   z-index:-1;
 }
-
 #mark {
   display: inline-block;
   letter-spacing: 7px;
@@ -149,15 +161,15 @@ a:visited {
 }
 
 #nav {
-  cursor: url(http://asdf.us/okfocus/ff/handopen.gif), auto;
+  cursor: url(http://okfoc.us/assets/franc/handopen.gif), auto;
   position: absolute;text-transform:uppercase;
   top: 0;
   left: 0;
 }
 
 #canvas-handle {
-  cursor: url(http://asdf.us/okfocus/ff/handopen.gif), auto;
-  width: 20000px;
+  cursor: url(http://okfoc.us/assets/franc/handopen.gif), auto;
+  width: 8000px;
   height: 20000px;
   position: absolute;
   top: 2000px;
@@ -167,7 +179,7 @@ a:visited {
   margin-top:-50px;
 }
 #canvas-handle:active, #canvas-handle.dragging {
-  cursor: url(http://asdf.us/okfocus/ff/handgrab.gif), auto;
+  cursor: url(http://okfoc.us/assets/franc/handgrab.gif), auto;
 }
 
 div.title {
@@ -184,21 +196,12 @@ div.copy p span {
 #okfocus {
   position: fixed;
   bottom: 20px;
-cursor:pointer;
+  cursor:pointer;
   right: 15px;
   z-index: 420;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  border-right: 1px solid transparent;
-  border-left: 1px solid transparent;
-  border-top: 1px solid transparent;
 }
 #okfocus:hover {
-  padding-top: 3px;
-  border-top: 1px solid #fff;
-  border-left: 1px solid #f8f8f8;
-  border-right: 1px solid #bbb;
-  border-bottom: 2px solid #666;
 }
 #okfocus a:hover {
   background: transparent;cursor:pointer;
@@ -211,3 +214,34 @@ cursor:pointer;
   border: 0;
 }
 
+#social {
+  position: fixed;
+  top: 50px;width:120px;
+  right: 15px;
+}
+.fb-like {
+  position: relative;float:right;
+  top: -7px;margin:5px;
+}
+.twitter-share-button {
+  position: relative;float:right;
+  top: -3px;margin:5px;
+}
+
+.photoset .photoset_row {
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.photoset .photoset_row:first-child {
+  margin-top: 0;
+}
+.photoset .photoset_row .photoset_photo {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+.photoset .photoset_row .photoset_photo:first-child {
+  margin-left: 0 !important;
+}
