@@ -236,6 +236,8 @@ div.copy p span {
   position: relative;
 }
 
+.dontshow{visibility:hidden;}
+
 .photoset .photoset_row {
   margin-top: 10px;
   overflow: hidden;
