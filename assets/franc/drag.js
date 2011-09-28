@@ -3,25 +3,43 @@ var POST_WIDTH = $(window).width(),
     POSTS_PER_ROW = 4,
     RIGHT_SHIM = 300,
     EASING = "easeOutExpo",
+    SELECT_HEADING = "PROJECTS",
     TOPSHIM = 0,
+    wrapper_id = "#canvas-handle",
     first_id = false,
     pages_by_id = {},
     ids_by_hash = {},
-    SELECT_HEADING = "PROJECTS";
+    COLUMN_HEIGHTS = [],
+    PAGE = 1,
+    loading_div = null,
+    finished = true;
 
 var title_option = function (id, title) {
-    return "<option id='" + id + "'>" + title + "</option>";
+  return "<option id='" + id + "'>" + title + "</option>";
 }
 
-var repage = function () {
-  var posts = find_posts();
-  TOPSHIM = $("#logo").height() + 50;
-  var heights = [];
-  for (var i = 0; i < POSTS_PER_ROW; i++) {
-    heights.push(TOPSHIM);
+var load_next_page = function () {
+  if (finished) {
+    console.log("DONE LOADING ...");
+    return;
   }
-  var title_select = [];
-  title_select.push(title_option("", SELECT_HEADING));
+  PAGE += 1;
+  console.log("LOADING NEXT PAGE ...");
+  loading_div = $("<div/>");
+  loading_div.load("/page/" + PAGE + " " + wrapper_id, null, load_callback);
+}
+
+var load_callback = function () {
+  var posts = find_posts(loading_div);
+  if (posts.length)
+    repage(posts);
+}
+
+var repage = function (posts) {
+  TOPSHIM = $("#logo").height() + 50;
+  for (var i = 0; i < POSTS_PER_ROW; i++) {
+    COLUMN_HEIGHTS.push(TOPSHIM);
+  }
   for (idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
@@ -30,17 +48,17 @@ var repage = function () {
 
     var post_shim = RIGHT_SHIM + (POST_WIDTH - w) / 2;
 
-    var top_offset = heights[column];
+    var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
 
-    heights[column] += Math.max(BOTTOM_SHIM, h + 200)
+    COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
 
     post.style.left = left_offset + "px";
     post.style.top = top_offset + "px";
 
     var title = get_title_from_caption(post, idx);
     var title_id = "title_" + post.id;
-    title_select.push(title_option(title_id, title));
+    $("navz").append(title_option(title_id, title));
 
     var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/_/g, "-").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
@@ -52,14 +70,16 @@ var repage = function () {
   var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5))
   var total_height = 0;
   for (var i = 0; i < POSTS_PER_ROW; i++)
-    total_height = Math.max(total_height, heights[i]);
-  document.getElementById("navz").innerHTML = title_select.join("");
-  document.getElementById("navz").style.display = "inline";
-  $("#canvas-handle").css({"width": total_width, "height": total_height });
-  $("#canvas-handle").animate({opacity: 1}, 200)
+    total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
+  $(wrapper_id).css({"width": total_width, "height": total_height });
+  $(wrapper_id).animate({opacity: 1}, 200)
+  $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
   go_home()
+  $("#navz").prepend(title_option("heading", SELECT_HEADING));
+  $("#navz option:selected").removeAttr("selected");
+  $("#heading").attr("selected", "selected");
 }
 
 var go_home = function () {
@@ -82,7 +102,7 @@ var go = function (id) {
   x = it[0];
   y = it[1];
   var easeType = EASING;
-  $('#canvas-handle').animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
+  $(wrapper_id).animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
   update_hash(-x+400, -y+TOPSHIM);
 }
 
@@ -107,8 +127,19 @@ var update_hash = function (x, y) {
   }
 }
 
-var find_posts = function () {
+var post_index = 0;
+var find_posts = function (container) {
   var posts = [];
+  if (! container)
+    container = $(wrapper_id);
+  container.children().each(function () {
+    if (this.className === "post") {
+      this.id = "post_" + i;
+      posts.push(this);
+    }
+    post_index += 1;
+  });
+/*
   var iz = document.getElementsByTagName("div");
   for (var i = 0, len = iz.length; i < len; i++) {
     if (iz[i].className === "post") {
@@ -116,6 +147,7 @@ var find_posts = function () {
       posts.push(iz[i]);
     }
   }
+*/
   return posts;
 }
 
@@ -146,7 +178,8 @@ var get_title_from_caption = function (post, offset) {
 
 var images_loaded = function () {
   document.getElementById('LB0').style.display = 'none';
-  repage();
+  var posts = find_posts();
+  repage(posts);
   // inject_photoset_css();
 }
 
@@ -169,14 +202,14 @@ $(document).ready(function () {
 
   // $('img').bind("onmousedown", function (e) { if (e) e.preventDefault() });
 
-  $('#canvas-handle').draggable({
+  $(wrapper_id).draggable({
     start: function(e, ui) {
-      $("#canvas-handle").addClass("dragging");
+      $(wrapper_id).addClass("dragging");
       dragMomentum.start(this.id, e.clientX, e.clientY, e.timeStamp);
       dragging = true;
     },
     stop: function(e, ui) {
-      $("#canvas-handle").removeClass("dragging");
+      $(wrapper_id).removeClass("dragging");
       dragMomentum.end(this.id, e.clientX, e.clientY, e.timeStamp);
       setTimeout('dragging = false', 50);
     }  
@@ -253,6 +286,9 @@ var dragMomentum = new function () {
     $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
 
     update_hash(Xc, Yc);
+
+    if (Yc === ymin)
+      load_next_page();
   };
 };
 
