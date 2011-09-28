@@ -134,7 +134,7 @@ var find_posts = function (container) {
     container = $(wrapper_id);
   container.children().each(function () {
     if (this.className === "post") {
-      this.id = "post_" + i;
+      this.id = "post_" + post_index;
       posts.push(this);
     }
     post_index += 1;
