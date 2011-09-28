@@ -20,11 +20,11 @@ var title_option = function (id, title) {
 
 var load_next_page = function () {
   if (finished) {
-    console.log("DONE LOADING ...");
+    // console.log("DONE LOADING ...");
     return;
   }
   PAGE += 1;
-  console.log("LOADING NEXT PAGE ...");
+  // console.log("LOADING NEXT PAGE ...");
   loading_div = $("<div/>");
   loading_div.load("/page/" + PAGE + " " + wrapper_id, null, load_callback);
 }
@@ -58,7 +58,7 @@ var repage = function (posts) {
 
     var title = get_title_from_caption(post, idx);
     var title_id = "title_" + post.id;
-    $("navz").append(title_option(title_id, title));
+    $("#navz").append(title_option(title_id, title));
 
     var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/_/g, "-").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
