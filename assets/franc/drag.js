@@ -6,7 +6,12 @@ var POST_WIDTH = $(window).width(),
     TOPSHIM = 0,
     first_id = false,
     pages_by_id = {},
-    ids_by_hash = {};
+    ids_by_hash = {},
+    SELECT_HEADING = "PROJECTS";
+
+var title_option = function (id, title) {
+    return "<option id='" + id + "'>" + title + "</option>";
+}
 
 var repage = function () {
   var posts = find_posts();
@@ -15,7 +20,8 @@ var repage = function () {
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     heights.push(TOPSHIM);
   }
-  var title_divs = [];
+  var title_select = [];
+  title_select.push(title_option("", SELECT_HEADING));
   for (idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
@@ -34,8 +40,7 @@ var repage = function () {
 
     var title = get_title_from_caption(post, idx);
     var title_id = "title_" + post.id;
-    var title_div = "<option id='" + title_id + "'>" + title + "</option>";
-    title_divs.push(title_div);
+    title_select.push(title_option(title_id, title));
 
     var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/_/g, "-").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
@@ -48,7 +53,7 @@ var repage = function () {
   var total_height = 0;
   for (var i = 0; i < POSTS_PER_ROW; i++)
     total_height = Math.max(total_height, heights[i]);
-  document.getElementById("navz").innerHTML = title_divs.join("");
+  document.getElementById("navz").innerHTML = title_select.join("");
   document.getElementById("navz").style.display = "inline";
   $("#canvas-handle").css({"width": total_width, "height": total_height });
   $("#canvas-handle").animate({opacity: 1}, 200)
@@ -67,8 +72,9 @@ var go_home = function () {
 }
 
 var pick = function () {
-  var id = $("select option:selected")[0].id
-  go(id);
+  var id = $("select option:selected")[0].id;
+  if (id)
+    go(id);
 }
 
 var go = function (id) {
