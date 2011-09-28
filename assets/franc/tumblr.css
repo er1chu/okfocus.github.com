@@ -98,13 +98,6 @@ a:visited {
   cursor: url("http://okfoc.us/assets/franc/finger.png"), auto;
 }
 
-#fblike {
-  position: fixed;
-  right: 0px;
-  top: 0pt;
-  z-index: 2;
-}
-
 #linx {
   color: #333333;
   left: 10px;
@@ -206,13 +199,10 @@ div.copy p span {
   z-index: 420;
 }
 
-#okfocus:hover {
-    
-}
 
 #okfocus a:hover {
   background: none repeat scroll 0% 0% transparent;
-  cursor: pointer;
+  cursor: pointer;   box-shadow:2px 2px 1px #000000;
 }
 
 #okfocus a {
@@ -229,23 +219,21 @@ div.copy p span {
 
 #social {
   position: fixed;
-  right: 15px;
+  right: 0px;
   top: 50px;
   width: 120px;
 }
 
 .fb-like {
   float: right;
-  margin: 5px;
+  margin: 0px;right:-6px;
   position: relative;
   top: -7px;
 }
 
 .twitter-share-button {
-  float: right;
-  margin: 5px;
+  float: right;right:5px;
   position: relative;
-  top: -3px;
 }
 
 .photoset .photoset_row {
