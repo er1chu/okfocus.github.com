@@ -40,7 +40,7 @@ var load_callback = function () {
     for (var i = 0; i < posts.length; i++)
       fragment.appendChild( posts[i] );
     document.getElementById("canvas-handle").appendChild( fragment );
-    $('#'+elemId).stop()
+    $('#canvas-handle').stop()
     }
   else
     finished = true;
