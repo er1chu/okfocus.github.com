@@ -2,7 +2,7 @@ var POST_WIDTH = $(window).width(),
     BOTTOM_SHIM = $(window).height(),
     LOAD_MARGIN = 500,
     POSTS_PER_ROW = 4,
-    RIGHT_SHIM = 300,
+    LEFT_SHIM = 300,
     EASING = "easeOutExpo",
     // SELECT_HEADING = "PROJECTS",
     TOPSHIM = 0,
@@ -47,9 +47,7 @@ var load_callback = function () {
     document.getElementById("canvas-handle").appendChild( fragment );
     }
   else
-    {
     finished = true;
-    }
 }
 
 var repage_init = function () {
@@ -74,7 +72,7 @@ var repage = function (posts) {
 
     var w = $("#"+post.id).width();
     var h = $("#"+post.id).height();
-    var post_shim = RIGHT_SHIM + (POST_WIDTH - w) / 2;
+    var post_shim = LEFT_SHIM //  + (POST_WIDTH - w) / 2;
 
     var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
