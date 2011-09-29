@@ -14,7 +14,8 @@ var POST_WIDTH = $(window).width(),
     PAGE = 1,
     loading_div = null,
     loaded_sidebar = false,
-    finished = false;
+    finished = false,
+    index = 1;
 
 var title_option = function (id, title) {
   if (title === "-")
@@ -52,11 +53,11 @@ var repage_init = function () {
   }
 }
 var repage = function (posts) {
-  for (idx in posts) {
+  for (var idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
 
-    var title = get_title_from_caption(post, idx);
+    var title = get_title_from_caption(post, index);
     var title_id = "title_" + post.id;
     $("#navz").append(title_option(title_id, title));
 
@@ -83,6 +84,7 @@ var repage = function (posts) {
 
     if (! first_id)
       first_id = title_id;
+    index += 1;
   }
   var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5))
   var total_height = 0;
@@ -173,7 +175,7 @@ var find_posts = function (container) {
   return posts;
 }
 
-var get_title_from_caption = function (post, offset) {
+var get_title_from_caption = function (post, index) {
   var children = post.childNodes;
   var title = false;
   for (i in children) {
@@ -194,7 +196,7 @@ var get_title_from_caption = function (post, offset) {
     }
   }
   if (! title)
-    title = "Post #" + idx;
+    title = "Post #" + index;
   return title;
 }
 
