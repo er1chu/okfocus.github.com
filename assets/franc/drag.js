@@ -78,8 +78,6 @@ var repage = function (posts) {
   $("#mark").bind("click", go_home);
   go_home()
   // $("#navz").prepend(title_option("heading", SELECT_HEADING));
-  $("#navz option:selected").removeAttr("selected");
-  $("#heading").attr("selected", "selected");
 }
 
 var go_home = function () {
