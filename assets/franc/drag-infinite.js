@@ -305,15 +305,18 @@ var dragMomentum = new function () {
     Xc = clamp(Xc, xmin, 0)
     Yc = clamp(Yc, ymin, 0)
 
+    if (Yc < ymin + 300)
+      {
+      load_next_page();
+      Yc = ymin;
+      }
+
     var newLocX = Xc + 'px';
     var newLocY = Yc + 'px';
 
     $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
 
     update_hash(Xc, Yc);
-
-    if (Yc < ymin + 300)
-      load_next_page();
   };
 };
 
