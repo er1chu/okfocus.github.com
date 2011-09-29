@@ -92,11 +92,9 @@ var repage = function (posts) {
     total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
   $(wrapper_id).css({"width": total_width, "height": total_height})
   $(wrapper_id).animate({"opacity": 1 }, 200);
-  $(wrapper_id).animate({opacity: 1}, 200)
   $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
-  go_home()
   // $("#navz").prepend(title_option("heading", SELECT_HEADING));
 }
 
@@ -206,6 +204,7 @@ var images_loaded = function () {
   var posts = find_posts();
   repage_init();
   repage(posts);
+  go_home()
   // inject_photoset_css();
 }
 
@@ -313,12 +312,10 @@ var dragMomentum = new function () {
       load_next_page();
       Yc = ymin;
       }
-    else
-      {
-      var newLocX = Xc + 'px';
-      var newLocY = Yc + 'px';
-      $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
-      }
+
+    var newLocX = Xc + 'px';
+    var newLocY = Yc + 'px';
+    $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
   };
 };
 
