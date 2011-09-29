@@ -61,11 +61,9 @@ html, body {
   width: 100%;
 }
 
-/*
 .post a {
   font-size: 170%;
 }
-*/
 
 body {
   background-attachment: fixed;
@@ -84,7 +82,7 @@ body {
 a {
   color: #333333;
   cursor: pointer;
-  font-size: 70%;
+  // font-size: 70%;
   letter-spacing: 4px;
   text-decoration: none;
 }
