@@ -15,6 +15,8 @@ var POST_WIDTH = $(window).width(),
     finished = true;
 
 var title_option = function (id, title) {
+  if (title === "-")
+    return "<option id='none'>-</option>";
   return "<option id='" + id + "'>" + title + "</option>";
 }
 
@@ -43,9 +45,18 @@ var repage = function (posts) {
   for (idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
+
+    var title = get_title_from_caption(post, idx);
+    var title_id = "title_" + post.id;
+    $("#navz").append(title_option(title_id, title));
+
+    if (title === "-") {
+      $(post).hide();
+      continue;
+    }
+
     var w = $("#"+post.id).width();
     var h = $("#"+post.id).height();
-
     var post_shim = RIGHT_SHIM + (POST_WIDTH - w) / 2;
 
     var top_offset = COLUMN_HEIGHTS[column];
@@ -55,10 +66,6 @@ var repage = function (posts) {
 
     post.style.left = left_offset + "px";
     post.style.top = top_offset + "px";
-
-    var title = get_title_from_caption(post, idx);
-    var title_id = "title_" + post.id;
-    $("#navz").append(title_option(title_id, title));
 
     var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/_/g, "-").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
