@@ -49,10 +49,13 @@ var load_callback = function () {
 var repage_init = function () {
   TOPSHIM = $("#logo").height() + 50;
   for (var i = 0; i < POSTS_PER_ROW; i++) {
-    COLUMN_HEIGHTS.push(TOPSHIM);
+    COLUMN_HEIGHTS.push(0);
   }
 }
 var repage = function (posts) {
+  for (var i = 0; i < POSTS_PER_ROW; i++) {
+    COLUMN_HEIGHTS[i] += TOPSHIM;
+  }
   for (var idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
