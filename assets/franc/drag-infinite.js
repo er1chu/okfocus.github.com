@@ -1,6 +1,5 @@
 var POST_WIDTH = $(window).width(),
     BOTTOM_SHIM = $(window).height(),
-    LOAD_MARGIN = 500,
     POSTS_PER_ROW = 4,
     LEFT_SHIM = ($(window).width() - 600) / 2,
     EASING = "easeOutExpo",
@@ -312,7 +311,7 @@ var dragMomentum = new function () {
 
     update_hash(Xc, Yc);
 
-    if (Yc < ymin + LOAD_MARGIN)
+    if (Yc < -el.height())
       load_next_page();
   };
 };
