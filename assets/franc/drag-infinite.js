@@ -310,8 +310,7 @@ var dragMomentum = new function () {
 
     update_hash(Xc, Yc);
 
-    console.log(Yc, ymin, LOAD_MARGIN);
-    if (Yc > ymin + LOAD_MARGIN)
+    if (Yc < ymin + LOAD_MARGIN)
       load_next_page();
   };
 };
