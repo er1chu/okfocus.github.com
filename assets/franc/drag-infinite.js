@@ -39,12 +39,11 @@ var load_callback = function () {
   console.log("GOT " + posts.length + " POSTS");
   if (posts.length)
     {
-    var div = document.getElementsByTagName("canvas-handle");
-    repage(posts);
     var fragment = document.createDocumentFragment();
-    for (var i = 0; i < elems.length; i++)
-      fragment.appendChild( elems[i] );
-    div.appendChild( fragment );
+    repage(posts);
+    for (var i = 0; i < posts.length; i++)
+      fragment.appendChild( posts[i] );
+    document.getElementsByTagName("canvas-handle").appendChild( fragment );
     }
   else
     {
