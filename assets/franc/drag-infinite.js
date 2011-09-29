@@ -28,7 +28,7 @@ var load_next_page = function () {
   PAGE += 1;
   console.log("LOADING NEXT PAGE ...");
   loading_div = $("<div/>");
-  loading_div.load("/page/" + PAGE + " " + wrapper_id, null, load_callback);
+  loading_div.load("/page/" + PAGE + " .post", null, load_callback);
 }
 
 var load_callback = function () {
