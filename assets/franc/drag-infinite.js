@@ -311,7 +311,7 @@ var dragMomentum = new function () {
 
     update_hash(Xc, Yc);
 
-    if (Yc < -el.height())
+    if (Yc < ymin + 300)
       load_next_page();
   };
 };
