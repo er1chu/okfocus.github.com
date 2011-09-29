@@ -2,3 +2,7 @@
 v1
 .DS_Store
 *.orig
+.sass-cache/
+.#*
+*.swp
+
