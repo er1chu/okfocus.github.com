@@ -80,7 +80,7 @@ var repage = function (posts) {
 
     post.style.left = left_offset + "px";
     post.style.top = top_offset + "px";
-    post.style.display = "none"
+    post.style.opacity = 0.0
 
     var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/_/g, "-").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
@@ -96,7 +96,7 @@ var repage = function (posts) {
     total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
   $(wrapper_id).css({"width": total_width, "height": total_height})
   $(wrapper_id).animate({"opacity": 1 }, 200);
-  $(".post").fadeIn(500);
+  $(".post").animate({"opacity": 1}, 500);
   $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
