@@ -1,5 +1,6 @@
 var POST_WIDTH = $(window).width(),
     BOTTOM_SHIM = $(window).height(),
+    LOAD_MARGIN = 500,
     POSTS_PER_ROW = 4,
     RIGHT_SHIM = 300,
     EASING = "easeOutExpo",
@@ -43,7 +44,7 @@ var load_callback = function () {
     repage(posts);
     for (var i = 0; i < posts.length; i++)
       fragment.appendChild( posts[i] );
-    document.getElementsByTagName("canvas-handle").appendChild( fragment );
+    document.getElementById("canvas-handle").appendChild( fragment );
     }
   else
     {
@@ -316,7 +317,7 @@ var dragMomentum = new function () {
 
     update_hash(Xc, Yc);
 
-    if (Yc === ymin)
+    if (Yc > ymin - LOAD_MARGIN)
       load_next_page();
   };
 };
