@@ -158,7 +158,7 @@ var find_posts = function (container) {
     if (this.id === "sidebar")
       {
       if (loaded_sidebar)
-        continue;
+        return;
       loaded_sidebar = true;
       }
 
