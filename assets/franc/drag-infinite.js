@@ -4,7 +4,7 @@ var POST_WIDTH = $(window).width(),
     LEFT_SHIM = 100 + ($(window).width() - 1000) / 2,
     EASING = "easeOutExpo",
     // SELECT_HEADING = "PROJECTS",
-    TOPSHIM = 0,
+    TOP_SHIM = 0,
     wrapper_id = "#canvas-handle",
     first_id = false,
     pages_by_id = {},
@@ -48,15 +48,12 @@ var load_callback = function () {
 }
 
 var repage_init = function () {
-  TOPSHIM = $("#logo").height() + 50;
+  TOP_SHIM = $("#logo").height() + 50;
   for (var i = 0; i < POSTS_PER_ROW; i++) {
-    COLUMN_HEIGHTS.push(0);
+    COLUMN_HEIGHTS.push(TOP_SHIM);
   }
 }
 var repage = function (posts) {
-  for (var i = 0; i < POSTS_PER_ROW; i++) {
-    COLUMN_HEIGHTS[i] += TOPSHIM;
-  }
   for (var idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
