@@ -88,7 +88,7 @@ var repage = function (posts) {
   var total_height = 0;
   for (var i = 0; i < POSTS_PER_ROW; i++)
     total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
-  $(wrapper_id).css({"width": total_width, "height": total_height });
+  $(wrapper_id).animate({"width": total_width, "height": total_height, "opacity": 1 }, 200);
   $(wrapper_id).animate({opacity: 1}, 200)
   $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
