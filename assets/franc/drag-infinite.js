@@ -12,6 +12,7 @@ var POST_WIDTH = $(window).width(),
     COLUMN_HEIGHTS = [],
     PAGE = 1,
     loading_div = null,
+    loaded_sidebar = false,
     finished = false;
 
 var title_option = function (id, title) {
@@ -28,7 +29,7 @@ var load_next_page = function () {
   PAGE += 1;
   console.log("LOADING NEXT PAGE ...");
   loading_div = $("<div/>");
-  loading_div.load("/page/" + PAGE + " .post", null, load_callback);
+  $(loading_div).load("/page/" + PAGE + " .post", null, load_callback);
 }
 
 var load_callback = function () {
@@ -37,7 +38,18 @@ var load_callback = function () {
   var posts = find_posts(loading_div);
   console.log("GOT " + posts.length + " POSTS");
   if (posts.length)
+    {
+    var div = document.getElementsByTagName("canvas-handle");
     repage(posts);
+    var fragment = document.createDocumentFragment();
+    for (var i = 0; i < elems.length; i++)
+      fragment.appendChild( elems[i] );
+    div.appendChild( fragment );
+    }
+  else
+    {
+    finished = true;
+    }
 }
 
 var repage_init = function () {
@@ -143,6 +155,13 @@ var find_posts = function (container) {
   if (! container)
     container = $(wrapper_id);
   container.children().each(function () {
+    if (this.id === "sidebar")
+      {
+      if (loaded_sidebar)
+        continue;
+      loaded_sidebar = true;
+      }
+
     if (this.className === "post") {
       this.id = "post_" + post_index;
       posts.push(this);
