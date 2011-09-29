@@ -61,9 +61,11 @@ html, body {
   width: 100%;
 }
 
+/*
 .post a {
   font-size: 170%;
 }
+*/
 
 body {
   background-attachment: fixed;
