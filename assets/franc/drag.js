@@ -3,7 +3,7 @@ var POST_WIDTH = $(window).width(),
     POSTS_PER_ROW = 4,
     RIGHT_SHIM = 300,
     EASING = "easeOutExpo",
-    SELECT_HEADING = "PROJECTS",
+    // SELECT_HEADING = "PROJECTS",
     TOPSHIM = 0,
     wrapper_id = "#canvas-handle",
     first_id = false,
@@ -77,7 +77,7 @@ var repage = function (posts) {
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
   go_home()
-  $("#navz").prepend(title_option("heading", SELECT_HEADING));
+  // $("#navz").prepend(title_option("heading", SELECT_HEADING));
   $("#navz option:selected").removeAttr("selected");
   $("#heading").attr("selected", "selected");
 }
