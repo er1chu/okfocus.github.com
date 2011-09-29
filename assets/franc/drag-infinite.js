@@ -90,7 +90,8 @@ var repage = function (posts) {
   var total_height = 0;
   for (var i = 0; i < POSTS_PER_ROW; i++)
     total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
-  $(wrapper_id).animate({"width": total_width, "height": total_height, "opacity": 1 }, 200);
+  $(wrapper_id).css({"width": total_width, "height": total_height})
+  $(wrapper_id).animate({"opacity": 1 }, 200);
   $(wrapper_id).animate({opacity: 1}, 200)
   $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
@@ -305,18 +306,19 @@ var dragMomentum = new function () {
     Xc = clamp(Xc, xmin, 0)
     Yc = clamp(Yc, ymin, 0)
 
+    update_hash(Xc, Yc);
+
     if (Yc < ymin + 300)
       {
       load_next_page();
       Yc = ymin;
       }
-
-    var newLocX = Xc + 'px';
-    var newLocY = Yc + 'px';
-
-    $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
-
-    update_hash(Xc, Yc);
+    else
+      {
+      var newLocX = Xc + 'px';
+      var newLocY = Yc + 'px';
+      $('#'+elemId).animate({ left: newLocX, top: newLocY }, 700, easeType );
+      }
   };
 };
 
