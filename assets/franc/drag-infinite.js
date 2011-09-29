@@ -12,7 +12,7 @@ var POST_WIDTH = $(window).width(),
     COLUMN_HEIGHTS = [],
     PAGE = 1,
     loading_div = null,
-    finished = true;
+    finished = false;
 
 var title_option = function (id, title) {
   if (title === "-")
@@ -22,17 +22,20 @@ var title_option = function (id, title) {
 
 var load_next_page = function () {
   if (finished) {
-    // console.log("DONE LOADING ...");
+    console.log("DONE LOADING ...");
     return;
   }
   PAGE += 1;
-  // console.log("LOADING NEXT PAGE ...");
+  console.log("LOADING NEXT PAGE ...");
   loading_div = $("<div/>");
   loading_div.load("/page/" + PAGE + " " + wrapper_id, null, load_callback);
 }
 
 var load_callback = function () {
+  console.log("GOT LOAD CALLBACK");
+  console.log(loading_div);
   var posts = find_posts(loading_div);
+  console.log("GOT " + loading_div.length + "POSTS");
   if (posts.length)
     repage(posts);
 }
