@@ -1,7 +1,7 @@
 var POST_WIDTH = $(window).width(),
     BOTTOM_SHIM = $(window).height(),
     POSTS_PER_ROW = 4,
-    LEFT_SHIM = ($(window).width() - 600) / 2,
+    LEFT_SHIM = 100 + ($(window).width() - 1000) / 2,
     EASING = "easeOutExpo",
     // SELECT_HEADING = "PROJECTS",
     TOPSHIM = 0,
