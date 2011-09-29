@@ -24,21 +24,16 @@ var title_option = function (id, title) {
 
 var load_next_page = function () {
   if (finished) {
-    console.log("DONE LOADING ...");
     return;
   }
   PAGE += 1;
-  console.log("LOADING NEXT PAGE ...");
   loading_div = $("<div/>");
   $(loading_div).load("/page/" + PAGE + " .post", null, load_callback);
 }
 
 var load_callback = function () {
-  console.log("GOT LOAD CALLBACK");
-  console.log(loading_div);
   var posts = find_posts(loading_div);
-  console.log("GOT " + posts.length + " POSTS");
-  if (posts.length)
+  if (posts.length > 0)
     {
     var fragment = document.createDocumentFragment();
     repage(posts);
@@ -315,7 +310,7 @@ var dragMomentum = new function () {
 
     update_hash(Xc, Yc);
 
-    if (Yc > ymin - LOAD_MARGIN)
+    if (Yc > ymin + LOAD_MARGIN)
       load_next_page();
   };
 };
