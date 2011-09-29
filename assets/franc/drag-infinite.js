@@ -35,16 +35,18 @@ var load_callback = function () {
   console.log("GOT LOAD CALLBACK");
   console.log(loading_div);
   var posts = find_posts(loading_div);
-  console.log("GOT " + loading_div.length + "POSTS");
+  console.log("GOT " + posts.length + " POSTS");
   if (posts.length)
     repage(posts);
 }
 
-var repage = function (posts) {
+var repage_init = function () {
   TOPSHIM = $("#logo").height() + 50;
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOPSHIM);
   }
+}
+var repage = function (posts) {
   for (idx in posts) {
     var column = idx % POSTS_PER_ROW;
     var post = posts[idx];
@@ -187,6 +189,7 @@ var get_title_from_caption = function (post, offset) {
 var images_loaded = function () {
   document.getElementById('LB0').style.display = 'none';
   var posts = find_posts();
+  repage_init();
   repage(posts);
   // inject_photoset_css();
 }
