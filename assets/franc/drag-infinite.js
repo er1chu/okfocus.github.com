@@ -22,7 +22,7 @@ var title_option = function (id, title) {
   if (title === "-")
     return "<option id='none'>-</option>";
   return "<option id='" + id + "'>" + title + "</option>";
-}
+};
 
 var load_next_page = function () {
   if (finished) {
@@ -31,7 +31,7 @@ var load_next_page = function () {
   PAGE += 1;
   loading_div = $("<div/>");
   $(loading_div).load("/page/" + PAGE + " .post", null, load_callback);
-}
+};
 
 var load_callback = function () {
   var posts = find_posts(loading_div);
@@ -48,14 +48,15 @@ var load_callback = function () {
     }
   else
     finished = true;
-}
+};
 
 var repage_init = function () {
   TOP_SHIM = $("#logo").height() + 50;
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOP_SHIM);
   }
-}
+};
+
 var repage = function (posts) {
   for (var idx in posts) {
     var column = idx % POSTS_PER_ROW;
@@ -106,7 +107,7 @@ var repage = function (posts) {
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
   // $("#navz").prepend(title_option("heading", SELECT_HEADING));
-}
+};
 
 var go_home = function () {
   $("html,body").css({"position": "fixed", "top": "0", "left": "0"});
@@ -115,23 +116,23 @@ var go_home = function () {
     go(ids_by_hash[hash]);
   else
     go(first_id);
-}
+};
 
 var pick = function () {
   var id = $("select option:selected")[0].id;
   if (id)
     go(id);
-}
+};
 
 var go = function (id) {
   var it = pages_by_id[id];
   x = it[0];
   y = it[1];
-  current_idx = it[3];
+  current_idx = it[5];
   var easeType = EASING;
   $(wrapper_id).animate({ left: -x + 400, top: -y + TOP_SHIM }, 700, easeType );
   update_hash(-x+400, -y+TOP_SHIM);
-}
+};
 
 var update_hash = function (x, y) {
   x = Math.abs(x);
@@ -152,7 +153,7 @@ var update_hash = function (x, y) {
       return;
     }
   }
-}
+};
 
 var post_index = 0;
 var find_posts = function (container) {
@@ -174,7 +175,7 @@ var find_posts = function (container) {
     post_index += 1;
   });
   return posts;
-}
+};
 
 var get_title_from_caption = function (post, index) {
   var children = post.childNodes;
@@ -199,7 +200,7 @@ var get_title_from_caption = function (post, index) {
   if (! title)
     title = "Post #" + index;
   return title;
-}
+};
 
 var images_loaded = function () {
   document.getElementById('LB0').style.display = 'none';
@@ -324,11 +325,14 @@ var dragMomentum = new function () {
   };
 };
 
-var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) }
+var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) };
 
 var go_direction = function (x, y) {
-  var index = clamp(index + x + y * POSTS_PER_ROW, 0, id_order.length);
-  go(id_order[index]);
+  console.log(current_idx)
+  var current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
+  console.log(current_idx)
+  console.log(x, y, id_order[current_idx]);
+  go(id_order[current_idx]);
 };
 
 var keys = {
@@ -343,3 +347,4 @@ var keys = {
   },
   init: function () { $(window).bind("keydown", keys.map); }
 };
+
