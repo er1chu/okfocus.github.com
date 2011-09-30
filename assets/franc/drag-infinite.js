@@ -75,7 +75,7 @@ var repage = function (posts) {
     var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
     if (row % 2 === 1)
-      left_offset *= 1.4;
+      left_offset += POST_WIDTH / 2;
 
     COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
 
