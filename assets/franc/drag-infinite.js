@@ -54,7 +54,9 @@ var load_callback = function () {
 };
 
 var repage_init = function () {
-  TOP_SHIM = $("#logo").height() || $("#linx").height();
+  TOP_SHIM = $("#logo").height();
+  if (TOP_SHIM === 0)
+    TOP_SHIM = $("#linx").height();
   TOP_SHIM += 50;
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOP_SHIM);
