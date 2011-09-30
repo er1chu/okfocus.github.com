@@ -1,7 +1,10 @@
+body {
+  font-family: Monaco, "Courier New", Courier, monospace;
+  background: url(http://www.carbonpictures.com/bucky/data/1826/purplehalloween.gif);
+}
 .post {
   padding: 10px;
   text-shadow: 10px 10px 10px #fff;
-  box-shadow: 10px 10px 10px #fff;
-  background: rgb(255,255,255);
   background: rgba(255,255,255,0.5);
+  text-align: center;
 }
