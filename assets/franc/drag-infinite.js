@@ -9,12 +9,14 @@ var POST_WIDTH = Math.max($(window).width() * 0.5, 700),
     first_id = false,
     pages_by_id = {},
     ids_by_hash = {},
+    id_order = [],
     COLUMN_HEIGHTS = [],
     PAGE = 1,
     loading_div = null,
     loaded_sidebar = false,
     finished = false,
-    index = 1;
+    index = 1,
+    current_idx = 0;
 
 var title_option = function (id, title) {
   if (title === "-")
@@ -86,7 +88,8 @@ var repage = function (posts) {
 
     var hash = title.replace(/&amp;/g, "and").replace(/&quot;/g, "").replace(/_/g, "-").replace(/[^ a-zA-Z0-9]/g, "").replace(/ /g, "-").toLowerCase()
     ids_by_hash[hash] = title_id;
-    pages_by_id[title_id] = [left_offset, top_offset, w, h, hash];
+    pages_by_id[title_id] = [left_offset, top_offset, w, h, hash, index];
+    id_order[index] = title_id;
 
     if (! first_id)
       first_id = title_id;
@@ -124,6 +127,7 @@ var go = function (id) {
   var it = pages_by_id[id];
   x = it[0];
   y = it[1];
+  current_idx = it[3];
   var easeType = EASING;
   $(wrapper_id).animate({ left: -x + 400, top: -y + TOP_SHIM }, 700, easeType );
   update_hash(-x+400, -y+TOP_SHIM);
@@ -202,7 +206,8 @@ var images_loaded = function () {
   var posts = find_posts();
   repage_init();
   repage(posts);
-  go_home()
+  go_home();
+  keys.init();
   // inject_photoset_css();
 }
 
@@ -295,11 +300,10 @@ var dragMomentum = new function () {
     // must CLAMP the x and y so we don't lose control
     var drag = $("#"+elemId).data('draggable');
 
-    function clamp (x, min, max) { return Math.max(min, Math.min(max, x)) }
-
     var el = $("#"+elemId);
     var xmin = $(window).width() - el.width();
     var ymin = $(window).height() - el.height();
+
     Xc = clamp(Xc, xmin, 0);
     if (finished)
       Yc = clamp(Yc, ymin, 0);
@@ -320,3 +324,22 @@ var dragMomentum = new function () {
   };
 };
 
+var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) }
+
+var go_direction = function (x, y) {
+  var index = clamp(index + x + y * POSTS_PER_ROW, 0, id_order.length);
+  go(id_order[index]);
+};
+
+var keys = {
+  map: function (e) {
+    var kc = e.keyCode;
+    switch (kc) {
+      case 38: return go_direction( 0, -1);
+      case 39: return go_direction( 1,  0);
+      case 40: return go_direction( 0,  1);
+      case 37: return go_direction(-1,  0);
+    }
+  },
+  init: function () { $(window).bind("keydown", keys.map); }
+};
