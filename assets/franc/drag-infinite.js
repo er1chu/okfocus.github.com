@@ -1,4 +1,4 @@
-var POST_WIDTH = $(window).width() * 0.5,
+var POST_WIDTH = Math.max($(window).width() * 0.5, 700),
     BOTTOM_SHIM = $(window).height(),
     POSTS_PER_ROW = 4,
     LEFT_SHIM = 100 + (POST_WIDTH) / 3,
