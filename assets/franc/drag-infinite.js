@@ -298,15 +298,18 @@ var dragMomentum = new function () {
     }
 
     // must CLAMP the x and y so we don't lose control
-    var drag = $("#"+elemId).data('draggable')
+    var drag = $("#"+elemId).data('draggable');
 
     function clamp (x, min, max) { return Math.max(min, Math.min(max, x)) }
 
-    var el = $("#"+elemId)
-    var xmin = $(window).width() - el.width()
-    var ymin = $(window).height() - el.height()
-    Xc = clamp(Xc, xmin, 0)
-    Yc = clamp(Yc, ymin, 0)
+    var el = $("#"+elemId);
+    var xmin = $(window).width() - el.width();
+    var ymin = $(window).height() - el.height();
+    Xc = clamp(Xc, xmin, 0);
+    if (finished)
+      Yc = clamp(Yc, ymin, 0);
+    else
+      Yc = Math.min(Yc, 0);
 
     if (Yc < ymin + 300)
       {
