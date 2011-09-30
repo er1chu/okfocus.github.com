@@ -15,7 +15,6 @@ var BOTTOM_SHIM = $(window).height(),
     EASING = "easeOutExpo",
     // SELECT_HEADING = "PROJECTS",
     TOP_SHIM = 0,
-    TOP_OFFSET = 40,
     wrapper_id = "#canvas-handle",
     first_id = false,
     pages_by_id = {},
@@ -67,7 +66,7 @@ var repage_init = function () {
   TOP_SHIM = $("#logo").height();
   if (! TOP_SHIM)
     TOP_SHIM = $("#linx").height();
-  TOP_SHIM = Math.max(TOP_SHIM, 40);
+  TOP_SHIM = Math.max(TOP_SHIM, 200);
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOP_SHIM);
   }
@@ -92,7 +91,7 @@ var repage = function (posts) {
     var h = $("#"+post.id).height();
     var post_shim = LEFT_SHIM //  + (POST_WIDTH - w) / 2;
 
-    var top_offset = COLUMN_HEIGHTS[column] + TOP_OFFSET;
+    var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
     if (o.stagger && row % 2 === 1)
       left_offset += POST_WIDTH / 2;
