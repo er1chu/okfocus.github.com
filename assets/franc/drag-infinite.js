@@ -122,7 +122,7 @@ var go = function (id) {
   y = it[1];
   var easeType = EASING;
   $(wrapper_id).animate({ left: -x + 400, top: -y + TOP_SHIM }, 700, easeType );
-  update_hash(-x+400, -y+TOPSHIM);
+  update_hash(-x+400, -y+TOP_SHIM);
 }
 
 var update_hash = function (x, y) {
