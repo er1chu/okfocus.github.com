@@ -1,6 +1,7 @@
 var o = {
   "stagger": false,
   "full_width": true,
+  "select_heading": "",
 }; jQuery.extend(o, options);
 
 var POST_WIDTH = $(window).width();
