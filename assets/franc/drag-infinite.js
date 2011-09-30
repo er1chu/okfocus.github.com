@@ -2,7 +2,7 @@ var o = {
   "stagger": false,
   "full_width": true,
   "select_heading": "",
-  "posts_per_row": "4",
+  "posts_per_row": 4,
 }; jQuery.extend(o, options);
 
 var POST_WIDTH = $(window).width();
@@ -25,7 +25,7 @@ var POST_WIDTH = $(window).width();
     index = 0,
     current_idx = 0;
 
-if (! o.full_width)
+if (! o.full_width && POSTS_PER_ROW > 1)
   POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
 
 var title_option = function (id, title) {
