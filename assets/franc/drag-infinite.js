@@ -1,5 +1,14 @@
-var POST_WIDTH = Math.max($(window).width() * 0.5, 700),
-    BOTTOM_SHIM = $(window).height(),
+var o = {
+  "stagger": false,
+  "full_width": true,
+}; jQuery.extend(o, options);
+
+var POST_WIDTH = $(window).width();
+
+if (! o.full_width)
+  POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
+
+var BOTTOM_SHIM = $(window).height(),
     POSTS_PER_ROW = 4,
     LEFT_SHIM = 100 + (POST_WIDTH) / 3,
     EASING = "easeOutExpo",
@@ -46,7 +55,6 @@ var load_callback = function () {
     document.getElementById("canvas-handle").appendChild( fragment );
     $(".post").animate({"opacity": 1}, 500);
     inject_init();
-    // $('#canvas-handle').stop()
     }
   else
     finished = true;
@@ -54,8 +62,11 @@ var load_callback = function () {
 };
 
 var repage_init = function () {
-  TOP_SHIM = $("#logo").height() || $("#linx").height();
+  TOP_SHIM = $("#logo").height();
+  if (! TOP_SHIM)
+    TOP_SHIM = $("#linx").height();
   TOP_SHIM += 50;
+  TOP_SHIM = Math.max(TOP_SHIM, 90);
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOP_SHIM);
   }
@@ -82,7 +93,7 @@ var repage = function (posts) {
 
     var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
-    if (row % 2 === 1)
+    if (o.stagger && row % 2 === 1)
       left_offset += POST_WIDTH / 2;
 
     COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
@@ -110,7 +121,11 @@ var repage = function (posts) {
   $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
-  // $("#navz").prepend(title_option("heading", SELECT_HEADING));
+  if (o.select_heading.length) {
+    $("#navz").prepend(title_option("heading", o.select_heading));
+    $("#navz").prepend(title_option("-", "-"));
+    o.select_heading = "";
+  }
 };
 
 var go_home = function () {
@@ -135,7 +150,7 @@ var go = function (id) {
   current_idx = it[5];
   var easeType = EASING;
   $(wrapper_id).animate({ left: -x + 400, top: -y + TOP_SHIM }, 700, easeType );
-  update_hash(-x+400, -y+TOP_SHIM);
+  update_hash(-x + 400, -y + TOP_SHIM);
 };
 
 var update_hash = function (x, y) {
