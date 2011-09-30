@@ -121,7 +121,7 @@ var go = function (id) {
   x = it[0];
   y = it[1];
   var easeType = EASING;
-  $(wrapper_id).animate({ left: -x+400, top: -y+TOPSHIM}, 700, easeType );
+  $(wrapper_id).animate({ left: -x + 400, top: -y + TOP_SHIM }, 700, easeType );
   update_hash(-x+400, -y+TOPSHIM);
 }
 
