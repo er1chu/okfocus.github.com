@@ -16,7 +16,7 @@ var POST_WIDTH = Math.max($(window).width() * 0.5, 700),
     loaded_sidebar = false,
     finished = false,
     loading = false,
-    index = 1,
+    index = 0,
     current_idx = 0;
 
 var title_option = function (id, title) {
@@ -162,7 +162,6 @@ var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) };
 
 var go_direction = function (x, y) {
   current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
-  console.log(current_idx);
   if (current_idx === id_order.length) {
     load_next_page();
   } else {
