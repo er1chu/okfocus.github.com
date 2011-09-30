@@ -41,6 +41,7 @@ var load_callback = function () {
       fragment.appendChild( posts[i] );
     document.getElementById("canvas-handle").appendChild( fragment );
     $(".post").animate({"opacity": 1}, 500);
+    inject_init();
     // $('#canvas-handle').stop()
     }
   else
