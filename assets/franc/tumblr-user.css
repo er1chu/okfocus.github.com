@@ -1,0 +1,6 @@
+.post {
+  padding: 10px;
+  text-shadow: 10px 10px 10px #333;
+  background: rgb(238,238,238);
+  background: rgba(238,238,238,0.5);
+}
