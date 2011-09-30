@@ -91,6 +91,7 @@ var repage = function (posts) {
     ids_by_hash[hash] = title_id;
     pages_by_id[title_id] = [left_offset, top_offset, w, h, hash, index];
     id_order[index] = title_id;
+    console.log(index, title_id);
 
     if (! first_id)
       first_id = title_id;
@@ -329,7 +330,7 @@ var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) };
 
 var go_direction = function (x, y) {
   console.log(current_idx)
-  var current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
+  current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
   console.log(current_idx)
   console.log(x, y, id_order[current_idx]);
   go(id_order[current_idx]);
