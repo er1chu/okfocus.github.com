@@ -1,5 +1,14 @@
-var POST_WIDTH = Math.max($(window).width() * 0.5, 700),
-    BOTTOM_SHIM = $(window).height(),
+var o = {
+  "stagger": false,
+  "full_width": true,
+}; jQuery.extend(o, options);
+
+var POST_WIDTH = $(window).width();
+
+if (! o.full_width)
+  POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
+
+var BOTTOM_SHIM = $(window).height(),
     POSTS_PER_ROW = 4,
     LEFT_SHIM = 100 + (POST_WIDTH) / 3,
     EASING = "easeOutExpo",
@@ -46,7 +55,6 @@ var load_callback = function () {
     document.getElementById("canvas-handle").appendChild( fragment );
     $(".post").animate({"opacity": 1}, 500);
     inject_init();
-    // $('#canvas-handle').stop()
     }
   else
     finished = true;
@@ -55,7 +63,7 @@ var load_callback = function () {
 
 var repage_init = function () {
   TOP_SHIM = $("#logo").height();
-  if (TOP_SHIM === 0)
+  if (! TOP_SHIM)
     TOP_SHIM = $("#linx").height();
   TOP_SHIM += 50;
   for (var i = 0; i < POSTS_PER_ROW; i++) {
@@ -84,7 +92,7 @@ var repage = function (posts) {
 
     var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
-    if (row % 2 === 1)
+    if (o.stagger && row % 2 === 1)
       left_offset += POST_WIDTH / 2;
 
     COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
