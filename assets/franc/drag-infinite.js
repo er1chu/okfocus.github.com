@@ -162,11 +162,12 @@ var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) };
 
 var go_direction = function (x, y) {
   current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
-  $('#canvas-handle').stop();
-  if (current_idx === id_order.length)
+  if (current_idx === id_order.length) {
     load_next_page();
-  else
+  } else {
+    $('#canvas-handle').stop();
     go(id_order[current_idx]);
+  }
 };
 
 var keys = {
