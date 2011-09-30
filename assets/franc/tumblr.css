@@ -259,3 +259,6 @@ p.dontshow{visibility:hidden;}
   margin-left: 0pt ! important;
 }
 
+#navigation {
+  display: none;
+}
