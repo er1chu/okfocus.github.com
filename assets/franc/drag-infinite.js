@@ -155,6 +155,30 @@ var update_hash = function (x, y) {
   }
 };
 
+var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) };
+
+var go_direction = function (x, y) {
+  current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
+  $('#canvas-handle').stop();
+  if (current_idx === id_order.length)
+    load_next_page();
+  else
+    go(id_order[current_idx]);
+};
+
+var keys = {
+  map: function (e) {
+    var kc = e.keyCode;
+    switch (kc) {
+      case 38: return go_direction( 0, -1);
+      case 39: return go_direction( 1,  0);
+      case 40: return go_direction( 0,  1);
+      case 37: return go_direction(-1,  0);
+    }
+  },
+  init: function () { $(window).bind("keydown", keys.map); }
+};
+
 var post_index = 0;
 var find_posts = function (container) {
   var posts = [];
@@ -323,29 +347,5 @@ var dragMomentum = new function () {
 
     update_hash(Xc, Yc);
   };
-};
-
-var clamp = function (x, min, max) { return Math.max(min, Math.min(max, x)) };
-
-var go_direction = function (x, y) {
-  current_idx = clamp(current_idx + x + y * POSTS_PER_ROW, 0, id_order.length);
-  $('#'+elemId).stop();
-  if (current_idx === id_order.length)
-    load_next_page();
-  else
-    go(id_order[current_idx]);
-};
-
-var keys = {
-  map: function (e) {
-    var kc = e.keyCode;
-    switch (kc) {
-      case 38: return go_direction( 0, -1);
-      case 39: return go_direction( 1,  0);
-      case 40: return go_direction( 0,  1);
-      case 37: return go_direction(-1,  0);
-    }
-  },
-  init: function () { $(window).bind("keydown", keys.map); }
 };
 
