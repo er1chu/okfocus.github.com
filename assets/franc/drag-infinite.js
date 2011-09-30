@@ -240,8 +240,12 @@ var get_title_from_caption = function (post, index) {
       }
     }
   }
-  if (! title)
-    title = "Post #" + index;
+  if (! title) {
+    if (post.id === "sidebar")
+      title = "CONTACT INFO";
+    else
+      title = "POST #" + index;
+  }
   return title;
 };
 
