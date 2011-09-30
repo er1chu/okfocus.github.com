@@ -2,18 +2,14 @@ var o = {
   "stagger": false,
   "full_width": true,
   "select_heading": "",
+  "posts_per_row": "4",
 }; jQuery.extend(o, options);
 
 var POST_WIDTH = $(window).width();
-
-if (! o.full_width)
-  POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
-
-var BOTTOM_SHIM = $(window).height(),
-    POSTS_PER_ROW = 4,
+    BOTTOM_SHIM = $(window).height(),
+    POSTS_PER_ROW = parseInt(o.posts_per_row),
     LEFT_SHIM = 100 + (POST_WIDTH) / 3,
     EASING = "easeOutExpo",
-    // SELECT_HEADING = "PROJECTS",
     TOP_SHIM = 0,
     wrapper_id = "#canvas-handle",
     first_id = false,
@@ -28,6 +24,9 @@ var BOTTOM_SHIM = $(window).height(),
     loading = false,
     index = 0,
     current_idx = 0;
+
+if (! o.full_width)
+  POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
 
 var title_option = function (id, title) {
   if (title === "-")
