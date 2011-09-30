@@ -66,6 +66,7 @@ var repage_init = function () {
   if (! TOP_SHIM)
     TOP_SHIM = $("#linx").height();
   TOP_SHIM += 50;
+  TOP_SHIM = Math.max(TOP_SHIM, 90);
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOP_SHIM);
   }
@@ -120,7 +121,11 @@ var repage = function (posts) {
   $("#navz").css("display", "inline");
   $("#navz").bind("change", pick);
   $("#mark").bind("click", go_home);
-  // $("#navz").prepend(title_option("heading", SELECT_HEADING));
+  if (o.select_heading.length) {
+    $("#navz").prepend(title_option("heading", o.select_heading));
+    $("#navz").prepend(title_option("-", "-"));
+    o.select_heading = "";
+  }
 };
 
 var go_home = function () {
@@ -145,7 +150,7 @@ var go = function (id) {
   current_idx = it[5];
   var easeType = EASING;
   $(wrapper_id).animate({ left: -x + 400, top: -y + TOP_SHIM }, 700, easeType );
-  update_hash(-x+400, -y+TOP_SHIM);
+  update_hash(-x + 400, -y + TOP_SHIM);
 };
 
 var update_hash = function (x, y) {
