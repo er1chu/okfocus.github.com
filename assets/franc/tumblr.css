@@ -202,7 +202,7 @@ div.copy p span {
 
 #okfocus a:hover {
   background: none repeat scroll 0% 0% transparent;
-  cursor: pointer;   box-shadow:2px 2px 1px #000000;
+  cursor: pointer;   box-shadow:1px 1px 0px #000000;
 }
 
 #okfocus a {
