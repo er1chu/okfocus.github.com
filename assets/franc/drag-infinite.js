@@ -56,6 +56,7 @@ var repage_init = function () {
 var repage = function (posts) {
   for (var idx in posts) {
     var column = idx % POSTS_PER_ROW;
+    var row = Math.floor(idx / POSTS_PER_ROW)
     var post = posts[idx];
 
     var title = get_title_from_caption(post, index);
@@ -73,6 +74,8 @@ var repage = function (posts) {
 
     var top_offset = COLUMN_HEIGHTS[column];
     var left_offset = POST_WIDTH * column + post_shim;
+    if (row % 2 === 1)
+      left_offset *= 1.4;
 
     COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
 
