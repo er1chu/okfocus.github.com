@@ -262,3 +262,8 @@ p.dontshow{visibility:hidden;}
 #navigation {
   display: none;
 }
+p.larger {
+     font-size: 50px;
+     line-height: 50px;
+     text-align: left;
+}
