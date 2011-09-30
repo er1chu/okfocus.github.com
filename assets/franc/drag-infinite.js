@@ -95,7 +95,7 @@ var repage = function (posts) {
     if (o.stagger && row % 2 === 1)
       left_offset += POST_WIDTH / 2;
 
-    COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
+    COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200);
 
     post.style.left = left_offset + "px";
     post.style.top = top_offset + "px";
@@ -110,7 +110,9 @@ var repage = function (posts) {
       first_id = title_id;
     index += 1;
   }
-  var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5))
+  var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 1));
+  if (o.full_width)
+    total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5));
   var total_height = 0;
   for (var i = 0; i < POSTS_PER_ROW; i++)
     total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
