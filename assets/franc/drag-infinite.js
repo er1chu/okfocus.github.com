@@ -165,15 +165,6 @@ var find_posts = function (container) {
     }
     post_index += 1;
   });
-/*
-  var iz = document.getElementsByTagName("div");
-  for (var i = 0, len = iz.length; i < len; i++) {
-    if (iz[i].className === "post") {
-      iz[i].id = "post_" + i
-      posts.push(iz[i]);
-    }
-  }
-*/
   return posts;
 }
 
