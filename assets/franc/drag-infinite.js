@@ -15,6 +15,7 @@ var POST_WIDTH = Math.max($(window).width() * 0.5, 700),
     loading_div = null,
     loaded_sidebar = false,
     finished = false,
+    loading = false,
     index = 1,
     current_idx = 0;
 
@@ -25,9 +26,10 @@ var title_option = function (id, title) {
 };
 
 var load_next_page = function () {
-  if (finished) {
+  if (loading || finished) {
     return;
   }
+  loading = true;
   PAGE += 1;
   loading_div = $("<div/>");
   $(loading_div).load("/page/" + PAGE + " .post", null, load_callback);
@@ -48,6 +50,7 @@ var load_callback = function () {
     }
   else
     finished = true;
+  loading = false;
 };
 
 var repage_init = function () {
