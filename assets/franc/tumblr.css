@@ -110,7 +110,7 @@ select {
   background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.9);
   font-size: 20px;
 }
-
+.paypal{overflow:hidden;position:absolute;display:block;}
 #navz {
   cursor: pointer;
   display: none;
