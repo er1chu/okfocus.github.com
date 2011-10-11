@@ -191,5 +191,23 @@ $(function(){
 
 });
 
+$(function(){
+$('#demo-shadow').okshadow({
+  xMax: 5,
+  yMax: 5,
+  fuzzMin: 1,
+  fuzzMax: 10,
+});
+$('#demo-shadow2').okshadow({
+  color: 'blue',
+  textShadow: true,
+  transparent: true,
+  xMax: 0,
+  yMax: 0,
+  fuzzMin: 1.5,
+  fuzz: 55
+});
+});
+
 
 

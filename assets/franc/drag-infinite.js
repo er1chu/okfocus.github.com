@@ -1,18 +1,15 @@
 var o = {
   "stagger": false,
   "full_width": true,
+  "select_heading": "",
+  "posts_per_row": 4,
 }; jQuery.extend(o, options);
 
 var POST_WIDTH = $(window).width();
-
-if (! o.full_width)
-  POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
-
-var BOTTOM_SHIM = $(window).height(),
-    POSTS_PER_ROW = 4,
+    BOTTOM_SHIM = $(window).height(),
+    POSTS_PER_ROW = parseInt(o.posts_per_row),
     LEFT_SHIM = 100 + (POST_WIDTH) / 3,
     EASING = "easeOutExpo",
-    // SELECT_HEADING = "PROJECTS",
     TOP_SHIM = 0,
     wrapper_id = "#canvas-handle",
     first_id = false,
@@ -27,6 +24,9 @@ var BOTTOM_SHIM = $(window).height(),
     loading = false,
     index = 0,
     current_idx = 0;
+
+if (! o.full_width && POSTS_PER_ROW > 1)
+  POST_WIDTH = Math.max(POST_WIDTH * 0.5, 700);
 
 var title_option = function (id, title) {
   if (title === "-")
@@ -65,8 +65,7 @@ var repage_init = function () {
   TOP_SHIM = $("#logo").height();
   if (! TOP_SHIM)
     TOP_SHIM = $("#linx").height();
-  TOP_SHIM += 50;
-  TOP_SHIM = Math.max(TOP_SHIM, 90);
+  TOP_SHIM = Math.max(TOP_SHIM, 200);
   for (var i = 0; i < POSTS_PER_ROW; i++) {
     COLUMN_HEIGHTS.push(TOP_SHIM);
   }
@@ -96,7 +95,7 @@ var repage = function (posts) {
     if (o.stagger && row % 2 === 1)
       left_offset += POST_WIDTH / 2;
 
-    COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200)
+    COLUMN_HEIGHTS[column] += Math.max(BOTTOM_SHIM, h + 200);
 
     post.style.left = left_offset + "px";
     post.style.top = top_offset + "px";
@@ -111,7 +110,9 @@ var repage = function (posts) {
       first_id = title_id;
     index += 1;
   }
-  var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5))
+  var total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 1));
+  if (o.full_width)
+    total_width = Math.floor(POST_WIDTH * (POSTS_PER_ROW + 0.5));
   var total_height = 0;
   for (var i = 0; i < POSTS_PER_ROW; i++)
     total_height = Math.max(total_height, COLUMN_HEIGHTS[i]);
@@ -241,8 +242,12 @@ var get_title_from_caption = function (post, index) {
       }
     }
   }
-  if (! title)
-    title = "Post #" + index;
+  if (! title) {
+    if (post.id === "sidebar")
+      title = "CONTACT INFO";
+    else
+      title = "POST #" + index;
+  }
   return title;
 };
 

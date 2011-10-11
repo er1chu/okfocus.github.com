@@ -47,7 +47,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 
 a img {
   border: medium none;
-  cursor: url("http://okfoc.us/assets/franc/finger.png"), auto;
+  cursor: url("http://static.tumblr.com/utxaocy/77Dlsctn0/finger.png"), auto;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
@@ -67,7 +67,7 @@ html, body {
 
 body {
   background-attachment: fixed;
-  background-image: url("http://okfoc.us/assets/franc/bg.jpg");
+  background-image: url("http://static.tumblr.com/utxaocy/Ro5lscs34/bg.jpg");
   background-position: left top;
   color: #333333;
   font-family: Monaco,"Courier New",Courier,monospace;
@@ -95,7 +95,7 @@ a:hover {
 
 a:visited {
   color: #333333;
-  cursor: url("http://okfoc.us/assets/franc/finger.png"), auto;
+  cursor: url("http://static.tumblr.com/utxaocy/77Dlsctn0/finger.png"), auto;
 }
 
 #linx {
@@ -110,7 +110,7 @@ select {
   background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.9);
   font-size: 20px;
 }
-.paypal{overflow:hidden;position:absolute;display:block;}
+
 #navz {
   cursor: pointer;
   display: none;
@@ -143,7 +143,7 @@ select {
 }
 
 #nav {
-  cursor: url("http://okfoc.us/assets/franc/handopen.gif"), auto;
+  cursor: url("http://static.tumblr.com/utxaocy/gQAlsctj6/handopen.gif"), auto;
   left: 0pt;
   position: absolute;
   text-transform: uppercase;
@@ -151,7 +151,7 @@ select {
 }
 
 #canvas-handle {
-  cursor: url("http://okfoc.us/assets/franc/handopen.gif"), auto;
+  cursor: url("http://static.tumblr.com/utxaocy/gQAlsctj6/handopen.gif"), auto;
   height: 20000px;
   left: 200px;
   margin-top: -100px;
@@ -163,7 +163,7 @@ select {
 }
 
 #canvas-handle:active, #canvas-handle.dragging {
-  cursor: url("http://okfoc.us/assets/franc/handgrab.gif"), auto;
+  cursor: url("http://static.tumblr.com/utxaocy/GBklsctmd/handgrab.gif"), auto;
 }
 
 p {
@@ -266,5 +266,4 @@ p.larger {
      font-size: 50px;
      line-height: 50px;
      text-align: left;
-     padding:20px;
 }
