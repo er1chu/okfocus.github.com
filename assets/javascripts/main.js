@@ -77,7 +77,6 @@ $(function(){
     }); 
      
     $("#demo-hover").click(function(e){
-    	e.preventDefault();
     	$("#ok-bg").css('backgroundImage', '');
     });
     
