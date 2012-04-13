@@ -106,7 +106,7 @@ round:!0,background:"#fff",backgroundRepeat:"no-repeat",shadow:"0 0 5px #000",bo
 
 $(function(){
 
-	$('header').fadeIn(900);
+	  $('header').fadeIn(900);
 
     $('#demo-hover').okhover({ zIndex: 0 });
 
@@ -115,15 +115,15 @@ $(function(){
         hash: true,
         duration: 400          
     });       
-       
+    
     $('#labs p').localScroll({
         lock: true,
         hash: true,
         duration: 400          
     }); 
-     
+    
     $("#demo-hover").click(function(e){
-    	$("#ok-bg").css('backgroundImage', '');
+    	  $("#ok-bg").css('backgroundImage', '');
     });
 
     $('#okzoom-test').okzoom({
@@ -156,7 +156,7 @@ $(function(){
 
         window.location.hash = "#work";
     }    
-
+    
     $(window).bind({
         hashchange: function(e){
             e.preventDefault();
@@ -171,10 +171,9 @@ $(function(){
         },
         keyup: function(e){
             if (e.keyCode == 27) remove();
-        }
-            
-    });
-   
+        },        
+    }).unbind('scroll');  
+
     listItems.bind({ 
         mouseover: function() {
             var name = $(this).attr('id'), title = $(this).text();
@@ -197,37 +196,39 @@ $(function(){
             }
         },
         click: function(e){
-            e.preventDefault();
-            var descrip = $(this).attr('data-description'),
+            if ( !$(this).parent('ul').hasClass('no-modal') ){
+                e.preventDefault();
+                var descrip = $(this).attr('data-description'),
                 title = $(this).text();
 
-            background.css('z-index', 9999);
+                background.css('z-index', 9999);
 
-            $('body').append("<div id='title'><span class='the-title'>" + title + "</span></div>");
-            var headline = $("#title");
-            
-            headline.css({ top: (e.clientY - headline.height() / 2), 
-                           left: (e.clientX - headline.width() / 2),
-                           position: 'fixed',
-                           zIndex: 10000
-                         });
+                $('body').append("<div id='title'><span class='the-title'>" + title + "</span></div>");
+                var headline = $("#title");
+                
+                headline.css({ top: (e.clientY - headline.height() / 2), 
+                               left: (e.clientX - headline.width() / 2),
+                               position: 'fixed',
+                               zIndex: 10000
+                             });
 
-            background
-                .append("<p></p>")
-                .type({ maxInterval: 5,
-                        content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>",
-                        callback: function(){
-                            if ( $("#title").length == 0 ) $("#p").remove();
-                        }
-                      });
+                background
+                    .append("<p></p>")
+                    .type({ maxInterval: 5,
+                            content: "<p id='p' style='top:0px' class='project-description'>" + descrip + "</p>",
+                            callback: function(){
+                                if ( $("#title").length == 0 ) $("#p").remove();
+                            }
+                          });
 
-            if ( $(this).parent().attr('id') === 'press-list' ) {
-                $("#title").prepend("<span class='the-dash'>&mdash;</span>");
+                if ( $(this).parent().attr('id') === 'press-list' ) {
+                    $("#title").prepend("<span class='the-dash'>&mdash;</span>");
+                }
+                
+                window.location.hash = "#more-" + $(this).attr('id');
+
+                _gaq.push(['_trackPageview', 'click-' + title]);
             }
-            
-            window.location.hash = "#more-" + $(this).attr('id');
-
-            _gaq.push(['_trackPageview', 'click-' + title]);
         }
     });
 
@@ -241,7 +242,6 @@ $(function(){
 
     $("#title").live('click', remove);
     $("#bg, #p").bind('click', remove);
-
 
     $('#demo-shadow').okshadow({
         xMax: 5,
@@ -260,6 +260,3 @@ $(function(){
         fuzz: 55
     });
 });
-
-
-
