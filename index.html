@@ -141,6 +141,7 @@
       #bg.eyebeam { background-image: url('assets/images/eyebeam.jpg'); position: fixed;z-index:0;}
       #bg.franc { background-image: url('assets/images/franc.jpg'); position: fixed;z-index:0;}
       #bg.l-magazine { background-image: url('assets/images/l-magazine.jpg'); position: fixed;z-index:0;}
+      #bg.tos { background-image: url('assets/images/tos.png'); position: fixed;z-index:0;}
       #bg.npr { background-image: url('assets/images/npr.jpg'); position: fixed;z-index:0;}
       #bg.wtp { background-image: url('assets/images/pixel_share.jpg'); position: fixed;z-index:0;}
       #bg.gothamist { background-image: url('assets/images/gothamist-logo.png'); position: fixed;z-index:0;}
@@ -149,6 +150,8 @@
       #bg.lemme { background-image: url('assets/images/lemme.gif'); position: fixed;z-index:0;}
       #bg.artornot { background-image: url('assets/images/artornot.png'); position: fixed;z-index:0;}
       #bg.whodat { background-image: url('assets/images/whodat.jpg'); position: fixed;z-index:0;}
+      #bg.okhover-demo { background-image: url('assets/images/okhover.png'); position: fixed;z-index:0;}
+      #bg.okmove-demo { background-image: url('http://media.tumblr.com/themes/wide/LErZgbER2BaT0ZoN.png'); position: fixed;z-index:0;}
       #bg.nicola { background-image: url('assets/images/nicola.jpg'); position: fixed;z-index:0;}
       #bg.likeartbasel { background-image: url('assets/images/likeartbasel.png'); position: fixed;z-index:0;}
       #bg.wsj { background-image: url('assets/images/wsj.jpeg'); position: fixed;z-index:0;}
@@ -162,9 +165,14 @@
       .the-dash { background:none; color:black;margin-right:4px }
       .the-title { padding: 4px }
 	  #labs a{font-size:12px;margin:2%;}
-	  #labs h3 { margin-bottom: 30px;letter-spacing:8px; }
+	  #labs h3 { margin-bottom: 10px;letter-spacing:8px; }
+	  #labs ul{text-align:center;}
+	  #labs ul li{font-size:20px;}
+	  #labs ul li a{font-size:18px;}
       #labs img{ float:left; }
+	  #oktype-test{font-size:25px;}
       #labs p img { margin-right: 7px;}
+	  #oktype-test:hover{background:transparent;}
       #labs p{font-size:12px;text-align:left; font-weight:100; color:#333; padding:0px 30px 20px 20px; background:rgb(255,255,255); background:rgba(255,255,255,0.5); margin-left:20px;}
       #doves{position:absolute;margin-top:-160px;width:600px;margin-left:25px;}
       #doves img{margin-right:150px;}
@@ -224,7 +232,8 @@
     });
   }
 </script> 
-  </head>
+
+</head>
   <body onload="initialize()">
     <header>
       <!-- img loaded with js -->
@@ -261,7 +270,7 @@
       <section id="intro">
         <p class="center" id="about"><!--OKFocus is a full service digital agency--></p>
       </section>
-      <article id="work">
+      <article id="work"class="okhover">
         <h3>Stuff We've Made For Ourselves!</h3>
         <ul>
           <li class="comma" id="dumpfm" data-description="the first real-time <a href='http://dump.fm' target='_blank'>image sharing community</a>. "><a href="#">dump.fm</a></li> 
@@ -290,6 +299,7 @@
           <li class="comma" id="smirnoff" data-description="design + development for <a href='http://dance-exchange.net' target='_blank'>Dance Exchange</a>."><a href="#">Smirnoff</a></li> 
           <li class="comma" id="franc" data-description="design + development of  <a href='http://francfernandez.com/'target='_blank'>site</a> built on Tumblr CMS." ><a href="#">Franc Fernandez</a></li>
           <li class="comma" id="mia" data-description="six sites including a <a href='http://www.facefacefacebook.com/' target='_blank'>webcam integrated app</a>."><a href="#">M.I.A.</a></li>
+          <li class="comma" id="tos" data-description="a real time game where coolness is decided through <a href='http://tugofstore.com/' target='_blank'>clique democracy</a>."><a href="#">Svpply</a></li>
           <li class="comma" id="ps1" data-description="small amounts of help for the <a href='http://www.moma.org/poprally/56_trecartin' target='_blank'>DIS_RT</a> event at PS1."><a href="#">PS1 MoMA</a></li>
           <li class="comma" id="new-museum" data-description="iPhone application for <a href='http://www.newmuseum.org/exhibitions/422'>Brion Gysin: Dreammachine</a>."><a href="#">New Museum</a></li> 
           <li class="comma" id="ssion" data-description="design + direction for the launch of album, <a href='http://ssion.com/'target='_blank'>bent</a>." ><a href="#">Ssion</a></li>
@@ -332,11 +342,23 @@
         <img src="assets/images/sigs.png">
         <div id="baby"><img src="assets/images/j.jpg"> <img src="assets/images/r.jpg"></div>
       </article>
+
         <article id="labs">
         <h3>awesome stuff we make<br>for developers!</h3>
-          <p><a href="http://okfoc.us/okhover"class="okhoverdemo"><img src="assets/images/okhover.png"></a>OKHover is a jQuery plugin that makes it easy to reproduce <a href="http://okfoc.us/okhover" id="demo-hover" data-okimage="assets/images/lilok.png" >this tiled background effect on hover</a> it uses HTML5 data attributes and is designed to be simple yet highly customizable. </p>
+		 <ul>
+<li class="comma"><a href="http://okfoc.us/okshadow/" id="demo-shadow2">OKShadow</a></li>
+<span class="okhover"><li class="comma" id="okhover-demo"><a href="http://okfoc.us/okhover/">OKHover</a></li></span>
+<li class="comma"><a href="http://okfoc.us/pixelcomicsans/"class="pcs">Pixel Comic Sans</a></li>
+<li class="comma" id="okzoom"><a href="http://okfoc.us/okzoom/" data-okimage="http://okfoc.us/assets/images/logo.gif" id="okzoom-test">OKZoom</a></li>
+<span class="okhover"><li class="comma" id="okmove-demo"><a href="http://www.tumblr.com/theme/34155">OKMove</a></li></span>
+<li><a href="http://okfoc.us/oktype/"id="oktype-test">EnterTheVoid.js</a></li>
+
+	</ul>   
+<!--	      
+ <p><a href="http://okfoc.us/okhover"class="okhoverdemo"><img src="assets/images/okhover.png"></a>OKHover is a jQuery plugin that makes it easy to reproduce <a href="http://okfoc.us/okhover" id="demo-hover" data-okimage="assets/images/lilok.png" >this tiled background effect on hover</a> it uses HTML5 data attributes and is designed to be simple yet highly customizable. </p>
           <p><a href="http://okfoc.us/okshadow"class="okshadowdemo"><img src="assets/images/okshadow.png"></a>OKShadow is a jQuery plugin that makes it easy to reproduce <a href="http://okfoc.us/okshadow" id="demo-shadow">this CSS shadow effect</a> on mouse movement. OKShadow is highly customizable and awesome, checkout our documentation and get the plugin <a href="http://okfoc.us/okshadow"id="demo-shadow2">here!</a></p>
           <p><a href="http://okfoc.us/pixelcomicsans"><img src="assets/images/PIXELCOMICSANS.png"style="margin-top:-3px;"></a>Created by OKFocus, Pixel Comic Sans is quite possibly the greatest font ever developed. <a href="http://okfoc.us/pixelcomicsans"class="pcs">Click here!</a> for more info and to download.</p>
+-->
       </article>    
       <article id="contact">
         <h3><a href="mailto:frontdesk@okfoc.us?subject=OKFocus inquiry">frontdesk@okfoc.us</a></h3>
@@ -373,6 +395,7 @@ We hope to see you soon!
               'assets/images/beautiful-decay-issue-y.jpeg',
               'assets/images/creative-time.jpg',
               'assets/images/blind-mist.png',
+              'assets/images/tos.png',
               'assets/images/anamanaguchi.png',
               'assets/images/ltrain.png',
               'assets/images/newmuseum.jpg',
@@ -427,6 +450,23 @@ We hope to see you soon!
     <script src="assets/javascripts/jquery.js"></script>
     <script src="assets/javascripts/okshadow-1.0.min.js"></script>
     <script src="assets/javascripts/main.js"></script>
+  <script src='http://okfoc.us/okzoom/src/okzoom-1.0.min.js'></script>
+  <script>
+    $(function(){
+      $('#okzoom-test').okzoom({
+        scaleWidth: 300,
+        backgroundRepeat: "repeat",
+        width: 200,
+        height: 200
+      });
+    });
+  </script>
+<script src="http://okfoc.us/oktype/src/oktype.js"></script>
+<script>
+  $(document).ready(function(){
+      $('#oktype-test').oktype({ randomColor: true });
+  });
+</script>
   <script type="text/javascript">
       var _sf_async_config={uid:25485,domain:"okfoc.us"};
       (function(){

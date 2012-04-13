@@ -82,7 +82,7 @@ $(function(){
     
     var background = $('#bg'),
     hashes = [], 
-    listItems = $('li');
+    listItems = $('.okhover li');
 
     listItems.each(function(item) {
         var idsAsHash = "#more-" + $(this).attr('id');
