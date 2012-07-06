@@ -908,10 +908,11 @@ body.us #topul li {
 }
 
 body.us #team li h1 {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	border-bottom: 1px solid white;
-	margin: 0;
+	margin: 1rem;
 	text-align: center;
+	font-weight: normal;
 }
 
 body.us #team li p {
