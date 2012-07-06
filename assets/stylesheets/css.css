@@ -58,7 +58,6 @@ body {
 	font-style: normal;
 }
 
-
 .nopointer {
 	pointer-events: none;
 }
@@ -323,7 +322,6 @@ li p {
 #topul li {
 	margin-bottom: 2rem;
 	vertical-align: middle;
-	// float: left;
 }
 
 #topul li p:first-child {
@@ -505,7 +503,7 @@ body.front {
 
 #work #all_work li:hover p:first-child::after {
 	content: '~';
-	font-family: 'OKFocusRegular';
+	font-family: 'OKFocusRegular', sans-serif;
 	text-decoration: none;
 	float: right;
 	position: absolute;
