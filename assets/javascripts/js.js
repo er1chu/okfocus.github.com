@@ -505,10 +505,15 @@ $(function(){
 		"loaderImage": "../../assets/images/spinner.gif"
 	});
    
+  var hasTextShadow = checkTextShadow();
+  if (! hasTextShadow) {
+  	$("body").addClass('noTextShadow');
+  }
+
 	$('.logo').okshadow({
 		color: 'black',
 		textShadow: true,
-		transparent: true,
+		transparent: hasTextShadow,
 		xMax: 0,
 		yMax: 0,
 		fuzzMin: 1.5,
@@ -518,7 +523,7 @@ $(function(){
 	$('.contact .logo').okshadow({
 		color: 'white',
 		textShadow: true,
-		transparent: true,
+		transparent: hasTextShadow,
 		xMax: 0,
 		yMax: 0,
 		fuzzMin: 1.5,
@@ -602,6 +607,7 @@ $(function(){
 					$("body")
 						.addClass("front");
 					$('#front .logo').hide().fadeIn(900);
+					console.log('duh');
 					State.swapBg('front');
 				},
 				'unload': function(){
@@ -785,6 +791,13 @@ $(function(){
 		$(this).next().slideToggle('medium');
 		return false;
 	}).next().hide();
+
+  function checkTextShadow(){
+    var div = document.createElement("div");
+    var test = "textShadow" in div.style;
+    div = null;
+    return test;
+  };
 
 });
 

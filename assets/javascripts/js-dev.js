@@ -77,8 +77,9 @@ $(function(){
 		"loaderImage": "../../assets/images/spinner.gif"
 	});
    
+  var hasTextShadow = checkTextShadow();
 	$('.logo').okshadow({
-		color: 'black',
+  	color: 'black',
 		textShadow: true,
 		transparent: true,
 		xMax: 0,
@@ -88,7 +89,9 @@ $(function(){
 	});
 
 
- 	$('#front .logo').hide().fadeIn(900);
+ 	$('#front .logo').hide();
+ 	$('#front').show();
+ 	$('#front .logo').fadeIn(900);
 
   if ($('body').hasClass('contact')) {
 
@@ -235,6 +238,13 @@ $(function(){
 		$(this).next().slideToggle('medium');
 		return false;
 	}).next().hide();
+
+  function checkTextShadow(){
+    var div = document.createElement("div");
+    var test = "textShadow" in div.style;
+    div = null;
+    return test;
+  };
 
 });
 
