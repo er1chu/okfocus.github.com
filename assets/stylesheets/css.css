@@ -111,7 +111,7 @@ body {
 }
 
 ::-moz-selection {
-	background: ##A200FF;
+	background: #A200FF;
 	color: white;
 	/* Firefox */
 }
