@@ -3,7 +3,6 @@
 xmlns:og="http://ogp.me/ns#"
 xmlns:fb="http://www.facebook.com/2008/fbml"/>
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Pontano+Sans|Lekton:400|Arapey:400italic' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
@@ -17,6 +16,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml"/>
 	<link rel="image_src" href="http://okfoc.us/assets/images/ok_icon.png"/> 
 	<meta property="og:url" content="http://okfoc.us"/>
 	<meta property="og:site_name" content="OKFocus" />	<link href="../assets/stylesheets/css.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
+		<link href='http://fonts.googleapis.com/css?family=Pontano+Sans|Lekton:400|Arapey:400italic' rel='stylesheet' type='text/css'>
 	<!--[if lt ie 9]>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 	<![endif]-->
@@ -36,17 +36,18 @@ xmlns:fb="http://www.facebook.com/2008/fbml"/>
 		</script>
 		<style type="text/css">
 		
-		@font-face {
-			font-family: 'OKFocusRegular';
-			src: url('../fonts/PixelComicSans-Regular.eot');
-			src: url('../fonts/PixelComicSans-Regular.eot?#iefix') format('embedded-opentype'),
-			url('../fonts/PixelComicSans-Regular.woff') format('woff'),
-			url('../fonts/PixelComicSans-Regular.ttf') format('truetype'),
-			url('../fonts/PixelComicSans-Regular.svg#PixelComicSans-Regular') format('svg'),
-			url('../fonts/PixelComicSans-Regular.ttf') format('truetype');
-			font-weight: normal;
-			font-style: normal;
-		}
+
+      @font-face {
+                        font-family: 'PixelComicSans-Regular';
+                        src: url('../assets/fonts/PixelComicSans-Regular.eot');
+       }
+
+      @font-face {
+                        font-family: 'PixelComicSans-Regular';
+                        src: url('../assets/fonts/PixelComicSans-Regular.woff') format('woff'),
+                        url('../assets/fonts/PixelComicSans-Regular.svg#PixelComicSans-Regular') format('svg');
+       }
+
 
 		.pcs {
 			font-family: "PixelComicSans-Regular", serif;
@@ -119,6 +120,9 @@ xmlns:fb="http://www.facebook.com/2008/fbml"/>
 					</p>
 				</li></a>
 			</ul>
+			<div class="okfont social">
+				<a href="http://facebook.com/okfocus"target="_blank">f</a> –– <a href="http://twitter.com/okfocus"target="_blank">T</a>
+			</div>
 		</article>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 		<script src="../assets/javascripts/labs.js"></script>

@@ -40,18 +40,17 @@ body {
 	overflow-x: hidden;
 }
 
-
 @font-face {
-	font-family: 'OKFocusRegular';
-	src: url('../fonts/okfocus-regular-webfont.eot');
-	src: url('../fonts/okfocus-regular-webfont.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/okfocus-regular-webfont.woff') format('woff'),
-	url('../fonts/okfocus-regular-webfont.ttf') format('truetype'),
-	url('../fonts/okfocus-regular-webfont.svg#OKFocusRegular') format('svg'),
-	url('../fonts/okfocus-regular-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+                        font-family: 'OKFocusRegular';
+                        src: url('../fonts/okfocus-regular-webfont.eot');
+       }
+
+      @font-face {
+                        font-family: 'OKFocusRegular';
+                        src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
+                        url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
+       }
+
 
 .okfont {
 	font-family: 'OKFocusRegular', sans-serif;
@@ -199,7 +198,7 @@ nav #labs-link {
 }
 
 .logo {
-	font-family: 'OKFocusRegular';
+	font-family: 'OKFocusRegular', sans-serif;
 	font-size: 2.5rem;
 	pointer-events: none;
 	text-shadow: 1px 1px white;
@@ -412,7 +411,6 @@ body.front {
 }
 
 #work {
-	overflow-x: hidden;
 	margin: 2rem 8rem;
 }
 
@@ -1048,19 +1046,6 @@ body.labs #topul a li:hover p {
 
 body.labs #topul li p:last-child {
 	padding-left: 25px;
-}
-
-body.labs #topul li p:first-child {
-	width: 20%;
-	display: table-cell;
-	vertical-align: middle;
-	float: none;
-	border: 0;
-	padding: 1%;
-	font-weight: normal;
-	text-decoration: underline;
-	font-style: italic;
-	text-align: left;
 }
 
 body.labs #topul li {
