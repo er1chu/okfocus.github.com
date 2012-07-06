@@ -16,8 +16,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml"/>
 	<meta property="og:image" content="http://okfoc.us/assets/images/ok_icon.png" />
 	<link rel="image_src" href="http://okfoc.us/assets/images/ok_icon.png"/> 
 	<meta property="og:url" content="http://okfoc.us"/>
-	<meta property="og:site_name" content="OKFocus" />	<link href="assets/stylesheets/css.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
-	<script src="assets/javascripts/css3-mediaqueries.js"></script>
+	<meta property="og:site_name" content="OKFocus" />	<link href="../assets/stylesheets/css.css" type="text/css" rel="stylesheet" media="screen, projection" /> 
 	<!--[if lt ie 9]>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 	<![endif]-->
@@ -29,35 +28,37 @@ xmlns:fb="http://www.facebook.com/2008/fbml"/>
 	_gaq.push(['_setDomainName', 'okfoc.us']);
 	_gaq.push(['_setAllowHash', false]);
 	_gaq.push(['_trackPageview']);
-
 	(function() {
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
-	</script>
-</head>
 
-	<body class="front">
+		</script>
+	</head>
+	<body class="contact">
 		<!-- NAV -->
 		<header>
 			<nav id='ls' class='center'>
 				<a id='us-link' href="/about">ABOUT</a>
 				<a id='work-link' href="/work">WORK</a>
 				<a id='labs-link' href="/labs">LABS</a>
-				<a id='contact-link' href="/contact">CONTACT</a>
+				<a id='contact-link' href="/contact"class="selected">CONTACT</a>
 			</nav>
 		</header>
-
-		<!-- OPENING PAGE -->
-		<article id="front"><script src="../../../.Trash/css3-mediaqueries.js" type="text/javascript" charset="utf-8"></script>
-
-			<div class="logo">OKFOCUS</div>
+		<div id="map" class="noselect"></div> 
+		<span class="logo biggie">OKFOCUS</span>
+		<article class="nopointer noselect hide" id="contact">
+			<h1 id="email" class="noselect nopointer">Hello, we would like to hear from you.</h1>
+			<a href="mailto:frontdesk@okfoc.us" class="contactbox yesselect">frontdesk at okfoc.us</a><br/>
+			<a class="yesselect contactbox" id="directions">43-32 22nd Street<br />LIC, NYC</a>
+      <div class="yesselect contactbox" id="phone">1-855-OKFOCUS</div>
+			<div class="okfont social yesselect contactbox">
+			 <a href="#">f</a> – <a href="#">T</a>
+			</div>
 		</article>
-
-
+		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-		<script src="assets/javascripts/js.js"></script>
-
+		<script src="../assets/javascripts/js.js"></script>
 	</body>
 	</html>
