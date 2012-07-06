@@ -81,7 +81,7 @@ $(function(){
 	$('.logo').okshadow({
   	color: 'black',
 		textShadow: true,
-		transparent: hasTextShadow,
+		transparent: true,
 		xMax: 0,
 		yMax: 0,
 		fuzzMin: 1.5,
@@ -89,7 +89,9 @@ $(function(){
 	});
 
 
- 	$('#front .logo').hide().fadeIn(900);
+ 	$('#front .logo').hide();
+ 	$('#front').show();
+ 	$('#front .logo').fadeIn(900);
 
   if ($('body').hasClass('contact')) {
 
