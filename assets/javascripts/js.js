@@ -662,28 +662,31 @@ $(function(){
           State.swapBg('contact');
           
           $('#directions').on('click', function(){
-            $('#contact').fadeOut('fast');
-            
-            marker = new google.maps.Marker({
-              map: map,
-              draggable: false,
-              animation: google.maps.Animation.DROP,
-              position: okfocus
-            });
-            
-            markers.push(marker);
+            $('#contact').fadeOut('fast', function(){
+              marker = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                position: okfocus
+              });
 
-            google.maps.event.addListener(marker, 'click', function(event) {
-              $('#contact').fadeIn('fast');             
-              
-              if (markers){
-                for (i in markers) {
-                  markers[i].setMap(null);
+              markers.push(marker);
+
+              google.maps.event.addListener(marker, 'click', function(event) {
+                $('#contact').fadeIn('fast');             
+                
+                if (markers){
+                  for (i in markers) {
+                    markers[i].setMap(null);
+                  }
                 }
-              }
-              markers.length = 0;
-              
+                markers.length = 0;
+                
+              });              
+
             });
+            
+
           });
           
 				}, 'unload': function(){
