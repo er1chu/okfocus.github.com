@@ -38,6 +38,7 @@ body {
 	overflow: auto;
 	margin: 0;
 	overflow-x: hidden;
+
 }
 
 @font-face {
@@ -56,6 +57,8 @@ body {
 	font-family: 'OKFocusRegular', sans-serif;
 	font-weight: normal;
 	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 .nopointer {
@@ -534,6 +537,8 @@ body.front {
 	width: auto;
 	display: inline-block;
 	float: left;
+	color: #999;
+	font-weight: 600;
 }
 
 #work #all_work li b {
