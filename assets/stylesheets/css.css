@@ -287,7 +287,6 @@ body.us .gallery div {
 
 
 article {
-	width: 900px\0/;
 	max-width: 1400px;
 	margin: 0 auto;
 	display: inline-block;
@@ -998,7 +997,7 @@ body.us #topul li p:first-child {
 
 .pressthumbs li {
 	width: 48%;
-	padding: 4.99999%;
+	padding: .5%;
 	display: table-cell;
 	z-index: 1;
 	text-align: center;
@@ -1017,8 +1016,13 @@ body.us #topul li p:first-child {
 }
 
 .pressthumbs li:hover img {
-	width: 60%;
+	transform:scale(1.2);
+	-ms-transform:scale(1.2);
+	-moz-transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+	-o-transform:scale(1.2);
 	border-bottom: 1px solid blue;
+	
 }
 
 .pressthumbs a li p.quote {

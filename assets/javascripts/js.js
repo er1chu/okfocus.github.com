@@ -607,12 +607,8 @@ $(function(){
 					$("body")
 						.addClass("front");
 					$('#front .logo').hide().fadeIn(900);
-					console.log('duh');
 					State.swapBg('front');
 				},
-				'unload': function(){
-					$("#front").hide();
-				}
 			},
 
 			'about': {
