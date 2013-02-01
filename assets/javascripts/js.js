@@ -597,19 +597,6 @@ $(function(){
 				State.oldBgClass = newBgClass;
 			},
 
-			'front': {
-				'load': function(){
-					$("#front").stop().css({
-						"left": 0,
-						"width": $(window).width(),
-						"height": $(window).height()
-						}).show();
-					$("body")
-						.addClass("front");
-					$('#front .logo').hide().fadeIn(900);
-					State.swapBg('front');
-				},
-			},
 
 			'about': {
 				'load': function(){
