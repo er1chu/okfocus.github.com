@@ -393,8 +393,9 @@ body.front {
 
 
 @-webkit-keyframes zwiiingnngnggggg {
-      from { -webkit-transform: rotateY(0); text-shadow:0 0 40px #777;}
-      to { -webkit-transform: rotateY(360deg);text-shadow:0 0 0 #333 }
+      from { -webkit-transform: rotateY(0); }
+			80%{text-shadow:0 0 50px #000;}
+      to { -webkit-transform: rotateY(360deg); }
     }
 
 
@@ -413,6 +414,9 @@ body.front {
 	z-index:2;
 	-webkit-animation: zwiiingnngnggggg 6s infinite linear;
 	-webkit-transform-style: preserve-3d;
+	color:transparent;
+	font-family: 'OKFocusRegular', sans-serif;
+	text-shadow: 1px 1px 5px #000;
 }
 
 
