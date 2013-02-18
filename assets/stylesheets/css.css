@@ -393,12 +393,12 @@ body.front {
 
 
 @-webkit-keyframes zwiiingnngnggggg {
-      from { -webkit-transform: rotateY(0); }
-      to { -webkit-transform: rotateY(360deg); }
+      from { -webkit-transform: rotateY(0); text-shadow:0 0 40px #777;}
+      to { -webkit-transform: rotateY(360deg);text-shadow:0 0 0 #333 }
     }
 
 
-#front .logo {
+.logospin {
 	width: 500px;
 	height: 152px;
 	top: 50%;
