@@ -38,18 +38,19 @@ body {
 	overflow: auto;
 	margin: 0;
 	overflow-x: hidden;
+
 }
 
 @font-face {
-	font-family: 'OKFocusRegular';
-	src: url('../fonts/okfocus-regular-webfont.eot');
-}
+                        font-family: 'OKFocusRegular';
+                        src: url('../fonts/okfocus-regular-webfont.eot');
+       }
 
-@font-face {
-	font-family: 'OKFocusRegular';
-	src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
-	url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
-}
+      @font-face {
+                        font-family: 'OKFocusRegular';
+                        src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
+                        url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
+       }
 
 
 .okfont {
@@ -376,6 +377,7 @@ li p {
 
 body.front {
 	overflow: hidden!important;
+
 }
 
 .front nav {
@@ -391,30 +393,16 @@ body.front {
 
 
 @-webkit-keyframes spinnerz {
-	from {
-		-webkit-transform: rotateY(0);
-	}
-	80% {
-		text-shadow: 0 0 50px #000;
-	}
-	to {
-		-webkit-transform: rotateY(360deg)translateZ(50px);
-	}
+      from { -webkit-transform: rotateY(0); }
+			80%{text-shadow:0 0 50px #000;}
+      to { -webkit-transform: rotateY(360deg)translateZ(50px); }
+    }
 
-}
-
-@-moz-keyframes spinnerz {
-	from {
-		-moz-transform: rotateY(0);
-	}
-	80% {
-		text-shadow: 0 0 50px #000;
-	}
-	to {
-		-moz-transform: rotateY(360deg)translateZ(50px);
-	}
-
-}
+		@-moz-keyframes spinnerz {
+		      from { -moz-transform: rotateY(0); }
+					80%{text-shadow:0 0 50px #000;}
+		      to { -moz-transform: rotateY(360deg)translateZ(50px); }
+		    }
 
 .logospin {
 	width: 500px;
@@ -425,15 +413,13 @@ body.front {
 	margin-left: -250px;
 	margin-top: -80px;
 	text-align: center;
-	background-position: center;
-	background-repeat: no-repeat;
+	background-position:center;
+	background-repeat:no-repeat;
 	font-size: 6rem;
-	z-index: 2;
+	z-index:2;
 	-webkit-animation: spinnerz 6s infinite linear;
 	-webkit-transform-style: preserve-3d;
-	-moz-animation: spinnerz 6s infinite linear;
-	-moz-transform-style: preserve-3d;
-	color: transparent;
+	color:transparent;
 	font-family: 'OKFocusRegular', sans-serif;
 	text-shadow: 1px 1px 5px #000;
 }
@@ -1053,12 +1039,13 @@ body.us #topul li p:first-child {
 }
 
 .pressthumbs li:hover img {
-	transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	-webkit-transform: scale(1.2);
-	-o-transform: scale(1.2);
+	transform:scale(1.2);
+	-ms-transform:scale(1.2);
+	-moz-transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+	-o-transform:scale(1.2);
 	border-bottom: 1px solid blue;
+	
 }
 
 .pressthumbs a li p.quote {
@@ -1187,7 +1174,6 @@ body.labs .logo {
 	html {
 		font-size: 15px;
 	}
-
 }
 
 @media (max-width: 1050px) {
