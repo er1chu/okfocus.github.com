@@ -486,6 +486,7 @@ $(function(){
 		'applyTransitionBeforeStart': true,
 		"loaderImage": "../../assets/images/spinner.gif"
 	});
+	
 	$(".autoplay").not("#us .gallery").okgallery({
 		"random": false,
 		"autoplay": true,

@@ -1,0 +1,116 @@
+/*OKFOCUS RESET*/
+
+html {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 100%;
+	outline: 0;
+	border: 0;
+	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+img {
+	border: 0; image-rendering : opimizequality;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	outline: 0;
+}
+
+
+/*GLOBAL STYLEZ*/
+
+
+body {
+	background-image: url('../images/photocopy.png');
+	background-position: CENTER;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-color: white;
+	overflow: auto;
+	margin: 0;
+	overflow-x: hidden;
+
+}
+
+@font-face {
+                        font-family: 'OKFocusRegular';
+                        src: url('../fonts/okfocus-regular-webfont.eot');
+       }
+
+      @font-face {
+                        font-family: 'OKFocusRegular';
+                        src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
+                        url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
+       }
+
+
+.okfont {
+	font-family: 'OKFocusRegular', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+.nopointer {
+	pointer-events: none;
+}
+
+.noselect {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.yesselect {
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-o-user-select: text;
+	user-select: text;
+	pointer-events: auto;
+}
+
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: white;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #333;
+}
+
+::selection {
+	background: #A200FF;
+	color: white;
+	/* Safari */
+}
+
+::-moz-selection {
+	background: #A200FF;
+	color: white;
+	/* Firefox */
+}
+
+.okfont {
+	font-family: 'OKFocusRegular', sans-serif;
+	font-size: 2.5rem;
+	pointer-events: none;
+	text-shadow: 1px 1px white;
+	z-index: 0;
+}
