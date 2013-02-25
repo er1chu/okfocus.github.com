@@ -1,5 +1,44 @@
 /*OKFOCUS RESET*/
 
+body.front {
+	overflow: hidden!important;
+	-webkit-perspective: 100;
+	-moz-perspective: 100;
+}
+
+@-webkit-keyframes zwiiingnngnggggg {
+      0% { -webkit-transform: rotateY(0); }
+			80%{text-shadow:0 0 50px #000;}
+      100% { -webkit-transform: rotateY(360deg)translateZ(50px); }
+    }
+
+		@-moz-keyframes zwiiingnngnggggg {
+		      0% { -moz-transform: rotateY(0); }
+					80%{text-shadow:0 0 50px #000;}
+		      100% { -moz-transform: rotateY(360deg)translateZ(50px); }
+		    }
+.logospin {
+	width: 500px;
+	height: 152px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	margin-left: -250px;
+	margin-top: -80px;
+	text-align: center;
+	background-position:center;
+	background-repeat:no-repeat;
+	font-size: 6rem;
+	z-index:2;
+	-webkit-animation: zwiiingnngnggggg 6s infinite linear;
+	-webkit-transform-style: preserve-3d;
+	-moz-animation: zwiiingnngnggggg 6s infinite linear;
+	-moz-transform-style: preserve-3d;
+	color:transparent;
+	font-family: 'OKFocusRegular', sans-serif;
+	text-shadow: 1px 1px 5px #000;
+}
+
 html {
 	margin: 0;
 	padding: 0;
@@ -375,10 +414,6 @@ li p {
 
 /*FRONT*/
 
-body.front {
-	overflow: hidden!important;
-
-}
 
 .front nav {
 	display: initial;
@@ -389,39 +424,6 @@ body.front {
 	font-style: regular;
 	letter-spacing: 8px;
 	color: black;
-}
-
-
-@-webkit-keyframes spinnerz {
-      from { -webkit-transform: rotateY(0); }
-			80%{text-shadow:0 0 50px #000;}
-      to { -webkit-transform: rotateY(360deg)translateZ(50px); }
-    }
-
-		@-moz-keyframes spinnerz {
-		      from { -moz-transform: rotateY(0); }
-					80%{text-shadow:0 0 50px #000;}
-		      to { -moz-transform: rotateY(360deg)translateZ(50px); }
-		    }
-
-.logospin {
-	width: 500px;
-	height: 152px;
-	top: 50%;
-	left: 50%;
-	position: absolute;
-	margin-left: -250px;
-	margin-top: -80px;
-	text-align: center;
-	background-position:center;
-	background-repeat:no-repeat;
-	font-size: 6rem;
-	z-index:2;
-	-webkit-animation: spinnerz 6s infinite linear;
-	-webkit-transform-style: preserve-3d;
-	color:transparent;
-	font-family: 'OKFocusRegular', sans-serif;
-	text-shadow: 1px 1px 5px #000;
 }
 
 /*work*/
