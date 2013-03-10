@@ -289,10 +289,8 @@ h1.logo {
 	opacity:0.3;
 	-webkit-animation: a 0s 1 ease-in-out;
 }
-h1.logo.faded {
-	opacity:0.4!important;
-}
-.logo.bigger.faded {
+
+.faded {
 	opacity:0.12!important;
 }
 
@@ -300,7 +298,6 @@ h1.logo.faded {
 	padding: 20px;
 	display: inline-block;
 	background: #f9f9f9;
-	background:rgba(200,200,200,0.4);
 	float: left;
 }
 .close {
@@ -321,7 +318,6 @@ h1.logo.faded {
 }
 .thumb.show:hover{
 	background:#f9f9f9;
-	background:rgba(200,200,200,0.4);
 	cursor:default;		
 }
 p{
