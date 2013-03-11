@@ -33,14 +33,16 @@ $(function(){
 		$('.thumb').removeClass('show');
 		$(this).addClass('show');
 		var headerHeight = $('header').height() + 2 * parseInt( $("header").css('paddingTop').replace("px","") );
-		$("body").scrollTop( $(this).offset().top - headerHeight );
+		var scrollTop = $(this).offset().top - headerHeight;
+		$("body").animate({ scrollTop: scrollTop }, 200);
 		return false;
 	});
 	
 	$('.close').click(function() {
 		$('.thumb').removeClass('show');
 		var headerHeight = $('header').height() + 2 * parseInt( $("header").css('paddingTop').replace("px","") );
-		$("body").scrollTop( $(this).closest(".thumb").offset().top - headerHeight );
+		var scrollTop = $(this).closest(".thumb").offset().top - headerHeight;
+		$("body").animate({ scrollTop: scrollTop }, 200);
 		return false;
 	});
 	
