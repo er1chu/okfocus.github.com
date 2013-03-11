@@ -28,9 +28,11 @@ $(function(){
 	
 	
 	$('.thumb').click(function() {
+		if ($(this).hasClass('show')) return;
 		$(this).find('.info').toggleClass('show');
 		$('.thumb').removeClass('show');
 		$(this).addClass('show');
+		$("body").scrollTop( $(this).offset().top - $("header").height() );
 		return false;
 	});
 	
