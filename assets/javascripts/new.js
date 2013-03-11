@@ -32,7 +32,8 @@ $(function(){
 		$(this).find('.info').toggleClass('show');
 		$('.thumb').removeClass('show');
 		$(this).addClass('show');
-		$("body").scrollTop( $(this).offset().top - $("header").height() );
+		var headerHeight = $('header').height() + 2 * parseInt( $("header").css('paddingTop').replace("px","") );
+		$("body").scrollTop( $(this).offset().top - headerHeight );
 		return false;
 	});
 	
