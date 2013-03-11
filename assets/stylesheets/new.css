@@ -234,7 +234,6 @@ h2 {
 	padding: 70px 0 5px 0;
 	margin-bottom: 40px;
 	margin-top: 0;
-	color:#999;
 }
 
 @-moz-document url-prefix() { 
@@ -282,7 +281,6 @@ h1.logo {
 .thumb{
 	padding: 20px;
 	display: inline-block;
-	background: #f9f9f9;
 	float: left;
 }
 .close {
@@ -305,8 +303,11 @@ h1.logo {
 	cursor:pointer;		
 }
 
-.thumb.show:hover{
+ul.work{
 	background:#f9f9f9;
+}
+
+.thumb.show:hover{
 	cursor:default;		
 }
 p{
@@ -345,8 +346,8 @@ p{
 	text-align:center;
 	background:white;
 	box-shadow:2px 2px #eee;
-	color:#999;
 }
+
 .thumb .screen h4 {
 	background:white;
 	margin:0;
@@ -464,20 +465,18 @@ u{
 .press td img{
 	max-width:200px;
 	margin-bottom:10px;
-	opacity: 0.4;
 }
 .press td p {
 	font-family: sans-serif;
 	line-height: 20px;
 	font-size: 16px;
 	padding: 15px 0;
-	color:#999;
 }
 .press a:hover img {
 	opacity:1;
 }
 .press a:hover p{
-	color:black;
+	color:blue;
 }
 #map {
 	height: 100%;
