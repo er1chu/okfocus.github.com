@@ -39,6 +39,8 @@ $(function(){
 	
 	$('.close').click(function() {
 		$('.thumb').removeClass('show');
+		var headerHeight = $('header').height() + 2 * parseInt( $("header").css('paddingTop').replace("px","") );
+		$("body").scrollTop( $(this).closest(".thumb").offset().top - headerHeight );
 		return false;
 	});
 	
