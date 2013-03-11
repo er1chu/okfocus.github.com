@@ -585,7 +585,15 @@ u{
 	background: rgba(0,120,255,0.5);
 }
 
-<<<<<<< HEAD
+/* the dynamic background-position on okzoom didn't work until i added this.. ! */
+#ok-lorgnette {
+	-webkit-transition: background-position 0.01s linear;
+	-moz-transition: background-position 0.01s linear;
+	-o-transition: background-position 0.01s linear;
+	-ms-transition: background-position 0.01s linear;
+	transition: background-position 0.01s linear;
+}
+
 @media (min-width: 1500px) {
 	.rapper {
 		width:1140px;
@@ -612,12 +620,4 @@ u{
 	max-width: 300px;
 	margin-right: 70px;
 	}
-=======
-#ok-lorgnette {
-	-webkit-transition: background-position 0.01s linear;
-	-moz-transition: background-position 0.01s linear;
-	-o-transition: background-position 0.01s linear;
-	-ms-transition: background-position 0.01s linear;
-	transition: background-position 0.01s linear;
->>>>>>> ed19f3bd9d14be24972f9c8a0fa7d0a04cd99711
 }
