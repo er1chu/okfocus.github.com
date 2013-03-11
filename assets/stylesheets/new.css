@@ -217,9 +217,11 @@ header table td a {
 	width:960px;
 	margin:0 auto;
 }
-#about {
+
+.about {
 	font-family: sans-serif;
 }
+
 .work{
 	display: inline-block;
 	width: 100%;
@@ -321,13 +323,14 @@ p{
 }
 .thumb .inner {
 	display:none;
-	padding: 10px;
 }
 .thumb.show .inner{
 	display:block;
 	background:white;
 	border-top: 20px solid yellow;
 	border:10px solid;
+	box-shadow:0 0 10px #222;
+	padding: 10px;
 }
 
 .thumb .screen {
@@ -350,39 +353,34 @@ p{
 	box-shadow:2px 2px #eee;
 }
 
+.thumb .screen td a{
+	display:none;
+}
+.thumb.show .screen td a{
+	display:block;
+}
+.thumb:hover td{
+	display:none;
+}
+
+.thumb.show:hover td{
+	display:table-cell;
+}
+
 .thumb .screen h4 {
 	background:white;
 	margin:0;
 	font-size:28px;
 	font-weight:normal;
-}
-.thumb:hover .screen td{
-	display:none;
-}
-
-.thumb .screen.invert td{
-	display:none;
+	display: inline-block;
+	box-shadow:-4px 4px white;
 }
 
-.thumb:hover .screen td{
-	display:none;
-}
 
-.thumb .screen.invert td{
-	display:none;
-}
-
-.thumb:hover .screen.invert td{
-	display:table-cell;
-}
 
 .thumb.show .screen td{
-	display:none;
+	background:transparent;
 }
-.thumb.show .screen:hover td{
-	display:none;
-}
-
 
 .thumb.show .screen {
 	width:100%;
@@ -391,6 +389,7 @@ p{
 	border-bottom:0px;
 	background-size: cover!important;
 	background-position: top center!important;
+	box-shadow:0 0 10px #222;
 }
 
 .thumb h3 {
@@ -398,10 +397,6 @@ p{
 	margin: 0 0 10px 0;
 	font-size: 35px;
 	font-weight:normal;
-}
-
-.thumb.show h3 {
-	display:block;
 }
 
 .embed {
@@ -441,14 +436,12 @@ p{
 .launch {
 	background: blue;
 	padding: 10px 22px;
-	display: block;
-	font-family: 'gtwal', sans-serif;
-	letter-spacing: 1px;
-	font-size: 18px;
+	display: inline-block;
 	color: white;
 	width: 200px;
 	text-align: center;
-	margin:10px auto;
+	margin:0px auto;
+	box-shadow:-4px 4px white;
 }
 
 .launch:hover {
