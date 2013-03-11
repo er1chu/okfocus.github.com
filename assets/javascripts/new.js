@@ -49,6 +49,49 @@ $(function(){
 			$("h1.logo").removeClass("faded")
 	    }
 	});		
+	
+	
+	$(".next").on("click", function(e){
+		    e.preventDefault();			
+				var nextthing = $(".work li.show").next('li');
+				
+				if (nextthing.length) {
+					nextthing.addClass("show");
+					$(".work li.show").prev('li').removeClass("show");
+				}
+
+				else {
+					 $(".work li").first('li').addClass("show");
+					 $(".work li").last('li').removeClass("show");
+					}
+		  });
+
+
+
+			 $(".prev").on("click", function(e){
+			    e.preventDefault();			
+					var prevthing = $(".thumb.show").prev('.thumb');
+					if (prevthing.length) {
+						prevthing.addClass(".show");
+						$(".thumb.show").next('li').removeClass("opened");
+					}
+
+					else {
+						 $("#content li").last('li').addClass("opened");
+						 $("#content li").first('li').removeClass("opened");
+						}
+			  });
+
+				// right click moves forward
+				$(document).keydown(function(event) {
+				  if (event.which == 39) $(".next").trigger("click");
+				});
+
+				// left click moves back
+				$(document).keydown(function(event) {
+				  if (event.which == 37) $(".prev").trigger("click");
+				});
+	
 });
 
 $(function(){

@@ -37,18 +37,6 @@
 }
 
 
-@font-face {
-	font-family: 'super';
-	src: url('../fonts/VTCSuperMarketSaleRegular.ttf');
-	font-weight:normal;
-}
-
-@font-face {
-	font-family: 'super';
-	src: url('../fonts/VTCSuperMarketSaleRegular.woff') format('woff');
-	font-weight:normal;
-}
-
 
 /*OKFOCUS RESET*/
 
@@ -91,6 +79,12 @@ body {
 	margin: 0;
 	overflow-x: hidden;
 	padding-top:30px;
+}
+
+ul, li {
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 
 header *{
@@ -409,6 +403,27 @@ p{
 .launch:hover {
 	color:yellow;
 	-webkit-animation: b 0.04s infinite linear;
+}
+
+
+.nav {
+	position: absolute;
+	width: 1000px;
+	margin-left: -60px;
+	font-size: 114px;
+	margin-top: -84px;
+}
+
+.prev {
+	float:left;
+}
+
+.next {
+	float:right;
+}
+
+.nav a:hover {
+	color:blue;
 }
 
 h3 {
