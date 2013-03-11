@@ -116,11 +116,8 @@ $(function(){
 	// right click moves forward
 	$(document).keydown(function(event) {
 	  if (event.which == 39) $(".next").first().trigger("click");
-	});
-
-	// left click moves back
-	$(document).keydown(function(event) {
 	  if (event.which == 37) $(".prev").first().trigger("click");
+	  if (event.which == 27) $(".show").find(".close").trigger("click");
 	});
 
 });
