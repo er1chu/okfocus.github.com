@@ -175,25 +175,25 @@ header {
 	top:0;
 	left:0;
 	position:fixed;
+	z-index:2;
+	background:white;
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 44%, rgba(255,255,255,1) 74%, rgba(255,255,255,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(44%,rgba(255,255,255,1)), color-stop(74%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
 }
 
-header *{
-	-webkit-transition: opacity .6s linear;
-	-moz-transition: opacity .6s linear;
-	-o-transition: opacity .6s linear;
-	transition: opacity .6s linear;
-}
 
 header table {
 	margin: 0px auto;
 	font-size: 12px;
 	color: #555;
-	opacity: 0;
 	width: 960px;
 }
-header.scrolled table {
-	opacity:1;
-}
+
 header table td{
 	padding:0px 15px;
 	text-align:right;
@@ -211,17 +211,6 @@ header table td a.okfont:hover {
 }
 header table td a {
 	font-weight: bold;
-}
-
-header.scrolled {
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 44%, rgba(255,255,255,1) 74%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(44%,rgba(255,255,255,1)), color-stop(74%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-	z-index:666;
 }
 
 .rapper {
@@ -245,6 +234,7 @@ h2 {
 	padding: 70px 0 5px 0;
 	margin-bottom: 40px;
 	margin-top: 0;
+	color:#999;
 }
 
 @-moz-document url-prefix() { 
@@ -262,7 +252,7 @@ h2 {
 
 h1.logo {
 	font-size: 2.6rem;
-	top: 0;
+	top: 6%;
 	left: 0;
 	margin: 0;
 	text-align: center;
@@ -350,12 +340,12 @@ p{
 }
 
 .thumb .screen td{
-	display:none;
 	font-family: 'gtwal', sans-serif;
 	letter-spacing: 1px;
 	text-align:center;
 	background:white;
 	box-shadow:2px 2px #eee;
+	color:#999;
 }
 .thumb .screen h4 {
 	background:white;
@@ -364,14 +354,33 @@ p{
 	font-weight:normal;
 }
 .thumb:hover .screen td{
+	display:none;
+}
+
+.thumb .screen.invert td{
+	display:none;
+}
+
+.thumb:hover .screen td{
+	display:none;
+}
+
+.thumb .screen.invert td{
+	display:none;
+}
+
+.thumb:hover .screen.invert td{
 	display:table-cell;
 }
+
 .thumb.show .screen td{
 	display:none;
 }
 .thumb.show .screen:hover td{
 	display:none;
 }
+
+
 .thumb.show .screen {
 	width:100%;
 	height: 60%;
@@ -407,7 +416,6 @@ p{
 
 .launch:hover {
 	color:yellow;
-	-webkit-animation: b 0.04s infinite linear;
 }
 
 
@@ -442,6 +450,13 @@ u{
 	text-decoration:none;
 }
 
+.press *{
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
 .press td{
 	vertical-align:top;
 	padding:0 30px 60px 0;
@@ -449,15 +464,20 @@ u{
 .press td img{
 	max-width:200px;
 	margin-bottom:10px;
+	opacity: 0.4;
 }
 .press td p {
 	font-family: sans-serif;
 	line-height: 20px;
 	font-size: 16px;
 	padding: 15px 0;
+	color:#999;
+}
+.press a:hover img {
+	opacity:1;
 }
 .press a:hover p{
-	color:blue;
+	color:black;
 }
 #map {
 	height: 100%;
@@ -530,4 +550,30 @@ u{
 	background: rgba(0,120,255,0.5);
 }
 
+@media (min-width: 1500px) {
+	.rapper {
+		width:1140px;
+	}
 
+}
+
+
+@media (min-width: 1500px) {
+	.rapper {
+		width:1200px;
+	}
+	header table {
+		width:1200px;
+	}
+	#about{
+		font-size:30px;
+	}
+	.press td p {
+	font-family: sans-serif;
+	line-height: 20px;
+	font-size: 16px;
+	padding: 15px 0px 15px 0;
+	max-width: 300px;
+	margin-right: 70px;
+	}
+}
