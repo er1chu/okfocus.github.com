@@ -87,14 +87,6 @@ ul, li {
 	list-style:none;
 }
 
-header *{
-	-webkit-transition: opacity .6s linear;
-	-moz-transition: opacity .6s linear;
-	-o-transition: opacity .6s linear;
-	transition: opacity .6s linear;
-}
-
-
 .okfont {
 	font-family: 'OKFocusRegular', sans-serif;
 	font-weight: normal;
@@ -153,14 +145,6 @@ header *{
 	/* Firefox */
 }
 
-.okfont {
-	font-family: 'OKFocusRegular', sans-serif;
-	font-size: 2.5rem;
-	pointer-events: none;
-	text-shadow: 1px 1px white;
-	z-index: 0;
-}
-
 @-webkit-keyframes a {
 	from{
 		-webkit-transform:scale(0)rotateX(0deg);
@@ -192,6 +176,14 @@ header {
 	left:0;
 	position:fixed;
 }
+
+header *{
+	-webkit-transition: opacity .6s linear;
+	-moz-transition: opacity .6s linear;
+	-o-transition: opacity .6s linear;
+	transition: opacity .6s linear;
+}
+
 header table {
 	margin: 0px auto;
 	font-size: 12px;
@@ -204,12 +196,21 @@ header.scrolled table {
 }
 header table td{
 	padding:0px 15px;
-	text-align:center;
+	text-align:right;
 }
 header table td a:hover {
-	-webkit-animation: b 0.05s infinite linear;
-	background-color:blue;
-	color:white;
+	border-bottom:3px solid;
+}
+
+header table td a.okfont {
+	font-weight: bold;
+}
+
+header table td a.okfont:hover {
+	border-bottom:0px solid;
+}
+header table td a {
+	font-weight: bold;
 }
 
 header.scrolled {
@@ -295,9 +296,11 @@ h1.logo {
 	float: left;
 }
 .close {
-	float:right;
-	font-size: 47px;
-	font-family:'super',sans-serif;
+	float: right;
+	font-size: 61px;
+	margin-top: -17px;
+	text-shadow: -1px 1px yellow;
+	font-family: sans-serif;
 }
 .close:hover {
 	color:blue;
@@ -305,11 +308,13 @@ h1.logo {
 .thumb.show{
 	width:100%;
 }
+
 .thumb:hover {
 	background-image:url(/assets/images/dotbg2.gif);
 	background-color:blue;
 	cursor:pointer;		
 }
+
 .thumb.show:hover{
 	background:#f9f9f9;
 	cursor:default;		
