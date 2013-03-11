@@ -38,19 +38,18 @@ body {
 	overflow: auto;
 	margin: 0;
 	overflow-x: hidden;
-
 }
 
 @font-face {
-                        font-family: 'OKFocusRegular';
-                        src: url('../fonts/okfocus-regular-webfont.eot');
-       }
+	font-family: 'OKFocusRegular';
+	src: url('../fonts/okfocus-regular-webfont.eot');
+}
 
-      @font-face {
-                        font-family: 'OKFocusRegular';
-                        src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
-                        url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
-       }
+@font-face {
+	font-family: 'OKFocusRegular';
+	src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
+	url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
+}
 
 
 .okfont {
@@ -378,6 +377,8 @@ li p {
 body.front {
 	overflow: hidden!important;
 	-webkit-perspective: 100;
+	-moz-perspective: 100px;
+	-moz-perspective-origin:-50px -50px;
 }
 
 .front nav {
@@ -393,11 +394,31 @@ body.front {
 
 
 @-webkit-keyframes zwiiingnngnggggg {
-      from { -webkit-transform: rotateY(0); }
-			80%{text-shadow:0 0 50px #000;}
-      to { -webkit-transform: rotateY(360deg); }
-    }
+	from {
+		-webkit-transform: rotateY(0);
+	}
+	80% {
+		text-shadow: 0 0 50px #000;
+	}
+	to {
+		-webkit-transform: rotateY(360deg);
+	}
 
+}
+
+
+@-moz-keyframes zwiiingnngnggggg {
+	from {
+		-moz-transform: rotateY(0);
+	}
+	80% {
+		text-shadow: 0 0 50px #000;
+	}
+	to {
+		-moz-transform: rotateY(360deg);
+	}
+
+}
 .logospin {
 	width: 500px;
 	height: 152px;
@@ -407,13 +428,16 @@ body.front {
 	margin-left: -250px;
 	margin-top: -80px;
 	text-align: center;
-	background-position:center;
-	background-repeat:no-repeat;
+	background-position: center;
+	background-repeat: no-repeat;
 	font-size: 6rem;
-	z-index:2;
+	z-index: 2;
 	-webkit-animation: zwiiingnngnggggg 6s infinite linear;
 	-webkit-transform-style: preserve-3d;
-	color:transparent;
+	-moz-animation: zwiiingnngnggggg 6s infinite linear;
+	-moz-transform-style: preserve-3d;
+	-moz-perspective-origin:100px;
+	color: transparent;
 	font-family: 'OKFocusRegular', sans-serif;
 	text-shadow: 1px 1px 5px #000;
 }
@@ -645,7 +669,6 @@ body.front {
 	cursor: pointer;
 }
 
-
 #study #launch p {
 	color: blue;
 	cursor: pointer;
@@ -656,7 +679,6 @@ body.front {
 	text-decoration: underline;
 }
 
-
 #study img {
 	margin-bottom: 5px;
 }
@@ -666,7 +688,6 @@ body.front {
 	display: inline-block;
 	margin: 0 auto;
 }
-
 
 #study h3 {
 	border-bottom: 1px solid;
@@ -1033,13 +1054,12 @@ body.us #topul li p:first-child {
 }
 
 .pressthumbs li:hover img {
-	transform:scale(1.2);
-	-ms-transform:scale(1.2);
-	-moz-transform:scale(1.2);
-	-webkit-transform:scale(1.2);
-	-o-transform:scale(1.2);
+	transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-o-transform: scale(1.2);
 	border-bottom: 1px solid blue;
-	
 }
 
 .pressthumbs a li p.quote {
@@ -1168,6 +1188,7 @@ body.labs .logo {
 	html {
 		font-size: 15px;
 	}
+
 }
 
 @media (max-width: 1050px) {
