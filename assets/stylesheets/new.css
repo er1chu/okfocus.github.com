@@ -3,37 +3,37 @@
 @font-face {
 	font-family: 'OKFocusRegular';
 	src: url('../fonts/okfocus-regular-webfont.eot');
-	font-weight:normal;
+	font-weight: normal;
 }
 
 @font-face {
 	font-family: 'OKFocusRegular';
 	src: url('../fonts/okfocus-regular-webfont.woff') format('woff'),
 	url('../fonts/okfocus-regular-webfont.svg#okfocus-regular-webfont') format('svg');
-	font-weight:normal;
+	font-weight: normal;
 }
 @font-face {
 	font-family: 'gtwal';
 	src: url('../fonts/gt_walsheim_medium-webfont.ttf');
-	font-weight:normal;
+	font-weight: normal;
 }
 
 @font-face {
 	font-family: 'gtwal';
 	src: url('../fonts/gt_walsheim_medium-webfont.woff') format('woff');
-	font-weight:normal;
+	font-weight: normal;
 }
 
 @font-face {
 	font-family: 'gtwal-bold';
 	src: url('../fonts/GT-Walsheim-Bold.ttf');
-	font-weight:normal;
+	font-weight: normal;
 }
 
 @font-face {
 	font-family: 'gtwal-bold';
 	src: url('../fonts/GT-Walsheim-Bold.woff') format('woff');
-	font-weight:normal;
+	font-weight: normal;
 }
 
 
@@ -81,9 +81,9 @@ body {
 }
 
 ul, li {
-	margin:0;
-	padding:0;
-	list-style:none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .okfont {
@@ -125,7 +125,7 @@ ul, li {
 }
 
 ::-webkit-scrollbar-track {
-	background:white;
+	background: white;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -144,44 +144,46 @@ ul, li {
 	/* Firefox */
 }
 
-#video{
-	height:100%;
-	display:inline-block;
-	width:100%;
+#video {
+	height: 100%;
+	display: inline-block;
+	width: 100%;
 }
 
 @-webkit-keyframes a {
-	from{
-		-webkit-transform:scale(0)rotateX(0deg);
+	from {
+		-webkit-transform: scale(0)rotateX(0deg);
 	}
-	60%{
-		-webkit-transform:scale(0.9)rotateX(180deg);
+	60% {
+		-webkit-transform: scale(0.9)rotateX(180deg);
 	}
 	to {
-		-webkit-transform:scale(1)rotateX(360deg);
+		-webkit-transform: scale(1)rotateX(360deg);
 	}
+
 }
 
 @-webkit-keyframes b {
-	50%{
-		background-color:#6698ff;
+	50% {
+		background-color: #6698ff;
 	}
+
 }
 .logo {
-	color:transparent!important;
+	color: transparent!important;
 }
-.smaller.logo{
-	text-shadow:0 0 #333;
+.smaller.logo {
+	text-shadow: 0 0 #333;
 }
 
 header {
-	padding:30px 0 50px 0;
-	width:100%;
-	top:0;
-	left:0;
-	position:fixed;
-	z-index:2;
-	background:white;
+	padding: 30px 0 50px 0;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: 2;
+	background: white;
 	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 44%, rgba(255,255,255,1) 74%, rgba(255,255,255,0) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(44%,rgba(255,255,255,1)), color-stop(74%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
 	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
@@ -199,36 +201,31 @@ header table {
 	width: 960px;
 }
 
-header table td{
-	padding:0px 15px;
-	text-align:right;
-	min-width:120px;
-}
-header table td a:hover {
-	border-bottom:3px solid;
+header table td {
+	padding: 0px 15px;
+	text-align: right;
+	min-width: 120px;
 }
 
 header table td a.okfont {
 	font-weight: bold;
 }
 
-header table td a.okfont:hover {
-	border-bottom:0px solid;
-}
+
 header table td a {
 	font-weight: bold;
 }
 
 .rapper {
-	width:960px;
-	margin:0 auto;
+	width: 960px;
+	margin: 0 auto;
 }
 
 .about {
 	font-family: sans-serif;
 }
 
-.work{
+.work {
 	display: inline-block;
 	width: 100%;
 	-webkit-transform: translate3d(0,0,0);
@@ -244,18 +241,19 @@ h2 {
 	margin-top: 0;
 }
 
-@-moz-document url-prefix() { 
-  h2{
-	font-weight:normal;
-	border-bottom:7px solid;
+@-moz-document url-prefix() {
+	h2 {
+		font-weight: normal;
+		border-bottom: 7px solid;
 	}
+
 }
 
 .topstuff {
-	height:100%;
-	min-height:530px;
-	width:100%;
-	pointer-events:none;
+	height: 100%;
+	min-height: 530px;
+	width: 100%;
+	pointer-events: none;
 }
 
 h1.logo {
@@ -266,7 +264,7 @@ h1.logo {
 	text-align: center;
 	width: 100%;
 	position: fixed;
-	margin-left:-5px;
+	margin-left: -5px;
 	margin-top: 250px;
 	-webkit-animation: a 0.4s 1 ease-in-out;
 	-webkit-transition: opacity .6s linear;
@@ -278,141 +276,115 @@ h1.logo {
 	font-size: 34rem;
 	text-align: center;
 	margin: 0;
-	color:transparent;
-	opacity:0.3;
+	color: transparent;
+	opacity: 0.3;
 	-webkit-animation: a 0s 1 ease-in-out;
 }
 
 .faded {
-	opacity:0.12!important;
+	opacity: 0.12!important;
 }
 
-.thumb{
+.thumb {
 	padding: 20px;
 	display: inline-block;
 	float: left;
 }
-.close {
-	float: right;
-	font-size: 61px;
-	margin-top: -17px;
-	text-shadow: -1px 1px yellow;
-	font-family: sans-serif;
-}
-.close:hover {
-	color:blue;
-}
-.thumb.show{
-	width:100%;
+
+.thumb.show {
+	width: 100%;
 }
 
-.thumb:hover {
-	background-image:url(/assets/images/dotbg2.gif);
-	background-color:blue;
-	cursor:pointer;		
+ul.work {
+	background: #f9f9f9;
 }
 
-ul.work{
-	background:#f9f9f9;
-}
-
-.thumb.show:hover{
-	cursor:default;		
-	background:#f9f9f9;
-}
-p{
+p {
 	font-family: 'gtwal', sans-serif;
 	letter-spacing: 1px;
 	font-size: 18px;
 	line-height: 37px;
-	margin:0;
+	margin: 0;
 }
 .thumb .inner {
-	display:none;
+	display: none;
 }
-.thumb.show .inner{
-	display:block;
-	background:white;
+.thumb.show .inner {
+	display: block;
+	background: white;
 	border-top: 20px solid yellow;
-	border:10px solid;
-	box-shadow:0 0 10px #222;
+	border: 10px solid;
+	box-shadow: 0 0 10px #222;
 	padding: 10px;
 }
 
 .thumb .screen {
-	width:200px;
-	height:200px;
-	background-position:center;
+	width: 200px;
+	height: 200px;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-color: white;
 }
 
 .thumb .screen.bigger {
-	width:440px;
+	width: 440px;
 }
 
-.thumb .screen td{
+.thumb .screen td {
 	font-family: 'gtwal', sans-serif;
 	letter-spacing: 1px;
-	text-align:center;
-	background:white;
+	text-align: center;
+	background: white;
 }
 
-.thumb .screen td a{
-	display:none;
+.thumb .screen td a {
+	display: none;
 }
-.thumb.show .screen td a{
-	display:block;
-}
-.thumb:hover td{
-	display:none;
-}
-
-.thumb.show:hover td{
-	display:table-cell;
+.thumb.show .screen td a {
+	display: block;
 }
 
 .thumb .screen h4 {
-	background:white;
-	margin:0;
-	font-size:28px;
-	font-weight:normal;
+	background: white;
+	margin: 0;
+	font-size: 28px;
+	font-weight: normal;
 	display: inline-block;
 }
 
-.thumb.show .screen h4{
-	box-shadow:-4px 4px #ccc;
-	padding:4px;
+.thumb.show .screen h4 {
+	box-shadow: -4px 4px #ccc;
+	padding: 4px;
 }
 
-.thumb .screen h4 span{
-	display:none;
+.thumb .screen h4 span {
+	display: none;
 }
 
-.thumb.show .screen h4 span{
-	display:block;
+.thumb.show .screen h4 span {
+	display: block;
 }
 
-.thumb.show .screen td{
-	background:transparent;
+.thumb.show .screen td {
+	background: transparent;
 }
 
 .thumb.show .screen {
-	width:100%;
+	width: 100%;
 	height: 60%;
-	border:10px solid;
-	border-bottom:0px;
+	border: 10px solid;
+	border-bottom: 0px;
 	background-size: cover!important;
 	background-position: top center!important;
-	box-shadow:0 0 10px #222;
+	box-shadow: 0 0 10px #222;
 }
 
 .embed {
 	display: none;
-	width:100%;
+	width: 100%;
 	height: 60%;
-	border:10px solid;
-	border-bottom:0px;
+	border: 10px solid;
+	border-bottom: 0px;
 	position: relative;
 }
 .thumb.embedded.show .screen {
@@ -448,13 +420,9 @@ p{
 	color: white;
 	width: 140px;
 	text-align: center;
-	margin:0px auto;
-	box-shadow:-4px 4px #ccc;
-	position:relative;
-}
-
-.launch:hover {
-	color:yellow;
+	margin: 0px auto;
+	box-shadow: -4px 4px #ccc;
+	position: relative;
 }
 
 
@@ -467,37 +435,33 @@ p{
 }
 
 .prev {
-	float:left;
+	float: left;
 }
 
 .next {
-	float:right;
+	float: right;
 }
 
-.nav a:hover {
-	color:blue;
+u {
+	border-bottom: 3px solid;
+	padding-bottom: 5px;
+	text-decoration: none;
 }
 
-u{
-	border-bottom:3px solid;
-	padding-bottom:5px;
-	text-decoration:none;
-}
-
-.press *{
+.press * {
 	-webkit-transition: all .2s linear;
 	-moz-transition: all .2s linear;
 	-o-transition: all .2s linear;
 	transition: all .2s linear;
 }
 
-.press td{
-	vertical-align:top;
-	padding:0 30px 60px 0;
+.press td {
+	vertical-align: top;
+	padding: 0 30px 60px 0;
 }
-.press td img{
-	max-width:200px;
-	margin-bottom:10px;
+.press td img {
+	max-width: 200px;
+	margin-bottom: 10px;
 }
 .press td p {
 	font-family: sans-serif;
@@ -505,12 +469,8 @@ u{
 	font-size: 16px;
 	padding: 15px 0;
 }
-.press a:hover img {
-	opacity:1;
-}
-.press a:hover p{
-	color:blue;
-}
+
+
 #map {
 	height: 100%;
 	width: 100%;
@@ -520,7 +480,7 @@ u{
 	position: absolute;
 	margin-left: 5%;
 	margin-top: -45%;
-	font-family:'gtwal',sans-serif;
+	font-family: 'gtwal',sans-serif;
 }
 
 #contact h1 {
@@ -535,10 +495,7 @@ u{
 	background: rgba(255,255,0,0.2);
 	display: inline;
 }
-#contact a:hover {
-	background: rgba(0,120,255,0.5);
-	text-decoration: underline
-}
+
 
 .contactbox {
 	color: white;
@@ -578,11 +535,63 @@ u{
 	background: rgba(0, 0, 255, 0.8) ;
 }
 
-#contact .social a:hover {
-	background: rgba(0,120,255,0.5);
+/*hover states for desktop*/
+@media screen {
+	header table td a:hover {
+		border-bottom: 3px solid;
+	}
+
+	header table td a.okfont:hover {
+		border-bottom: 0px solid;
+	}
+
+	.thumb:hover {
+		background-image: url(/assets/images/dotbg2.gif);
+		background-color: blue;
+		cursor: pointer;
+	}
+
+	.thumb.show:hover {
+		cursor: default;
+		background: #f9f9f9;
+	}
+
+	.thumb:hover td {
+		display: none;
+	}
+
+	.thumb.show:hover td {
+		display: table-cell;
+	}
+
+	.launch:hover {
+		color: yellow;
+	}
+
+	.nav a:hover {
+		color: blue;
+	}
+
+	.press a:hover p {
+		color: blue;
+	}
+
+	#contact a:hover {
+		background: rgba(0,120,255,0.5);
+		text-decoration: underline
+	}
+
+	#contact .social a:hover {
+		background: rgba(0,120,255,0.5);
+	}
+
 }
 
+
+
 /* the dynamic background-position on okzoom didn't work until i added this.. ! */
+
+
 #ok-lorgnette {
 	-webkit-transition: background-position 0.01s linear;
 	-moz-transition: background-position 0.01s linear;
@@ -593,7 +602,7 @@ u{
 
 @media (min-width: 1500px) {
 	.rapper {
-		width:1140px;
+		width: 1140px;
 	}
 
 }
@@ -601,20 +610,24 @@ u{
 
 @media (min-width: 1500px) {
 	.rapper {
-		width:1200px;
+		width: 1200px;
 	}
 	header table {
-		width:1200px;
+		width: 1200px;
 	}
-	.about{
-		font-size:30px;
+	.about {
+		font-size: 30px;
 	}
 	.press td p {
-	font-family: sans-serif;
-	line-height: 20px;
-	font-size: 16px;
-	padding: 15px 0px 15px 0;
-	max-width: 300px;
-	margin-right: 70px;
+		font-family: sans-serif;
+		line-height: 20px;
+		font-size: 16px;
+		padding: 15px 0px 15px 0;
+		max-width: 300px;
+		margin-right: 70px;
 	}
+
+}
+
+@media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
 }
