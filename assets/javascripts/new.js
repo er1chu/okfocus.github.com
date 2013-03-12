@@ -65,7 +65,7 @@ $(function(){
 		return false;
 	});
 	
-	$('.close').click(function() {
+	$('body').click(function() {
 		$('.thumb').removeClass('show');
 		var scrollTop = $(this).closest(".thumb").offset().top - headerHeight();
 		$("body").animate({ scrollTop: scrollTop }, 200);
@@ -76,10 +76,8 @@ $(function(){
 	$(window).scroll(function() {    
 	  var scroll = $(window).scrollTop();
 	    if (scroll >= 150) {
-	        $("header").addClass("scrolled");
 			$("h1.logo").addClass("faded")
 	    } else {
-	        $("header").removeClass("scrolled");
 			$("h1.logo").removeClass("faded")
 	    }
 	});
