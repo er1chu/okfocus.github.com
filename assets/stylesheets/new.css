@@ -379,6 +379,14 @@ p{
 	padding:4px;
 }
 
+.thumb .screen h4 span{
+	display:none;
+}
+
+.thumb.show .screen h4 span{
+	display:block;
+}
+
 .thumb.show .screen td{
 	background:transparent;
 }
@@ -391,13 +399,6 @@ p{
 	background-size: cover!important;
 	background-position: top center!important;
 	box-shadow:0 0 10px #222;
-}
-
-.thumb h3 {
-	display:none;
-	margin: 0 0 10px 0;
-	font-size: 35px;
-	font-weight:normal;
 }
 
 .embed {
@@ -469,11 +470,6 @@ p{
 
 .nav a:hover {
 	color:blue;
-}
-
-h3 {
-	font-family:'gtwal',sans-serif;
-	font-weight:normal;
 }
 
 u{
