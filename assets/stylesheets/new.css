@@ -600,7 +600,7 @@ u{
 	header table {
 		width:1200px;
 	}
-	#about{
+	.about{
 		font-size:30px;
 	}
 	.press td p {
