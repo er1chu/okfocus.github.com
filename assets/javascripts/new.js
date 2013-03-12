@@ -45,7 +45,7 @@ $(function(){
 		yMax: 7,
 		fuzzMin: 2
 	});
-	$("#okshadow-block").okshadow({
+	$(".okshadow-block").okshadow({
 		xMax: 7,
 		yMax: 7,
 		fuzzMin: 2
