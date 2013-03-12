@@ -350,7 +350,6 @@ p{
 	letter-spacing: 1px;
 	text-align:center;
 	background:white;
-	box-shadow:2px 2px #eee;
 }
 
 .thumb .screen td a{
@@ -375,8 +374,9 @@ p{
 	display: inline-block;
 }
 
-.thumb.show .screen td{
-	box-shadow:-4px 4px black;
+.thumb.show .screen h4{
+	box-shadow:-4px 4px #ccc;
+	padding:4px;
 }
 
 .thumb.show .screen td{
@@ -436,13 +436,14 @@ p{
 
 .launch {
 	background: blue;
-	padding: 10px 22px;
+	padding: 4px;
 	display: inline-block;
 	color: white;
-	width: 200px;
+	width: 140px;
 	text-align: center;
 	margin:0px auto;
-	box-shadow:-4px 4px black;
+	box-shadow:-4px 4px #ccc;
+	position:relative;
 }
 
 .launch:hover {
