@@ -221,9 +221,6 @@ header table td a {
 	margin: 0 auto;
 }
 
-.about {
-	font-family: sans-serif;
-}
 
 .work {
 	display: inline-block;
@@ -300,12 +297,17 @@ ul.work {
 }
 
 p {
-	font-family: 'gtwal', sans-serif;
 	letter-spacing: 1px;
-	font-size: 18px;
-	line-height: 37px;
+	font-size: 16px;
+	line-height: 32px;
 	margin: 0;
 }
+
+.about {
+	font-size:18px;
+	line-height:36px;
+}
+
 .thumb .inner {
 	display: none;
 }
