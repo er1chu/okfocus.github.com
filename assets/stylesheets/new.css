@@ -78,7 +78,6 @@ body {
 	overflow: auto;
 	margin: 0;
 	overflow-x: hidden;
-	padding-top:30px;
 }
 
 ul, li {
@@ -145,6 +144,12 @@ ul, li {
 	/* Firefox */
 }
 
+#video{
+	height:100%;
+	display:inline-block;
+	width:100%;
+}
+
 @-webkit-keyframes a {
 	from{
 		-webkit-transform:scale(0)rotateX(0deg);
@@ -197,6 +202,7 @@ header table {
 header table td{
 	padding:0px 15px;
 	text-align:right;
+	min-width:120px;
 }
 header table td a:hover {
 	border-bottom:3px solid;

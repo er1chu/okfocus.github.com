@@ -34,6 +34,16 @@
 		</script>
 	</head>
 	<body>
+		<style>
+		#video video {
+			width:100%;
+			height:100%;
+			opacity:0.1;
+		}
+		</style>
+
+		<h1 class="logo okfont">OKFOCUS</h1>
+		<h1 class="okfont logo bigger">c</h1>
 		<div class="rapper">
 			<header class="nopointer">
 				<table class="yespointer">
@@ -56,12 +66,11 @@
 					</tr>
 				</table>
 			</header>
-			<table class="topstuff">
-				<td>
-					<h1 class="logo okfont">OKFOCUS</h1>
-					<h1 class="okfont logo bigger">c</h1>
-				</td>
-			</table>
+			<div id="video">
+				<video width="320" height="240" autoplay="true">
+				  <source src="http://okfocus.s3.amazonaws.com/video/computerfire.mp4" type="video/mp4"loop>
+				</video>
+			</div>
 			<h2 id="about">
 				Cutting Edge<br>Technologies – Culturally<br>Conscious Design.
 			</h2>
