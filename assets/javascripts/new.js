@@ -45,7 +45,7 @@ $(function(){
 		yMax: 7,
 		fuzzMin: 2
 	});
-	$("#okshadow-block").okshadow({
+	$(".okshadow-block").okshadow({
 		xMax: 7,
 		yMax: 7,
 		fuzzMin: 2
@@ -85,12 +85,14 @@ $(function(){
 		var dir = $(this).attr("href").split("#")[1];
 		if (dir.length) {
 			var scrollTop = $("#" + dir).offset().top;
-			$("body").animate({ scrollTop: scrollTop }, 200);
+			$("body").animate({ scrollTop: scrollTop }, 20);
+			$('.thumb').removeClass('show');
 		}
 		return false;
 	});
 	
-	$(".launch").click(function(e){
+	
+	$("a").click(function(e){
 		e.stopPropagation();
 	});
 	

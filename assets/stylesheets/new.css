@@ -40,17 +40,17 @@
 
 /*OKFOCUS RESET*/
 
-html {
+html,body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
 	font-size: 100%;
 	outline: 0;
 	border: 0;
-	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
+
 img {
-	border: 0; image-rendering : opimizequality;
+	border: 0; 
 }
 
 * {
@@ -70,14 +70,8 @@ a {
 
 
 body {
-	background-image: url('../images/photocopy.png');
-	background-position: center;
-	background-repeat: repeat;
-	background-attachment: fixed;
-	background-color: white;
-	overflow: auto;
-	margin: 0;
-	overflow-x: hidden;
+	background: white url('../images/photocopy.png') center fixed;
+	min-width:960px;
 }
 
 ul, li {
@@ -121,7 +115,7 @@ ul, li {
 
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -182,7 +176,7 @@ header {
 	top: 0;
 	left: 0;
 	position: fixed;
-	z-index: 2;
+	z-index: 3;
 	background: white;
 	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 44%, rgba(255,255,255,1) 74%, rgba(255,255,255,0) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(44%,rgba(255,255,255,1)), color-stop(74%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
@@ -191,6 +185,7 @@ header {
 	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+	
 }
 
 
@@ -301,6 +296,8 @@ p {
 	font-size: 16px;
 	line-height: 32px;
 	margin: 0;
+	position: relative;
+	z-index: 2;
 }
 
 .about {
@@ -318,6 +315,10 @@ p {
 	border: 10px solid;
 	box-shadow: 0 0 10px #222;
 	padding: 10px;
+}
+
+.inner p a{
+	text-decoration:underline;
 }
 
 .thumb .screen {
@@ -367,6 +368,10 @@ p {
 	display: block;
 }
 
+.thumb.show .screen.centered {
+	background-position: center!important;
+}
+
 .thumb.show .screen td {
 	background: transparent;
 }
@@ -397,23 +402,34 @@ p {
 }
 
 .embed-inner {
-	width: 300px;
+	width: 400px;
+	height: 300px;
 	position: absolute;
-	top: 20%;
+	top: 50%;
 	left: 50%;
-	margin-left: -150px;
+	margin-left: -200px;
+	margin-top: -150px;
 	text-align: center;
 }
 #okshadow-text {
+	position: absolute;
+	top: 140px;
+	width: 100%;
+	text-align: center;
 	color: red;
-	font-family: trebuchet ms;
+	font-family: sans-serif;
 	font-weight: bold;
 }
-#okshadow-block {
-	width: 50px;
-	height: 50px;
-	background: #ddd;
-}
+.okshadow-block { position: absolute; }
+.okshadow-block:nth-child(9n)   { background: rgb(231,230,238); width: 145px; height: 145px; top: 110px; left: 161px; }
+.okshadow-block:nth-child(9n+1) { background: rgb(232,230,238); width: 143px; height: 143px; top:  30px; left: 120px; }
+.okshadow-block:nth-child(9n+2) { background: rgb(231,228,235); width: 150px; height: 150px; top:  60px; left:  80px; }
+.okshadow-block:nth-child(9n+3) { background: rgb(234,228,237); width: 142px; height: 142px; top:  10px; left:  40px; }
+.okshadow-block:nth-child(9n+4) { background: rgb(233,234,237); width: 141px; height: 141px; top:  10px; left: 250px; }
+.okshadow-block:nth-child(9n+5) { background: rgb(232,233,238); width: 143px; height: 143px; top:  40px; left: 210px; }
+.okshadow-block:nth-child(9n+6) { background: rgb(228,229,237); width: 151px; height: 151px; top:  70px; left: 180px; }
+.okshadow-block:nth-child(9n+7) { background: rgb(228,228,242); width: 138px; height: 138px; top: 110px; left: 144px; }
+.okshadow-block:nth-child(9n+8) { background: rgb(235,231,241); width: 140px; height: 140px; top: 150px; left: 100px; }
 
 .launch {
 	background: blue;
@@ -618,7 +634,7 @@ u {
 		width: 1200px;
 	}
 	.about {
-		font-size: 30px;
+		font-size: 21px;
 	}
 	.press td p {
 		font-family: sans-serif;
@@ -628,7 +644,28 @@ u {
 		max-width: 300px;
 		margin-right: 70px;
 	}
+	.nav{
+		width:1240px;
+	}
+}
 
+@media (max-width: 1140px) {
+	#contact h1{
+		font-size:4rem;
+	}
+	#contact {
+	margin-top: -53%;
+	}
+}
+@media (max-width: 1000px) {
+	#contact {
+	margin-top: -58%;
+	}
+}
+@media only screen and (max-height:650px){
+	.inner p{
+		line-height:22px;
+	}
 }
 
 @media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
