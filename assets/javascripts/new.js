@@ -67,6 +67,7 @@ $(function(){
 	// Click a project thumbnail to expand it
 	$('.thumb').click(function(e, dontAnimate) {
 		if ($(this).hasClass('show')) return;
+		window.location.hash = "#" + $(this).attr("id");
 		$('.show').removeClass('show');
 		$(this).addClass('show');
 		var scrollTop = $(this).offset().top - headerHeight();
@@ -85,6 +86,7 @@ $(function(){
 			$('.thumb').removeClass('show');
 			var scrollTop = $current.offset().top - headerHeight();
 			$("body").animate({ scrollTop: scrollTop }, 200);
+			window.location.hash = "#" + $current.closest("ul").attr("class");
 		}
 		return false;
 	});
@@ -114,7 +116,10 @@ $(function(){
 	function scrollToSection (target, duration) {
 		duration = duration || 20;
 		var scrollTop = $("#" + target).offset().top;
-		$("body").animate({ scrollTop: scrollTop }, duration);
+		$.waypoints('disable');
+		$("body").animate({ scrollTop: scrollTop }, duration, function(){
+			$.waypoints('enable');
+		});
 		$('.thumb').removeClass('show');
 	}
 	
@@ -161,7 +166,7 @@ $(function(){
 	$(document).keydown(function(event) {
 	  if (event.which == 39) $(".next").first().trigger("click");			// right arrow
 	  if (event.which == 37) $(".prev").first().trigger("click");			// left arrow
-	  if (event.which == 27) $(".show").find(".close").trigger("click");	// escape
+	  if (event.which == 27) $("body").trigger("click");	// escape
 	});
 
 
@@ -184,6 +189,10 @@ $(function(){
 	  };
 	})();
 
+	$("h2").waypoint(function(){
+		window.location.hash = "#" + $(this).attr("id");
+	});
+
 	$(".thumb").each(function(){
 		var id = $(this).attr("id");
 		var $table = $(this).find("table");
@@ -192,6 +201,24 @@ $(function(){
 		cssRule( "#" + id + ":hover table", style );
 		cssRule( "#" + id + ".show table", style );
 	});
+	
+	if (window.location.hash.length > 1) {
+		var dest = window.location.hash.replace("#","");
+		var $section = $("#" + dest);
+		if ($section.length) {
+			$.waypoints('disable');
+			$("#video").hide();
+			if ($section.hasClass("thumb")) {
+				$section.addClass('show');
+				var scrollTop = $section.offset().top - headerHeight();
+				$("body").scrollTop(scrollTop);
+				$.waypoints('enable');
+			}
+			else {
+				scrollToSection(dest);
+			}
+		}
+	}
 
 });
 
