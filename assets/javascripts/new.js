@@ -70,6 +70,7 @@ $(function(){
 		window.location.hash = "#" + $(this).attr("id");
 		$('.show').removeClass('show');
 		$(this).addClass('show');
+		$.waypoints('disable');
 		var scrollTop = $(this).offset().top - headerHeight();
 		if (!dontAnimate) {
 			$("body").animate({ scrollTop: scrollTop }, 200);
@@ -83,9 +84,12 @@ $(function(){
 	$('body').click(function() {
 		var $current = $('.thumb.show');
 		if ($current.length) {
+			$.waypoints('disable');
 			$('.thumb').removeClass('show');
 			var scrollTop = $current.offset().top - headerHeight();
-			$("body").animate({ scrollTop: scrollTop }, 200);
+			$("body").animate({ scrollTop: scrollTop }, 200, function(){
+				$.waypoints('enable');
+			});
 			window.location.hash = "#" + $current.closest("ul").attr("class");
 		}
 		return false;
@@ -166,7 +170,7 @@ $(function(){
 	$(document).keydown(function(event) {
 	  if (event.which == 39) $(".next").first().trigger("click");			// right arrow
 	  if (event.which == 37) $(".prev").first().trigger("click");			// left arrow
-	  if (event.which == 27) $("body").trigger("click");	// escape
+	  if (event.which == 27) $("body").trigger("click");					// escape
 	});
 
 
