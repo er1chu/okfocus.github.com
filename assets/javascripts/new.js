@@ -68,7 +68,6 @@ $(function(){
 	$('.thumb').click(function(e, dontAnimate) {
 		if ($(this).hasClass('show')) return;
 		$('.show').removeClass('show');
-		$(this).find('.info').toggleClass('show');
 		$(this).addClass('show');
 		var scrollTop = $(this).offset().top - headerHeight();
 		if (!dontAnimate) {
@@ -91,19 +90,24 @@ $(function(){
 	});
 	
 	// Header links
-	$("header a").click(function(){
+	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			scrollTo(target, 20);
+			scrollToSection(target, 20);
 		}
 		return false;
 	});
+	
+	// Make links work without triggering other things..
+	$("a[target]").click(function(e){
+		e.stopPropagation();
+	});
+	console.log($("a[target]"));
 	
 	// Show/hide welcome video
 	$("#video").on("click mousewheel", function(e){
 		e.preventDefault();
 		e.stopPropagation();
-		// scrollToTarget("about");
 		$("#video").slideUp(500);
 		return false;
 	});
@@ -114,11 +118,6 @@ $(function(){
 		$("body").animate({ scrollTop: scrollTop }, duration);
 		$('.thumb').removeClass('show');
 	}
-	
-	// Make links work without triggering other things..
-	$("a").click(function(e){
-		e.stopPropagation();
-	});
 	
 	$(window).scroll(function() {    
 	  var scroll = $(window).scrollTop();
@@ -164,6 +163,35 @@ $(function(){
 	  if (event.which == 39) $(".next").first().trigger("click");			// right arrow
 	  if (event.which == 37) $(".prev").first().trigger("click");			// left arrow
 	  if (event.which == 27) $(".show").find(".close").trigger("click");	// escape
+	});
+
+
+	// Add a CSS rule on the fly
+	(function(){
+	  var loaded = false;
+	  function newStyleSheet () {
+		var stylesheet = document.createElement("style");
+		stylesheet.type = "text/css";
+		document.body.appendChild(stylesheet);
+		loaded = true;
+	  }
+
+	  window.cssRule = function (selector, declaration) {
+		if (! loaded) newStyleSheet();
+		var x = document.styleSheets,
+			y = x.length-1;
+		x[y].insertRule(selector+"{"+declaration+"}", x[y].cssRules.length);
+		$(selector).css(declaration.split(": "));
+	  };
+	})();
+
+	$("li").each(function(){
+		var id = $(this).attr("id");
+		var $table = $(this).find("table");
+		var style = $table.attr("style");
+		$table.attr("style", "");
+		cssRule( "#" + id + ":hover table", style );
+		cssRule( "#" + id + ".show table", style );
 	});
 
 });
