@@ -85,10 +85,11 @@ $(function(){
 		var dir = $(this).attr("href").split("#")[1];
 		if (dir.length) {
 			var scrollTop = $("#" + dir).offset().top;
-			$("body").animate({ scrollTop: scrollTop }, 200);
+			$("body").animate({ scrollTop: scrollTop }, 20);
 		}
 		return false;
 	});
+	
 	
 	$(".launch").click(function(e){
 		e.stopPropagation();

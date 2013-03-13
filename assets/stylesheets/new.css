@@ -40,17 +40,17 @@
 
 /*OKFOCUS RESET*/
 
-html {
+html,body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
 	font-size: 100%;
 	outline: 0;
 	border: 0;
-	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
+
 img {
-	border: 0; image-rendering : opimizequality;
+	border: 0; 
 }
 
 * {
@@ -70,14 +70,8 @@ a {
 
 
 body {
-	background-image: url('../images/photocopy.png');
-	background-position: center;
-	background-repeat: repeat;
-	background-attachment: fixed;
-	background-color: white;
-	overflow: auto;
-	margin: 0;
-	overflow-x: hidden;
+	background: white url('../images/photocopy.png') center fixed;
+	min-width:960px;
 }
 
 ul, li {
@@ -121,7 +115,7 @@ ul, li {
 
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -626,7 +620,7 @@ u {
 		width: 1200px;
 	}
 	.about {
-		font-size: 30px;
+		font-size: 21px;
 	}
 	.press td p {
 		font-family: sans-serif;
@@ -636,8 +630,23 @@ u {
 		max-width: 300px;
 		margin-right: 70px;
 	}
-
+	.nav{
+		width:1240px;
+	}
 }
 
+@media (max-width: 1140px) {
+	#contact h1{
+		font-size:4rem;
+	}
+	#contact {
+	margin-top: -53%;
+	}
+}
+@media (max-width: 1000px) {
+	#contact {
+	margin-top: -58%;
+	}
+}
 @media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
 }
