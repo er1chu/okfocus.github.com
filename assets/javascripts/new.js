@@ -30,6 +30,8 @@ round:!0,background:"#fff",backgroundRepeat:"no-repeat",shadow:"0 0 5px #000",bo
 
 
 $(function(){
+
+	// Logo OKSHADOW
 	$('h1.logo').okshadow({
 		color: 'black',
 		textShadow: true,
@@ -39,8 +41,7 @@ $(function(){
 		fuzz: 80
 	});
 	
-
-	
+	// Demo OKSHADOW
 	$("#okshadow-text").okshadow({
 		textShadow: true,
 		xMax: 7,
@@ -52,17 +53,21 @@ $(function(){
 		yMax: 7,
 		fuzzMin: 2
 	});
+	
+	// Demo OKZOOM
 	$("#okzoom").okzoom({
 	});
 	
+	// Get the height of the header element..
+	// jQuery calculates this wrong
 	function headerHeight(){
 		return $('header').height() + 2 * parseInt( $("header").css('paddingTop').replace("px","") );
 	}
 	
+	// Click a project thumbnail to expand it
 	$('.thumb').click(function(e, dontAnimate) {
 		if ($(this).hasClass('show')) return;
 		$('.show').removeClass('show');
-		$(this).find('.info').toggleClass('show');
 		$(this).addClass('show');
 		var scrollTop = $(this).offset().top - headerHeight();
 		if (!dontAnimate) {
@@ -73,6 +78,7 @@ $(function(){
 		return false;
 	});
 	
+	// Click anywhere on the body to close the current project
 	$('body').click(function() {
 		var $current = $('.thumb.show');
 		if ($current.length) {
@@ -83,31 +89,35 @@ $(function(){
 		return false;
 	});
 	
-	$("header a").click(function(){
+	// Header links
+	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			scrollTo(target);
+			scrollToSection(target, 20);
 		}
 		return false;
 	});
 	
+	// Make links work without triggering other things..
+	$("a[target]").click(function(e){
+		e.stopPropagation();
+	});
+	console.log($("a[target]"));
+	
+	// Show/hide welcome video
 	$("#video").on("click mousewheel", function(e){
 		e.preventDefault();
 		e.stopPropagation();
-		// scrollToTarget("about");
 		$("#video").slideUp(500);
 		return false;
 	});
 	
-	function scrollToSection (target) {
+	function scrollToSection (target, duration) {
+		duration = duration || 20;
 		var scrollTop = $("#" + target).offset().top;
-		$("body").animate({ scrollTop: scrollTop }, 20);
+		$("body").animate({ scrollTop: scrollTop }, duration);
 		$('.thumb').removeClass('show');
 	}
-	
-	$("a").click(function(e){
-		e.stopPropagation();
-	});
 	
 	$(window).scroll(function() {    
 	  var scroll = $(window).scrollTop();
@@ -118,7 +128,8 @@ $(function(){
 	    }
 	});
 	
-	
+
+	// Next project arrow	
 	$(".next").on("click", function(e){
 		e.preventDefault();
 		e.stopPropagation();
@@ -127,13 +138,13 @@ $(function(){
 		if (nextthing.length) {
 			$(nextthing).trigger("click", [true]);
 		}
-
 		else {
 			 $(".show").parent().find("li").first().trigger("click", [true]);
 		}
 	});
 
-	 $(".prev").on("click", function(e){
+	// Previous project arrow
+	$(".prev").on("click", function(e){
 		e.preventDefault();			
 		e.stopPropagation();
 		var prevthing = $("li.show").prev('li');
@@ -147,11 +158,40 @@ $(function(){
 		} 
 	});
 
-	// right click moves forward
+	// Arrow navigation
 	$(document).keydown(function(event) {
-	  if (event.which == 39) $(".next").first().trigger("click");
-	  if (event.which == 37) $(".prev").first().trigger("click");
-	  if (event.which == 27) $(".show").find(".close").trigger("click");
+	  if (event.which == 39) $(".next").first().trigger("click");			// right arrow
+	  if (event.which == 37) $(".prev").first().trigger("click");			// left arrow
+	  if (event.which == 27) $(".show").find(".close").trigger("click");	// escape
+	});
+
+
+	// Add a CSS rule on the fly
+	(function(){
+	  var loaded = false;
+	  function newStyleSheet () {
+		var stylesheet = document.createElement("style");
+		stylesheet.type = "text/css";
+		document.body.appendChild(stylesheet);
+		loaded = true;
+	  }
+
+	  window.cssRule = function (selector, declaration) {
+		if (! loaded) newStyleSheet();
+		var x = document.styleSheets,
+			y = x.length-1;
+		x[y].insertRule(selector+"{"+declaration+"}", x[y].cssRules.length);
+		$(selector).css(declaration.split(": "));
+	  };
+	})();
+
+	$("li").each(function(){
+		var id = $(this).attr("id");
+		var $table = $(this).find("table");
+		var style = $table.attr("style");
+		$table.attr("style", "");
+		cssRule( "#" + id + ":hover table", style );
+		cssRule( "#" + id + ".show table", style );
 	});
 
 });
