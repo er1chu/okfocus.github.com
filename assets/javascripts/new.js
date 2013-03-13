@@ -93,7 +93,7 @@ $(function(){
 	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			scrollToSection(target, 2000);
+			scrollToSection(target, 200);
 		}
 		return false;
 	});
