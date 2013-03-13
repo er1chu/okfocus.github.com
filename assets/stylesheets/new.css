@@ -651,5 +651,11 @@ u {
 	margin-top: -58%;
 	}
 }
+@media only screen and (max-height:650px){
+	.inner p{
+		line-height:22px;
+	}
+}
+
 @media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
 }
