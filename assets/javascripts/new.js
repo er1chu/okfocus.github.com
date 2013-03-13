@@ -93,7 +93,7 @@ $(function(){
 	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			scrollToSection(target, 20);
+			scrollToSection(target, 2000);
 		}
 		return false;
 	});
@@ -102,7 +102,6 @@ $(function(){
 	$("a[target]").click(function(e){
 		e.stopPropagation();
 	});
-	console.log($("a[target]"));
 	
 	// Show/hide welcome video
 	$("#video").on("click mousewheel", function(e){
@@ -185,7 +184,7 @@ $(function(){
 	  };
 	})();
 
-	$("li").each(function(){
+	$(".thumb").each(function(){
 		var id = $(this).attr("id");
 		var $table = $(this).find("table");
 		var style = $table.attr("style");
