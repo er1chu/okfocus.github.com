@@ -111,12 +111,12 @@ $(function(){
 	});
 	
 	// Show/hide welcome video
-	$("#video").on("click mousewheel", function(e){
-		e.preventDefault();
-		e.stopPropagation();
-		$("#video").slideUp(500);
-		return false;
-	});
+//	$("#video").on("click mousewheel", function(e){
+//		e.preventDefault();
+//		e.stopPropagation();
+//		$("#video").slideUp(500);
+//		return false;
+//	});
 	
 	function scrollToSection (target, duration, offset) {
 		offset = offset || 0;
@@ -222,7 +222,7 @@ $(function(){
 		var $section = $("#" + dest);
 		if ($section.length) {
 			$.waypoints('disable');
-			$("#video").hide();
+			//$("#video").hide();
 			if ($section.hasClass("thumb")) {
 				$section.addClass('show');
 				var scrollTop = $section.offset().top - headerHeight() - 10;

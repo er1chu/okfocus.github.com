@@ -153,6 +153,21 @@ ul, li {
 	}
 
 }
+
+.logo-holder {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+.logo-holder td {
+	color: rgba(255,255,255,0.8);
+	width: 100%;
+	text-align: center;
+	font-size: 4rem;
+}
+
 .logo {
 	color: transparent!important;
 }
@@ -447,15 +462,33 @@ p {
 	width: 1000px;
 	margin-left: -60px;
 	font-size: 114px;
-	margin-top: -84px;
+	margin-top:-40px;
+}
+
+.nav a {
+	background-image:url('../images/arrows.gif');
+	background-repeat:no-repeat;
+	width: 91px;
+	height: 49px;
 }
 
 .prev {
 	float: left;
+	background-position: 0 -118px;
+
+}
+
+.prev:hover {
+	background-position: 0 -5px;
 }
 
 .next {
 	float: right;
+	background-position: 0 -173px;
+}
+
+.next:hover {
+	background-position: 0 -60px;
 }
 
 u {
@@ -486,6 +519,23 @@ u {
 	padding: 15px 0;
 }
 
+
+.creators {
+	clear:both;
+	padding:40px;
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	background:#eee;
+	margin-bottom:120px;
+}
+
+.creators iframe{
+	padding:30px;
+	border:40px ridge gold;
+	box-shadow: 0 0 10px #222;
+	
+}
 
 #map {
 	height: 100%;
