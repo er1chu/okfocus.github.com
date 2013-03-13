@@ -211,7 +211,7 @@ $(function(){
 		var $section = $("#" + dest);
 		if ($section.length) {
 			$.waypoints('disable');
-			$("#video").hide();
+			//$("#video").hide();
 			if ($section.hasClass("thumb")) {
 				$section.addClass('show');
 				var scrollTop = $section.offset().top - headerHeight();
