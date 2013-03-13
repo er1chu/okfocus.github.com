@@ -82,15 +82,26 @@ $(function(){
 	});
 	
 	$("header a").click(function(){
-		var dir = $(this).attr("href").split("#")[1];
-		if (dir.length) {
-			var scrollTop = $("#" + dir).offset().top;
-			$("body").animate({ scrollTop: scrollTop }, 20);
-			$('.thumb').removeClass('show');
+		var target = $(this).attr("href").split("#")[1];
+		if (target) {
+			scrollTo(target);
 		}
 		return false;
 	});
 	
+	$("#video").on("click mousewheel", function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		// scrollToTarget("about");
+		$("#video").slideUp(500);
+		return false;
+	});
+	
+	function scrollToSection (target) {
+		var scrollTop = $("#" + target).offset().top;
+		$("body").animate({ scrollTop: scrollTop }, 20);
+		$('.thumb').removeClass('show');
+	}
 	
 	$("a").click(function(e){
 		e.stopPropagation();
