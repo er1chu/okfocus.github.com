@@ -320,6 +320,10 @@ p {
 	padding: 10px;
 }
 
+.inner p a{
+	text-decoration:underline;
+}
+
 .thumb .screen {
 	width: 200px;
 	height: 200px;
@@ -365,6 +369,10 @@ p {
 
 .thumb.show .screen h4 span {
 	display: block;
+}
+
+.thumb.show .screen.centered {
+	background-position: center!important;
 }
 
 .thumb.show .screen td {
