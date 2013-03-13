@@ -64,7 +64,7 @@ $(function(){
 	// Click a project thumbnail to expand it
 	$('.thumb').click(function(e, dontAnimate) {
 		if ($(this).hasClass('show')) return;
-		window.location.hash = "#" + $(this).attr("id");
+		window.location.hash = "#/" + $(this).attr("id");
 		$('.show').removeClass('show');
 		$(this).addClass('show');
 		$.waypoints('disable');
@@ -87,7 +87,7 @@ $(function(){
 			$("body").animate({ scrollTop: scrollTop }, 200, function(){
 				$.waypoints('enable');
 			});
-			window.location.hash = "#" + $current.closest("ul").attr("class");
+			window.location.hash = "#/" + $current.closest("ul").attr("class");
 		}
 		return false;
 	});
@@ -96,7 +96,7 @@ $(function(){
 	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			window.location.hash = "#" + target;
+			window.location.hash = "#/" + target;
 			scrollToSection(target, 200);
 		}
 		return false;
@@ -193,15 +193,13 @@ $(function(){
 	})();
 
 	$("h2").waypoint(function(dir){
-		console.log(dir, $(this).attr("id"));
 		if (dir === "down") {
-			window.location.hash = "#" + $(this).attr("id");
+			window.location.hash = "#/" + $(this).attr("id");
 		}
 	}, { offset: headerHeight() });
 	$("ul").waypoint(function(dir){
-		console.log(dir, $(this).prev("h2").attr("id"));
 		if (dir === "up") {
-			window.location.hash = "#" + $(this).prev("h2").attr("id");
+			window.location.hash = "#/" + $(this).prev("h2").attr("id");
 		}
 	}, { offset: 'bottom-in-view' });
 
@@ -215,7 +213,7 @@ $(function(){
 	});
 	
 	if (window.location.hash.length > 1) {
-		var dest = window.location.hash.replace("#","");
+		var dest = window.location.hash.replace("#","").replace(/\//g,"");
 		var $section = $("#" + dest);
 		if ($section.length) {
 			$.waypoints('disable');
@@ -235,24 +233,21 @@ $(function(){
 			}
 		}
 	}
+	// $("#map").height( window.innerHeight );
+	var map, marker, markers = [], okfocus = new google.maps.LatLng(40.749622,-73.945287);
+	var options = {
+		center: okfocus,
+		zoom: 15,
+		tilt: 45,
+		mapTypeControl: true,
+		panControl: false,
+		zoomControl: true,
+		zoomControlOptions: {
+			style: google.maps.ZoomControlStyle.SMALL
+		},
+		mapTypeId: google.maps.MapTypeId.SATELLITE
+	};
+	
+	map = new google.maps.Map(document.getElementById('map'), options);
+
 });
-
-$(function(){
-		var map, marker, markers = [], okfocus = new google.maps.LatLng(40.749622,-73.945287);
-		var options = {
-			center: okfocus,
-			zoom: 15,
-			tilt: 45,
-			mapTypeControl: true,
-			panControl: false,
-			zoomControl: true,
-			zoomControlOptions: {
-				style: google.maps.ZoomControlStyle.SMALL
-			},
-			mapTypeId: google.maps.MapTypeId.SATELLITE
-		};
-		
-		map = new google.maps.Map(document.getElementById('map'), options);
-
-
-	});	
