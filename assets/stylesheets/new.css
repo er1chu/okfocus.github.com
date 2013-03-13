@@ -176,7 +176,7 @@ header {
 	top: 0;
 	left: 0;
 	position: fixed;
-	z-index: 2;
+	z-index: 3;
 	background: white;
 	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 44%, rgba(255,255,255,1) 74%, rgba(255,255,255,0) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(44%,rgba(255,255,255,1)), color-stop(74%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
@@ -185,6 +185,7 @@ header {
 	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+	
 }
 
 
@@ -295,6 +296,8 @@ p {
 	font-size: 16px;
 	line-height: 32px;
 	margin: 0;
+	position: relative;
+	z-index: 2;
 }
 
 .about {

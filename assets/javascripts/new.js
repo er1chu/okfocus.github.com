@@ -91,7 +91,7 @@ $(function(){
 	});
 	
 	
-	$(".launch").click(function(e){
+	$("a").click(function(e){
 		e.stopPropagation();
 	});
 	
