@@ -39,6 +39,8 @@ $(function(){
 		fuzz: 80
 	});
 	
+
+	
 	$("#okshadow-text").okshadow({
 		textShadow: true,
 		xMax: 7,
