@@ -505,6 +505,23 @@ u {
 }
 
 
+.creators {
+	clear:both;
+	padding:40px;
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	background:#eee;
+	margin-bottom:120px;
+}
+
+.creators iframe{
+	padding:30px;
+	border:40px ridge gold;
+	box-shadow: 0 0 10px #222;
+	
+}
+
 #map {
 	height: 100%;
 	width: 100%;
