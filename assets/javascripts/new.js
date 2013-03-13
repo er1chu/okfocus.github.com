@@ -86,6 +86,7 @@ $(function(){
 		if (dir.length) {
 			var scrollTop = $("#" + dir).offset().top;
 			$("body").animate({ scrollTop: scrollTop }, 20);
+			$('.thumb').removeClass('show');
 		}
 		return false;
 	});
