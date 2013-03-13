@@ -99,6 +99,7 @@ $(function(){
 	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
+			window.location.hash = "#" + target;
 			scrollToSection(target, 200);
 		}
 		return false;
@@ -193,9 +194,18 @@ $(function(){
 	  };
 	})();
 
-	$("h2").waypoint(function(){
-		window.location.hash = "#" + $(this).attr("id");
-	});
+	$("h2").waypoint(function(dir){
+		console.log(dir, $(this).attr("id"));
+		if (dir === "down") {
+			window.location.hash = "#" + $(this).attr("id");
+		}
+	}, { offset: headerHeight() });
+	$("ul").waypoint(function(dir){
+		console.log(dir, $(this).prev("h2").attr("id"));
+		if (dir === "up") {
+			window.location.hash = "#" + $(this).prev("h2").attr("id");
+		}
+	}, { offset: 'bottom-in-view' });
 
 	$(".thumb").each(function(){
 		var id = $(this).attr("id");
@@ -214,16 +224,17 @@ $(function(){
 			$("#video").hide();
 			if ($section.hasClass("thumb")) {
 				$section.addClass('show');
-				var scrollTop = $section.offset().top - headerHeight();
-				$("body").scrollTop(scrollTop);
-				$.waypoints('enable');
+				var scrollTop = $section.offset().top - headerHeight() - 10;
+				setTimeout(function(){
+					$("body").scrollTop(scrollTop - headerHeight());
+					$.waypoints('enable');
+				}, 0);
 			}
 			else {
 				scrollToSection(dest);
 			}
 		}
 	}
-
 });
 
 $(function(){
