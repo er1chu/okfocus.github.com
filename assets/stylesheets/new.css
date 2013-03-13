@@ -447,15 +447,33 @@ p {
 	width: 1000px;
 	margin-left: -60px;
 	font-size: 114px;
-	margin-top: -84px;
+	margin-top:-40px;
+}
+
+.nav a {
+	background-image:url('../images/arrows.png');
+	background-repeat:no-repeat;
+	width: 91px;
+	height: 49px;
 }
 
 .prev {
 	float: left;
+	background-position: 0 -118px;
+
+}
+
+.prev:hover {
+	background-position: 0 -5px;
 }
 
 .next {
 	float: right;
+	background-position: 0 -173px;
+}
+
+.next:hover {
+	background-position: 0 -60px;
 }
 
 u {
