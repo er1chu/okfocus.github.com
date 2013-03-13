@@ -118,9 +118,10 @@ $(function(){
 		return false;
 	});
 	
-	function scrollToSection (target, duration) {
+	function scrollToSection (target, duration, offset) {
+		offset = offset || 0;
 		duration = duration || 20;
-		var scrollTop = $("#" + target).offset().top;
+		var scrollTop = $("#" + target).offset().top - offset;
 		$.waypoints('disable');
 		$("body").animate({ scrollTop: scrollTop }, duration, function(){
 			$.waypoints('enable');
@@ -225,13 +226,14 @@ $(function(){
 			if ($section.hasClass("thumb")) {
 				$section.addClass('show');
 				var scrollTop = $section.offset().top - headerHeight() - 10;
+				$("body").scrollTop(scrollTop - headerHeight());
 				setTimeout(function(){
 					$("body").scrollTop(scrollTop - headerHeight());
 					$.waypoints('enable');
 				}, 0);
 			}
 			else {
-				scrollToSection(dest);
+				scrollToSection(dest, undefined, headerHeight() + 20);
 			}
 		}
 	}
