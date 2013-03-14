@@ -40,7 +40,7 @@ html,body {
 }
 
 img {
-	border: 0; 
+	border: 0;
 }
 
 * {
@@ -61,7 +61,7 @@ a {
 
 body {
 	background: white url('../images/photocopy.png') center fixed;
-	min-width:960px;
+	min-width: 960px;
 }
 
 ul, li {
@@ -190,7 +190,6 @@ header {
 	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
-	
 }
 
 
@@ -226,8 +225,8 @@ header table td a {
 	display: inline-block;
 	width: 100%;
 	-webkit-transform: translate3d(0,0,0);
-	position:relative;
-	z-index:1;
+	position: relative;
+	z-index: 1;
 }
 h2 {
 	font-family: 'gtwal', sans-serif;
@@ -241,8 +240,8 @@ h2 {
 }
 
 @-moz-document url-prefix() {
-	body{
-			-moz-user-select: none;
+	body {
+		-moz-user-select: none;
 	}
 	h2 {
 		font-weight: normal;
@@ -273,7 +272,7 @@ h1.logo {
 	-moz-transition: opacity .6s linear;
 	-o-transition: opacity .6s linear;
 	transition: opacity .6s linear;
-	z-index:0;
+	z-index: 0;
 }
 .logo.bigger {
 	font-size: 34rem;
@@ -312,8 +311,8 @@ p {
 }
 
 .about {
-	font-size:18px;
-	line-height:36px;
+	font-size: 18px;
+	line-height: 36px;
 }
 
 .thumb .inner {
@@ -328,8 +327,8 @@ p {
 	padding: 10px;
 }
 
-.inner p a{
-	text-decoration:underline;
+.inner p a {
+	text-decoration: underline;
 }
 
 .thumb .screen {
@@ -364,8 +363,7 @@ p {
 	font-size: 28px;
 	font-weight: normal;
 	display: inline-block;
-	font-weight:normal;
-	
+	font-weight: normal;
 }
 
 .thumb.show .screen h4 {
@@ -433,16 +431,72 @@ p {
 	font-family: sans-serif;
 	font-weight: bold;
 }
-.okshadow-block { position: absolute; }
-.okshadow-block:nth-child(9n)   { background: rgb(231,230,238); width: 145px; height: 145px; top: 110px; left: 161px; }
-.okshadow-block:nth-child(9n+1) { background: rgb(232,230,238); width: 143px; height: 143px; top:  30px; left: 120px; }
-.okshadow-block:nth-child(9n+2) { background: rgb(231,228,235); width: 150px; height: 150px; top:  60px; left:  80px; }
-.okshadow-block:nth-child(9n+3) { background: rgb(234,228,237); width: 142px; height: 142px; top:  10px; left:  40px; }
-.okshadow-block:nth-child(9n+4) { background: rgb(233,234,237); width: 141px; height: 141px; top:  10px; left: 250px; }
-.okshadow-block:nth-child(9n+5) { background: rgb(232,233,238); width: 143px; height: 143px; top:  40px; left: 210px; }
-.okshadow-block:nth-child(9n+6) { background: rgb(228,229,237); width: 151px; height: 151px; top:  70px; left: 180px; }
-.okshadow-block:nth-child(9n+7) { background: rgb(228,228,242); width: 138px; height: 138px; top: 110px; left: 144px; }
-.okshadow-block:nth-child(9n+8) { background: rgb(235,231,241); width: 140px; height: 140px; top: 150px; left: 100px; }
+.okshadow-block {
+	position: absolute;
+}
+.okshadow-block:nth-child(9n) {
+	background: rgb(231,230,238);
+	width: 145px;
+	height: 145px;
+	top: 110px;
+	left: 161px;
+}
+.okshadow-block:nth-child(9n+1) {
+	background: rgb(232,230,238);
+	width: 143px;
+	height: 143px;
+	top: 30px;
+	left: 120px;
+}
+.okshadow-block:nth-child(9n+2) {
+	background: rgb(231,228,235);
+	width: 150px;
+	height: 150px;
+	top: 60px;
+	left: 80px;
+}
+.okshadow-block:nth-child(9n+3) {
+	background: rgb(234,228,237);
+	width: 142px;
+	height: 142px;
+	top: 10px;
+	left: 40px;
+}
+.okshadow-block:nth-child(9n+4) {
+	background: rgb(233,234,237);
+	width: 141px;
+	height: 141px;
+	top: 10px;
+	left: 250px;
+}
+.okshadow-block:nth-child(9n+5) {
+	background: rgb(232,233,238);
+	width: 143px;
+	height: 143px;
+	top: 40px;
+	left: 210px;
+}
+.okshadow-block:nth-child(9n+6) {
+	background: rgb(228,229,237);
+	width: 151px;
+	height: 151px;
+	top: 70px;
+	left: 180px;
+}
+.okshadow-block:nth-child(9n+7) {
+	background: rgb(228,228,242);
+	width: 138px;
+	height: 138px;
+	top: 110px;
+	left: 144px;
+}
+.okshadow-block:nth-child(9n+8) {
+	background: rgb(235,231,241);
+	width: 140px;
+	height: 140px;
+	top: 150px;
+	left: 100px;
+}
 
 .launch {
 	background: blue;
@@ -462,12 +516,12 @@ p {
 	width: 1000px;
 	margin-left: -60px;
 	font-size: 114px;
-	margin-top:-40px;
+	margin-top: -40px;
 }
 
 .nav a {
-	background-image:url('../images/arrows.gif');
-	background-repeat:no-repeat;
+	background-image: url('../images/arrows.gif');
+	background-repeat: no-repeat;
 	width: 91px;
 	height: 49px;
 }
@@ -475,7 +529,6 @@ p {
 .prev {
 	float: left;
 	background-position: 0 -118px;
-
 }
 
 .prev:hover {
@@ -514,32 +567,36 @@ u {
 
 
 .creators {
-	clear:both;
-	padding:40px;
-	display:inline-block;
-	width:100%;
-	text-align:center;
-	background:#eee;
-	margin-bottom:120px;
+	clear: both;
+	padding: 40px;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background: #eee;
+	margin-bottom: 120px;
 }
 
-.creators iframe{
-	padding:30px;
-	border:40px ridge gold;
+.creators iframe {
+	padding: 30px;
+	border: 40px ridge gold;
 	box-shadow: 0 0 10px #222;
-	
 }
 
 #map {
 	height: 100%;
 	width: 100%;
 	box-shadow: 0 -5px 9px #666;
+	position: absolute;
+	z-index: 0;
 }
 #contact {
-	position: absolute;
-	margin-left: 5%;
-	margin-top: -45%;
-	font-family: 'gtwal',sans-serif;
+	height: 100%;
+}
+
+#contact td {
+	position: relative;
+	z-index: 1;
+	padding-left: 2%;
 }
 
 #contact h1 {
@@ -685,29 +742,72 @@ u {
 		max-width: 300px;
 		margin-right: 70px;
 	}
-	.nav{
-		width:1240px;
+	.nav {
+		width: 1240px;
 	}
+
 }
 
 @media (max-width: 1140px) {
-	#contact h1{
-		font-size:4rem;
+	#contact h1 {
+		font-size: 4rem;
 	}
-	#contact {
-	margin-top: -53%;
-	}
-}
-@media (max-width: 1000px) {
-	#contact {
-	margin-top: -58%;
-	}
-}
-@media only screen and (max-height:650px){
-	.inner p{
-		line-height:22px;
-	}
+
 }
 
-@media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+@media only screen and (max-height:650px) {
+	.inner p {
+		line-height: 22px;
+	}
+
+}
+
+@media (max-width: 480px) {
+	.nomobile {
+		display: none;
+	}
+	#video {
+		display: none;
+	}
+	body {
+		min-width: 100%;
+	}
+	.rapper {
+		width: 100%;
+	}
+	header table {
+		width: 100%;
+	}
+	header table td {
+		padding: 0px 2px;
+		min-width: auto;
+	}
+	h2 {
+		font-size: 30px;
+		line-height: 40px;
+		border-bottom: 4px solid;
+	}
+	ul {
+		width: 100%;
+	}
+	.about {
+		font-size: 12px;
+		line-height: 22px;
+		margin-bottom: 20px;
+	}
+	.thumb .screen {
+		height: auto;
+		width: auto!important;
+	}
+	.thumb {
+		padding: 0px;
+		display: block;
+	}
+	.thumb .screen td {
+		text-align: left;
+	}
+	#contact {
+		margin-top: 40px;
+	}
+
 }

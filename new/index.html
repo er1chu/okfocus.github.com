@@ -56,7 +56,7 @@
 							<a href="#work">WORK</a>
 						</td>
 						<td>
-							<a href="#press">PRESS</a>
+							<a href="#press" class="nomobile">PRESS</a>
 						</td>
 						<td>
 							<a href="#map">CONTACT</a>
@@ -64,8 +64,9 @@
 					</tr>
 				</table>
 			</header>
-			<a href="#about" id="video">
-				<video id="startvid" style="width:100%;height:100%;z-index:0" width="100%" height="100%" autoplay preload="auto" loop data-setup="{}">					
+			<a href="#about" id="video" >
+				<video id="startvid" style="width:100%;height:100%;z-index:0" width="100%" height="100%" autoplay preload="auto" loop>	
+				<source src="movie.ogg" type="video/ogg" />				
 				  <source type="video/mp4" src="http://okfocus.s3.amazonaws.com/video/start.mp4">
 				</video>
 				<table class="logo-holder">
@@ -81,7 +82,7 @@
 			<h2 id="work">Client Work</h2>
 			<ul class="work">
 				<li class="thumb" id="tanlines">
-				<table cellspacing="0" class="screen bigger" style="background-position: top;background-image:url(https://s3.amazonaws.com/luckyplop/f94f037926c3aa868ff890eeb62fe13c91bf6fe0.jpg)"><td><h4>Tanlines / The Creators Project<span>Feb.2013</span></h4><a href="http://notthesa.me"target="_blank"class="launch">Launch Site</a>
+				<table cellspacing="0" class="screen bigger" style="background-position: top;background-image:url(https://s3.amazonaws.com/luckyplop/f94f037926c3aa868ff890eeb62fe13c91bf6fe0.jpg)"><td><h4>Tanlines, Not The Same<span>Feb.2013</span></h4><a href="http://notthesa.me"target="_blank"class="launch">Launch Site</a>
 				</td></table>
 				<div class="inner">
 					<div class="nav"><a href="#"class="prev"></a><a href="#"class="next"></a></div>
@@ -92,7 +93,7 @@
 			</li>
 
 			<li class="thumb" id="met">
-				<table cellspacing="0" class="screen" style="background-position:bottom; background-image:url(https://s3.amazonaws.com/luckyplop/c4a5f41c5b932b2dd698fe93bd99494386d91470.jpg)"><td><h4>The MET/CHIPS–NY<span>Jan.2013</span></h4><a href="http://82nd-and-fifth.metmuseum.org/"target="_blank"class="launch">Launch Site</a>
+				<table cellspacing="0" class="screen" style="background-position:bottom; background-image:url(https://s3.amazonaws.com/luckyplop/c4a5f41c5b932b2dd698fe93bd99494386d91470.jpg)"><td><h4>Metropolitan Museum of Art<span>Jan.2013</span></h4><a href="http://82nd-and-fifth.metmuseum.org/"target="_blank"class="launch">Launch Site</a>
 				</td></table>
 				<div class="inner">
 					<div class="nav"><a href="#"class="prev"></a><a href="#"class="next"></a></div>
@@ -242,7 +243,7 @@
 		</ul>
 
 
-		<h2 id="in-house">In Haus Work</h2>
+		<h2 id="in-house-work">In Haus Work</h2>
 		<ul class="work">
 		
 			<li class="thumb" id="soundcloud-dj">
@@ -447,7 +448,7 @@
 			</li>
 		</ul>
 
-
+		<div class="nomobile">
 		<h2 id="press">Accolades – Bragging Rights, Whatever</h2>
 		<div class="work">
 		<table class="press">
@@ -557,16 +558,19 @@
 			<iframe width="500" height="340" src="http://www.youtube.com/embed/NGXkFDiGGV4?color=white&theme=light&hd=1&showinfo=0" style=""frameborder="0"allowfullscreen></iframe>
 			</div>
 		</div>
+		</div>
 	</div>
+	<table id="contact">
 	<div id="map" class="noselect nopointer"></div> 
-	<div id="contact">
-		<h1 id="email">Oh hai, we would love to hear from you.</h1>
+	<td>
+		<h1 id="email">we would love to hear from you.</h1>
 		<a href="mailto:frontdesk@okfoc.us" class="contactbox">frontdesk at okfoc.us</a><br/>
 		<a class="contactbox" id="directions">11-11 44th Rd. #201<br />LIC, NYC</a>
 		<div class="contactbox" id="phone">1-855-OKFOCUS</div>
 		<div class="okfont social contactbox">
 			<a href="http://facebook.com/okfocus">f</a> – <a href="http://twitter.com/okfocus">T</a>
 		</div>
-	</div>
+		</td>
+	</table>
 </body>
 </html>

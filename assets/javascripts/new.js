@@ -102,18 +102,20 @@ $(function(){
 		return false;
 	});
 	
+	$("#video").on("click", function(){
+		var target = $(this).attr("href").split("#")[1];
+		if (target) {
+			window.location.hash = "#/" + target;
+			scrollToSection(target, 200);
+		}
+		return false;
+	});
+	
 	// Make links work without triggering other things..
 	$("a[target]").click(function(e){
 		e.stopPropagation();
 	});
 	
-	// Show/hide welcome video
-//	$("#video").on("click mousewheel", function(e){
-//		e.preventDefault();
-//		e.stopPropagation();
-//		$("#video").slideUp(500);
-//		return false;
-//	});
 	
 	function scrollToSection (target, duration, offset) {
 		offset = offset || 0;
