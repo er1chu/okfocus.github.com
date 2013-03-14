@@ -26,8 +26,6 @@
 	font-weight: normal;
 }
 
-
-
 /*OKFOCUS RESET*/
 
 html,body {
@@ -717,7 +715,7 @@ p {
 
 /*MOBILE STYLEZ YALL*/
 
-@media (max-width: 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	body{
 		min-width:auto;
 	}
@@ -730,7 +728,6 @@ p {
 		width:100%;
 		display:table;
 		position:absolute;
-		color:transparent!important;
 	}
 	.mobile td {
 		height:100%;
@@ -738,6 +735,7 @@ p {
 	}
 	.phone {
 		font-size: 310px;
+		color:transparent;
 	}
 	.mobile .logo {
 		position: absolute;
@@ -745,14 +743,12 @@ p {
 		left: 50%;
 		margin-left: -100px;
 		margin-top: 150px;
-		color:black;
 	}
 	.mobile p {
 		font-size:12px;
 		line-height:24px;
 	}
-	.mobile p a{
+	.mobile p a {
 		color:transparent!important;
 	}
-
 }

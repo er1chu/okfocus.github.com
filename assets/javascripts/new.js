@@ -32,12 +32,6 @@ $(function(){
 		'yMax': 50
 	});
 	
-	$('.mobile span.logo').okshadow({
-		'textShadow': true,
-		'color': 'black',
-		'xMax': 100,
-		'yMax': 50
-	});
 	
 	// Demo OKSHADOW
 	$("#okshadow-text").okshadow({
