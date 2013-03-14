@@ -195,6 +195,13 @@ $(function(){
 	  };
 	})();
 
+	$(".frontlogo").waypoint(function(){
+		setUrl( "" );
+	});
+	$("#contact").waypoint(function(){
+		setUrl( "contact" );
+	});
+	
 	$("h2").waypoint(function(dir){
 		if (dir === "down") {
 			setUrl( $(this).attr("id") );
