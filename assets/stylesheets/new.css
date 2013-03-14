@@ -147,13 +147,6 @@ ul, li {
 
 }
 
-@-webkit-keyframes b {
-	50% {
-		background-color: #6698ff;
-	}
-
-}
-
 .logo-holder {
 	width: 100%;
 	position: absolute;
@@ -161,18 +154,18 @@ ul, li {
 	left: 0;
 	height: 100%;
 }
-.logo-holder td {
+.frontlogo {
 	color: rgba(255,255,255,0.6);
 	width: 100%;
 	text-align: center;
 	font-size: 4rem;
 }
 
-.logo {
-	color: transparent!important;
-}
-.smaller.logo {
-	text-shadow: 0 0 #333;
+.frontlogo span{
+	display: block;
+	width: 100%;
+	min-height: 62px;
+	/*-webkit-animation: a 0.9s 1 ease-in-out;*/
 }
 
 header {
@@ -248,43 +241,6 @@ h2 {
 		border-bottom: 7px solid;
 	}
 
-}
-
-.topstuff {
-	height: 100%;
-	min-height: 530px;
-	width: 100%;
-	pointer-events: none;
-}
-
-h1.logo {
-	font-size: 2.6rem;
-	top: 6%;
-	left: 0;
-	margin: 0;
-	text-align: center;
-	width: 100%;
-	position: fixed;
-	margin-left: -5px;
-	margin-top: 250px;
-	-webkit-animation: a 0.4s 1 ease-in-out;
-	-webkit-transition: opacity .6s linear;
-	-moz-transition: opacity .6s linear;
-	-o-transition: opacity .6s linear;
-	transition: opacity .6s linear;
-	z-index: 0;
-}
-.logo.bigger {
-	font-size: 34rem;
-	text-align: center;
-	margin: 0;
-	color: transparent;
-	opacity: 0.3;
-	-webkit-animation: a 0s 1 ease-in-out;
-}
-
-.faded {
-	opacity: 0.12!important;
 }
 
 .thumb {
@@ -542,12 +498,6 @@ p {
 
 .next:hover {
 	background-position: 0 -60px;
-}
-
-u {
-	border-bottom: 3px solid;
-	padding-bottom: 5px;
-	text-decoration: none;
 }
 
 .press td {
