@@ -747,3 +747,18 @@ header table td a.okfont:hover {
 		color: transparent!important;
 	}
 }
+
+@media all and (device-width: 768px) and (device-height: 1024px)  {
+	body {
+		min-width:auto;
+	}
+	.rapper{
+		width:auto;
+	}
+	#startvid{
+		display:none;
+	}
+	.frontlogo span {
+	color:black;
+	}
+}
