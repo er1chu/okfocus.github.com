@@ -588,9 +588,12 @@ u {
 	box-shadow: 0 -5px 9px #666;
 	position: absolute;
 	z-index: 0;
+	
 }
 #contact {
 	height: 100%;
+	max-height:800px;
+	position:absolute;
 }
 
 #contact td {
