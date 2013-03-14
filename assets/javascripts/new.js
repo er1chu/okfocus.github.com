@@ -17,8 +17,6 @@ a.naturalHeight/a.height;b.style.width=a.options.width+"px";b.style.height=a.opt
 a.mousemove=function(c){var d=a.options.width/2,f=a.options.height/2,e=-1*Math.floor((c.pageX-a.offset.left)*a.widthRatio-d),g=-1*Math.floor((c.pageY-a.offset.top)*a.heightRatio-f);document.body.style.cursor="none";b.style.display="block";b.style.left=c.pageX-d+"px";b.style.top=c.pageY-f+"px";b.style.backgroundPosition=e+"px "+g+"px";};a.mouseout=function(){b.style.display="none";b.style.background="none";document.body.style.cursor="auto"};a.init()};c.okzoom.options={width:150,height:null,scaleWidth:null,
 round:!0,background:"#fff",backgroundRepeat:"no-repeat",shadow:"0 0 5px #000",border:0};c.fn.okzoom=function(b){return this.each(function(){new c.okzoom(this,b)})}});
 
-
-
 /**
  *
  * okjavascript
@@ -64,7 +62,7 @@ $(function(){
 	// Click a project thumbnail to expand it
 	$('.thumb').click(function(e, dontAnimate) {
 		if ($(this).hasClass('show')) return;
-		window.location.hash = "#/" + $(this).attr("id");
+		setUrl( "/#/" + $(this).attr("id") );
 		$('.show').removeClass('show');
 		$(this).addClass('show');
 		$.waypoints('disable');
@@ -87,7 +85,7 @@ $(function(){
 			$("body").animate({ scrollTop: scrollTop }, 200, function(){
 				$.waypoints('enable');
 			});
-			window.location.hash = "#/" + $current.closest("ul").attr("class");
+			setUrl( "/#/" + $current.closest("ul").attr("class") );
 		}
 		return false;
 	});
@@ -96,7 +94,7 @@ $(function(){
 	$("header a").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			window.location.hash = "#/" + target;
+			setUrl( target );
 			scrollToSection(target, 200);
 		}
 		return false;
@@ -105,7 +103,7 @@ $(function(){
 	$("#video").on("click", function(){
 		var target = $(this).attr("href").split("#")[1];
 		if (target) {
-			window.location.hash = "#/" + target;
+			setUrl( target );
 			scrollToSection(target, 200);
 		}
 		return false;
@@ -196,12 +194,12 @@ $(function(){
 
 	$("h2").waypoint(function(dir){
 		if (dir === "down") {
-			window.location.hash = "#/" + $(this).attr("id");
+			setUrl( $(this).attr("id") );
 		}
 	}, { offset: headerHeight() });
 	$("ul").waypoint(function(dir){
 		if (dir === "up") {
-			window.location.hash = "#/" + $(this).prev("h2").attr("id");
+			setUrl( $(this).prev("h2").attr("id") );
 		}
 	}, { offset: 'bottom-in-view' });
 
@@ -214,8 +212,34 @@ $(function(){
 		cssRule( "#" + id + ".show table", style );
 	});
 	
+	// History.js removes the "#" from all our URLs, which is undesired because
+	// we do not have static assets serving from those URLs. Here is a tiny polyfill.
+	window.history = window.history || {};
+	window.history.pushState = window.history.pushState || function setHash(d,t,s){
+		window.location.hash = "#" + s.split("#")[1];
+	}
+	function setUrl(s){
+		if (s == "") {
+			window.history.pushState("", document.title, window.location.pathname);
+			return;
+		}
+		else { 
+			s = "#!/" + s;
+		}
+		window.history.pushState("", document.title, window.location.pathname + s);
+	}
+
+	// Clicking the home link should clear the hash, if possible.
+	$("#homelink").click(function(){
+		setUrl("");
+		$.waypoints('disable');
+		$("body").animate({ scrollTop: 0 }, 400, function(){
+			$.waypoints('enable');
+		});
+	});
+	
 	if (window.location.hash.length > 1) {
-		var dest = window.location.hash.replace("#","").replace(/\//g,"");
+		var dest = window.location.hash.replace(/[#\/!]/g,"");
 		var $section = $("#" + dest);
 		if ($section.length) {
 			$.waypoints('disable');
