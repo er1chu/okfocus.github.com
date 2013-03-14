@@ -455,13 +455,6 @@ u {
 	text-decoration: none;
 }
 
-.press * {
-	-webkit-transition: all .2s linear;
-	-moz-transition: all .2s linear;
-	-o-transition: all .2s linear;
-	transition: all .2s linear;
-}
-
 .press td {
 	vertical-align: top;
 	padding: 0 30px 60px 0;
