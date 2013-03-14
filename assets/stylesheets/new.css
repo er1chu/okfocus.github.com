@@ -39,6 +39,10 @@ html,body {
 	border: 0;
 }
 
+.mobile {
+	display:none;
+}
+
 img {
 	border: 0;
 }
@@ -602,8 +606,8 @@ p {
 	background: rgba(0, 0, 255, 0.8) ;
 }
 
-/*hover states for desktop*/
-@media screen {
+/*hover states*/
+
 	header table td a:hover {
 		border-bottom: 3px solid;
 	}
@@ -651,8 +655,6 @@ p {
 	#contact .social a:hover {
 		background: rgba(0,120,255,0.5);
 	}
-
-}
 
 
 
@@ -713,52 +715,44 @@ p {
 
 }
 
+/*MOBILE STYLEZ YALL*/
+
 @media (max-width: 480px) {
-	.nomobile {
-		display: none;
+	body{
+		min-width:auto;
 	}
-	#video {
-		display: none;
+	.desktop{
+		display:none;
 	}
-	body {
-		min-width: 100%;
+	
+	.mobile {
+		height:100%;
+		width:100%;
+		display:table;
+		position:absolute;
+		color:transparent!important;
 	}
-	.rapper {
-		width: 100%;
+	.mobile td {
+		height:100%;
+		text-align:center;
 	}
-	header table {
-		width: 100%;
+	.phone {
+		font-size: 310px;
 	}
-	header table td {
-		padding: 0px 2px;
-		min-width: auto;
+	.mobile .logo {
+		position: absolute;
+		width: 200px;
+		left: 50%;
+		margin-left: -100px;
+		margin-top: 150px;
+		color:black;
 	}
-	h2 {
-		font-size: 30px;
-		line-height: 40px;
-		border-bottom: 4px solid;
+	.mobile p {
+		font-size:12px;
+		line-height:24px;
 	}
-	ul {
-		width: 100%;
-	}
-	.about {
-		font-size: 12px;
-		line-height: 22px;
-		margin-bottom: 20px;
-	}
-	.thumb .screen {
-		height: auto;
-		width: auto!important;
-	}
-	.thumb {
-		padding: 0px;
-		display: block;
-	}
-	.thumb .screen td {
-		text-align: left;
-	}
-	#contact {
-		margin-top: 40px;
+	.mobile p a{
+		color:transparent!important;
 	}
 
 }
