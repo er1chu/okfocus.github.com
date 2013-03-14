@@ -1,4 +1,4 @@
-/*FONTS*/
+/*fonts*/
 
 @font-face {
 	font-family: 'OKFocusRegular';
@@ -13,7 +13,6 @@
 	font-weight: normal;
 }
 
-
 @font-face {
 	font-family: 'gtwal';
 	src: url('../fonts/gt_walsheim_medium-webfont.ttf');
@@ -26,7 +25,13 @@
 	font-weight: normal;
 }
 
-/*OKFOCUS RESET*/
+/*okfocus reset*/
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 html,body {
 	margin: 0;
@@ -38,17 +43,11 @@ html,body {
 }
 
 .mobile {
-	display:none;
+	display: none;
 }
 
 img {
 	border: 0;
-}
-
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 a {
@@ -57,9 +56,7 @@ a {
 	outline: 0;
 }
 
-
-/*GLOBAL STYLEZ*/
-
+/*ok lets start writing seriocss!!!!*/
 
 body {
 	background: white url('../images/photocopy.png') center fixed;
@@ -121,13 +118,11 @@ ul, li {
 ::selection {
 	background: #A200FF;
 	color: white;
-	/* Safari */
 }
 
 ::-moz-selection {
 	background: #A200FF;
 	color: white;
-	/* Firefox */
 }
 
 #video {
@@ -146,7 +141,6 @@ ul, li {
 	to {
 		-webkit-transform: scale(1)rotateX(360deg);
 	}
-
 }
 
 .logo-holder {
@@ -163,7 +157,7 @@ ul, li {
 	font-size: 4rem;
 }
 
-.frontlogo span{
+.frontlogo span {
 	display: block;
 	width: 100%;
 	min-height: 62px;
@@ -187,7 +181,6 @@ header {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
 }
 
-
 header table {
 	margin: 0px auto;
 	font-size: 12px;
@@ -205,7 +198,6 @@ header table td a.okfont {
 	font-weight: bold;
 }
 
-
 header table td a {
 	font-weight: bold;
 }
@@ -215,7 +207,6 @@ header table td a {
 	margin: 0 auto;
 }
 
-
 .work {
 	display: inline-block;
 	width: 100%;
@@ -223,6 +214,7 @@ header table td a {
 	position: relative;
 	z-index: 1;
 }
+
 h2 {
 	font-family: 'gtwal', sans-serif;
 	font-size: 80px;
@@ -234,6 +226,8 @@ h2 {
 	margin-top: 0;
 }
 
+/*shoutout to paul irish*/
+
 @-moz-document url-prefix() {
 	body {
 		-moz-user-select: none;
@@ -242,7 +236,6 @@ h2 {
 		font-weight: normal;
 		border-bottom: 7px solid;
 	}
-
 }
 
 .thumb {
@@ -363,9 +356,11 @@ p {
 	border-bottom: 0px;
 	position: relative;
 }
+
 .thumb.embedded.show .screen {
 	display: none;
 }
+
 .thumb.embedded.show .embed {
 	display: block;
 }
@@ -389,9 +384,11 @@ p {
 	font-family: sans-serif;
 	font-weight: bold;
 }
+
 .okshadow-block {
 	position: absolute;
 }
+
 .okshadow-block:nth-child(9n) {
 	background: rgb(231,230,238);
 	width: 145px;
@@ -399,6 +396,7 @@ p {
 	top: 110px;
 	left: 161px;
 }
+
 .okshadow-block:nth-child(9n+1) {
 	background: rgb(232,230,238);
 	width: 143px;
@@ -406,6 +404,7 @@ p {
 	top: 30px;
 	left: 120px;
 }
+
 .okshadow-block:nth-child(9n+2) {
 	background: rgb(231,228,235);
 	width: 150px;
@@ -413,6 +412,7 @@ p {
 	top: 60px;
 	left: 80px;
 }
+
 .okshadow-block:nth-child(9n+3) {
 	background: rgb(234,228,237);
 	width: 142px;
@@ -427,6 +427,7 @@ p {
 	top: 10px;
 	left: 250px;
 }
+
 .okshadow-block:nth-child(9n+5) {
 	background: rgb(232,233,238);
 	width: 143px;
@@ -434,6 +435,7 @@ p {
 	top: 40px;
 	left: 210px;
 }
+
 .okshadow-block:nth-child(9n+6) {
 	background: rgb(228,229,237);
 	width: 151px;
@@ -467,7 +469,6 @@ p {
 	box-shadow: -4px 4px #ccc;
 	position: relative;
 }
-
 
 .nav {
 	position: absolute;
@@ -506,17 +507,18 @@ p {
 	vertical-align: top;
 	padding: 0 30px 60px 0;
 }
+
 .press td img {
 	max-width: 200px;
 	margin-bottom: 10px;
 }
+
 .press td p {
 	font-family: sans-serif;
 	line-height: 20px;
 	font-size: 16px;
 	padding: 15px 0;
 }
-
 
 .creators {
 	clear: both;
@@ -540,13 +542,12 @@ p {
 	box-shadow: 0 -5px 9px #666;
 	position: absolute;
 	z-index: 0;
-	
 }
 #contact {
 	height: 100%;
-	max-height:800px;
-	position:absolute;
-	font-family:'gtwal',sans-serif;
+	max-height: 800px;
+	position: absolute;
+	font-family: 'gtwal',sans-serif;
 }
 
 #contact td {
@@ -564,8 +565,8 @@ p {
 	text-align: left;
 	background: rgba(255,255,0,0.2);
 	display: inline;
+	font-weight: normal;
 }
-
 
 .contactbox {
 	color: white;
@@ -604,57 +605,55 @@ p {
 	background: rgba(0, 0, 255, 0.8) ;
 }
 
-/*hover states*/
+/*hover stat.es*/
 
-	header table td a:hover {
-		border-bottom: 3px solid;
-	}
+header table td a:hover {
+	border-bottom: 3px solid;
+}
 
-	header table td a.okfont:hover {
-		border-bottom: 0px solid;
-	}
+header table td a.okfont:hover {
+	border-bottom: 0px solid;
+}
 
-	.thumb:hover {
-		background-image: url(/assets/images/dotbg2.gif);
-		background-color: blue;
-		cursor: pointer;
-	}
+.thumb:hover {
+	background-image: url(/assets/images/dotbg2.gif);
+	background-color: blue;
+	cursor: pointer;
+}
 
-	.thumb.show:hover {
-		cursor: default;
-		background: #f9f9f9;
-	}
+.thumb.show:hover {
+	cursor: default;
+	background: #f9f9f9;
+}
 
-	.thumb:hover td {
-		display: none;
-	}
+.thumb:hover td {
+	display: none;
+}
 
-	.thumb.show:hover td {
-		display: table-cell;
-	}
+.thumb.show:hover td {
+	display: table-cell;
+}
 
-	.launch:hover {
-		color: yellow;
-	}
+.launch:hover {
+	color: yellow;
+}
 
-	.nav a:hover {
-		color: blue;
-	}
+.nav a:hover {
+	color: blue;
+}
 
-	.press a:hover p {
-		color: blue;
-	}
+.press a:hover p {
+	color: blue;
+}
 
-	#contact a:hover {
-		background: rgba(0,120,255,0.5);
-		text-decoration: underline
-	}
+#contact a:hover {
+	background: rgba(0,120,255,0.5);
+	text-decoration: underline
+}
 
-	#contact .social a:hover {
-		background: rgba(0,120,255,0.5);
-	}
-
-
+#contact .social a:hover {
+	background: rgba(0,120,255,0.5);
+}
 
 /* the dynamic background-position on okzoom didn't work until i added this.. ! */
 
@@ -671,7 +670,6 @@ p {
 	.rapper {
 		width: 1140px;
 	}
-
 }
 
 
@@ -696,46 +694,43 @@ p {
 	.nav {
 		width: 1240px;
 	}
-
 }
 
 @media (max-width: 1140px) {
 	#contact h1 {
-		font-size: 4rem;
+		font-size: 5rem;
 	}
-
 }
 
 @media only screen and (max-height:650px) {
 	.inner p {
 		line-height: 22px;
 	}
-
 }
 
 /*MOBILE STYLEZ YALL*/
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-	body{
-		min-width:auto;
+	body {
+		min-width: auto;
 	}
-	.desktop{
-		display:none;
+	.desktop {
+		display: none;
 	}
-	
+
 	.mobile {
-		height:100%;
-		width:100%;
-		display:table;
-		position:absolute;
+		height: 100%;
+		width: 100%;
+		display: table;
+		position: absolute;
 	}
 	.mobile td {
-		height:100%;
-		text-align:center;
+		height: 100%;
+		text-align: center;
 	}
 	.phone {
 		font-size: 310px;
-		color:transparent;
+		color: transparent;
 	}
 	.mobile .logo {
 		position: absolute;
@@ -745,10 +740,10 @@ p {
 		margin-top: 150px;
 	}
 	.mobile p {
-		font-size:12px;
-		line-height:24px;
+		font-size: 12px;
+		line-height: 24px;
 	}
 	.mobile p a {
-		color:transparent!important;
+		color: transparent!important;
 	}
 }
