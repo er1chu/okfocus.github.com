@@ -65,7 +65,7 @@ $(function(){
 	// Click a project thumbnail to expand it
 	$('.thumb').click(function(e, dontAnimate) {
 		if ($(this).hasClass('show')) return;
-		setUrl( "/#/" + $(this).attr("id") );
+		setUrl( $(this).attr("id") );
 		$('.show').removeClass('show');
 		$(this).addClass('show');
 		$.waypoints('disable');
@@ -88,7 +88,7 @@ $(function(){
 			$("body").animate({ scrollTop: scrollTop }, 200, function(){
 				$.waypoints('enable');
 			});
-			setUrl( "/#/" + $current.closest("ul").attr("class") );
+			setUrl( $current.closest("ul").attr("class") );
 		}
 		return false;
 	});
@@ -113,7 +113,7 @@ $(function(){
 	});
 	
 	// Make links work without triggering other things..
-	$("a[target]").click(function(e){
+	$("a").click(function(e){
 		e.stopPropagation();
 	});
 	
