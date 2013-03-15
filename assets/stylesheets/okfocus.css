@@ -218,24 +218,13 @@ header table td a {
 h2 {
 	font-family: 'gtwal', sans-serif;
 	font-size: 80px;
-	border-bottom: 10px solid;
+	font-weight: normal;
+	border-bottom: 7px solid;
 	clear: both;
 	line-height: 95px;
 	padding: 70px 0 5px 0;
 	margin-bottom: 40px;
 	margin-top: 0;
-}
-
-/*shoutout to paul irish*/
-
-@-moz-document url-prefix() {
-	body {
-		-moz-user-select: none;
-	}
-	h2 {
-		font-weight: normal;
-		border-bottom: 7px solid;
-	}
 }
 
 .thumb {
