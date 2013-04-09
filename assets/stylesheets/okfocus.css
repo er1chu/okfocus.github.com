@@ -685,6 +685,9 @@ header table td a.okfont:hover {
 		max-width: 300px;
 		margin-right: 70px;
 	}
+	p{
+		font-size:19px;
+	}
 	.nav {
 		width: 1240px;
 	}
