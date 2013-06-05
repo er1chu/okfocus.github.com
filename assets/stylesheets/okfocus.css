@@ -56,6 +56,8 @@ img {
 a {
 	text-decoration: none;
 	color: black;
+	-webkit-transition:color 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-moz-transition:color 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
 	outline: 0;
 }
 
@@ -607,11 +609,25 @@ header table td a:hover {
 header table td a.okfont:hover {
 	border-bottom: 0px solid;
 }
-
+.thumb {
+	-webkit-transform:scale(0.97);
+	-webkit-transition:-webkit-transform 0.15s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-moz-transform:scale(0.97);
+	-moz-transition:-webkit-transform 0.15s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+}
 .thumb:hover {
 	background-image: url(/assets/images/dotbg2.gif);
 	background-color: blue;
 	cursor: pointer;
+	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+}
+
+.thumb.show {
+	-webkit-transform:scale(1);
+	-webkit-transition:-webkit-transform 0s;
+	-moz-transform:scale(1);
+	-moz-transition:-webkit-transform 0s;
 }
 
 .thumb.show:hover {
