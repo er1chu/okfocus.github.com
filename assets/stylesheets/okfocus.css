@@ -204,6 +204,20 @@ header table td a {
 	font-weight: bold;
 }
 
+#staff {
+	width: 100%;
+	text-align: center;
+	border-spacing: 0;
+	margin-top:60px;
+}
+#staff b{
+	display:block;
+}
+#staff img{
+	width:50%;
+	margin:20px 0;
+}
+
 .rapper {
 	width: 960px;
 	margin: 0 auto;
