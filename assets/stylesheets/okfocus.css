@@ -56,6 +56,8 @@ img {
 a {
 	text-decoration: none;
 	color: black;
+	-webkit-transition:color 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-moz-transition:color 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
 	outline: 0;
 }
 
@@ -622,10 +624,32 @@ header table td a.okfont:hover {
 	border-bottom: 0px solid;
 }
 
+#work {
+	-webkit-persepctive:500;
+}
+.thumb {
+	-webkit-transform:scale(0.97)perspective(500)rotateY(0deg);
+	-webkit-transition:-webkit-transform 0.15s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-moz-transform:scale(0.97);
+	-moz-transition:-webkit-transform 0.15s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-webkit-transform-style: preserve-3d;
+}
+.thumb.right {
+	-webkit-transform:scale(0.97)perspective(500)rotateY(0deg);
+}
 .thumb:hover {
 	background-image: url(/assets/images/dotbg2.gif);
 	background-color: blue;
 	cursor: pointer;
+	-webkit-transform:scale(1)perspective(500)rotateY(0deg);
+	-moz-transform:scale(1);
+}
+
+.thumb.show {
+	-webkit-transform:scale(1);
+	-webkit-transition:-webkit-transform 0s;
+	-moz-transform:scale(1);
+	-moz-transition:-webkit-transform 0s;
 }
 
 .thumb.show:hover {
@@ -753,7 +777,7 @@ header table td a.okfont:hover {
 	}
 	.phone {
 		font-size: 310px;
-		color: transparent;
+		color: rgba(0,0,0,0.7);
 	}
 	.mobile .logo {
 		position: absolute;
@@ -767,7 +791,7 @@ header table td a.okfont:hover {
 		line-height: 24px;
 	}
 	.mobile p a {
-		color: transparent!important;
+			color: rgba(0,0,0,0.7)!important;
 	}
 }
 
