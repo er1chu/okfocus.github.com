@@ -213,11 +213,20 @@ header table td a {
 	margin-top:60px;
 }
 #staff b{
-	display:block;
+	max-width: 150px;
+	display: block;
+	margin: 0 auto;
 }
 #staff img{
-	width:50%;
+	width:120px;
 	margin:20px 0;
+	-webkit-transition: all 1s cubic-bezier(0.230,1.000,0.320,1.000);
+	-moz-transition: all 20s cubic-bezier(0.230,1.000,0.320,1.000);
+	transition: all 1s cubic-bezier(0.230,1.000,0.320,1.000);
+}
+
+#staff td:hover img{
+	-webkit-filter:  invert(0%) hue-rotate(18deg) contrast(298%) grayscale(66%) saturate(241%);
 }
 
 .rapper {
