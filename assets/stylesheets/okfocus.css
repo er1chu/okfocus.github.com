@@ -38,7 +38,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-	font-size: 100%;
+	font-size: 12px;
 	outline: 0;
 	border: 0;
 	width:100%;
@@ -56,6 +56,8 @@ img {
 a {
 	text-decoration: none;
 	color: black;
+	-webkit-transition:color 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-moz-transition:color 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
 	outline: 0;
 }
 
@@ -63,7 +65,6 @@ a {
 
 body {
 	background: white url('../images/photocopy.png') center fixed;
-	min-width: 960px;
 }
 
 ul, li {
@@ -205,6 +206,29 @@ header table td a {
 	font-weight: bold;
 }
 
+#staff {
+	width: 100%;
+	text-align: center;
+	border-spacing: 0;
+	margin-top:60px;
+}
+#staff b{
+	max-width: 150px;
+	display: block;
+	margin: 0 auto;
+}
+#staff img{
+	width:120px;
+	margin:20px 0;
+	-webkit-transition: all 1s cubic-bezier(0.230,1.000,0.320,1.000);
+	-moz-transition: all 20s cubic-bezier(0.230,1.000,0.320,1.000);
+	transition: all 1s cubic-bezier(0.230,1.000,0.320,1.000);
+}
+
+#staff td:hover img{
+	-webkit-filter:  invert(0%) hue-rotate(18deg) contrast(298%) grayscale(66%) saturate(241%);
+}
+
 .rapper {
 	width: 960px;
 	margin: 0 auto;
@@ -220,11 +244,11 @@ header table td a {
 
 h2 {
 	font-family: 'gtwal', sans-serif;
-	font-size: 80px;
+	font-size: 600%;
 	font-weight: normal;
 	border-bottom: 7px solid;
 	clear: both;
-	line-height: 95px;
+	line-height: 110%;
 	padding: 70px 0 5px 0;
 	margin-bottom: 40px;
 	margin-top: 0;
@@ -254,8 +278,8 @@ p {
 }
 
 .about {
-	font-size: 18px;
-	line-height: 36px;
+	font-size: 150%;
+	line-height: 220%;
 }
 
 .thumb .inner {
@@ -497,23 +521,62 @@ p {
 	background-position: 0 -60px;
 }
 
-.press td {
-	vertical-align: top;
-	padding: 0 30px 60px 0;
+.press{
+	text-align:center;
+	margin-bottom:60px;
+	display:inline-block;
+}
+.press p{
+	line-height:auto;
+	text-align:justify;
+	margin:0 20px;
+}
+.press a {
+	display:inline-block;
+	width:33.33%;
+	float:left;
+	margin:60px 0;
+}
+.press a img{
+	max-width:60%;
+}
+.cube {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	height: 130px;
+	-webkit-transition: -webkit-transform .33s cubic-bezier(0.230,1.000,0.320,1.000);
+	-moz-transition: -moz-transform .33s cubic-bezier(0.230,1.000,0.320,1.000);
+	transition: transform .33s cubic-bezier(0.230,1.000,0.320,1.000);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d; /* <-NB */
+	margin-top: 10px;
+	cursor:pointer;
 }
 
-.press td img {
-	max-width: 200px;
-	margin-bottom: 10px;
+.flippety,.flop {
+	background: white;
+	height: 100px;
 }
 
-.press td p {
-	font-family: sans-serif;
-	line-height: 20px;
-	font-size: 16px;
-	padding: 15px 0;
+.flippety {
+	-webkit-transform: translateZ(50px);
+	-moz-transform: translateZ(50px);
+	transform: translateZ(50px);
 }
 
+.flop {
+	-webkit-transform: rotateX(-90deg) translateZ(-50px);
+	-moz-transform: rotateX(-90deg) translateZ(-50px);
+	transform: rotateX(-90deg) translateZ(-50px);
+}
+
+.press a:hover .cube {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	transform: rotateX(90deg); 
+}
 .creators {
 	clear: both;
 	padding: 40px;
@@ -609,10 +672,32 @@ header table td a.okfont:hover {
 	border-bottom: 0px solid;
 }
 
+#work {
+	-webkit-persepctive:500;
+}
+.thumb {
+	-webkit-transform:scale(0.97)perspective(500)rotateY(0deg);
+	-webkit-transition:-webkit-transform 0.15s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-moz-transform:scale(0.97);
+	-moz-transition:-webkit-transform 0.15s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0ms;
+	-webkit-transform-style: preserve-3d;
+}
+.thumb.right {
+	-webkit-transform:scale(0.97)perspective(500)rotateY(0deg);
+}
 .thumb:hover {
 	background-image: url(/assets/images/dotbg2.gif);
 	background-color: blue;
 	cursor: pointer;
+	-webkit-transform:scale(1)perspective(500)rotateY(0deg);
+	-moz-transform:scale(1);
+}
+
+.thumb.show {
+	-webkit-transform:scale(1);
+	-webkit-transition:-webkit-transform 0s;
+	-moz-transform:scale(1);
+	-moz-transition:-webkit-transform 0s;
 }
 
 .thumb.show:hover {
@@ -693,6 +778,19 @@ header table td a.okfont:hover {
 	}
 }
 
+@media (max-width:720px) {
+	body {
+		font-size:8px;
+	}
+	.rapper {
+		width: 720px;
+		margin: 0 auto;
+	}
+	header table {
+		width: 720px;
+	}
+}
+
 @media (max-width: 1140px) {
 	#contact h1 {
 		font-size: 5rem;
@@ -727,7 +825,7 @@ header table td a.okfont:hover {
 	}
 	.phone {
 		font-size: 310px;
-		color: transparent;
+		color: rgba(0,0,0,0.7);
 	}
 	.mobile .logo {
 		position: absolute;
@@ -741,7 +839,7 @@ header table td a.okfont:hover {
 		line-height: 24px;
 	}
 	.mobile p a {
-		color: transparent!important;
+			color: rgba(0,0,0,0.7)!important;
 	}
 }
 

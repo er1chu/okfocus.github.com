@@ -27,9 +27,10 @@ $(function(){
 	// Logo OKSHADOW
 	$('.mobile span').okshadow({
 		'textShadow': true,
-		'color': 'blue',
-		'xMax': 100,
-		'yMax': 50
+		'color': '#ccc',
+		'xMax': 30,
+		'yMax': 10,
+		'fuzzMax': 4
 	});
 	
 	
