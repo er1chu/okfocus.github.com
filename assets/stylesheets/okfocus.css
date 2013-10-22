@@ -26,6 +26,40 @@
 	font-weight: normal;
 }
 
+	@font-face {
+		font-family: 'CircularStd-Bold';
+		src: url('http://okfocus.s3.amazonaws.com/fonts/CircularStd-Bold.eot');
+	}
+
+	@font-face {
+		font-family: 'CircularStd-Bold';
+		src: url('http://okfocus.s3.amazonaws.com/fonts/CircularStd-Bold.woff') format('woff'),
+		url('http://okfocus.s3.amazonaws.com/fonts/CircularStd-Bold.svg#CircularStd-Bold') format('svg');
+	}
+
+
+	@font-face {
+		font-family: 'CircularStd-Book';
+		src: url('http://okfocus.s3.amazonaws.com/fonts/CircularStd-Book.eot');
+	}
+
+	@font-face {
+		font-family: 'CircularStd-Book';
+		src: url('http://okfocus.s3.amazonaws.com/fonts/CircularStd-Book.woff') format('woff'),
+		url('http://okfocus.s3.amazonaws.com/fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
+	}
+
+	@font-face {
+		font-family: 'ACaslonPro-Regular';
+		src: url('http://okfocus.s3.amazonaws.com/fonts/ACaslonPro-Regular.eot');
+	}
+
+	@font-face {
+		font-family: 'ACaslonPro-Regular';
+		src: url('http://okfocus.s3.amazonaws.com/fonts/ACaslonPro-Regular.woff') format('woff'),
+		url('http://okfocus.s3.amazonaws.com/fonts/ACaslonPro-Regular.svg#ACaslonPro-Regular') format('svg');
+	}
+
 /*okfocus reset*/
 
 * {
@@ -37,8 +71,8 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
-	font-size: 12px;
+	font-family: 'ACaslonPro-Regular', serif;
+	font-size: 16px;
 	outline: 0;
 	border: 0;
 	width:100%;
@@ -182,7 +216,7 @@ header {
 	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 44%,rgba(255,255,255,1) 74%,rgba(255,255,255,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); 
 }
 
 header table {
@@ -243,11 +277,12 @@ header table td a {
 }
 
 h2 {
-	font-family: 'gtwal', sans-serif;
-	font-size: 600%;
+	font-family: 'CircularStd-Book', sans-serif;
+	font-size: 500%;
 	font-weight: normal;
-	border-bottom: 7px solid;
+	color: #414042;
 	clear: both;
+	text-align: center;
 	line-height: 110%;
 	padding: 70px 0 5px 0;
 	margin-bottom: 40px;
@@ -269,17 +304,18 @@ ul.work {
 }
 
 p {
-	letter-spacing: 1px;
-	font-size: 16px;
-	line-height: 32px;
+	font-size: 18px;
+	line-height: 18px;
+	-webkit-font-smoothing: antialiased;
 	margin: 0;
+	color: #414042;
 	position: relative;
 	z-index: 2;
 }
 
 .about {
 	font-size: 150%;
-	line-height: 220%;
+	line-height: 170%;
 }
 
 .thumb .inner {
@@ -295,7 +331,7 @@ p {
 }
 
 .inner p a {
-	text-decoration: underline;
+	text-decoration: 1px dotted underline;
 }
 
 .thumb .screen {
@@ -311,7 +347,7 @@ p {
 }
 
 .thumb .screen td {
-	font-family: 'gtwal', sans-serif;
+	font-family: 'CircularStd-Bold', sans-serif;
 	letter-spacing: 1px;
 	text-align: center;
 	background: white;
@@ -604,7 +640,7 @@ p {
 	height: 100%;
 	max-height: 800px;
 	position: absolute;
-	font-family: 'gtwal',sans-serif;
+	font-family: 'CircularStd-Bold',sans-serif;
 }
 
 #contact td {
@@ -764,7 +800,7 @@ header table td a.okfont:hover {
 	}
 	.press td p {
 		font-family: sans-serif;
-		line-height: 20px;
+		line-height: 22px;
 		font-size: 16px;
 		padding: 15px 0px 15px 0;
 		max-width: 300px;
